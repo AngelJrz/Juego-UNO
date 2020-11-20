@@ -62,11 +62,17 @@
     <Compile Include="Ventanas\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\RecuperacionCuenta.xaml.cs">
+      <DependentUpon>RecuperacionCuenta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\RegistrarCuenta.xaml.cs">
       <DependentUpon>RegistrarCuenta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\RegistroEnEspera.xaml.cs">
       <DependentUpon>RegistroEnEspera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\VerificarCodigo.xaml.cs">
+      <DependentUpon>VerificarCodigo.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -100,11 +106,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ventanas\RecuperacionCuenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\RegistrarCuenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\RegistroEnEspera.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\VerificarCodigo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
