@@ -15,21 +15,13 @@ using System.Windows.Shapes;
 namespace UNOGui.Ventanas
 {
     /// <summary>
-    /// Lógica de interacción para Login.xaml
+    /// Lógica de interacción para RegistroEnEspera.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class RegistroEnEspera : Window
     {
-        public Login()
+        public RegistroEnEspera()
         {
             InitializeComponent();
-        }
-
-        private void IrARegistrarCuenta(object sender, RoutedEventArgs e)
-        {
-            RegistrarCuenta registrarCuentaVentana = new RegistrarCuenta();
-            registrarCuentaVentana.Show();
-
-            this.Close();
         }
     }
 }
