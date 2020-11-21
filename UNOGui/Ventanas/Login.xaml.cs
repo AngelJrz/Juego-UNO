@@ -31,5 +31,13 @@ namespace UNOGui.Ventanas
 
             this.Close();
         }
+
+        private void IrARecuperarCuenta(object sender, RoutedEventArgs e)
+        {
+            RecuperacionCuenta recuperacionCuentaVentana = new RecuperacionCuenta();
+            recuperacionCuentaVentana.Show();
+
+            this.Close();
+        }
     }
 }
