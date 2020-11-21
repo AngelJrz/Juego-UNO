@@ -10,8 +10,8 @@
         Title="Iniciar sesión" Height="550" Width="500" Icon="/Imagenes/logo.png">
     <Grid Background="Red">
         <Grid.RowDefinitions>
-            <RowDefinition Height="230"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="150"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -20,55 +20,11 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center" >
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="usuarioTextbox">
-                <TextBox.Style>
-                    <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="TextBox" BasedOn="{StaticResource Input}">
-                        <Style.Resources>
-                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                                <VisualBrush.Visual>
-                                    <Label Content="Usuario" Foreground="DarkSlateGray" FontSize="16" Padding="10"/>
-                                </VisualBrush.Visual>
-                            </VisualBrush>
-                        </Style.Resources>
+            <Label Content="Usuario:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
+            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="usuarioTextbox"/>
 
-
-                        <Style.Triggers>
-                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                            </Trigger>
-                            <Trigger Property="Text" Value="{x:Null}">
-                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                            </Trigger>
-                            <Trigger Property="IsKeyboardFocused" Value="True">
-                                <Setter Property="Background" Value="White" />
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBox.Style>
-            </TextBox>
-
-            <PasswordBox Template="{StaticResource PasswordBoxBaseControlTemplate}">
-                <PasswordBox.Style>
-                    <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource PasswordInput}">
-                        <Style.Resources>
-                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" Stretch="None">
-                                <VisualBrush.Visual>
-                                    <Label Content="Contraseña" Foreground="DarkSlateGray" Padding="10" FontSize="16"/>
-                                </VisualBrush.Visual>
-                            </VisualBrush>
-                        </Style.Resources>
-                        <Style.Triggers>
-                            <MultiDataTrigger>
-                                <MultiDataTrigger.Conditions>
-                                    <Condition Binding="{Binding Password}" Value="{x:Null}"/>
-                                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsFocused}" Value="False"/>
-                                </MultiDataTrigger.Conditions>
-                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}"/>
-                            </MultiDataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </PasswordBox.Style>
-            </PasswordBox>
+            <Label Content="Contraseña:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
+            <PasswordBox Template="{StaticResource PasswordBoxBaseControlTemplate}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2">

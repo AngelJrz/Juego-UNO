@@ -21,7 +21,7 @@
             <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd"
                 BorderThickness="2" BorderBrush="Gold" 
-                CornerRadius="10">
+                CornerRadius="10"  Width="300">
                 <ScrollViewer x:Name="PART_ContentHost" Margin="3" Content="{TemplateBinding DataContext}"/>
             </Border>
         </ControlTemplate>
@@ -31,6 +31,7 @@
                     x:Name="Bd"
                     BorderThickness="2" BorderBrush="Gold" 
                     CornerRadius="10"
+                    Width="300"
                 >
                 <ScrollViewer x:Name="PART_ContentHost" Margin="3" Content="{TemplateBinding DataContext}"/>
             </Border>
@@ -98,6 +99,12 @@
                     <DropShadowEffect Color="Black" Direction="300" ShadowDepth="3" BlurRadius="10" Opacity="0.5"/>
                 </Setter.Value>
             </Setter>
+        </Style>
+
+        <Style x:Key="TextoLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Gold"/>
         </Style>
     </Application.Resources>
 </Application>
