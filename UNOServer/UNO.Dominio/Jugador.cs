@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UNO.Contratos
+namespace UNO.Dominio
 {
-    public class Class1
+    public class Jugador
     {
     }
 }
