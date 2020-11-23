@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,10 +35,66 @@ namespace UNOGui.Ventanas
 
         private void RegistrarNuevaCuenta(object sender, RoutedEventArgs e)
         {
-            RegistroEnEspera registroEnEsperaVentana = new RegistroEnEspera();
-            registroEnEsperaVentana.Show();
+            if (CamposCompletos() && CorreoValido() && SonContraseniasIguales())
+            {
+                RegistroEnEspera registroEnEsperaVentana = new RegistroEnEspera();
+                registroEnEsperaVentana.Show();
+                this.Close();
+            }
 
-            this.Close();
+        }
+
+        private bool CamposCompletos()
+        {
+            bool completo = false;
+
+            if (usuarioIngresado.Text != "" &&
+                correoElectronicoIngresado.Text != "" &&
+                contraseniaIngresada.Password != "" &&
+                contraseniaDosIngresada.Password != "")
+            {
+                completo = true;
+            }
+            else
+            {
+                MessageBox.Show("Los campos estan incompletos","Falta información",MessageBoxButton.OK,MessageBoxImage.Warning);
+            }
+
+            return completo;
+        }
+
+        private bool SonContraseniasIguales()
+        {
+            bool iguales = false;
+
+            if (contraseniaIngresada.Password == contraseniaDosIngresada.Password)
+            {
+                iguales = true;
+            }
+            else
+            {
+                MessageBox.Show("Las contraseñas no son iguales", "Información invalida", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
+                return iguales;
+        }
+
+        private bool CorreoValido()
+        {
+            bool valido = false;
+
+            Regex email = new Regex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+
+            if (email.IsMatch(correoElectronicoIngresado.Text))
+            {
+                valido = true;
+            }
+            else
+            {
+                MessageBox.Show("El correo electronico ingresado no es valido", "Información invalida", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
+            return valido;
         }
     }
 }
