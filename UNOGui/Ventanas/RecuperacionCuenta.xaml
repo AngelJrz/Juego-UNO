@@ -15,7 +15,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48" Margin="54,26" Width="386">
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Recupera tu contraseña" Style="{StaticResource TituloStyle}"/>
         </StackPanel>
 
@@ -39,7 +39,7 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Margin="197,41,197,34" Width="100">
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image Source="/Imagenes/logo.png" Width="100"/>
         </StackPanel>
     </Grid>

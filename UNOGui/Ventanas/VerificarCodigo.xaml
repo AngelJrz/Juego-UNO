@@ -15,15 +15,15 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48" Margin="118,26" Width="258">
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Verificar código" Style="{StaticResource TituloStyle}"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="29,0" Width="436">
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
             <TextBlock Text="Te enviamos un código de recuperación a su dirección de correo. Por favor, ingreselo en el siguiente campo." 
-                       Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center"/>
+                       Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Width="400"/>
 
-            <Label Content="Código de recuperación:" Style="{StaticResource TextoLabel}" Margin="65,20,0,0"/>
+            <Label Content="Código de recuperación:" Style="{StaticResource TextoLabel}" Margin="50,10,0,0"/>
             <TextBox x:Name="codigoIngresado" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,10,0,30" />
 
 
@@ -37,7 +37,7 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Margin="197,30,197,21" Width="100">
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image Source="/Imagenes/logo.png" Width="100"/>
         </StackPanel>
     </Grid>
