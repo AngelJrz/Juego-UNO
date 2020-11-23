@@ -59,6 +59,20 @@ namespace UNOGui.JuegoUNOServicio {
         CorreoYaExiste = 4,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResultadoLogin", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.Login")]
+    public enum ResultadoLogin : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NoExisteNickname = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContraseñaIncorrecta = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExisteJugador = 3,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicio.IRegistrarJugador", CallbackContract=typeof(UNOGui.JuegoUNOServicio.IRegistrarJugadorCallback))]
     public interface IRegistrarJugador {
@@ -128,6 +142,61 @@ namespace UNOGui.JuegoUNOServicio {
         
         public System.Threading.Tasks.Task VerificarClaveAsync(string clave) {
             return base.Channel.VerificarClaveAsync(clave);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicio.ILogin", CallbackContract=typeof(UNOGui.JuegoUNOServicio.ILoginCallback))]
+    public interface ILogin {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/IniciarSesion")]
+        void IniciarSesion(string nickname, string contraseña);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/IniciarSesion")]
+        System.Threading.Tasks.Task IniciarSesionAsync(string nickname, string contraseña);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ILoginCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/NotificarResultadoLogin")]
+        void NotificarResultadoLogin(UNOGui.JuegoUNOServicio.ResultadoLogin resultado);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ILoginChannel : UNOGui.JuegoUNOServicio.ILogin, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class LoginClient : System.ServiceModel.DuplexClientBase<UNOGui.JuegoUNOServicio.ILogin>, UNOGui.JuegoUNOServicio.ILogin {
+        
+        public LoginClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public LoginClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public LoginClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public LoginClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public LoginClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void IniciarSesion(string nickname, string contraseña) {
+            base.Channel.IniciarSesion(nickname, contraseña);
+        }
+        
+        public System.Threading.Tasks.Task IniciarSesionAsync(string nickname, string contraseña) {
+            return base.Channel.IniciarSesionAsync(nickname, contraseña);
         }
     }
 }

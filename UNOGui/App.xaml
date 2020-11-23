@@ -101,7 +101,6 @@
             </Setter>
         </Style>
 
-
         <Style x:Key="TextoLabel" TargetType="Label">
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontWeight" Value="Bold"/>

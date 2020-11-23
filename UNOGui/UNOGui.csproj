@@ -66,6 +66,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Logica\LoginAdmin.cs" />
+    <Compile Include="Logica\LoginCallbackAdmin.cs" />
     <Compile Include="Ventanas\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -110,6 +112,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\JuegoUNOServicio\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\JuegoUNOServicio\item4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\JuegoUNOServicio\JuegoUNOServicio.wsdl" />

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UNOGui.Logica;
 
 namespace UNOGui.Ventanas
 {
@@ -38,6 +39,25 @@ namespace UNOGui.Ventanas
             recuperacionCuentaVentana.Show();
 
             this.Close();
+        }
+
+        private void IniciarSesionBoton(object sender, RoutedEventArgs e)
+        {
+            if(CamposCompletos()){
+                string nickname = usuarioTextbox.Text.Trim();
+                string contraseña = contraseñaTextbox.Password.Trim();
+
+                LoginAdmin.IniciarSesion(nickname, contraseña);
+            }
+            else
+            {
+                MessageBox.Show("Campos Vacios");
+            }
+        }
+
+        private bool CamposCompletos()
+        {
+            return (usuarioTextbox.Text.Trim() != "" && contraseñaTextbox.Password.Trim() != "");
         }
     }
 }
