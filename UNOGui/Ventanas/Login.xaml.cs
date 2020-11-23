@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UNOGui.Logica;
 
 namespace UNOGui.Ventanas
 {
@@ -38,6 +39,14 @@ namespace UNOGui.Ventanas
             recuperacionCuentaVentana.Show();
 
             this.Close();
+        }
+
+        private void IniciarSesionBoton(object sender, RoutedEventArgs e)
+        {
+            string nickname = usuarioTextbox.Text;
+            string contraseña = contraseñaTextbox.Password;
+
+            LoginAdmin.IniciarSesion(nickname, contraseña);
         }
     }
 }

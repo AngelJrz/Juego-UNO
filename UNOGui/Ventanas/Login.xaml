@@ -24,11 +24,11 @@
             <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="usuarioTextbox"/>
 
             <Label Content="Contraseña:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
-            <PasswordBox Template="{StaticResource PasswordBoxBaseControlTemplate}"/>
+            <PasswordBox Template="{StaticResource PasswordBoxBaseControlTemplate}" Name="contraseñaTextbox"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2">
-            <Button Content="Iniciar sesión" Style="{StaticResource Button}" Margin="10"/>
+            <Button Content="Iniciar sesión" Style="{StaticResource Button}" Margin="10" Click="IniciarSesionBoton"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Registrate" Style="{StaticResource ButtonOutlined}" Click="IrARegistrarCuenta"/>

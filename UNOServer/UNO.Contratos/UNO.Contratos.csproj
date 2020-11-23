@@ -43,12 +43,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JuegoUNOServicio.cs" />
+    <Compile Include="LoginServicio.cs" />
+    <Compile Include="Login\ILogin.cs" />
+    <Compile Include="Login\ILoginCallback.cs" />
+    <Compile Include="Login\ResultadoLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrarJugador\IRegistrarJugador.cs" />
     <Compile Include="RegistrarJugador\IRegistrarJugadorCallback.cs" />
     <Compile Include="RegistrarJugador\ResultadoRegistro.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UNO.AccesoADatos\UNO.AccesoADatos.csproj">
+      <Project>{66c6eba9-1510-479a-a50d-1a6a588a4f12}</Project>
+      <Name>UNO.AccesoADatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UNO.Dominio\UNO.Dominio.csproj">
       <Project>{74916420-f62a-4a08-bb05-dba53c003d5b}</Project>
       <Name>UNO.Dominio</Name>
