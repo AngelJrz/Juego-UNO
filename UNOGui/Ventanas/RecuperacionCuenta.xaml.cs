@@ -26,7 +26,10 @@ namespace UNOGui.Ventanas
 
         private void CambiarContrasenia(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Contraseña cambiada");
+            if (CamposCompletos())
+            {
+                MessageBox.Show("Contraseña cambiada");
+            }
         }
 
         private void Cancelar(object sender, RoutedEventArgs e)
@@ -35,6 +38,30 @@ namespace UNOGui.Ventanas
             login.Show();
 
             this.Close();
+        }
+
+        private bool CamposCompletos()
+        {
+            bool completo = false;
+
+            if (nuevaContrasenia.Password.Trim() != "" &&
+                nuevaContrasenia2.Password.Trim() != "")
+            {
+                if (nuevaContrasenia.Password.Trim() == nuevaContrasenia2.Password.Trim())
+                {
+                    completo = true;
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas no son iguales");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Los campos estan incompletos");
+            }
+
+            return completo;
         }
     }
 }

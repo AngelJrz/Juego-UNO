@@ -26,10 +26,17 @@ namespace UNOGui.Ventanas
 
         private void IrARecuperacionDeCuenta(object sender, RoutedEventArgs e)
         {
-            RecuperacionCuenta recuperacionDeCuenta = new RecuperacionCuenta();
-            recuperacionDeCuenta.Show();
+            if (CamposCompletos())
+            {
+                RecuperacionCuenta recuperacionDeCuenta = new RecuperacionCuenta();
+                recuperacionDeCuenta.Show();
 
-            this.Close();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("El campo no esta completo");
+            }
         }
 
         private void Cancelar(object sender, RoutedEventArgs e)
@@ -38,6 +45,11 @@ namespace UNOGui.Ventanas
             login.Show();
 
             this.Close();
+        }
+
+        public bool CamposCompletos()
+        {
+            return codigoIngresado.Text.Trim() != ""; 
         }
     }
 }
