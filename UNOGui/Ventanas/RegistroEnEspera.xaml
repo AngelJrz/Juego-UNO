@@ -19,37 +19,15 @@
             <TextBlock Text="¡Ya casi terminamos!" Style="{StaticResource TituloStyle}"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="31,0,31.6,140.8" Grid.RowSpan="2">
             <TextBlock Text="Te enviamos una clave de validación al correo especificado para que confirmes tu registro. Por favor, ingresala en el siguiente campo." 
                        Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center"/>
+            
+            <Label Content="Usuario:" Style="{StaticResource TextoLabel}" Margin="65,20,0,0"/>
+            <TextBox x:Name="claveIngresada" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,0,0,30"/>
 
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,40,0,30">
-                <TextBox.Style>
-                    <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="TextBox" BasedOn="{StaticResource Input}">
-                        <Style.Resources>
-                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                                <VisualBrush.Visual>
-                                    <Label Content="Clave de validación" Foreground="DarkSlateGray" FontSize="16" Padding="10"/>
-                                </VisualBrush.Visual>
-                            </VisualBrush>
-                        </Style.Resources>
-
-
-                        <Style.Triggers>
-                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                            </Trigger>
-                            <Trigger Property="Text" Value="{x:Null}">
-                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                            </Trigger>
-                        </Style.Triggers>
-
-                    </Style>
-                </TextBox.Style>
-            </TextBox>
-
-            <Button Content="Aceptar" Style="{StaticResource Button}" Margin="10"/>
-            <Button Content="Cancelar" Style="{StaticResource Button}" Margin="10"/>
+            <Button Content="Confirmar registro" Style="{StaticResource Button}" Margin="10" Click="ConfirmarRegistro"/>
+            <Button Content="Cancelar" Style="{StaticResource Button}" Margin="10" Click="CancelarRegistro"/>
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Orientation="Horizontal">
                 <TextBlock Text="¿No recibiste la clave de validación?" Foreground="Gold" Margin="0,0,5,0"/>

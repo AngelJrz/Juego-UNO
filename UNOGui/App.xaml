@@ -21,7 +21,7 @@
             <Border Background="{TemplateBinding Background}" 
                 x:Name="Bd"
                 BorderThickness="2" BorderBrush="Gold" 
-                CornerRadius="10"  Width="300">
+                CornerRadius="10" Width="300">
                 <ScrollViewer x:Name="PART_ContentHost" Margin="3" Content="{TemplateBinding DataContext}"/>
             </Border>
         </ControlTemplate>
