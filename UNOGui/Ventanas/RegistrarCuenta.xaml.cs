@@ -48,10 +48,10 @@ namespace UNOGui.Ventanas
         {
             bool completo = false;
 
-            if (usuarioIngresado.Text != "" &&
-                correoElectronicoIngresado.Text != "" &&
-                contraseniaIngresada.Password != "" &&
-                contraseniaDosIngresada.Password != "")
+            if (usuarioIngresado.Text.Trim() != "" &&
+                correoElectronicoIngresado.Text.Trim() != "" &&
+                contraseniaIngresada.Password.Trim() != "" &&
+                contraseniaDosIngresada.Password.Trim() != "")
             {
                 completo = true;
             }
@@ -67,7 +67,7 @@ namespace UNOGui.Ventanas
         {
             bool iguales = false;
 
-            if (contraseniaIngresada.Password == contraseniaDosIngresada.Password)
+            if (contraseniaIngresada.Password.Trim() == contraseniaDosIngresada.Password.Trim())
             {
                 iguales = true;
             }
@@ -85,7 +85,7 @@ namespace UNOGui.Ventanas
 
             Regex email = new Regex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
 
-            if (email.IsMatch(correoElectronicoIngresado.Text))
+            if (email.IsMatch(correoElectronicoIngresado.Text.Trim()))
             {
                 valido = true;
             }
