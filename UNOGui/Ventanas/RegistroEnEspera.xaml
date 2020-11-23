@@ -23,7 +23,7 @@
             <TextBlock Text="Te enviamos una clave de validación al correo especificado para que confirmes tu registro. Por favor, ingresala en el siguiente campo." 
                        Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center"/>
 
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,40,0,30">
+            <TextBox x:Name="claveIngresada" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,40,0,30">
                 <TextBox.Style>
                     <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="TextBox" BasedOn="{StaticResource Input}">
                         <Style.Resources>
@@ -48,8 +48,8 @@
                 </TextBox.Style>
             </TextBox>
 
-            <Button Content="Aceptar" Style="{StaticResource Button}" Margin="10"/>
-            <Button Content="Cancelar" Style="{StaticResource Button}" Margin="10"/>
+            <Button Content="Confirmar registro" Style="{StaticResource Button}" Margin="10" Click="ConfirmarRegistro"/>
+            <Button Content="Cancelar" Style="{StaticResource Button}" Margin="10" Click="CancelarRegistro"/>
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Orientation="Horizontal">
                 <TextBlock Text="¿No recibiste la clave de validación?" Foreground="Gold" Margin="0,0,5,0"/>
