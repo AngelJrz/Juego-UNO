@@ -33,7 +33,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Registrate" Style="{StaticResource ButtonOutlined}" Click="IrARegistrarCuenta"/>
                 <Label Content="u" Foreground="Gold"/>
-                <Button Content="¿Olvidaste tu contraseña?" Style="{StaticResource ButtonOutlined}" Click="IrARecuperarCuenta"/>
+                <Button Content="¿Olvidaste tu contraseña?" Style="{StaticResource ButtonOutlined}" Click="IrAVerificarCodigo"/>
             </StackPanel>
         </StackPanel>
     </Grid>

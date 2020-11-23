@@ -24,12 +24,44 @@ namespace UNOGui.Ventanas
             InitializeComponent();
         }
 
-        private void IrAValidarCodigo(object sender, RoutedEventArgs e)
+        private void CambiarContrasenia(object sender, RoutedEventArgs e)
         {
-            VerificarCodigo verificarCodigoVentana = new VerificarCodigo();
-            verificarCodigoVentana.Show();
+            if (CamposCompletos())
+            {
+                MessageBox.Show("Contraseña cambiada");
+            }
+        }
+
+        private void Cancelar(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
 
             this.Close();
+        }
+
+        private bool CamposCompletos()
+        {
+            bool completo = false;
+
+            if (nuevaContrasenia.Password.Trim() != "" &&
+                nuevaContrasenia2.Password.Trim() != "")
+            {
+                if (nuevaContrasenia.Password.Trim() == nuevaContrasenia2.Password.Trim())
+                {
+                    completo = true;
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas no son iguales");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Los campos estan incompletos");
+            }
+
+            return completo;
         }
     }
 }

@@ -23,5 +23,33 @@ namespace UNOGui.Ventanas
         {
             InitializeComponent();
         }
+
+        private void IrARecuperacionDeCuenta(object sender, RoutedEventArgs e)
+        {
+            if (CamposCompletos())
+            {
+                RecuperacionCuenta recuperacionDeCuenta = new RecuperacionCuenta();
+                recuperacionDeCuenta.Show();
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("El campo no esta completo");
+            }
+        }
+
+        private void Cancelar(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+
+            this.Close();
+        }
+
+        public bool CamposCompletos()
+        {
+            return codigoIngresado.Text.Trim() != ""; 
+        }
     }
 }
