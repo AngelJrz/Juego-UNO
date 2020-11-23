@@ -11,11 +11,11 @@
     <Grid Background="Red">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="260"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="276"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48" Margin="54,26" Width="386">
             <TextBlock Text="Recupera tu contraseña" Style="{StaticResource TituloStyle}"/>
         </StackPanel>
 
@@ -24,62 +24,22 @@
             <TextBlock Text="Por favor, ingresa una nueva contraseña." 
                        Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="10"/>
 
-            <PasswordBox Template="{StaticResource PasswordBoxBaseControlTemplate}">
-                <PasswordBox.Style>
-                    <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource PasswordInput}">
-                        <Style.Resources>
-                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" Stretch="None">
-                                <VisualBrush.Visual>
-                                    <Label Content="Nueva contraseña" Foreground="DarkSlateGray" Padding="10" FontSize="16"/>
-                                </VisualBrush.Visual>
-                            </VisualBrush>
-                        </Style.Resources>
-                        <Style.Triggers>
-                            <MultiDataTrigger>
-                                <MultiDataTrigger.Conditions>
-                                    <Condition Binding="{Binding Password}" Value="{x:Null}"/>
+            <Label Content="Nueva contraseña:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
+            <PasswordBox Template="{StaticResource PasswordBoxBaseControlTemplate}" />
 
-                                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsFocused}" Value="False"/>
-                                </MultiDataTrigger.Conditions>
-                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}"/>
-                            </MultiDataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </PasswordBox.Style>
-            </PasswordBox>
 
-            <PasswordBox Template="{StaticResource PasswordBoxBaseControlTemplate}">
-                <PasswordBox.Style>
-                    <Style xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource PasswordInput}">
-                        <Style.Resources>
-                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" Stretch="None">
-                                <VisualBrush.Visual>
-                                    <Label Content="Confirmar contraseña" Foreground="DarkSlateGray" Padding="10" FontSize="16"/>
-                                </VisualBrush.Visual>
-                            </VisualBrush>
-                        </Style.Resources>
-                        <Style.Triggers>
-                            <MultiDataTrigger>
-                                <MultiDataTrigger.Conditions>
-                                    <Condition Binding="{Binding Password}" Value="{x:Null}"/>
+            <Label Content="Confirmar contraseña:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
+            <PasswordBox Template="{StaticResource PasswordBoxBaseControlTemplate}" />
 
-                                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsFocused}" Value="False"/>
-                                </MultiDataTrigger.Conditions>
-                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}"/>
-                            </MultiDataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </PasswordBox.Style>
-            </PasswordBox>
 
             <StackPanel Margin="20">
-                <Button Content="Confirmar" Style="{StaticResource Button}" Margin="10" Click="IrAValidarCodigo"/>
-                <Button Content="Cancelar" Style="{StaticResource Button}" Margin="10"/>
+                <Button Content="Confirmar" Style="{StaticResource Button}" Margin="10" Click="CambiarContrasenia"/>
+                <Button Content="Cancelar" Style="{StaticResource Button}" Margin="10" Click="Cancelar"/>
             </StackPanel>
 
         </StackPanel>
 
-        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Margin="197,41,197,34" Width="100">
             <Image Source="/Imagenes/logo.png" Width="100"/>
         </StackPanel>
     </Grid>

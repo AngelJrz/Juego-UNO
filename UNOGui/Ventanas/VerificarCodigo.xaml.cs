@@ -23,5 +23,21 @@ namespace UNOGui.Ventanas
         {
             InitializeComponent();
         }
+
+        private void IrARecuperacionDeCuenta(object sender, RoutedEventArgs e)
+        {
+            RecuperacionCuenta recuperacionDeCuenta = new RecuperacionCuenta();
+            recuperacionDeCuenta.Show();
+
+            this.Close();
+        }
+
+        private void Cancelar(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+
+            this.Close();
+        }
     }
 }

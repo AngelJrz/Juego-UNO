@@ -24,10 +24,15 @@ namespace UNOGui.Ventanas
             InitializeComponent();
         }
 
-        private void IrAValidarCodigo(object sender, RoutedEventArgs e)
+        private void CambiarContrasenia(object sender, RoutedEventArgs e)
         {
-            VerificarCodigo verificarCodigoVentana = new VerificarCodigo();
-            verificarCodigoVentana.Show();
+            MessageBox.Show("Contraseña cambiada");
+        }
+
+        private void Cancelar(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
 
             this.Close();
         }

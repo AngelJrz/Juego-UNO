@@ -33,10 +33,10 @@ namespace UNOGui.Ventanas
             this.Close();
         }
 
-        private void IrARecuperarCuenta(object sender, RoutedEventArgs e)
+        private void IrAVerificarCodigo(object sender, RoutedEventArgs e)
         {
-            RecuperacionCuenta recuperacionCuentaVentana = new RecuperacionCuenta();
-            recuperacionCuentaVentana.Show();
+            VerificarCodigo verificacionDeCodigo = new VerificarCodigo();
+            verificacionDeCodigo.Show();
 
             this.Close();
         }
