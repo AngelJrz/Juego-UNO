@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:UNOGui.Ventanas"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MenuPrincipal" Height="500" Width="600">
+        Title="MenuPrincipal" Height="500" Width="800">
     <Grid>
 
-        <Image Source="/Imagenes/imagenMenuPrincipal.jpg" Margin="-164,-43,-161.4,-10.6"/>
-        <Button Content="Mi perfil" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="377,422,0,0" VerticalAlignment="Top" Width="137"/>
-        <Button Content="Cear Sala" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="225,422,0,0" VerticalAlignment="Top" Width="137" Click="IrACrearSala"/>
-        <Button Content="Unirse a sala" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="71,422,0,0" VerticalAlignment="Top" Width="137" Click="IrAUnirseASala"/>
-        <Button Content="Cerrar sesión" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="463,10,0,0" VerticalAlignment="Top" Width="121" Click="CerrarSecion"/>
+        <Image Source="/Imagenes/imagenMenuPrincipal.jpg" Margin="-104,-28,-221,-26"/>
+        <Button Content="Mi perfil" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="27,142,0,0" VerticalAlignment="Top" Width="137"/>
+        <Button Content="Cear Sala" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="27,90,0,0" VerticalAlignment="Top" Width="137" Click="IrACrearSala"/>
+        <Button Content="Unirse a sala" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="27,38,0,0" VerticalAlignment="Top" Width="137" Click="IrAUnirseASala"/>
+        <Button Content="Cerrar sesión" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="639,38,0,0" VerticalAlignment="Top" Width="121" Click="CerrarSecion"/>
 
     </Grid>
 </Window>

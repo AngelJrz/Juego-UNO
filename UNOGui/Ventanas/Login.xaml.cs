@@ -43,11 +43,13 @@ namespace UNOGui.Ventanas
 
         private void IniciarSesionBoton(object sender, RoutedEventArgs e)
         {
-            if(CamposCompletos()){
+            if (CamposCompletos())
+            {
                 string nickname = usuarioTextbox.Text.Trim();
                 string contraseña = contraseñaTextbox.Password.Trim();
 
                 LoginAdmin.IniciarSesion(nickname, contraseña);
+                this.Close();
             }
             else
             {
