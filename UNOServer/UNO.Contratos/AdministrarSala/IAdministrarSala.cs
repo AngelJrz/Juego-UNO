@@ -14,7 +14,7 @@ namespace UNO.Contratos.AdministrarSala
         void CrearSala(Sala nuevaSala);
 
         [OperationContract(IsOneWay = true)]
-        void UnirseASala(Sala salaAUnirse);
+        void UnirseASala(Sala salaAUnirse, Dominio.Jugador jugador);
 
         [OperationContract(IsOneWay = true)]
         void SalirDeSala(string idSala);

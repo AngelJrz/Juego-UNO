@@ -3,6 +3,7 @@
   <xs:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio" />
   <xs:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarJugador" />
   <xs:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.Login" />
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" />
   <xs:element name="RegistrarJugador">
     <xs:complexType>
       <xs:sequence>
@@ -43,6 +44,42 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/UNO.Contratos.Login" minOccurs="0" name="resultado" type="q3:ResultadoLogin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearSala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" minOccurs="0" name="nuevaSala" nillable="true" type="q4:Sala" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnirseASala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" minOccurs="0" name="salaAUnirse" nillable="true" type="q5:Sala" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="jugador" nillable="true" type="q6:Jugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SalirDeSala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSala" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotificarCreacionDeSala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="salaCreada" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotificarUnionASala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" minOccurs="0" name="resultado" type="q7:ResultadoUnionSala" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

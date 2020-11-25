@@ -217,6 +217,116 @@ namespace UNOGui.JuegoUNOServicio {
         ExisteJugador = 3,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Sala", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala")]
+    [System.SerializableAttribute()]
+    public partial class Sala : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContraseñaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.Dictionary<object, UNOGui.JuegoUNOServicio.Jugador> JugadoresEnSalaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NumeroTotalDeJugadoresField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Contraseña {
+            get {
+                return this.ContraseñaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContraseñaField, value) != true)) {
+                    this.ContraseñaField = value;
+                    this.RaisePropertyChanged("Contraseña");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.Dictionary<object, UNOGui.JuegoUNOServicio.Jugador> JugadoresEnSala {
+            get {
+                return this.JugadoresEnSalaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JugadoresEnSalaField, value) != true)) {
+                    this.JugadoresEnSalaField = value;
+                    this.RaisePropertyChanged("JugadoresEnSala");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NumeroTotalDeJugadores {
+            get {
+                return this.NumeroTotalDeJugadoresField;
+            }
+            set {
+                if ((this.NumeroTotalDeJugadoresField.Equals(value) != true)) {
+                    this.NumeroTotalDeJugadoresField = value;
+                    this.RaisePropertyChanged("NumeroTotalDeJugadores");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResultadoUnionSala", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala")]
+    public enum ResultadoUnionSala : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NoExisteId = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContraseñaIncorrecta = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NoHayCupo = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UnionExitosa = 4,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicio.IRegistrarJugador", CallbackContract=typeof(UNOGui.JuegoUNOServicio.IRegistrarJugadorCallback))]
     public interface IRegistrarJugador {
@@ -341,6 +451,92 @@ namespace UNOGui.JuegoUNOServicio {
         
         public System.Threading.Tasks.Task IniciarSesionAsync(string nickname, string contraseña) {
             return base.Channel.IniciarSesionAsync(nickname, contraseña);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicio.IAdministrarSala", CallbackContract=typeof(UNOGui.JuegoUNOServicio.IAdministrarSalaCallback))]
+    public interface IAdministrarSala {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/CrearSala")]
+        void CrearSala(UNOGui.JuegoUNOServicio.Sala nuevaSala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/CrearSala")]
+        System.Threading.Tasks.Task CrearSalaAsync(UNOGui.JuegoUNOServicio.Sala nuevaSala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/UnirseASala")]
+        void UnirseASala(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/UnirseASala")]
+        System.Threading.Tasks.Task UnirseASalaAsync(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/SalirDeSala")]
+        void SalirDeSala(string idSala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/SalirDeSala")]
+        System.Threading.Tasks.Task SalirDeSalaAsync(string idSala);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAdministrarSalaCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/NotificarCreacionDeSala")]
+        void NotificarCreacionDeSala(bool salaCreada);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/NotificarUnionASala")]
+        void NotificarUnionASala(UNOGui.JuegoUNOServicio.ResultadoUnionSala resultado);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IAdministrarSalaChannel : UNOGui.JuegoUNOServicio.IAdministrarSala, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AdministrarSalaClient : System.ServiceModel.DuplexClientBase<UNOGui.JuegoUNOServicio.IAdministrarSala>, UNOGui.JuegoUNOServicio.IAdministrarSala {
+        
+        public AdministrarSalaClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public AdministrarSalaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public AdministrarSalaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AdministrarSalaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public AdministrarSalaClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void CrearSala(UNOGui.JuegoUNOServicio.Sala nuevaSala) {
+            base.Channel.CrearSala(nuevaSala);
+        }
+        
+        public System.Threading.Tasks.Task CrearSalaAsync(UNOGui.JuegoUNOServicio.Sala nuevaSala) {
+            return base.Channel.CrearSalaAsync(nuevaSala);
+        }
+        
+        public void UnirseASala(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador) {
+            base.Channel.UnirseASala(salaAUnirse, jugador);
+        }
+        
+        public System.Threading.Tasks.Task UnirseASalaAsync(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador) {
+            return base.Channel.UnirseASalaAsync(salaAUnirse, jugador);
+        }
+        
+        public void SalirDeSala(string idSala) {
+            base.Channel.SalirDeSala(idSala);
+        }
+        
+        public System.Threading.Tasks.Task SalirDeSalaAsync(string idSala) {
+            return base.Channel.SalirDeSalaAsync(idSala);
         }
     }
 }

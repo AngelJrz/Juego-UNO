@@ -5,6 +5,7 @@ namespace UNO.Contratos.AdministrarSala
     {
         NoExisteId = 1,
         ContraseñaIncorrecta = 2,
-        NoHayCupo = 3
+        NoHayCupo = 3,
+        UnionExitosa = 4
     }
 }
