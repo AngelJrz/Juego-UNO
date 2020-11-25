@@ -1,4 +1,4 @@
-﻿namespace UNO.Contratos.RegistrarJugador
+﻿namespace UNO.Contratos.AdministrarJugador
 {
     public enum ResultadoRegistro
     {

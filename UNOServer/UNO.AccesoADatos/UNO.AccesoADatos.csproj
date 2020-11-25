@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministrarDatos\AdminDatosJugador.cs" />
+    <Compile Include="AdministrarDatos\AdministradorHash.cs" />
     <Compile Include="JuegoUNOModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UNO.Dominio\UNO.Dominio.csproj">
+      <Project>{74916420-f62a-4a08-bb05-dba53c003d5b}</Project>
+      <Name>UNO.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

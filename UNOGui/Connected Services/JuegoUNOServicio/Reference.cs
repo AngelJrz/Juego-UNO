@@ -22,6 +22,33 @@ namespace UNOGui.JuegoUNOServicio {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClaveValidacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContraseñaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CorreoElectronicoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ExperienciaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NicknameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NivelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PartidasGanadasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PartidasJugadasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PuntajeTotalField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -29,6 +56,123 @@ namespace UNOGui.JuegoUNOServicio {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ClaveValidacion {
+            get {
+                return this.ClaveValidacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClaveValidacionField, value) != true)) {
+                    this.ClaveValidacionField = value;
+                    this.RaisePropertyChanged("ClaveValidacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Contraseña {
+            get {
+                return this.ContraseñaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContraseñaField, value) != true)) {
+                    this.ContraseñaField = value;
+                    this.RaisePropertyChanged("Contraseña");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CorreoElectronico {
+            get {
+                return this.CorreoElectronicoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CorreoElectronicoField, value) != true)) {
+                    this.CorreoElectronicoField = value;
+                    this.RaisePropertyChanged("CorreoElectronico");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Experiencia {
+            get {
+                return this.ExperienciaField;
+            }
+            set {
+                if ((this.ExperienciaField.Equals(value) != true)) {
+                    this.ExperienciaField = value;
+                    this.RaisePropertyChanged("Experiencia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nickname {
+            get {
+                return this.NicknameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NicknameField, value) != true)) {
+                    this.NicknameField = value;
+                    this.RaisePropertyChanged("Nickname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Nivel {
+            get {
+                return this.NivelField;
+            }
+            set {
+                if ((this.NivelField.Equals(value) != true)) {
+                    this.NivelField = value;
+                    this.RaisePropertyChanged("Nivel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PartidasGanadas {
+            get {
+                return this.PartidasGanadasField;
+            }
+            set {
+                if ((this.PartidasGanadasField.Equals(value) != true)) {
+                    this.PartidasGanadasField = value;
+                    this.RaisePropertyChanged("PartidasGanadas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PartidasJugadas {
+            get {
+                return this.PartidasJugadasField;
+            }
+            set {
+                if ((this.PartidasJugadasField.Equals(value) != true)) {
+                    this.PartidasJugadasField = value;
+                    this.RaisePropertyChanged("PartidasJugadas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PuntajeTotal {
+            get {
+                return this.PuntajeTotalField;
+            }
+            set {
+                if ((this.PuntajeTotalField.Equals(value) != true)) {
+                    this.PuntajeTotalField = value;
+                    this.RaisePropertyChanged("PuntajeTotal");
+                }
             }
         }
         
@@ -43,7 +187,7 @@ namespace UNOGui.JuegoUNOServicio {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResultadoRegistro", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.RegistrarJugador")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResultadoRegistro", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarJugador")]
     public enum ResultadoRegistro : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -96,8 +240,8 @@ namespace UNOGui.JuegoUNOServicio {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/NotificarRegistro")]
         void NotificarRegistro(UNOGui.JuegoUNOServicio.ResultadoRegistro resultado);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/NotificarEnvioClave")]
-        void NotificarEnvioClave();
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/NotificarResultadoClave")]
+        void NotificarResultadoClave(bool claveValida);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

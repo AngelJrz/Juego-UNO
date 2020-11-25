@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UNOGui.JuegoUNOServicio;
+using UNOGui.Logica;
 
 namespace UNOGui.Ventanas
 {
@@ -37,9 +40,14 @@ namespace UNOGui.Ventanas
         {
             if (CamposCompletos() && CorreoValido() && SonContraseniasIguales())
             {
-                RegistroEnEspera registroEnEsperaVentana = new RegistroEnEspera();
-                registroEnEsperaVentana.Show();
-                this.Close();
+                Jugador jugadorARegistrar = new Jugador
+                {
+                    Nickname = usuarioIngresado.Text,
+                    CorreoElectronico = correoElectronicoIngresado.Text,
+                    Contraseña = contraseniaIngresada.Password
+                };
+
+                RegistroJugadorAdmin.RegistrarNuevoJugador(jugadorARegistrar);
             }
 
         }
@@ -76,7 +84,7 @@ namespace UNOGui.Ventanas
                 MessageBox.Show("Las contraseñas no son iguales", "Información invalida", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
-                return iguales;
+            return iguales;
         }
 
         private bool CorreoValido()

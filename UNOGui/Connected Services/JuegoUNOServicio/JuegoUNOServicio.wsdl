@@ -63,7 +63,7 @@
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.RegistrarJugador" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarJugador" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.Login" />
     </xsd:schema>
   </wsdl:types>
@@ -76,8 +76,8 @@
   <wsdl:message name="IRegistrarJugador_NotificarRegistro_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarRegistro" />
   </wsdl:message>
-  <wsdl:message name="IRegistrarJugador_NotificarEnvioClave_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:NotificarEnvioClave" />
+  <wsdl:message name="IRegistrarJugador_NotificarResultadoClave_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarResultadoClave" />
   </wsdl:message>
   <wsdl:message name="ILogin_IniciarSesion_InputMessage">
     <wsdl:part name="parameters" element="tns:IniciarSesion" />
@@ -95,8 +95,8 @@
     <wsdl:operation name="NotificarRegistro">
       <wsdl:output wsaw:Action="http://tempuri.org/IRegistrarJugador/NotificarRegistro" message="tns:IRegistrarJugador_NotificarRegistro_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="NotificarEnvioClave">
-      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrarJugador/NotificarEnvioClave" message="tns:IRegistrarJugador_NotificarEnvioClave_OutputCallbackMessage" />
+    <wsdl:operation name="NotificarResultadoClave">
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrarJugador/NotificarResultadoClave" message="tns:IRegistrarJugador_NotificarResultadoClave_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ILogin">
@@ -128,8 +128,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="NotificarEnvioClave">
-      <soap12:operation soapAction="http://tempuri.org/IRegistrarJugador/NotificarEnvioClave" style="document" />
+    <wsdl:operation name="NotificarResultadoClave">
+      <soap12:operation soapAction="http://tempuri.org/IRegistrarJugador/NotificarResultadoClave" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
