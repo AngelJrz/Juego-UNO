@@ -5,6 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using UNOGui.JuegoUNOServicio;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Logica
 {
@@ -20,7 +21,7 @@ namespace UNOGui.Logica
         /// <param name="contraseña">Contraseña del Jugador.</param>
         public static void IniciarSesion(string nickname, string contraseña)
         {
-            InstanceContext contexto = new InstanceContext(new LoginCallbackAdmin());
+            InstanceContext contexto = new InstanceContext(new Login());
             LoginClient servidor = new LoginClient(contexto);
 
             servidor.IniciarSesion(nickname, contraseña);

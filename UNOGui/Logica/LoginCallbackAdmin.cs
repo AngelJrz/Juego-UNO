@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UNOGui.JuegoUNOServicio;
 using System.Windows;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Logica
 {
