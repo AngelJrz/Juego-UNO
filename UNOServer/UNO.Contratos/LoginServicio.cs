@@ -23,7 +23,7 @@ namespace UNO.Contratos
 
             if (adminDatosJugador.ExisteNickname(nickname))
             {
-                if (adminDatosJugador.EsContraseñaCorrecta(contraseña))
+                if (adminDatosJugador.EsContraseñaCorrecta(nickname, contraseña))
                 {
                     resultadoLogin = ResultadoLogin.ExisteJugador;
                 }
