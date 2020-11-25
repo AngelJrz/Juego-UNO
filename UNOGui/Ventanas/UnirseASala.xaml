@@ -18,7 +18,7 @@
         </StackPanel>
         
         <StackPanel Grid.Row="1" VerticalAlignment="Center" >
-            <Label Content="Nombre de sala:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
+            <Label Content="Clave de sala:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
             <TextBox x:Name="nombreSala" Template="{StaticResource TextBoxBaseControlTemplate}"/>
 
             <Label Content="Contraseña:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>

@@ -46,7 +46,7 @@ namespace UNOGui.Ventanas
 
         private bool CamposCompletos()
         {
-            return (nombreSala.Text.Trim() != "" && contrasenia.Password.Trim() != "");
+            return (contrasenia.Password.Trim() != "");
         }
     }
 }

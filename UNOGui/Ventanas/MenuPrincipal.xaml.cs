@@ -44,5 +44,13 @@ namespace UNOGui.Ventanas
 
             this.Close();
         }
+
+        private void IrAMiPerfil(object sender, RoutedEventArgs e)
+        {
+            MiPerfil perfil = new MiPerfil();
+            perfil.Show();
+
+            this.Close();
+        }
     }
 }
