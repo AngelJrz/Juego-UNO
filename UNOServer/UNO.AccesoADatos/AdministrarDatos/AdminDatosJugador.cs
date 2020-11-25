@@ -38,15 +38,23 @@ namespace UNO.AccesoADatos.AdministrarDatos
         /// <summary>
         /// Verifica si la contraseña del Jugador es correcta.
         /// </summary>
+        /// <param name="nickname">Nickname del Jugador a buscar.</param>
         /// <param name="contraseña">Contraseña del Jugador.</param>
         /// <returns>
         /// true si la contraseña es correcta, false si no lo es.
         /// </returns>
-        public bool EsContraseñaCorrecta(string contraseña)
+        public bool EsContraseñaCorrecta(string nickname, string contraseña)
         {
             bool esCorrecta = false;
+            string contraseñaConHash = AdministradorHash.GenerarHash(contraseña);
 
-            esCorrecta = baseDeDatos.Jugador.Any(jugador => jugador.Contraseña.Equals(contraseña));
+            var jugadorBuscado = baseDeDatos.Jugador.Where(jugador => jugador.Nickname.Equals(nickname))
+                .FirstOrDefault<Jugador>();
+
+            if (AdministradorHash.CompararHash(jugadorBuscado.Contraseña, contraseñaConHash))
+            {
+                esCorrecta = true;
+            }
 
             return esCorrecta;
         }
