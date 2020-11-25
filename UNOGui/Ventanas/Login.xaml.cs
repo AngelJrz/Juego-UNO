@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UNOGui.JuegoUNOServicio;
 using UNOGui.Logica;
 
 namespace UNOGui.Ventanas
@@ -18,7 +20,7 @@ namespace UNOGui.Ventanas
     /// <summary>
     /// Lógica de interacción para Login.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class Login : Window, ILoginCallback
     {
         public Login()
         {
@@ -47,7 +49,10 @@ namespace UNOGui.Ventanas
                 string nickname = usuarioTextbox.Text.Trim();
                 string contraseña = contraseñaTextbox.Password.Trim();
 
-                LoginAdmin.IniciarSesion(nickname, contraseña);
+                InstanceContext contexto = new InstanceContext(this);
+                LoginClient servidor = new LoginClient(contexto);
+
+                servidor.IniciarSesion(nickname, contraseña);
             }
             else
             {
@@ -58,6 +63,28 @@ namespace UNOGui.Ventanas
         private bool CamposCompletos()
         {
             return (usuarioTextbox.Text.Trim() != "" && contraseñaTextbox.Password.Trim() != "");
+        }
+
+        public void NotificarResultadoLogin(ResultadoLogin resultado)
+        {
+            if (resultado == ResultadoLogin.ExisteJugador)
+            {
+                MenuPrincipal menu = new MenuPrincipal();
+                menu.Show();
+                this.Close();
+            }
+            else
+            {
+                if (resultado == ResultadoLogin.NoExisteNickname)
+                {
+                    MessageBox.Show("No existe nickname");
+                }
+                else if (resultado == ResultadoLogin.ContraseñaIncorrecta)
+                {
+                    MessageBox.Show("contraseña incorrecta");
+                }
+            }
+
         }
     }
 }
