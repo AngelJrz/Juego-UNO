@@ -4,22 +4,94 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using UNO.Contratos.RegistrarJugador;
+using UNO.Contratos.AdministrarJugador;
 using UNO.Dominio;
+using UNO.AccesoADatos.AdministrarDatos;
+using UNO.Contratos.AdministradorEmail;
+using System.Net.Mail;
+using System.Data.Entity.Infrastructure;
 
 namespace UNO.Contratos
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
     public partial class JuegoUNOServicio : IRegistrarJugador
     {
+        private readonly Dictionary<IRegistrarJugadorCallback, Jugador> jugadoresARegistrar = new Dictionary<IRegistrarJugadorCallback, Jugador>();
+        private readonly AdminDatosJugador administradorDatosJugador = new AdminDatosJugador();
+
         public void RegistrarJugador(Jugador jugador)
         {
-            throw new NotImplementedException();
+            ResultadoRegistro resultadoRegistro;
+
+            if (administradorDatosJugador.ExisteNickname(jugador.Nickname))
+            {
+                resultadoRegistro = ResultadoRegistro.UsuarioYaExiste;
+            }
+            else if (administradorDatosJugador.ExisteCorreoElectronico(jugador.CorreoElectronico))
+            {
+                resultadoRegistro = ResultadoRegistro.CorreoYaExiste;
+            }
+            else
+            {
+                string claveValidacion = GeneradorClave.GenerarClaveValidacion();
+                jugador.ClaveValidacion = claveValidacion;
+                CorreoElectronico adminCorreoElectronico = new CorreoElectronico();
+
+                try
+                {
+                    adminCorreoElectronico.EnviarClaveValidacion(jugador);
+                }
+                catch (SmtpException)
+                {
+                    throw new SmtpException();
+                }
+
+                jugadoresARegistrar.Add(ObtenerCallbackActual, jugador);
+                resultadoRegistro = ResultadoRegistro.RegistroExitoso;
+            }
+
+            ObtenerCallbackActual.NotificarRegistro(resultadoRegistro);
         }
 
         public void VerificarClave(string clave)
         {
-            throw new NotImplementedException();
+            bool esClaveCorrecta = false;
+
+            foreach (var jugador in jugadoresARegistrar)
+            {
+                if (jugador.Key == ObtenerCallbackActual)
+                {
+                    if (jugador.Value.ClaveValidacion.Equals(clave))
+                    {
+                        esClaveCorrecta = true;
+
+                        try
+                        {
+                            administradorDatosJugador.GuardarJugador(jugador.Value);
+                        }
+                        catch (DbUpdateException)
+                        {
+                            throw new DbUpdateException("Error al agregar nuevo jugador");
+                        }
+                    }
+                    break;
+                }
+            }
+
+            if (esClaveCorrecta)
+            {
+                jugadoresARegistrar.Remove(ObtenerCallbackActual);
+            }
+
+            ObtenerCallbackActual.NotificarResultadoClave(esClaveCorrecta);
+        }
+
+        private IRegistrarJugadorCallback ObtenerCallbackActual
+        {
+            get
+            {
+                return OperationContext.Current.GetCallbackChannel<IRegistrarJugadorCallback>();
+            }
         }
     }
 }

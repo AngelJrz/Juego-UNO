@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio" />
-  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.RegistrarJugador" />
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarJugador" />
   <xs:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.Login" />
   <xs:element name="RegistrarJugador">
     <xs:complexType>
@@ -20,13 +20,15 @@
   <xs:element name="NotificarRegistro">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/UNO.Contratos.RegistrarJugador" minOccurs="0" name="resultado" type="q2:ResultadoRegistro" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarJugador" minOccurs="0" name="resultado" type="q2:ResultadoRegistro" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="NotificarEnvioClave">
+  <xs:element name="NotificarResultadoClave">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="claveValida" type="xs:boolean" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="IniciarSesion">

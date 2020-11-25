@@ -5,15 +5,26 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UNO.Contratos.RegistrarJugador
+namespace UNO.Contratos.AdministrarJugador
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [ServiceContract]
     public interface IRegistrarJugadorCallback
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="resultado"></param>
         [OperationContract(IsOneWay = true)]
         void NotificarRegistro(ResultadoRegistro resultado);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="claveValida"></param>
         [OperationContract(IsOneWay = true)]
-        void NotificarEnvioClave();
+        void NotificarResultadoClave(bool claveValida);
     }
 }

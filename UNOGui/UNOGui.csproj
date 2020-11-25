@@ -68,6 +68,8 @@
     </Compile>
     <Compile Include="Logica\LoginAdmin.cs" />
     <Compile Include="Logica\LoginCallbackAdmin.cs" />
+    <Compile Include="Logica\RegistroJugadorAdmin.cs" />
+    <Compile Include="Logica\RegistroJugadorCallback.cs" />
     <Compile Include="Ventanas\CreacionDeSala.xaml.cs">
       <DependentUpon>CreacionDeSala.xaml</DependentUpon>
     </Compile>

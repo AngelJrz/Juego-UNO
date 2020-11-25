@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,6 +49,51 @@ namespace UNO.AccesoADatos.AdministrarDatos
             esCorrecta = baseDeDatos.Jugador.Any(jugador => jugador.Contraseña.Equals(contraseña));
 
             return esCorrecta;
+        }
+
+        /// <summary>
+        /// Verifica si existe el correo electrónico del Jugador.
+        /// </summary>
+        /// <param name="correoElectronico">Correo electrónico del Jugador.</param>
+        /// <returns>true si existe el correo, falso si no existe.</returns>
+        public bool ExisteCorreoElectronico(string correoElectronico)
+        {
+            bool existe = false;
+
+            existe = baseDeDatos.Jugador.Any(jugador => jugador.CorreoElectronico.Equals(correoElectronico));
+
+            return existe;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nuevoJugador"></param>
+        public void GuardarJugador(Dominio.Jugador nuevoJugador)
+        {
+            Jugador entidadJugador = new Jugador
+            {
+                Nickname = nuevoJugador.Nickname,
+                CorreoElectronico = nuevoJugador.CorreoElectronico,
+                Contraseña = AdministradorHash.GenerarHash(nuevoJugador.Contraseña),
+                Nivel = 1,
+                Experiencia = 0,
+                PartidasGanadas = 0,
+                PartidasJugadas = 0,
+                PuntajeTotal = 0
+            };
+
+            baseDeDatos.Jugador.Add(entidadJugador);
+
+            try
+            {
+                baseDeDatos.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                throw new DbUpdateException("Error al agregar nuevo jugador");
+            }
+            
         }
     }
 }
