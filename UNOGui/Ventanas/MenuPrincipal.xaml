@@ -10,7 +10,7 @@
     <Grid>
 
         <Image Source="/Imagenes/imagenMenuPrincipal.jpg" Margin="-104,-28,-221,-26"/>
-        <Button Content="Mi perfil" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="27,142,0,0" VerticalAlignment="Top" Width="137"/>
+        <Button Content="Mi perfil" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="27,142,0,0" VerticalAlignment="Top" Width="137" Click="IrAMiPerfil"/>
         <Button Content="Cear Sala" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="27,90,0,0" VerticalAlignment="Top" Width="137" Click="IrACrearSala"/>
         <Button Content="Unirse a sala" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="27,38,0,0" VerticalAlignment="Top" Width="137" Click="IrAUnirseASala"/>
         <Button Content="Cerrar sesión" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="639,38,0,0" VerticalAlignment="Top" Width="121" Click="CerrarSecion"/>
