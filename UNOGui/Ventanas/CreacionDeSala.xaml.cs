@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UNOGui.JuegoUNOServicio;
+using UNOGui.Logica;
 
 namespace UNOGui.Ventanas
 {
@@ -19,9 +21,15 @@ namespace UNOGui.Ventanas
     /// </summary>
     public partial class CreacionDeSala : Window
     {
+        private List<int> jugadores;
         public CreacionDeSala()
         {
             InitializeComponent();
+            jugadores = new List<int>
+            {
+                2,3,4,5
+            };
+            numeroDeJugadores.ItemsSource = jugadores;
         }
 
         private void Cancelar(object sender, RoutedEventArgs e)
@@ -36,7 +44,19 @@ namespace UNOGui.Ventanas
         {
             if (CamposCompletos())
             {
-                MessageBox.Show("Creaste una sala");
+                Sala nuevaSala = new Sala
+                {
+                    Contraseña = contrasenia.Password,
+                    NumeroTotalDeJugadores = ObtenerJugadores(),
+                    JugadoresEnSala = new Dictionary<object, Jugador>()
+                };
+
+                Jugador jugador = new Jugador
+                {
+                    Nickname = "AngelJuarez"
+                };
+
+                SalaAdmin.CrearSala(nuevaSala, jugador);
             }
             else
             {
@@ -47,6 +67,32 @@ namespace UNOGui.Ventanas
         private bool CamposCompletos()
         {
             return (contrasenia.Password.Trim() != "");
+        }
+
+        private int ObtenerJugadores() {
+
+            int jugadores = 0;
+
+            switch (numeroDeJugadores.SelectedItem)
+            {
+                case 2:
+                    jugadores = 2;
+                    break;
+                case 3:
+                    jugadores = 3;
+                    break;
+                case 4:
+                    jugadores = 4;
+                    break;
+                case 5:
+                    jugadores = 5;
+                    break;
+                default:
+                    break;
+            }
+
+
+            return jugadores;
         }
     }
 }
