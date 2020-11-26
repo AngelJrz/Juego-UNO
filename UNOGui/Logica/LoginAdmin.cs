@@ -21,7 +21,7 @@ namespace UNOGui.Logica
         /// <param name="contraseña">Contraseña del Jugador.</param>
         public static void IniciarSesion(string nickname, string contraseña)
         {
-            InstanceContext contexto = new InstanceContext(new Login());
+            InstanceContext contexto = new InstanceContext(new LoginCallbackAdmin());
             LoginClient servidor = new LoginClient(contexto);
 
             servidor.IniciarSesion(nickname, contraseña);

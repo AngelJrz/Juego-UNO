@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,16 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UNOGui.JuegoUNOServicio;
 using UNOGui.Logica;
 
-namespace UNOGui.Ventanas
+namespace UNOGui.Paginas
 {
     /// <summary>
     /// Lógica de interacción para Login.xaml
     /// </summary>
-    public partial class Login : Window, ILoginCallback
+    public partial class Login : Page
     {
         public Login()
         {
@@ -29,18 +28,19 @@ namespace UNOGui.Ventanas
 
         private void IrARegistrarCuenta(object sender, RoutedEventArgs e)
         {
-            RegistrarCuenta registrarCuentaVentana = new RegistrarCuenta();
-            registrarCuentaVentana.Show();
-
-            this.Close();
+            NavigationService.Navigate(new RegistrarCuenta());
         }
 
         private void IrAVerificarCodigo(object sender, RoutedEventArgs e)
         {
-            VerificarCodigo verificacionDeCodigo = new VerificarCodigo();
+            /*
+             VerificarCodigo verificacionDeCodigo = new VerificarCodigo();
             verificacionDeCodigo.Show();
 
             this.Close();
+             */
+
+            NavigationService.Navigate(new VerificarCodigo());
         }
 
         private void IniciarSesionBoton(object sender, RoutedEventArgs e)
@@ -50,10 +50,7 @@ namespace UNOGui.Ventanas
                 string nickname = usuarioTextbox.Text.Trim();
                 string contraseña = contraseñaTextbox.Password.Trim();
 
-                InstanceContext contexto = new InstanceContext(this);
-                LoginClient servidor = new LoginClient(contexto);
-
-                servidor.IniciarSesion(nickname, contraseña);
+                LoginAdmin.IniciarSesion(nickname, contraseña);
             }
             else
             {
@@ -64,28 +61,6 @@ namespace UNOGui.Ventanas
         private bool CamposCompletos()
         {
             return (usuarioTextbox.Text.Trim() != "" && contraseñaTextbox.Password.Trim() != "");
-        }
-
-        public void NotificarResultadoLogin(ResultadoLogin resultado)
-        {
-            if (resultado == ResultadoLogin.ExisteJugador)
-            {
-                MenuPrincipal menu = new MenuPrincipal();
-                menu.Show();
-                this.Close();
-            }
-            else
-            {
-                if (resultado == ResultadoLogin.NoExisteNickname)
-                {
-                    MessageBox.Show("No existe nickname");
-                }
-                else if (resultado == ResultadoLogin.ContraseñaIncorrecta)
-                {
-                    MessageBox.Show("contraseña incorrecta");
-                }
-            }
-
         }
     }
 }

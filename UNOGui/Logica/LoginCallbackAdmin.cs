@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UNOGui.JuegoUNOServicio;
 using System.Windows;
 using UNOGui.Ventanas;
+using UNOGui.Paginas;
 
 namespace UNOGui.Logica
 {
@@ -18,7 +19,21 @@ namespace UNOGui.Logica
         {
             if (resultado == ResultadoLogin.ExisteJugador)
             {
-                MessageBox.Show("Iniciaste sesion");
+                var ventanaPrincipal = App.Current.Windows.OfType<Principal>().SingleOrDefault();
+                Jugador jugadorActual = new Jugador
+                {
+                    Nickname = (ventanaPrincipal.Content as Login).usuarioTextbox.Text
+                };
+
+                MenuPrincipal menuPrincipal = new MenuPrincipal()
+                {
+                    DataContext = jugadorActual
+                };
+
+                Console.WriteLine(jugadorActual.Nickname);
+                menuPrincipal.Show();
+
+                ventanaPrincipal.Close();
             }
             else
             {

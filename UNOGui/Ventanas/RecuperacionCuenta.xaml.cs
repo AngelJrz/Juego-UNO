@@ -34,10 +34,12 @@ namespace UNOGui.Ventanas
 
         private void Cancelar(object sender, RoutedEventArgs e)
         {
+            /*
             Login login = new Login();
             login.Show();
 
             this.Close();
+            */
         }
 
         private bool CamposCompletos()

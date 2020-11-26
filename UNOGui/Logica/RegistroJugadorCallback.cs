@@ -7,6 +7,8 @@ namespace UNOGui.Logica
 {
     public class RegistroJugadorCallback : IRegistrarJugadorCallback
     {
+        private readonly Principal ventanaPrincipal = Application.Current.Windows.OfType<Principal>().SingleOrDefault();
+
         public void NotificarRegistro(ResultadoRegistro resultado)
         {
             if (resultado == ResultadoRegistro.UsuarioYaExiste)
@@ -18,11 +20,8 @@ namespace UNOGui.Logica
                 MessageBox.Show("El correo ya existe");
             }
             else if (resultado == ResultadoRegistro.RegistroExitoso)
-            {
-                RegistroEnEspera registroEnEsperaVentana = new RegistroEnEspera();
-                registroEnEsperaVentana.Show();
-                var ventanaRegistro = Application.Current.Windows.OfType<RegistrarCuenta>().SingleOrDefault();
-                ventanaRegistro.Close();
+            {                
+                ventanaPrincipal.Navigate(new Paginas.RegistroEnEspera());
             }
         }
 
@@ -32,11 +31,7 @@ namespace UNOGui.Logica
             {
                 MessageBox.Show("Tu registro fue exitoso", "Exito", MessageBoxButton.OK);
 
-                Login ventanaLogin = new Login();
-                ventanaLogin.Show();
-
-                var ventanaRegistroEnEspera = Application.Current.Windows.OfType<RegistroEnEspera>().SingleOrDefault();
-                ventanaRegistroEnEspera.Close();
+                ventanaPrincipal.Navigate(new Paginas.Login());
             }
             else
             {

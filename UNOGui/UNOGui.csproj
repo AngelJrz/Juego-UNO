@@ -70,11 +70,20 @@
     <Compile Include="Logica\LoginCallbackAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorCallback.cs" />
+    <Compile Include="Paginas\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\RegistrarCuenta.xaml.cs">
+      <DependentUpon>RegistrarCuenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\RegistroEnEspera.xaml.cs">
+      <DependentUpon>RegistroEnEspera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\VerificarCodigo.xaml.cs">
+      <DependentUpon>VerificarCodigo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\CreacionDeSala.xaml.cs">
       <DependentUpon>CreacionDeSala.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Ventanas\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\MenuPrincipal.xaml.cs">
       <DependentUpon>MenuPrincipal.xaml</DependentUpon>
@@ -82,14 +91,11 @@
     <Compile Include="Ventanas\MiPerfil.xaml.cs">
       <DependentUpon>MiPerfil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Principal.xaml.cs">
+      <DependentUpon>Principal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\RecuperacionCuenta.xaml.cs">
       <DependentUpon>RecuperacionCuenta.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Ventanas\RegistrarCuenta.xaml.cs">
-      <DependentUpon>RegistrarCuenta.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Ventanas\RegistroEnEspera.xaml.cs">
-      <DependentUpon>RegistroEnEspera.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\UnirseASala.xaml.cs">
       <DependentUpon>UnirseASala.xaml</DependentUpon>
@@ -141,11 +147,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Ventanas\CreacionDeSala.xaml">
+    <Page Include="Paginas\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Ventanas\Login.xaml">
+    <Page Include="Paginas\RegistrarCuenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\RegistroEnEspera.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\VerificarCodigo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\CreacionDeSala.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,15 +175,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ventanas\Principal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\RecuperacionCuenta.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Ventanas\RegistrarCuenta.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Ventanas\RegistroEnEspera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
