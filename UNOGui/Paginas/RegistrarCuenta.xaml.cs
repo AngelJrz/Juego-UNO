@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -12,16 +11,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Logica;
 
-namespace UNOGui.Ventanas
+namespace UNOGui.Paginas
 {
     /// <summary>
     /// Lógica de interacción para RegistrarCuenta.xaml
     /// </summary>
-    public partial class RegistrarCuenta : Window
+    public partial class RegistrarCuenta : Page
     {
         public RegistrarCuenta()
         {
@@ -30,10 +30,7 @@ namespace UNOGui.Ventanas
 
         private void CancelarRegistro(object sender, RoutedEventArgs e)
         {
-            Login loginWindow = new Login();
-            loginWindow.Show();
-
-            this.Close();
+            NavigationService.GoBack();
         }
 
         private void RegistrarNuevaCuenta(object sender, RoutedEventArgs e)
@@ -49,7 +46,6 @@ namespace UNOGui.Ventanas
 
                 RegistroJugadorAdmin.RegistrarNuevoJugador(jugadorARegistrar);
             }
-
         }
 
         private bool CamposCompletos()
@@ -65,7 +61,7 @@ namespace UNOGui.Ventanas
             }
             else
             {
-                MessageBox.Show("Los campos estan incompletos","Falta información",MessageBoxButton.OK,MessageBoxImage.Warning);
+                MessageBox.Show("Los campos estan incompletos", "Falta información", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
             return completo;

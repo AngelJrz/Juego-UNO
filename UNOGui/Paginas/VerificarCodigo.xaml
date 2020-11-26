@@ -1,0 +1,44 @@
+﻿<Page x:Class="UNOGui.Paginas.VerificarCodigo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UNOGui.Paginas"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      WindowTitle="Verificar código" Height="550" Width="500">
+
+    <Grid Background="Red">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="270"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Verificar código" Style="{StaticResource TituloStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <TextBlock Text="Te enviamos un código de recuperación a su dirección de correo. Por favor, ingreselo en el siguiente campo." 
+                       Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Width="400"/>
+
+            <Label Content="Código de recuperación:" Style="{StaticResource TextoLabel}" Margin="50,10,0,0"/>
+            <TextBox x:Name="codigoIngresado" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,10,0,30" />
+
+
+            <Button Content="Aceptar" Style="{StaticResource Button}" Margin="10" Click="IrARecuperacionDeCuenta"/>
+            <Button Content="Cancelar" Style="{StaticResource Button}" Margin="10" Click="Cancelar"/>
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Orientation="Horizontal">
+                <TextBlock Text="¿No recibiste el código de recuperación?" Foreground="Gold" Margin="0,0,5,0"/>
+                <Button Content="Enviar de nuevo" Style="{StaticResource ButtonOutlined}"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="/Imagenes/logo.png" Width="100"/>
+        </StackPanel>
+    </Grid>
+</Page>

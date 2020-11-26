@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UNOGui.Ventanas
+namespace UNOGui.Paginas
 {
     /// <summary>
     /// Lógica de interacción para VerificarCodigo.xaml
     /// </summary>
-    public partial class VerificarCodigo : Window
+    public partial class VerificarCodigo : Page
     {
         public VerificarCodigo()
         {
@@ -28,10 +29,12 @@ namespace UNOGui.Ventanas
         {
             if (CamposCompletos())
             {
+                /*
                 RecuperacionCuenta recuperacionDeCuenta = new RecuperacionCuenta();
                 recuperacionDeCuenta.Show();
 
                 this.Close();
+                */
             }
             else
             {
@@ -41,17 +44,12 @@ namespace UNOGui.Ventanas
 
         private void Cancelar(object sender, RoutedEventArgs e)
         {
-            /*
-            Login login = new Login();
-            login.Show();
-
-            this.Close();
-            */
+            NavigationService.GoBack();
         }
 
-        public bool CamposCompletos()
+        private bool CamposCompletos()
         {
-            return codigoIngresado.Text.Trim() != ""; 
+            return codigoIngresado.Text.Trim() != "";
         }
     }
 }
