@@ -58,6 +58,35 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IAdministrarSala_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -65,6 +94,8 @@
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarJugador" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.Login" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IRegistrarJugador_RegistrarJugador_InputMessage">
@@ -84,6 +115,21 @@
   </wsdl:message>
   <wsdl:message name="ILogin_NotificarResultadoLogin_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarResultadoLogin" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarSala_CrearSala_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearSala" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarSala_UnirseASala_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseASala" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarSala_SalirDeSala_InputMessage">
+    <wsdl:part name="parameters" element="tns:SalirDeSala" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarSala_NotificarCreacionDeSala_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarCreacionDeSala" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarSala_NotificarUnionASala_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarUnionASala" />
   </wsdl:message>
   <wsdl:portType name="IRegistrarJugador">
     <wsdl:operation name="RegistrarJugador">
@@ -105,6 +151,23 @@
     </wsdl:operation>
     <wsdl:operation name="NotificarResultadoLogin">
       <wsdl:output wsaw:Action="http://tempuri.org/ILogin/NotificarResultadoLogin" message="tns:ILogin_NotificarResultadoLogin_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAdministrarSala">
+    <wsdl:operation name="CrearSala">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarSala/CrearSala" message="tns:IAdministrarSala_CrearSala_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnirseASala">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarSala/UnirseASala" message="tns:IAdministrarSala_UnirseASala_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SalirDeSala">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarSala/SalirDeSala" message="tns:IAdministrarSala_SalirDeSala_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarCreacionDeSala">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarSala/NotificarCreacionDeSala" message="tns:IAdministrarSala_NotificarCreacionDeSala_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarUnionASala">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarSala/NotificarUnionASala" message="tns:IAdministrarSala_NotificarUnionASala_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IRegistrarJugador" type="tns:IRegistrarJugador">
@@ -151,13 +214,47 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IAdministrarSala" type="tns:IAdministrarSala">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAdministrarSala_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="CrearSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/CrearSala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UnirseASala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/UnirseASala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SalirDeSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/SalirDeSala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarCreacionDeSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/NotificarCreacionDeSala" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarUnionASala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/NotificarUnionASala" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="JuegoUNOServicio">
     <wsdl:port name="NetTcpBinding_IRegistrarJugador" binding="tns:NetTcpBinding_IRegistrarJugador">
       <soap12:address location="net.tcp://localhost:8090/UNO.Contratos" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -166,7 +263,16 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IAdministrarSala" binding="tns:NetTcpBinding_IAdministrarSala">
+      <soap12:address location="net.tcp://localhost:8090/UNO.Contratos" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

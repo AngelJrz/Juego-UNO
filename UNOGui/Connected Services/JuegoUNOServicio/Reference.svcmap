@@ -27,7 +27,9 @@
     <MetadataFile FileName="JuegoUNOServicio.wsdl" MetadataType="Wsdl" ID="3a14459f-92c2-4234-aadc-ddd3231270cc" SourceId="1" SourceUrl="http://localhost:8080/?wsdl" />
     <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="78a34b5c-4b57-4cc8-adeb-740a5ea51741" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd4" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="1f8058b2-ab7b-4623-be92-ef9aeb1cb705" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd1" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="754ca09e-3d43-4699-9546-823c8c5a9b45" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd5" />
     <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="bb5abef9-db32-41c5-aab9-8a3ac4095379" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd3" />
+    <MetadataFile FileName="item51.xsd" MetadataType="Schema" ID="64ce947e-b056-4c3e-923f-55fa3b9eec76" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd6" />
     <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="4930cb18-8302-464d-8c12-d48e4b0595e0" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd0" />
   </Metadata>
   <Extensions>
