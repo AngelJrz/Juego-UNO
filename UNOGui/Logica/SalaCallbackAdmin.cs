@@ -8,7 +8,14 @@ namespace UNOGui.Logica
     {
         public void NotificarCreacionDeSala(bool salaCreada)
         {
-            throw new NotImplementedException();
+            if (salaCreada)
+            {
+                MessageBox.Show("Creaste una nueva sala");
+            }
+            else
+            {
+                MessageBox.Show("No se pudo crear la sala");
+            }
         }
 
         public void NotificarUnionASala(ResultadoUnionSala resultado)

@@ -75,6 +75,9 @@
     <Compile Include="Ventanas\CreacionDeSala.xaml.cs">
       <DependentUpon>CreacionDeSala.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Lobby.xaml.cs">
+      <DependentUpon>Lobby.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Ventanas\CreacionDeSala.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Lobby.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UNOGui.JuegoUNOServicio;
+using UNOGui.Logica;
 
 namespace UNOGui.Ventanas
 {
@@ -36,7 +38,13 @@ namespace UNOGui.Ventanas
         {
             if (CamposCompletos())
             {
-                MessageBox.Show("Creaste una sala");
+                Sala nuevaSala = new Sala
+                {
+                    Contraseña = contrasenia.Password,
+                    NumeroTotalDeJugadores = ObtenerJugadores()
+                };
+
+                SalaAdmin.CrearSala(nuevaSala);
             }
             else
             {
@@ -47,6 +55,15 @@ namespace UNOGui.Ventanas
         private bool CamposCompletos()
         {
             return (contrasenia.Password.Trim() != "");
+        }
+
+        private int ObtenerJugadores()
+        {
+            object itemSeleccionado = numeroDeJugadores.SelectedItem;
+
+            int jugadores = int.Parse(itemSeleccionado.ToString());
+
+            return jugadores;
         }
     }
 }

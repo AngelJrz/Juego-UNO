@@ -20,5 +20,10 @@ namespace UNOGui.Logica
         {
             servidor.UnirseASala(salaBuscada, jugador);
         }
+
+        public static void CrearSala(Sala nuevaSala)
+        {
+            servidor.CrearSala(nuevaSala);
+        }
     }
 }
