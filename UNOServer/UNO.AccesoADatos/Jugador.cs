@@ -22,6 +22,5 @@ namespace UNO.AccesoADatos
         public Nullable<int> PartidasGanadas { get; set; }
         public Nullable<int> PartidasJugadas { get; set; }
         public int Nivel { get; set; }
-        public string ClaveValidacion { get; set; }
     }
 }
