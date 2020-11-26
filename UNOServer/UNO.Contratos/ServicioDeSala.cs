@@ -12,9 +12,15 @@ namespace UNO.Contratos
     {
         private readonly List<Sala> salasCreadas = new List<Sala>();
 
-        public void CrearSala(Sala nuevaSala)
+        public void CrearSala(Sala nuevaSala, Dominio.Jugador jugador)
         {
-            throw new NotImplementedException();
+            ISalaCallback calbackActual = SalaCallbackActual;
+
+            nuevaSala.Id = ObtenerNuevoCodigoSala();
+            nuevaSala.JugadoresEnSala.Add(calbackActual, jugador);
+
+            salasCreadas.Add(nuevaSala);
+            calbackActual.NotificarCreacionDeSala(true);
         }
 
         public void SalirDeSala(string idSala)
@@ -64,6 +70,15 @@ namespace UNO.Contratos
             }
 
             return hayCupo;
+        }
+
+        private String ObtenerNuevoCodigoSala()
+        {
+            Random random = new Random();
+
+            string idSala = random.Next(10000, 99999).ToString();
+
+            return idSala;
         }
 
         private ISalaCallback SalaCallbackActual

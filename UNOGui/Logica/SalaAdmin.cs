@@ -21,9 +21,14 @@ namespace UNOGui.Logica
             servidor.UnirseASala(salaBuscada, jugador);
         }
 
-        public static void CrearSala(Sala nuevaSala)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nuevaSala"></param>
+        /// <param name="jugador"></param>
+        public static void CrearSala(Sala nuevaSala, Jugador jugador)
         {
-            servidor.CrearSala(nuevaSala);
+            servidor.CrearSala(nuevaSala, jugador);
         }
     }
 }

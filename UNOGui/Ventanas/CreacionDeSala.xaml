@@ -24,10 +24,6 @@
 
             <Label Content="¿Para cuantos jugadores es la sala?" Style="{StaticResource TextoLabel}" Margin="115,20,0,0"/>
             <ComboBox Name="numeroDeJugadores" Width="40" Margin="0,10,0,0">
-                <ComboBoxItem>5</ComboBoxItem>
-                <ComboBoxItem IsSelected="True">4</ComboBoxItem>
-                <ComboBoxItem>3</ComboBoxItem>
-                <ComboBoxItem>2</ComboBoxItem>
             </ComboBox>
         </StackPanel>
 

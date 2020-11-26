@@ -11,7 +11,7 @@ namespace UNO.Contratos.AdministrarSala
     public interface IAdministrarSala
     {
         [OperationContract(IsOneWay = true)]
-        void CrearSala(Sala nuevaSala);
+        void CrearSala(Sala nuevaSala, Dominio.Jugador jugador);
 
         [OperationContract(IsOneWay = true)]
         void UnirseASala(Sala salaAUnirse, Dominio.Jugador jugador);

@@ -459,10 +459,10 @@ namespace UNOGui.JuegoUNOServicio {
     public interface IAdministrarSala {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/CrearSala")]
-        void CrearSala(UNOGui.JuegoUNOServicio.Sala nuevaSala);
+        void CrearSala(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/CrearSala")]
-        System.Threading.Tasks.Task CrearSalaAsync(UNOGui.JuegoUNOServicio.Sala nuevaSala);
+        System.Threading.Tasks.Task CrearSalaAsync(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/UnirseASala")]
         void UnirseASala(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador);
@@ -515,12 +515,12 @@ namespace UNOGui.JuegoUNOServicio {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void CrearSala(UNOGui.JuegoUNOServicio.Sala nuevaSala) {
-            base.Channel.CrearSala(nuevaSala);
+        public void CrearSala(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador) {
+            base.Channel.CrearSala(nuevaSala, jugador);
         }
         
-        public System.Threading.Tasks.Task CrearSalaAsync(UNOGui.JuegoUNOServicio.Sala nuevaSala) {
-            return base.Channel.CrearSalaAsync(nuevaSala);
+        public System.Threading.Tasks.Task CrearSalaAsync(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador) {
+            return base.Channel.CrearSalaAsync(nuevaSala, jugador);
         }
         
         public void UnirseASala(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador) {

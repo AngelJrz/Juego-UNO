@@ -254,7 +254,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -263,7 +263,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -272,7 +272,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

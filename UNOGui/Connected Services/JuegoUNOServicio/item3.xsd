@@ -51,14 +51,15 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" minOccurs="0" name="nuevaSala" nillable="true" type="q4:Sala" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="jugador" nillable="true" type="q5:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UnirseASala">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" minOccurs="0" name="salaAUnirse" nillable="true" type="q5:Sala" />
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="jugador" nillable="true" type="q6:Jugador" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" minOccurs="0" name="salaAUnirse" nillable="true" type="q6:Sala" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="jugador" nillable="true" type="q7:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -79,7 +80,7 @@
   <xs:element name="NotificarUnionASala">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" minOccurs="0" name="resultado" type="q7:ResultadoUnionSala" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" minOccurs="0" name="resultado" type="q8:ResultadoUnionSala" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

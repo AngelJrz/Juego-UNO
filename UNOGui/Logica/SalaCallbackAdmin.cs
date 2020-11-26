@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using UNOGui.JuegoUNOServicio;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Logica
 {
@@ -10,7 +12,10 @@ namespace UNOGui.Logica
         {
             if (salaCreada)
             {
-                MessageBox.Show("Creaste una nueva sala");
+                Lobby lobby = new Lobby();
+                lobby.Show();
+                var ventanaRegistro = Application.Current.Windows.OfType<CreacionDeSala>().SingleOrDefault();
+                ventanaRegistro.Close();
             }
             else
             {
