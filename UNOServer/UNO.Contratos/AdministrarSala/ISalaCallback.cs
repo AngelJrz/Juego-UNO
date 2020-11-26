@@ -18,7 +18,7 @@ namespace UNO.Contratos.AdministrarSala
         /// </summary>
         /// <param name="salaCreada"></param>
         [OperationContract(IsOneWay = true)]
-        void NotificarCreacionDeSala(bool salaCreada);
+        void NotificarCreacionDeSala(Sala salaCreada);
 
         /// <summary>
         /// 
@@ -26,5 +26,12 @@ namespace UNO.Contratos.AdministrarSala
         /// <param name="resultado"></param>
         [OperationContract(IsOneWay = true)]
         void NotificarUnionASala(ResultadoUnionSala resultado);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jugadores"></param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarSala(List<string> jugadores);
     }
 }

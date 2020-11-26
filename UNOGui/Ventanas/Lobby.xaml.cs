@@ -19,6 +19,7 @@ namespace UNOGui.Ventanas
     /// </summary>
     public partial class Lobby : Window
     {
+        List<string> jugadores = new List<string>();
         public Lobby()
         {
             InitializeComponent();

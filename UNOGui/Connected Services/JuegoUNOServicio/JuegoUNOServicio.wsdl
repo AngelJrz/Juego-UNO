@@ -131,6 +131,9 @@
   <wsdl:message name="IAdministrarSala_NotificarUnionASala_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarUnionASala" />
   </wsdl:message>
+  <wsdl:message name="IAdministrarSala_ActualizarSala_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarSala" />
+  </wsdl:message>
   <wsdl:portType name="IRegistrarJugador">
     <wsdl:operation name="RegistrarJugador">
       <wsdl:input wsaw:Action="http://tempuri.org/IRegistrarJugador/RegistrarJugador" message="tns:IRegistrarJugador_RegistrarJugador_InputMessage" />
@@ -168,6 +171,9 @@
     </wsdl:operation>
     <wsdl:operation name="NotificarUnionASala">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarSala/NotificarUnionASala" message="tns:IAdministrarSala_NotificarUnionASala_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSala">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarSala/ActualizarSala" message="tns:IAdministrarSala_ActualizarSala_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IRegistrarJugador" type="tns:IRegistrarJugador">
@@ -243,6 +249,12 @@
     </wsdl:operation>
     <wsdl:operation name="NotificarUnionASala">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/NotificarUnionASala" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/ActualizarSala" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

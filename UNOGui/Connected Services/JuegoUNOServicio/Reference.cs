@@ -481,10 +481,13 @@ namespace UNOGui.JuegoUNOServicio {
     public interface IAdministrarSalaCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/NotificarCreacionDeSala")]
-        void NotificarCreacionDeSala(bool salaCreada);
+        void NotificarCreacionDeSala(UNOGui.JuegoUNOServicio.Sala salaCreada);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/NotificarUnionASala")]
         void NotificarUnionASala(UNOGui.JuegoUNOServicio.ResultadoUnionSala resultado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/ActualizarSala")]
+        void ActualizarSala(string[] jugadores);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

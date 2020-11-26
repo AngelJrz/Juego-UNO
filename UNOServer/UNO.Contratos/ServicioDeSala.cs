@@ -20,7 +20,8 @@ namespace UNO.Contratos
             nuevaSala.JugadoresEnSala.Add(calbackActual, jugador);
 
             salasCreadas.Add(nuevaSala);
-            calbackActual.NotificarCreacionDeSala(true);
+            calbackActual.NotificarCreacionDeSala(nuevaSala);
+            NotificarNuevoJugador(nuevaSala);
         }
 
         public void SalirDeSala(string idSala)
@@ -43,6 +44,7 @@ namespace UNO.Contratos
                         {
                             resultadoUnionSala = ResultadoUnionSala.UnionExitosa;
                             sala.JugadoresEnSala.Add(calbackActual, jugador);
+                            salaAUnirse = sala;
                             break;
                         }
                         else
@@ -58,6 +60,7 @@ namespace UNO.Contratos
             }
 
             calbackActual.NotificarUnionASala(resultadoUnionSala);
+            NotificarNuevoJugador(salaAUnirse);
         }
 
         private bool HayCupoEnSala(Sala sala)
@@ -79,6 +82,21 @@ namespace UNO.Contratos
             string idSala = random.Next(10000, 99999).ToString();
 
             return idSala;
+        }
+
+        private void NotificarNuevoJugador(Sala salaActual)
+        {
+            List<string> nombres = new List<string>();
+
+            foreach (var jugadores in salaActual.JugadoresEnSala.Values)
+            {
+                nombres.Add(jugadores.Nickname);
+            }
+
+            foreach (var jugador in salaActual.JugadoresEnSala)
+            {
+                jugador.Key.ActualizarSala(nombres);
+            }
         }
 
         private ISalaCallback SalaCallbackActual

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using UNOGui.JuegoUNOServicio;
@@ -8,19 +9,24 @@ namespace UNOGui.Logica
 {
     public class SalaCallbackAdmin : IAdministrarSalaCallback
     {
-        public void NotificarCreacionDeSala(bool salaCreada)
+        public void ActualizarSala(string[] jugadores)
         {
-            if (salaCreada)
+            ObservableCollection<string> jugadoresEnSala = new ObservableCollection<string>(jugadores);
+
+            var lobbyActual = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
+            lobbyActual.jugadoresEnSala.ItemsSource = jugadoresEnSala;
+        }
+
+        public void NotificarCreacionDeSala(Sala salaCreada)
+        {
+            Lobby lobby = new Lobby
             {
-                Lobby lobby = new Lobby();
-                lobby.Show();
-                var ventanaRegistro = Application.Current.Windows.OfType<CreacionDeSala>().SingleOrDefault();
-                ventanaRegistro.Close();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo crear la sala");
-            }
+                DataContext = salaCreada
+            };
+
+            lobby.Show();
+            var ventanaRegistro = Application.Current.Windows.OfType<CreacionDeSala>().SingleOrDefault();
+            ventanaRegistro.Close();
         }
 
         public void NotificarUnionASala(ResultadoUnionSala resultado)
@@ -37,7 +43,10 @@ namespace UNOGui.Logica
                     MessageBox.Show("Ya no hay cupo en la sala");
                     break;
                 case ResultadoUnionSala.UnionExitosa:
-                    MessageBox.Show("Te uniste a la sala");
+                    Lobby lobby = new Lobby();
+                    lobby.Show();
+                    var ventanaUnion = Application.Current.Windows.OfType<UnirseASala>().SingleOrDefault();
+                    ventanaUnion.Close();
                     break;
                 default: break;
             }
