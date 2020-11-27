@@ -18,6 +18,7 @@ namespace UNO.Contratos
     {
         private readonly Dictionary<IRegistrarJugadorCallback, Jugador> jugadoresARegistrar = new Dictionary<IRegistrarJugadorCallback, Jugador>();
         private readonly AdminDatosJugador administradorDatosJugador = new AdminDatosJugador();
+        private readonly CorreoElectronico adminCorreoElectronico = new CorreoElectronico();
 
         public void RegistrarJugador(Jugador jugador)
         {
@@ -35,8 +36,7 @@ namespace UNO.Contratos
             {
                 string claveValidacion = GeneradorClave.GenerarClaveValidacion();
                 jugador.ClaveValidacion = claveValidacion;
-                CorreoElectronico adminCorreoElectronico = new CorreoElectronico();
-
+                
                 try
                 {
                     adminCorreoElectronico.EnviarClaveValidacion(jugador);
@@ -84,6 +84,38 @@ namespace UNO.Contratos
             }
 
             ObtenerCallbackActual.NotificarResultadoClave(esClaveCorrecta);
+        }
+
+        public void CancelarRegistro()
+        {
+            IRegistrarJugadorCallback callbackActual = ObtenerCallbackActual;
+
+            if (jugadoresARegistrar.ContainsKey(callbackActual))
+            {
+                jugadoresARegistrar.Remove(callbackActual);
+            }
+
+            callbackActual.NotificarCancelacionRegistro();
+        }
+
+        public void EnviarClaveDeNuevo()
+        {
+            IRegistrarJugadorCallback callbackActual = ObtenerCallbackActual;
+            jugadoresARegistrar.TryGetValue(callbackActual, out Jugador jugador);
+
+            if (jugador != null)
+            {
+                try
+                {
+                    adminCorreoElectronico.EnviarClaveValidacion(jugador);
+                }
+                catch (SmtpException)
+                {
+                    throw new SmtpException();
+                }
+
+                callbackActual.NotificarEnvioDeClave();
+            }
         }
 
         private IRegistrarJugadorCallback ObtenerCallbackActual

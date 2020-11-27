@@ -104,11 +104,23 @@
   <wsdl:message name="IRegistrarJugador_VerificarClave_InputMessage">
     <wsdl:part name="parameters" element="tns:VerificarClave" />
   </wsdl:message>
+  <wsdl:message name="IRegistrarJugador_CancelarRegistro_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarRegistro" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrarJugador_EnviarClaveDeNuevo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarClaveDeNuevo" />
+  </wsdl:message>
   <wsdl:message name="IRegistrarJugador_NotificarRegistro_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarRegistro" />
   </wsdl:message>
   <wsdl:message name="IRegistrarJugador_NotificarResultadoClave_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarResultadoClave" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrarJugador_NotificarCancelacionRegistro_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarCancelacionRegistro" />
+  </wsdl:message>
+  <wsdl:message name="IRegistrarJugador_NotificarEnvioDeClave_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarEnvioDeClave" />
   </wsdl:message>
   <wsdl:message name="ILogin_IniciarSesion_InputMessage">
     <wsdl:part name="parameters" element="tns:IniciarSesion" />
@@ -141,11 +153,23 @@
     <wsdl:operation name="VerificarClave">
       <wsdl:input wsaw:Action="http://tempuri.org/IRegistrarJugador/VerificarClave" message="tns:IRegistrarJugador_VerificarClave_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CancelarRegistro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrarJugador/CancelarRegistro" message="tns:IRegistrarJugador_CancelarRegistro_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarClaveDeNuevo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRegistrarJugador/EnviarClaveDeNuevo" message="tns:IRegistrarJugador_EnviarClaveDeNuevo_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotificarRegistro">
       <wsdl:output wsaw:Action="http://tempuri.org/IRegistrarJugador/NotificarRegistro" message="tns:IRegistrarJugador_NotificarRegistro_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotificarResultadoClave">
       <wsdl:output wsaw:Action="http://tempuri.org/IRegistrarJugador/NotificarResultadoClave" message="tns:IRegistrarJugador_NotificarResultadoClave_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarCancelacionRegistro">
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrarJugador/NotificarCancelacionRegistro" message="tns:IRegistrarJugador_NotificarCancelacionRegistro_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarEnvioDeClave">
+      <wsdl:output wsaw:Action="http://tempuri.org/IRegistrarJugador/NotificarEnvioDeClave" message="tns:IRegistrarJugador_NotificarEnvioDeClave_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ILogin">
@@ -191,6 +215,18 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="CancelarRegistro">
+      <soap12:operation soapAction="http://tempuri.org/IRegistrarJugador/CancelarRegistro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarClaveDeNuevo">
+      <soap12:operation soapAction="http://tempuri.org/IRegistrarJugador/EnviarClaveDeNuevo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="NotificarRegistro">
       <soap12:operation soapAction="http://tempuri.org/IRegistrarJugador/NotificarRegistro" style="document" />
       <wsdl:output>
@@ -199,6 +235,18 @@
     </wsdl:operation>
     <wsdl:operation name="NotificarResultadoClave">
       <soap12:operation soapAction="http://tempuri.org/IRegistrarJugador/NotificarResultadoClave" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarCancelacionRegistro">
+      <soap12:operation soapAction="http://tempuri.org/IRegistrarJugador/NotificarCancelacionRegistro" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarEnvioDeClave">
+      <soap12:operation soapAction="http://tempuri.org/IRegistrarJugador/NotificarEnvioDeClave" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
@@ -266,7 +314,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
+          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -275,7 +323,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
+          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -284,7 +332,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
+          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

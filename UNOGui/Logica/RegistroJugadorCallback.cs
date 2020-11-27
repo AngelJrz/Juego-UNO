@@ -2,12 +2,25 @@
 using System.Windows;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Ventanas;
+using UNOGui.Paginas;
 
 namespace UNOGui.Logica
 {
     public class RegistroJugadorCallback : IRegistrarJugadorCallback
     {
         private readonly Principal ventanaPrincipal = Application.Current.Windows.OfType<Principal>().SingleOrDefault();
+
+        public void NotificarCancelacionRegistro()
+        {
+            ventanaPrincipal.Navigate(new Login());
+        }
+
+        public void NotificarEnvioDeClave()
+        {
+            MessageBox.Show("Te enviamos una nueva clave al correo especificado.", "", MessageBoxButton.OK);
+
+            (ventanaPrincipal.Content as RegistroEnEspera).IniciarTemporizador();
+        }
 
         public void NotificarRegistro(ResultadoRegistro resultado)
         {
@@ -21,7 +34,7 @@ namespace UNOGui.Logica
             }
             else if (resultado == ResultadoRegistro.RegistroExitoso)
             {                
-                ventanaPrincipal.Navigate(new Paginas.RegistroEnEspera());
+                ventanaPrincipal.Navigate(new RegistroEnEspera());
             }
         }
 
@@ -31,7 +44,7 @@ namespace UNOGui.Logica
             {
                 MessageBox.Show("Tu registro fue exitoso", "Exito", MessageBoxButton.OK);
 
-                ventanaPrincipal.Navigate(new Paginas.Login());
+                ventanaPrincipal.Navigate(new Login());
             }
             else
             {
