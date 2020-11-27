@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="JuegoUNOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="JuegoUNOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Jugador">
           <Key>
             <PropertyRef Name="Nickname" />
@@ -17,13 +17,11 @@
           <Property Name="PartidasGanadas" Type="int" />
           <Property Name="PartidasJugadas" Type="int" />
           <Property Name="Nivel" Type="int" Nullable="false" />
-          <Property Name="ClaveValidacion" Type="varchar" MaxLength="6" />
         </EntityType>
         <EntityContainer Name="JuegoUNOModelStoreContainer">
           <EntitySet Name="Jugador" EntityType="Self.Jugador" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="JuegoUNOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -39,7 +37,6 @@
           <Property Name="PartidasGanadas" Type="Int32" />
           <Property Name="PartidasJugadas" Type="Int32" />
           <Property Name="Nivel" Type="Int32" Nullable="false" />
-          <Property Name="ClaveValidacion" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="JuegoUNOContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Jugador" EntityType="Self.Jugador" />
@@ -61,7 +58,6 @@
                 <ScalarProperty Name="PartidasGanadas" ColumnName="PartidasGanadas" />
                 <ScalarProperty Name="PartidasJugadas" ColumnName="PartidasJugadas" />
                 <ScalarProperty Name="Nivel" ColumnName="Nivel" />
-                <ScalarProperty Name="ClaveValidacion" ColumnName="ClaveValidacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

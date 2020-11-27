@@ -1,0 +1,37 @@
+﻿<Window x:Class="UNOGui.Ventanas.Lobby"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UNOGui.Ventanas"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Lobby" Height="300" Width="400">
+    <Grid Background="red">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1">
+            <ListView x:Name="jugadoresEnSala">
+                
+            </ListView>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Sala de juego" Style="{StaticResource TituloStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" >
+            <Label Content="Código de sala:" Margin="0,10,0,0" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding Id}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap"  TextAlignment="Center"/>
+            <TextBlock Text="Espere a que el host inicie la partida" Margin="0,50,0,0" Style="{StaticResource TextoContenido}" TextWrapping="Wrap"  TextAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Button Content="Salir de sala" Style="{StaticResource Button}" Margin="10" Click="SalirDeSala" />
+        </StackPanel>
+    </Grid>
+</Window>
