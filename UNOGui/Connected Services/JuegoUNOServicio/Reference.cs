@@ -342,6 +342,18 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/VerificarClave")]
         System.Threading.Tasks.Task VerificarClaveAsync(string clave);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/CancelarRegistro")]
+        void CancelarRegistro();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/CancelarRegistro")]
+        System.Threading.Tasks.Task CancelarRegistroAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/EnviarClaveDeNuevo")]
+        void EnviarClaveDeNuevo();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/EnviarClaveDeNuevo")]
+        System.Threading.Tasks.Task EnviarClaveDeNuevoAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -352,6 +364,12 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/NotificarResultadoClave")]
         void NotificarResultadoClave(bool claveValida);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/NotificarCancelacionRegistro")]
+        void NotificarCancelacionRegistro();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/NotificarEnvioDeClave")]
+        void NotificarEnvioDeClave();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -396,6 +414,22 @@ namespace UNOGui.JuegoUNOServicio {
         
         public System.Threading.Tasks.Task VerificarClaveAsync(string clave) {
             return base.Channel.VerificarClaveAsync(clave);
+        }
+        
+        public void CancelarRegistro() {
+            base.Channel.CancelarRegistro();
+        }
+        
+        public System.Threading.Tasks.Task CancelarRegistroAsync() {
+            return base.Channel.CancelarRegistroAsync();
+        }
+        
+        public void EnviarClaveDeNuevo() {
+            base.Channel.EnviarClaveDeNuevo();
+        }
+        
+        public System.Threading.Tasks.Task EnviarClaveDeNuevoAsync() {
+            return base.Channel.EnviarClaveDeNuevoAsync();
         }
     }
     

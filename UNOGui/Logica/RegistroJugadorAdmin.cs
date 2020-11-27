@@ -22,5 +22,15 @@ namespace UNOGui.Logica
         {
             servidor.VerificarClave(clave);
         }
+
+        public static void CancelarRegistrarJugador()
+        {
+            servidor.CancelarRegistro();
+        }
+
+        public static void EnviarClave()
+        {
+            servidor.EnviarClaveDeNuevo();
+        }
     }
 }

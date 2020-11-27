@@ -31,7 +31,8 @@
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Orientation="Horizontal">
                 <TextBlock Text="¿No recibiste la clave de validación?" Foreground="Gold" Margin="0,0,5,0"/>
-                <Button Content="Enviar de nuevo" Style="{StaticResource ButtonOutlined}"/>
+                <TextBlock x:Name="temporizadorTexto" Foreground="Gold"/>
+                <Button x:Name="enviarCorreoBotton" Content="Enviar de nuevo" Style="{StaticResource ButtonOutlined}" Visibility="Hidden" Click="EnviarCorreo"/>
             </StackPanel>
 
         </StackPanel>

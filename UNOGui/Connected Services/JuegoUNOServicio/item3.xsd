@@ -19,6 +19,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CancelarRegistro">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnviarClaveDeNuevo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NotificarRegistro">
     <xs:complexType>
       <xs:sequence>
@@ -31,6 +41,16 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="claveValida" type="xs:boolean" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotificarCancelacionRegistro">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotificarEnvioDeClave">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="IniciarSesion">
