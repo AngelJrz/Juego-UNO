@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UNOGui.JuegoUNOServicio;
 
 namespace UNOGui.Ventanas
 {
@@ -35,6 +36,11 @@ namespace UNOGui.Ventanas
             {
                 frameNavegacion.Navigate(new Paginas.UnirseASala());
             }
+            UnirseASala unirseSala = new UnirseASala(this.DataContext as Jugador);
+
+            unirseSala.Show();
+
+            this.Close();
         }
 
         private void IrACrearSala(object sender, RoutedEventArgs e)
@@ -43,6 +49,11 @@ namespace UNOGui.Ventanas
             {
                 frameNavegacion.Navigate(new Paginas.CreacionDeSala());
             }
+            CreacionDeSala nuevasala = new CreacionDeSala(this.DataContext as Jugador);
+
+            nuevasala.Show();
+
+            this.Close();
         }
 
         private void IrAMiPerfil(object sender, RoutedEventArgs e)

@@ -9,9 +9,10 @@ namespace UNOGui.Ventanas
     /// </summary>
     public partial class UnirseASala : Window
     {
-        public UnirseASala()
+        public UnirseASala(Jugador jugador)
         {
             InitializeComponent();
+            this.DataContext = jugador;
         }
 
         private void Cancelar(object sender, RoutedEventArgs e)
@@ -32,10 +33,7 @@ namespace UNOGui.Ventanas
                     Contraseña = contrasenia.Password
                 };
 
-                Jugador jugador = new Jugador
-                {
-                    Nickname = "angelJuarez"
-                };
+                Jugador jugador = DataContext as Jugador;
 
                 SalaAdmin.UnirseASala(salaAUnirse, jugador);
             }
