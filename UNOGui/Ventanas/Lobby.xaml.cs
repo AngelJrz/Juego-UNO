@@ -19,7 +19,8 @@ namespace UNOGui.Ventanas
     /// </summary>
     public partial class Lobby : Window
     {
-        List<string> jugadores = new List<string>();
+        private readonly MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
+
         public Lobby()
         {
             InitializeComponent();
@@ -27,10 +28,14 @@ namespace UNOGui.Ventanas
 
         private void SalirDeSala(object sender, RoutedEventArgs e)
         {
-            MenuPrincipal menu = new MenuPrincipal();
-            menu.Show();
+            menuPrincipal.Show();
 
             this.Close();
+        }
+
+        private void RegresarMenuPrincipal(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            menuPrincipal.Show();
         }
     }
 }

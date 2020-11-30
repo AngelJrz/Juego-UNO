@@ -46,12 +46,9 @@ namespace UNOGui.Paginas
                     JugadoresEnSala = new Dictionary<object, Jugador>()
                 };
 
-                Jugador jugador = new Jugador
-                {
-                    Nickname = "AngelJuarez"
-                };
-
+                var jugador = Window.GetWindow(this).DataContext as Jugador;
                 SalaAdmin.CrearSala(nuevaSala, jugador);
+                LimpiarCampos();
             }
             else
             {
@@ -68,7 +65,13 @@ namespace UNOGui.Paginas
 
         private bool CamposCompletos()
         {
-            return (contrasenia.Password.Trim() != "");
+            return (contrasenia.Password.Trim() != "" && numeroDeJugadores.SelectedItem != null);
+        }
+
+        private void LimpiarCampos()
+        {
+            contrasenia.Password = "";
+            numeroDeJugadores.SelectedItem = null;
         }
 
         private void Cancelar(object sender, RoutedEventArgs e)

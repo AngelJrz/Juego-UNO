@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UNOGui.JuegoUNOServicio;
+using UNOGui.Logica;
 
 namespace UNOGui.Paginas
 {
@@ -27,7 +29,34 @@ namespace UNOGui.Paginas
 
         private void Unirse(object sender, RoutedEventArgs e)
         {
+            if (CamposCompletos())
+            {
+                Sala salaAUnirse = new Sala
+                {
+                    Id = nombreSala.Text,
+                    Contraseña = contrasenia.Password
+                };
 
+                var jugador = Window.GetWindow(this).DataContext as Jugador;
+
+                SalaAdmin.UnirseASala(salaAUnirse, jugador);
+                LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("Los campos estan incompletos");
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            nombreSala.Text = "";
+            contrasenia.Password = "";
+        }
+
+        private bool CamposCompletos()
+        {
+            return (nombreSala.Text.Trim() != "" && contrasenia.Password.Trim() != "");
         }
 
         private void Cancelar(object sender, RoutedEventArgs e)
