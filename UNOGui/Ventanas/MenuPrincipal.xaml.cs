@@ -31,26 +31,34 @@ namespace UNOGui.Ventanas
 
         private void IrAUnirseASala(object sender, RoutedEventArgs e)
         {
-            UnirseASala unirseSala = new UnirseASala();
-            unirseSala.Show();
-
-            this.Close();
+            if (frameNavegacion.Content.GetType() != typeof(Paginas.UnirseASala))
+            {
+                frameNavegacion.Navigate(new Paginas.UnirseASala());
+            }
         }
 
         private void IrACrearSala(object sender, RoutedEventArgs e)
         {
-            CreacionDeSala nuevasala = new CreacionDeSala();
-            nuevasala.Show();
-
-            this.Close();
+            if (frameNavegacion.Content.GetType() != typeof(Paginas.CreacionDeSala))
+            {
+                frameNavegacion.Navigate(new Paginas.CreacionDeSala());
+            }
         }
 
         private void IrAMiPerfil(object sender, RoutedEventArgs e)
         {
-            MiPerfil perfil = new MiPerfil();
-            perfil.Show();
+            if (frameNavegacion.Content.GetType() != typeof(Paginas.MiPerfil))
+            {
+                frameNavegacion.Navigate(new Paginas.MiPerfil());
+            }
+        }
 
-            this.Close();
+        private void IrAInicio(object sender, RoutedEventArgs e)
+        {
+            if (frameNavegacion.Content.GetType() != typeof(Paginas.Inicio))
+            {
+                frameNavegacion.Navigate(new Paginas.Inicio());
+            }
         }
     }
 }

@@ -33,13 +33,6 @@ namespace UNOGui.Paginas
 
         private void IrAVerificarCodigo(object sender, RoutedEventArgs e)
         {
-            /*
-             VerificarCodigo verificacionDeCodigo = new VerificarCodigo();
-            verificacionDeCodigo.Show();
-
-            this.Close();
-             */
-
             NavigationService.Navigate(new VerificarCodigo());
         }
 
