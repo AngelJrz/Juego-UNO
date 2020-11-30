@@ -30,7 +30,6 @@ namespace UNOGui.Logica
                     DataContext = jugadorActual
                 };
 
-                Console.WriteLine(jugadorActual.Nickname);
                 menuPrincipal.Show();
 
                 ventanaPrincipal.Close();

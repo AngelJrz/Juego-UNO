@@ -22,7 +22,7 @@ namespace UNOGui.Ventanas
     public partial class CreacionDeSala : Window
     {
         private List<int> jugadores;
-        public CreacionDeSala()
+        public CreacionDeSala(Jugador jugador)
         {
             InitializeComponent();
             jugadores = new List<int>
@@ -30,6 +30,7 @@ namespace UNOGui.Ventanas
                 2,3,4,5
             };
             numeroDeJugadores.ItemsSource = jugadores;
+            this.DataContext = jugador;
         }
 
         private void Cancelar(object sender, RoutedEventArgs e)
@@ -51,10 +52,7 @@ namespace UNOGui.Ventanas
                     JugadoresEnSala = new Dictionary<object, Jugador>()
                 };
 
-                Jugador jugador = new Jugador
-                {
-                    Nickname = "AngelJuarez"
-                };
+                Jugador jugador = DataContext as Jugador;
 
                 SalaAdmin.CrearSala(nuevaSala, jugador);
             }
