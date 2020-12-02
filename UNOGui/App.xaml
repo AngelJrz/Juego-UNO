@@ -106,5 +106,21 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="Gold"/>
         </Style>
+
+        <Style x:Key="Menu" TargetType="Grid">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Direction="300" ShadowDepth="3" BlurRadius="10" Opacity="0.5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Avatar" TargetType="Ellipse">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Direction="300" ShadowDepth="3" BlurRadius="10" Opacity="0.5"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

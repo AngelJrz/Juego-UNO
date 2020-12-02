@@ -6,14 +6,47 @@
         xmlns:local="clr-namespace:UNOGui.Ventanas"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MenuPrincipal" Height="500" Width="800">
+        ResizeMode="CanMinimize"
+        Title="Inicio" Height="600" Width="800" Icon="/Imagenes/logo.png">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <Image Source="/Imagenes/imagenMenuPrincipal.jpg" Margin="-104,-28,-221,-26"/>
-        <Button Content="Mi perfil" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="27,142,0,0" VerticalAlignment="Top" Width="137" Click="IrAMiPerfil"/>
-        <Button Content="Cear Sala" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="27,90,0,0" VerticalAlignment="Top" Width="137" Click="IrACrearSala"/>
-        <Button Content="Unirse a sala" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="27,38,0,0" VerticalAlignment="Top" Width="137" Click="IrAUnirseASala"/>
-        <Button Content="Cerrar sesión" Style="{StaticResource Button}" HorizontalAlignment="Left" Margin="639,38,0,0" VerticalAlignment="Top" Width="121" Click="CerrarSecion"/>
+        <Grid Style="{StaticResource Menu}" Background="Red" Grid.Column="0" Panel.ZIndex="1">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="130"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Ellipse Width="100" Height="100" Style="{StaticResource Avatar}">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock Foreground="Gold" Style="{StaticResource TextoContenido}">
+                    <Run Text="Hola, "/>
+                    <Run Text="{Binding Nickname}"/>
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <Button Content="Inicio" Style="{StaticResource Button}" Width="137" Margin="10" Click="IrAInicio"/>
+                <Button Content="Mi perfil" Style="{StaticResource Button}" Width="137" Click="IrAMiPerfil" Margin="10"/>
+                <Button Content="Cear Sala" Style="{StaticResource Button}" Width="137" Click="IrACrearSala" Margin="10"/>
+                <Button Content="Unirse a sala" Style="{StaticResource Button}" Width="137" Click="IrAUnirseASala" Margin="10"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" VerticalAlignment="Center">
+                <Button Content="Cerrar sesión" Style="{StaticResource Button}" Width="137" Click="CerrarSecion"/>
+            </StackPanel>
+        </Grid>
+
+        <Frame Grid.Column="1" NavigationUIVisibility="Hidden" x:Name="frameNavegacion" Source="/Paginas/Inicio.xaml"/>
 
     </Grid>
 </Window>

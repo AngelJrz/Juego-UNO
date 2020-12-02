@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNOGui.Ventanas"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="RegresarMenuPrincipal"
         Title="Lobby" Height="300" Width="400">
     <Grid Background="red">
         <Grid.RowDefinitions>

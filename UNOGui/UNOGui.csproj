@@ -70,14 +70,26 @@
     <Compile Include="Logica\LoginCallbackAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorCallback.cs" />
+    <Compile Include="Paginas\CreacionDeSala.xaml.cs">
+      <DependentUpon>CreacionDeSala.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Inicio.xaml.cs">
+      <DependentUpon>Inicio.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\MiPerfil.xaml.cs">
+      <DependentUpon>MiPerfil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\RegistrarCuenta.xaml.cs">
       <DependentUpon>RegistrarCuenta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\RegistroEnEspera.xaml.cs">
       <DependentUpon>RegistroEnEspera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\UnirseASala.xaml.cs">
+      <DependentUpon>UnirseASala.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\VerificarCodigo.xaml.cs">
       <DependentUpon>VerificarCodigo.xaml</DependentUpon>
@@ -92,9 +104,6 @@
     </Compile>
     <Compile Include="Ventanas\MenuPrincipal.xaml.cs">
       <DependentUpon>MenuPrincipal.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Ventanas\MiPerfil.xaml.cs">
-      <DependentUpon>MiPerfil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Principal.xaml.cs">
       <DependentUpon>Principal.xaml</DependentUpon>
@@ -158,11 +167,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Paginas\CreacionDeSala.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Inicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Paginas\MiPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\RegistrarCuenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\UnirseASala.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,10 +208,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\MenuPrincipal.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Ventanas\MiPerfil.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

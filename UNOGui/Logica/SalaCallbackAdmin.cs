@@ -9,6 +9,8 @@ namespace UNOGui.Logica
 {
     public class SalaCallbackAdmin : IAdministrarSalaCallback
     {
+        private readonly MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
+
         public void ActualizarSala(string[] jugadores)
         {
             ObservableCollection<string> jugadoresEnSala = new ObservableCollection<string>(jugadores);
@@ -25,8 +27,7 @@ namespace UNOGui.Logica
             };
 
             lobby.Show();
-            var ventanaRegistro = Application.Current.Windows.OfType<CreacionDeSala>().SingleOrDefault();
-            ventanaRegistro.Close();
+            menuPrincipal.Hide();
         }
 
         public void NotificarUnionASala(ResultadoUnionSala resultado)
@@ -45,8 +46,10 @@ namespace UNOGui.Logica
                 case ResultadoUnionSala.UnionExitosa:
                     Lobby lobby = new Lobby();
                     lobby.Show();
+                    /*
                     var ventanaUnion = Application.Current.Windows.OfType<UnirseASala>().SingleOrDefault();
-                    ventanaUnion.Close();
+                    ventanaUnion.Close();*/
+                    menuPrincipal.Hide();
                     break;
                 default: break;
             }

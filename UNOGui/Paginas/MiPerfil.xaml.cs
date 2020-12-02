@@ -10,25 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UNOGui.Ventanas
+namespace UNOGui.Paginas
 {
     /// <summary>
     /// Lógica de interacción para MiPerfil.xaml
     /// </summary>
-    public partial class MiPerfil : Window
+    public partial class MiPerfil : Page
     {
         public MiPerfil()
         {
             InitializeComponent();
-        }
-
-        private void Atras(object sender, RoutedEventArgs e)
-        {
-            MenuPrincipal menu = new MenuPrincipal();
-            menu.Show();
-            this.Close();
         }
     }
 }
