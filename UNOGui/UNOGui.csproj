@@ -70,6 +70,9 @@
     <Compile Include="Logica\LoginCallbackAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorCallback.cs" />
+    <Compile Include="Paginas\IngresoDeCorreo.xaml.cs">
+      <DependentUpon>IngresoDeCorreo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -158,6 +161,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Paginas\IngresoDeCorreo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

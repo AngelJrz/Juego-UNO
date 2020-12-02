@@ -40,7 +40,7 @@ namespace UNOGui.Paginas
             this.Close();
              */
 
-            NavigationService.Navigate(new VerificarCodigo());
+            NavigationService.Navigate(new IngresoDeCorreo());
         }
 
         private void IniciarSesionBoton(object sender, RoutedEventArgs e)
