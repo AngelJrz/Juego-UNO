@@ -58,10 +58,5 @@ namespace UNOGui.Paginas
         {
             return (nombreSala.Text.Trim() != "" && contrasenia.Password.Trim() != "");
         }
-
-        private void Cancelar(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

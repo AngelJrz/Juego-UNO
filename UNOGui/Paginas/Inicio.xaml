@@ -17,14 +17,38 @@
         <StackPanel>
             <TextBlock Text="Tabla de puntuaciones" Style="{StaticResource TituloStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10"/>
 
-            <ListView Height="300" Width="300" VerticalAlignment="Top" Margin="10" Background="Transparent" BorderBrush="Transparent">
-                <ListViewItem>
-                    <TextBlock Text="NIckname 1"/>
-                </ListViewItem>
+            <ListView Height="400" Width="220" VerticalAlignment="Top" Margin="10" 
+                      Background="Transparent" BorderBrush="Transparent" 
+                      Name="tablaPuntaciones" IsHitTestVisible="False" 
+                      AlternationCount="{Binding Count}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="#0058EA" CornerRadius="10" Padding="10" Width="200">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
-                <ListViewItem>
-                    <TextBlock Text="NIckname 2"/>
-                </ListViewItem>
+                                <TextBlock Grid.Column="0" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplatedParent.(ItemsControl.AlternationIndex)}" FontSize="25" Foreground="Gold" FontWeight="Bold"/>
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="{Binding}" Foreground="Gold" Style="{StaticResource TextoContenido}"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource TextoContenido}">
+                                            <Run Text="Puntaje: "/>
+                                            <Run Text="10" FontWeight="Bold"/>
+                                        </TextBlock>
+                                        <TextBlock Margin="10,0" Style="{StaticResource TextoContenido}">
+                                            <Run Text="Nivel: "/>
+                                            <Run Text="3" FontWeight="Bold"/>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </StackPanel>
 

@@ -73,10 +73,5 @@ namespace UNOGui.Paginas
             contrasenia.Password = "";
             numeroDeJugadores.SelectedItem = null;
         }
-
-        private void Cancelar(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
