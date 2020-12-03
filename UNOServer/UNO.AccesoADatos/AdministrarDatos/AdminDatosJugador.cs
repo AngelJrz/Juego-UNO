@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -102,6 +103,23 @@ namespace UNO.AccesoADatos.AdministrarDatos
                 throw new DbUpdateException("Error al agregar nuevo jugador");
             }
             
+        }
+
+        public void ActualizarContrasenia(Dominio.Jugador jugadorActualizado, string contrasenia)
+        {
+            var jugadorBuscado = baseDeDatos.Jugador.Where(jugador => jugador.CorreoElectronico.Equals(jugadorActualizado.CorreoElectronico)).FirstOrDefault<Jugador>();
+
+            jugadorBuscado.Contraseña = AdministradorHash.GenerarHash(contrasenia);
+
+            try
+            {
+                baseDeDatos.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                throw new DbUpdateException("Error al agregar nuevo jugador");
+            }
+
         }
     }
 }

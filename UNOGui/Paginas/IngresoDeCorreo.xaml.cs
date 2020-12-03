@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UNOGui.JuegoUNOServicio;
+using UNOGui.Logica;
 
 namespace UNOGui.Paginas
 {
@@ -35,7 +37,12 @@ namespace UNOGui.Paginas
         {
             if (CamposCompletos() && CorreoValido())
             {
-                NavigationService.Navigate(new VerificarCodigo());
+                Jugador usuario = new Jugador()
+                {
+                    CorreoElectronico = correoIngresado.Text.Trim()
+                };
+
+                RecuperarCuentaAdmin.EnviarClave(usuario);
             }
         }
 

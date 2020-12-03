@@ -576,4 +576,93 @@ namespace UNOGui.JuegoUNOServicio {
             return base.Channel.SalirDeSalaAsync(idSala);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicio.IRecuperarCuenta", CallbackContract=typeof(UNOGui.JuegoUNOServicio.IRecuperarCuentaCallback))]
+    public interface IRecuperarCuenta {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRecuperarCuenta/VerificarClaveRecuperacion")]
+        void VerificarClaveRecuperacion(string clave);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRecuperarCuenta/VerificarClaveRecuperacion")]
+        System.Threading.Tasks.Task VerificarClaveRecuperacionAsync(string clave);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRecuperarCuenta/EnviarClaveRecuperacion")]
+        void EnviarClaveRecuperacion(UNOGui.JuegoUNOServicio.Jugador infoJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRecuperarCuenta/EnviarClaveRecuperacion")]
+        System.Threading.Tasks.Task EnviarClaveRecuperacionAsync(UNOGui.JuegoUNOServicio.Jugador infoJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRecuperarCuenta/ActualizarContrasenia")]
+        void ActualizarContrasenia(string contrasenia);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRecuperarCuenta/ActualizarContrasenia")]
+        System.Threading.Tasks.Task ActualizarContraseniaAsync(string contrasenia);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IRecuperarCuentaCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRecuperarCuenta/NotificarEnvioClave")]
+        void NotificarEnvioClave(bool resultado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRecuperarCuenta/NotificarResultadoVerificación")]
+        void NotificarResultadoVerificación(bool resultado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRecuperarCuenta/NotificarResultadoRecuperacion")]
+        void NotificarResultadoRecuperacion(bool recuperada);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IRecuperarCuentaChannel : UNOGui.JuegoUNOServicio.IRecuperarCuenta, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class RecuperarCuentaClient : System.ServiceModel.DuplexClientBase<UNOGui.JuegoUNOServicio.IRecuperarCuenta>, UNOGui.JuegoUNOServicio.IRecuperarCuenta {
+        
+        public RecuperarCuentaClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public RecuperarCuentaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public RecuperarCuentaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RecuperarCuentaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RecuperarCuentaClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void VerificarClaveRecuperacion(string clave) {
+            base.Channel.VerificarClaveRecuperacion(clave);
+        }
+        
+        public System.Threading.Tasks.Task VerificarClaveRecuperacionAsync(string clave) {
+            return base.Channel.VerificarClaveRecuperacionAsync(clave);
+        }
+        
+        public void EnviarClaveRecuperacion(UNOGui.JuegoUNOServicio.Jugador infoJugador) {
+            base.Channel.EnviarClaveRecuperacion(infoJugador);
+        }
+        
+        public System.Threading.Tasks.Task EnviarClaveRecuperacionAsync(UNOGui.JuegoUNOServicio.Jugador infoJugador) {
+            return base.Channel.EnviarClaveRecuperacionAsync(infoJugador);
+        }
+        
+        public void ActualizarContrasenia(string contrasenia) {
+            base.Channel.ActualizarContrasenia(contrasenia);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarContraseniaAsync(string contrasenia) {
+            return base.Channel.ActualizarContraseniaAsync(contrasenia);
+        }
+    }
 }

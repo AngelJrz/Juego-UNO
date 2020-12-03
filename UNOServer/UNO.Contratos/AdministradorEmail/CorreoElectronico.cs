@@ -1,6 +1,7 @@
 ﻿using System.Net.Mail;
 using System.Net;
 using UNO.Dominio;
+using UNO.Contratos.AdministrarJugador;
 
 namespace UNO.Contratos.AdministradorEmail
 {
@@ -39,6 +40,27 @@ namespace UNO.Contratos.AdministradorEmail
             mensaje.Body = $"<h1>¡Hola, {jugadorDestino.Nickname}!</h1>" +
                 "<h2>¡Este es el último paso para registrar tu cuenta!</h2> " +
                 $"<h3>Ingresa la siguiente clave en la ventana de verificación: <code>{jugadorDestino.ClaveValidacion}</code></h3>";
+            mensaje.From = remitente;
+
+            try
+            {
+                cliente.Send(mensaje);
+            }
+            catch (SmtpException)
+            {
+                throw new SmtpException("Error al enviar el correo.");
+            }
+        }
+
+        public void EnviarClaveRecuperacion(string correoDestino, string claveValidacion)
+        {
+            MailMessage mensaje = new MailMessage();
+            mensaje.To.Add(correoDestino);
+            mensaje.Subject = "Cambio de contraseña";
+            mensaje.IsBodyHtml = true;
+            mensaje.Body = $"<h1>¡Hola, Recupera tu cuenta!</h1>" +
+                "<h2>¡Este es el último paso para recuperar tu cuenta!</h2> " +
+                $"<h3>Ingresa la siguiente clave en la ventana de verificación: <code>{claveValidacion}</code></h3>";
             mensaje.From = remitente;
 
             try

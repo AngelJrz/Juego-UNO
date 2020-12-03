@@ -11,6 +11,12 @@ namespace UNO.Contratos.AdministrarJugador
     public interface IRecuperarCuentaCallback
     {
         [OperationContract(IsOneWay = true)]
-        void RegistrarJugador();
+        void NotificarEnvioClave(bool resultado);
+
+        [OperationContract(IsOneWay = true)]
+        void NotificarResultadoVerificación(bool resultado);
+
+        [OperationContract(IsOneWay = true)]
+        void NotificarResultadoRecuperacion(bool recuperada);
     }
 }

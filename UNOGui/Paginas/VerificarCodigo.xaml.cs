@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UNOGui.Logica;
 
 namespace UNOGui.Paginas
 {
@@ -29,12 +30,7 @@ namespace UNOGui.Paginas
         {
             if (CamposCompletos())
             {
-                /*
-                RecuperacionCuenta recuperacionDeCuenta = new RecuperacionCuenta();
-                recuperacionDeCuenta.Show();
-
-                this.Close();
-                */
+                RecuperarCuentaAdmin.VerificarClave(codigoIngresado.Text.Trim());
             }
             else
             {
@@ -44,7 +40,7 @@ namespace UNOGui.Paginas
 
         private void Cancelar(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new Login());
         }
 
         private bool CamposCompletos()

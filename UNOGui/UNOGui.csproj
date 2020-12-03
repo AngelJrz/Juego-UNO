@@ -68,6 +68,8 @@
     </Compile>
     <Compile Include="Logica\LoginAdmin.cs" />
     <Compile Include="Logica\LoginCallbackAdmin.cs" />
+    <Compile Include="Logica\RecuperarCuentaAdmin.cs" />
+    <Compile Include="Logica\RecuperarCuentaCallback.cs" />
     <Compile Include="Logica\RegistroJugadorAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorCallback.cs" />
     <Compile Include="Paginas\IngresoDeCorreo.xaml.cs">
@@ -75,6 +77,9 @@
     </Compile>
     <Compile Include="Paginas\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\RecuperacionCuenta.xaml.cs">
+      <DependentUpon>RecuperacionCuenta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\RegistrarCuenta.xaml.cs">
       <DependentUpon>RegistrarCuenta.xaml</DependentUpon>
@@ -166,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\RecuperacionCuenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
