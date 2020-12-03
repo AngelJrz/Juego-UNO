@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UNOGui.JuegoUNOServicio;
+using UNOGui.Logica;
 
 namespace UNOGui.Ventanas
 {
@@ -21,6 +24,11 @@ namespace UNOGui.Ventanas
     {
         private readonly MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
 
+        /// <summary>
+        /// Obtiene o establece los jugadores que están en la sala.
+        /// </summary>
+        public ObservableCollection<Jugador> Jugadores { get; set; }
+
         public Lobby()
         {
             InitializeComponent();
@@ -28,14 +36,24 @@ namespace UNOGui.Ventanas
 
         private void SalirDeSala(object sender, RoutedEventArgs e)
         {
-            menuPrincipal.Show();
+            string idSala = idSalaActual.Text;
 
-            this.Close();
+            SalaAdmin.SalirDeSala(idSala);
         }
 
         private void RegresarMenuPrincipal(object sender, System.ComponentModel.CancelEventArgs e)
         {
             menuPrincipal.Show();
+        }
+
+        /// <summary>
+        /// Configura la sala para que el creador de la sala pueda iniciar la partida.
+        /// </summary>
+        public void ConfigurarSalaParaHost()
+        {
+            mensajeParaInvitado.Visibility = Visibility.Collapsed;
+            mensajeParaHost.Visibility = Visibility.Visible;
+            iniciarPartidaBoton.Visibility = Visibility.Visible;
         }
     }
 }

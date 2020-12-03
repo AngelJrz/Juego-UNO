@@ -30,5 +30,14 @@ namespace UNOGui.Logica
         {
             servidor.CrearSala(nuevaSala, jugador);
         }
+
+        /// <summary>
+        /// Saca al Jugador de la sala.
+        /// </summary>
+        /// <param name="idSala">Id de la sala</param>
+        public static void SalirDeSala(string idSala)
+        {
+            servidor.SalirDeSala(idSala);
+        }
     }
 }
