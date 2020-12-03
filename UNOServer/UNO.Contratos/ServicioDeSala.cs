@@ -21,46 +21,109 @@ namespace UNO.Contratos
 
             salasCreadas.Add(nuevaSala);
             calbackActual.NotificarCreacionDeSala(nuevaSala);
-            NotificarNuevoJugador(nuevaSala);
         }
 
         public void SalirDeSala(string idSala)
         {
-            throw new NotImplementedException();
+            var salaActual = salasCreadas.Find(sala => sala.Id.Equals(idSala));
+
+            if (salaActual != null)
+            {
+                ISalaCallback callbackActual = SalaCallbackActual;
+
+                salaActual.JugadoresEnSala.TryGetValue(callbackActual, out Dominio.Jugador jugadorASacar);
+
+                if (EsCreadorDeLaSala(salaActual, jugadorASacar))
+                {
+                    callbackActual.EliminarCreador();
+                    salaActual.JugadoresEnSala.Remove(callbackActual);
+                    EliminarSala(salaActual);
+                }
+                else
+                {
+                    callbackActual.NotificarSalidaDeSala();
+                    salaActual.JugadoresEnSala.Remove(callbackActual);
+                    NotificarJugadorEliminado(salaActual, jugadorASacar);
+                }
+            }
+        }
+
+        private void NotificarJugadorEliminado(Sala salaActual, Dominio.Jugador jugadorASacar)
+        {
+            foreach (var jugador in salaActual.JugadoresEnSala)
+            {
+                jugador.Key.SacarJugador(jugadorASacar);
+            }
+        }
+
+        private void EliminarSala(Sala salaActual)
+        {
+            if (salaActual.JugadoresEnSala.Count > 0)
+            {
+                foreach (var jugador in salaActual.JugadoresEnSala)
+                {
+                    jugador.Key.NotificarEliminacionDeSala();
+                }
+
+                salaActual.JugadoresEnSala.Clear();
+            }
+            
+            salasCreadas.Remove(salaActual);
+        }
+
+        private bool EsCreadorDeLaSala(Sala sala, Dominio.Jugador jugador)
+        {
+            bool esCreador = false;
+
+            if (sala.CreadaPor.Equals(jugador.Nickname))
+            {
+                esCreador = true;
+            }
+
+            return esCreador;
         }
 
         public void UnirseASala(Sala salaAUnirse, Dominio.Jugador jugador)
         {
             ResultadoUnionSala resultadoUnionSala = ResultadoUnionSala.NoExisteId;
-            ISalaCallback calbackActual = SalaCallbackActual;
+            ISalaCallback callbackActual = SalaCallbackActual;
 
-            foreach (var sala in salasCreadas)
+            var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(salaAUnirse.Id));
+
+            if (salaBuscada != null)
             {
-                if (sala.Id.Equals(salaAUnirse.Id))
+                if (salaBuscada.Contraseña.Equals(salaAUnirse.Contraseña))
                 {
-                    if (sala.Contraseña.Equals(salaAUnirse.Contraseña))
+                    if (HayCupoEnSala(salaBuscada))
                     {
-                        if (HayCupoEnSala(sala))
-                        {
-                            resultadoUnionSala = ResultadoUnionSala.UnionExitosa;
-                            sala.JugadoresEnSala.Add(calbackActual, jugador);
-                            salaAUnirse = sala;
-                            break;
-                        }
-                        else
-                        {
-                            resultadoUnionSala = ResultadoUnionSala.NoHayCupo;
-                        }
+                        resultadoUnionSala = ResultadoUnionSala.UnionExitosa;
                     }
                     else
                     {
-                        resultadoUnionSala = ResultadoUnionSala.ContraseñaIncorrecta;
+                        resultadoUnionSala = ResultadoUnionSala.NoHayCupo;
                     }
+                }
+                else
+                {
+                    resultadoUnionSala = ResultadoUnionSala.ContraseñaIncorrecta;
                 }
             }
 
-            calbackActual.NotificarUnionASala(resultadoUnionSala);
-            NotificarNuevoJugador(salaAUnirse);
+            callbackActual.NotificarUnionASala(resultadoUnionSala);
+            if (resultadoUnionSala == ResultadoUnionSala.UnionExitosa)
+            {
+                callbackActual.ObtenerInformacionDeSala(salaBuscada);
+                salaBuscada.JugadoresEnSala.Add(callbackActual, jugador);
+                AgregarNuevoJugadorEnSala(salaBuscada, jugador);
+            }
+        }
+
+        private void AgregarNuevoJugadorEnSala(Sala sala, Dominio.Jugador nuevoJugador)
+        {
+            foreach (var jugador in sala.JugadoresEnSala)
+            {
+                jugador.Key.AgregarNuevoJugador(nuevoJugador);
+            }
         }
 
         private bool HayCupoEnSala(Sala sala)
@@ -82,21 +145,6 @@ namespace UNO.Contratos
             string idSala = random.Next(10000, 99999).ToString();
 
             return idSala;
-        }
-
-        private void NotificarNuevoJugador(Sala salaActual)
-        {
-            List<string> nombres = new List<string>();
-
-            foreach (var jugadores in salaActual.JugadoresEnSala.Values)
-            {
-                nombres.Add(jugadores.Nickname);
-            }
-
-            foreach (var jugador in salaActual.JugadoresEnSala)
-            {
-                jugador.Key.ActualizarSala(nombres);
-            }
         }
 
         private ISalaCallback SalaCallbackActual

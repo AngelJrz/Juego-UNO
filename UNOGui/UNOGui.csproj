@@ -96,9 +96,6 @@
     </Compile>
     <Compile Include="Logica\SalaAdmin.cs" />
     <Compile Include="Logica\SalaCallbackAdmin.cs" />
-    <Compile Include="Ventanas\CreacionDeSala.xaml.cs">
-      <DependentUpon>CreacionDeSala.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Ventanas\Lobby.xaml.cs">
       <DependentUpon>Lobby.xaml</DependentUpon>
     </Compile>
@@ -110,9 +107,6 @@
     </Compile>
     <Compile Include="Ventanas\RecuperacionCuenta.xaml.cs">
       <DependentUpon>RecuperacionCuenta.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Ventanas\UnirseASala.xaml.cs">
-      <DependentUpon>UnirseASala.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\VerificarCodigo.xaml.cs">
       <DependentUpon>VerificarCodigo.xaml</DependentUpon>
@@ -203,10 +197,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Ventanas\CreacionDeSala.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Ventanas\MenuPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,10 +206,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\RecuperacionCuenta.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Ventanas\UnirseASala.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

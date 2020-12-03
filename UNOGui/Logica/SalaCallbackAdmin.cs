@@ -19,6 +19,17 @@ namespace UNOGui.Logica
             lobbyActual.jugadoresEnSala.ItemsSource = jugadoresEnSala;
         }
 
+        public void AgregarNuevoJugador(Jugador nuevoJugador)
+        {
+            var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
+            lobby.Jugadores.Add(nuevoJugador);
+        }
+
+        public void EliminarCreador()
+        {
+            CerrarSala();
+        }
+
         public void NotificarCreacionDeSala(Sala salaCreada)
         {
             Lobby lobby = new Lobby
@@ -26,8 +37,23 @@ namespace UNOGui.Logica
                 DataContext = salaCreada
             };
 
+            lobby.Jugadores = new ObservableCollection<Jugador>(salaCreada.JugadoresEnSala.Values);
+            lobby.jugadoresEnSala.ItemsSource = lobby.Jugadores;
+            lobby.ConfigurarSalaParaHost();
             lobby.Show();
             menuPrincipal.Hide();
+        }
+
+        public void NotificarEliminacionDeSala()
+        {
+            MessageBox.Show("El host eliminó la sala. Unete a otra sala.", "Advertencia", MessageBoxButton.OK);
+
+            CerrarSala();
+        }
+
+        public void NotificarSalidaDeSala()
+        {
+            CerrarSala();
         }
 
         public void NotificarUnionASala(ResultadoUnionSala resultado)
@@ -46,13 +72,34 @@ namespace UNOGui.Logica
                 case ResultadoUnionSala.UnionExitosa:
                     Lobby lobby = new Lobby();
                     lobby.Show();
-                    /*
-                    var ventanaUnion = Application.Current.Windows.OfType<UnirseASala>().SingleOrDefault();
-                    ventanaUnion.Close();*/
                     menuPrincipal.Hide();
                     break;
                 default: break;
             }
+        }
+
+        public void ObtenerInformacionDeSala(Sala sala)
+        {
+            var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
+            lobby.DataContext = sala;
+            lobby.Jugadores = new ObservableCollection<Jugador>(sala.JugadoresEnSala.Values);
+            lobby.jugadoresEnSala.ItemsSource = lobby.Jugadores;
+        }
+
+        public void SacarJugador(Jugador jugadorASacar)
+        {
+            var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
+
+            var jugador = lobby.Jugadores.Single(jugadorAux => jugadorAux.Nickname.Equals(jugadorASacar.Nickname));
+            lobby.Jugadores.Remove(jugador);
+        }
+
+        private void CerrarSala()
+        {
+            var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
+            lobby.Close();
+
+            menuPrincipal.Show();
         }
     }
 }

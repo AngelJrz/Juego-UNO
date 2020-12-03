@@ -230,6 +230,9 @@ namespace UNOGui.JuegoUNOServicio {
         private string ContraseñaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreadaPorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -257,6 +260,19 @@ namespace UNOGui.JuegoUNOServicio {
                 if ((object.ReferenceEquals(this.ContraseñaField, value) != true)) {
                     this.ContraseñaField = value;
                     this.RaisePropertyChanged("Contraseña");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CreadaPor {
+            get {
+                return this.CreadaPorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreadaPorField, value) != true)) {
+                    this.CreadaPorField = value;
+                    this.RaisePropertyChanged("CreadaPor");
                 }
             }
         }
@@ -522,6 +538,24 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/ActualizarSala")]
         void ActualizarSala(string[] jugadores);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/ObtenerInformacionDeSala")]
+        void ObtenerInformacionDeSala(UNOGui.JuegoUNOServicio.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/AgregarNuevoJugador")]
+        void AgregarNuevoJugador(UNOGui.JuegoUNOServicio.Jugador nuevoJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/SacarJugador")]
+        void SacarJugador(UNOGui.JuegoUNOServicio.Jugador jugadorASacar);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/NotificarSalidaDeSala")]
+        void NotificarSalidaDeSala();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/NotificarEliminacionDeSala")]
+        void NotificarEliminacionDeSala();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/EliminarCreador")]
+        void EliminarCreador();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

@@ -39,14 +39,16 @@ namespace UNOGui.Paginas
         {
             if (CamposCompletos())
             {
+                var jugador = Window.GetWindow(this).DataContext as Jugador;
+
                 Sala nuevaSala = new Sala
                 {
                     Contraseña = contrasenia.Password,
                     NumeroTotalDeJugadores = ObtenerJugadores(),
+                    CreadaPor = jugador.Nickname,
                     JugadoresEnSala = new Dictionary<object, Jugador>()
                 };
 
-                var jugador = Window.GetWindow(this).DataContext as Jugador;
                 SalaAdmin.CrearSala(nuevaSala, jugador);
                 LimpiarCampos();
             }
