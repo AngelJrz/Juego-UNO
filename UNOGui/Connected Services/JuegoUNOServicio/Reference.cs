@@ -465,6 +465,9 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/NotificarResultadoLogin")]
         void NotificarResultadoLogin(UNOGui.JuegoUNOServicio.ResultadoLogin resultado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/ObtenerJugadoresTop")]
+        void ObtenerJugadoresTop(UNOGui.JuegoUNOServicio.Jugador[] jugadoresTop);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

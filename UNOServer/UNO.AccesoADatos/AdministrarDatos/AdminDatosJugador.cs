@@ -103,5 +103,32 @@ namespace UNO.AccesoADatos.AdministrarDatos
             }
             
         }
+
+        /// <summary>
+        /// Obtiene los mejores 5 Jugadores del juego, de acuerdo con su puntaje total.
+        /// </summary>
+        /// <returns>Una lista de los jugadores</returns>
+        public List<Dominio.Jugador> ObtenerMejoresJugadores()
+        {
+            List<Dominio.Jugador> mejoresJugadores = new List<Dominio.Jugador>();
+
+            var jugadoresConsultados = baseDeDatos.Jugador
+                .AsNoTracking()
+                .OrderByDescending(jugador => jugador.PuntajeTotal).Take(5);
+
+            foreach (var jugador in jugadoresConsultados)
+            {
+                mejoresJugadores.Add(
+                    new Dominio.Jugador 
+                    { 
+                        Nickname = jugador.Nickname,
+                        PuntajeTotal = (int)jugador.PuntajeTotal,
+                        Nivel = jugador.Nivel
+                    }
+                );
+            }
+
+            return mejoresJugadores;
+        }
     }
 }

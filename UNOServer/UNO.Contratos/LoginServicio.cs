@@ -38,6 +38,13 @@ namespace UNO.Contratos
             }
 
             LoginCallback.NotificarResultadoLogin(resultadoLogin);
+
+            if (resultadoLogin == ResultadoLogin.ExisteJugador)
+            {
+                List<Dominio.Jugador> jugadoresTop = adminDatosJugador.ObtenerMejoresJugadores();
+
+                LoginCallback.ObtenerJugadoresTop(jugadoresTop);
+            }
         }
 
         private ILoginCallback LoginCallback

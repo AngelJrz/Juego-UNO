@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using UNOGui.Logica;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Paginas
 {
@@ -43,11 +34,27 @@ namespace UNOGui.Paginas
                 string nickname = usuarioTextbox.Text.Trim();
                 string contraseña = contraseñaTextbox.Password.Trim();
 
-                LoginAdmin.IniciarSesion(nickname, contraseña);
+                try
+                {
+                    LoginAdmin.IniciarSesion(nickname, contraseña);
+                }
+                catch (EndpointNotFoundException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = "Ups!",
+                        Contenido = "Lo sentimos, ocurrió un error en el servidor. Intente más tarde."
+                    }.ShowDialog();
+                }
             }
             else
             {
-                MessageBox.Show("Campos Vacios");
+                new Mensaje
+                {
+                    Title = "Campos vacíos",
+                    TituloMensaje = "Campos vacíos",
+                    Contenido = "Por favor ingresa tu usuario y contraseña para iniciar sesión."
+                }.ShowDialog();
             }
         }
 
