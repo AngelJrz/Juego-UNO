@@ -24,7 +24,14 @@ namespace UNOGui.Logica
             InstanceContext contexto = new InstanceContext(new LoginCallbackAdmin());
             LoginClient servidor = new LoginClient(contexto);
 
-            servidor.IniciarSesion(nickname, contraseña);
+            try
+            {
+                servidor.IniciarSesion(nickname, contraseña);
+            }
+            catch (EndpointNotFoundException)
+            {
+                throw;
+            }
         }
     }
 }

@@ -19,7 +19,7 @@
             <Image Source="/Imagenes/logo.png" Width="200"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" >
+        <StackPanel Grid.Row="1" VerticalAlignment="Center"  FocusManager.FocusedElement="{Binding ElementName=usuarioTextbox}">
             <Label Content="Usuario:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
             <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="usuarioTextbox"/>
 

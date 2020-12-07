@@ -30,7 +30,7 @@
                 </Ellipse>
                 <TextBlock Foreground="Gold" Style="{StaticResource TextoContenido}">
                     <Run Text="Hola, "/>
-                    <Run Text="{Binding Nickname}"/>
+                    <Run Text="{Binding Nickname, UpdateSourceTrigger=PropertyChanged}"/>
                 </TextBlock>
             </StackPanel>
 
@@ -46,7 +46,8 @@
             </StackPanel>
         </Grid>
 
-        <Frame Grid.Column="1" NavigationUIVisibility="Hidden" x:Name="frameNavegacion" Source="/Paginas/Inicio.xaml"/>
+        <Frame Grid.Column="1" NavigationUIVisibility="Hidden" x:Name="frameNavegacion" 
+               />
 
     </Grid>
 </Window>

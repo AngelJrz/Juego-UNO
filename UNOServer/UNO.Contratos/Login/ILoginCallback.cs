@@ -20,5 +20,12 @@ namespace UNO.Contratos.Login
         /// <param name="resultado">Paramétro de tipo enumeración ResultadoLogin</param>
         [OperationContract(IsOneWay = true)]
         void NotificarResultadoLogin(ResultadoLogin resultado);
+
+        /// <summary>
+        /// Envía los Jugadores Top 5, con mayor puntaje.
+        /// </summary>
+        /// <param name="jugadoresTop">Lista de los Jugadores Top</param>
+        [OperationContract(IsOneWay = true)]
+        void ObtenerJugadoresTop(List<Dominio.Jugador> jugadoresTop);
     }
 }

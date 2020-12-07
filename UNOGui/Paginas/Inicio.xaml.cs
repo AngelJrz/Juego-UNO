@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+using System.Globalization;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace UNOGui.Paginas
 {
@@ -21,17 +10,28 @@ namespace UNOGui.Paginas
     /// </summary>
     public partial class Inicio : Page
     {
-        public ObservableCollection<string> Nombres { get; set; }
-
         public Inicio()
         {
             InitializeComponent();
+        }
+    }
 
-            Nombres = new ObservableCollection<string>
-            {
-                "angelJuarez", "SammyGCh", "locoXUno", "NicknameRandom123", "JugadorNumero1"
-            };
-            tablaPuntaciones.ItemsSource = Nombres;
+    /// <summary>
+    /// Lógica para obtener el index del elemento de una lista, utilizado en la tabla de puntuaciones.
+    /// </summary>
+    public class IndexConverter : IValueConverter
+    {
+        public object Convert(object value, Type TargetType, object parameter, CultureInfo culture)
+        {
+            var item = (ListViewItem)value;
+            var listView = ItemsControl.ItemsControlFromItemContainer(item) as ListView;
+            int index = listView.ItemContainerGenerator.IndexFromContainer(item) + 1;
+            return index.ToString();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }

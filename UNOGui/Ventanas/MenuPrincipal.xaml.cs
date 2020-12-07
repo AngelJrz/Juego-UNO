@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using UNOGui.JuegoUNOServicio;
+using UNOGui.Paginas;
 
 namespace UNOGui.Ventanas
 {
@@ -20,60 +21,55 @@ namespace UNOGui.Ventanas
     /// </summary>
     public partial class MenuPrincipal : Window
     {
+        /// <summary>
+        /// Obtiene la pagina de inicio del menu principal
+        /// </summary>
+        public Inicio PaginaIncio { get; set; }
+
         public MenuPrincipal()
         {
             InitializeComponent();
+            PaginaIncio = new Inicio();
+            frameNavegacion.Content = PaginaIncio;
         }
 
         private void CerrarSecion(object sender, RoutedEventArgs e)
         {
+            Principal ventanaLogin = new Principal();
+
+            ventanaLogin.Show();
             this.Close();
         }
 
         private void IrAUnirseASala(object sender, RoutedEventArgs e)
         {
-            if (frameNavegacion.Content.GetType() != typeof(Paginas.UnirseASala))
+            if (frameNavegacion.Content.GetType() != typeof(UnirseASala))
             {
-                frameNavegacion.Navigate(new Paginas.UnirseASala());
+                frameNavegacion.Navigate(new UnirseASala());
             }
-
-            /*
-            UnirseASala unirseSala = new UnirseASala(this.DataContext as Jugador);
-
-            unirseSala.Show();
-
-            this.Close();
-            */
         }
 
         private void IrACrearSala(object sender, RoutedEventArgs e)
         {
-            if (frameNavegacion.Content.GetType() != typeof(Paginas.CreacionDeSala))
+            if (frameNavegacion.Content.GetType() != typeof(CreacionDeSala))
             {
-                frameNavegacion.Navigate(new Paginas.CreacionDeSala());
+                frameNavegacion.Navigate(new CreacionDeSala());
             }
-
-            /*
-            CreacionDeSala nuevasala = new CreacionDeSala(this.DataContext as Jugador);
-
-            nuevasala.Show();
-
-            this.Close();*/
         }
 
         private void IrAMiPerfil(object sender, RoutedEventArgs e)
         {
-            if (frameNavegacion.Content.GetType() != typeof(Paginas.MiPerfil))
+            if (frameNavegacion.Content.GetType() != typeof(MiPerfil))
             {
-                frameNavegacion.Navigate(new Paginas.MiPerfil());
+                frameNavegacion.Navigate(new MiPerfil());
             }
         }
 
         private void IrAInicio(object sender, RoutedEventArgs e)
         {
-            if (frameNavegacion.Content.GetType() != typeof(Paginas.Inicio))
+            if (frameNavegacion.Content.GetType() != typeof(Inicio))
             {
-                frameNavegacion.Navigate(new Paginas.Inicio());
+                frameNavegacion.Navigate(this.PaginaIncio);
             }
         }
     }

@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UNO.AccesoADatos.AdministrarDatos
 {
+    /// <summary>
+    /// Lógica para la administración de datos de un Jugador.
+    /// </summary>
     public class AdminDatosJugador
     {
         private readonly JuegoUNOContext baseDeDatos;
@@ -102,6 +102,33 @@ namespace UNO.AccesoADatos.AdministrarDatos
                 throw new DbUpdateException("Error al agregar nuevo jugador");
             }
             
+        }
+
+        /// <summary>
+        /// Obtiene los mejores 5 Jugadores del juego, de acuerdo con su puntaje total.
+        /// </summary>
+        /// <returns>Una lista de los jugadores</returns>
+        public List<Dominio.Jugador> ObtenerMejoresJugadores()
+        {
+            List<Dominio.Jugador> mejoresJugadores = new List<Dominio.Jugador>();
+
+            var jugadoresConsultados = baseDeDatos.Jugador
+                .AsNoTracking()
+                .OrderByDescending(jugador => jugador.PuntajeTotal).Take(5);
+
+            foreach (var jugador in jugadoresConsultados)
+            {
+                mejoresJugadores.Add(
+                    new Dominio.Jugador 
+                    { 
+                        Nickname = jugador.Nickname,
+                        PuntajeTotal = (int)jugador.PuntajeTotal,
+                        Nivel = jugador.Nivel
+                    }
+                );
+            }
+
+            return mejoresJugadores;
         }
     }
 }

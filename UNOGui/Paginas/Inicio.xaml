@@ -8,7 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Height="Auto" Width="Auto"
       WindowTitle="Inicio">
-
+    <Page.Resources>
+        <local:IndexConverter x:Key="IndexConverter"/>
+    </Page.Resources>
+    
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Imagenes/imagenMenuPrincipal.jpg" Stretch="UniformToFill" Opacity="0.8"/>
@@ -17,31 +20,31 @@
         <StackPanel>
             <TextBlock Text="Tabla de puntuaciones" Style="{StaticResource TituloStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10"/>
 
-            <ListView Height="400" Width="220" VerticalAlignment="Top" Margin="10" 
+            <ListView Height="400" Width="260" VerticalAlignment="Top" Margin="10" 
                       Background="Transparent" BorderBrush="Transparent" 
-                      Name="tablaPuntaciones" IsHitTestVisible="False" 
-                      AlternationCount="{Binding Count}">
+                      Name="TablaPuntaciones" IsHitTestVisible="False" 
+                      >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border Background="#0058EA" CornerRadius="10" Padding="10" Width="200">
+                        <Border Background="#0058EA" CornerRadius="10" Padding="10" Width="230">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="30"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Grid.Column="0" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplatedParent.(ItemsControl.AlternationIndex)}" FontSize="25" Foreground="Gold" FontWeight="Bold"/>
+                                <TextBlock Grid.Column="0" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}, Converter={StaticResource IndexConverter}}" FontSize="25" Foreground="Gold" FontWeight="Bold"/>
 
                                 <StackPanel Grid.Column="1">
-                                    <TextBlock Text="{Binding}" Foreground="Gold" Style="{StaticResource TextoContenido}"/>
+                                    <TextBlock Text="{Binding Nickname, UpdateSourceTrigger=LostFocus}" Foreground="Gold" Style="{StaticResource TextoContenido}"/>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Style="{StaticResource TextoContenido}">
                                             <Run Text="Puntaje: "/>
-                                            <Run Text="10" FontWeight="Bold"/>
+                                            <Run Text="{Binding PuntajeTotal}" FontWeight="Bold"/>
                                         </TextBlock>
                                         <TextBlock Margin="10,0" Style="{StaticResource TextoContenido}">
                                             <Run Text="Nivel: "/>
-                                            <Run Text="3" FontWeight="Bold"/>
+                                            <Run Text="{Binding Nivel}" FontWeight="Bold"/>
                                         </TextBlock>
                                     </StackPanel>
                                 </StackPanel>
