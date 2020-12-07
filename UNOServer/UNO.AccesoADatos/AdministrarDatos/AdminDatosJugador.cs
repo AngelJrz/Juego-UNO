@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UNO.AccesoADatos.AdministrarDatos
 {
+    /// <summary>
+    /// Lógica para la administración de datos de un Jugador.
+    /// </summary>
     public class AdminDatosJugador
     {
         private readonly JuegoUNOContext baseDeDatos;

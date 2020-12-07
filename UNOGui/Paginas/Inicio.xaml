@@ -8,6 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Height="Auto" Width="Auto"
       WindowTitle="Inicio">
+    <Page.Resources>
+        <local:IndexConverter x:Key="IndexConverter"/>
+    </Page.Resources>
     
     <Grid>
         <Grid.Background>
@@ -20,8 +23,7 @@
             <ListView Height="400" Width="260" VerticalAlignment="Top" Margin="10" 
                       Background="Transparent" BorderBrush="Transparent" 
                       Name="TablaPuntaciones" IsHitTestVisible="False" 
-                      AlternationCount="{Binding Count}"
-                      ItemsSource="{Binding Path=MejoresJugadores, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Page}, UpdateSourceTrigger=Explicit}">
+                      >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border Background="#0058EA" CornerRadius="10" Padding="10" Width="230">
@@ -31,7 +33,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Grid.Column="0" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplatedParent.(ItemsControl.AlternationIndex)}" FontSize="25" Foreground="Gold" FontWeight="Bold"/>
+                                <TextBlock Grid.Column="0" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}, Converter={StaticResource IndexConverter}}" FontSize="25" Foreground="Gold" FontWeight="Bold"/>
 
                                 <StackPanel Grid.Column="1">
                                     <TextBlock Text="{Binding Nickname, UpdateSourceTrigger=LostFocus}" Foreground="Gold" Style="{StaticResource TextoContenido}"/>
