@@ -613,4 +613,59 @@ namespace UNOGui.JuegoUNOServicio {
             return base.Channel.SalirDeSalaAsync(idSala);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicio.IPerfil", CallbackContract=typeof(UNOGui.JuegoUNOServicio.IPerfilCallback))]
+    public interface IPerfil {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPerfil/BuscarJugador")]
+        void BuscarJugador(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPerfil/BuscarJugador")]
+        System.Threading.Tasks.Task BuscarJugadorAsync(string nickname);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IPerfilCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPerfil/ObtenerInformacionJugador")]
+        void ObtenerInformacionJugador(UNOGui.JuegoUNOServicio.Jugador jugador);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IPerfilChannel : UNOGui.JuegoUNOServicio.IPerfil, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class PerfilClient : System.ServiceModel.DuplexClientBase<UNOGui.JuegoUNOServicio.IPerfil>, UNOGui.JuegoUNOServicio.IPerfil {
+        
+        public PerfilClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public PerfilClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public PerfilClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public PerfilClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public PerfilClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void BuscarJugador(string nickname) {
+            base.Channel.BuscarJugador(nickname);
+        }
+        
+        public System.Threading.Tasks.Task BuscarJugadorAsync(string nickname) {
+            return base.Channel.BuscarJugadorAsync(nickname);
+        }
+    }
 }

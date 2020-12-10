@@ -19,7 +19,7 @@ namespace UNOGui.Logica
                 Principal ventanaPrincipal = Application.Current.Windows.OfType<Principal>()
                     .SingleOrDefault();
 
-                string nicknameJugadorActual = (ventanaPrincipal.Content as Login).usuarioTextbox.Text;
+                string nicknameJugadorActual = (ventanaPrincipal.Content as Login).JugadorNickname;
 
                 MenuPrincipal menuPrincipal = new MenuPrincipal()
                 {

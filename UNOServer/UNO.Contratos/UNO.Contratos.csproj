@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="AdministradorEmail\CorreoElectronico.cs" />
     <Compile Include="AdministrarJugador\GeneradorClave.cs" />
+    <Compile Include="AdministrarJugador\IPerfil.cs" />
+    <Compile Include="AdministrarJugador\IPerfilCallback.cs" />
     <Compile Include="AdministrarSala\IAdministrarSala.cs" />
     <Compile Include="AdministrarSala\ISalaCallback.cs" />
     <Compile Include="AdministrarSala\ResultadoUnionSala.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="Login\ILogin.cs" />
     <Compile Include="Login\ILoginCallback.cs" />
     <Compile Include="Login\ResultadoLogin.cs" />
+    <Compile Include="PerfilServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AdministrarJugador\IRegistrarJugador.cs" />
     <Compile Include="AdministrarJugador\IRegistrarJugadorCallback.cs" />

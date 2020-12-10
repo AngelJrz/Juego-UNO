@@ -42,7 +42,6 @@ namespace UNO.Contratos
             if (resultadoLogin == ResultadoLogin.ExisteJugador)
             {
                 List<Dominio.Jugador> jugadoresTop = adminDatosJugador.ObtenerMejoresJugadores();
-
                 LoginCallback.ObtenerJugadoresTop(jugadoresTop);
             }
         }

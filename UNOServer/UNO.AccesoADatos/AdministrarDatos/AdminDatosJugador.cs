@@ -130,5 +130,25 @@ namespace UNO.AccesoADatos.AdministrarDatos
 
             return mejoresJugadores;
         }
+
+        public Dominio.Jugador ObtenerJugador(string nickname)
+        {
+            Dominio.Jugador jugador;
+
+            var jugadorBuscado = baseDeDatos.Jugador.Find(nickname);
+
+            jugador = new Dominio.Jugador
+            {
+                Nickname = nickname,
+                CorreoElectronico = jugadorBuscado.CorreoElectronico,
+                PuntajeTotal = (int)jugadorBuscado.PuntajeTotal,
+                Nivel = jugadorBuscado.Nivel,
+                Experiencia = (int)jugadorBuscado.Experiencia,
+                PartidasGanadas = (int)jugadorBuscado.PartidasGanadas,
+                PartidasJugadas = (int)jugadorBuscado.PartidasJugadas
+            };
+
+            return jugador;
+        }
     }
 }

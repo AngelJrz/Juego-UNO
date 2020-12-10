@@ -12,6 +12,17 @@ namespace UNOGui.Paginas
     /// </summary>
     public partial class Login : Page
     {
+        /// <summary>
+        /// Obtiene el nickname del Jugador a iniciar sesión.
+        /// </summary>
+        public string JugadorNickname 
+        { 
+            get 
+            { 
+                return usuarioTextbox.Text; 
+            } 
+        }
+
         public Login()
         {
             InitializeComponent();
