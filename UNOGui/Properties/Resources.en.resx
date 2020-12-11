@@ -118,57 +118,48 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CampoContraseña" xml:space="preserve">
-    <value>Contraseña</value>
+    <value>Password</value>
   </data>
   <data name="CampoUsuario" xml:space="preserve">
-    <value>Usuario</value>
+    <value>Nickname</value>
   </data>
   <data name="Inicio_Nivel" xml:space="preserve">
-    <value>Nivel</value>
+    <value>Level</value>
   </data>
   <data name="Inicio_Puntaje" xml:space="preserve">
-    <value>Puntaje</value>
+    <value>Score</value>
   </data>
   <data name="Inicio_TablaPuntaciones" xml:space="preserve">
-    <value>Tabla de puntuaciones</value>
+    <value>High Scores</value>
   </data>
   <data name="Login_IniciarSesion" xml:space="preserve">
-    <value>Iniciar sesión</value>
+    <value>Login</value>
   </data>
   <data name="Login_RecuperarCuenta" xml:space="preserve">
-    <value>¿Olvidaste tu contraseña?</value>
+    <value>Forgot your password?</value>
   </data>
   <data name="Login_Registrarse" xml:space="preserve">
-    <value>Registrate</value>
+    <value>Sign in</value>
   </data>
   <data name="Login_SeperadorO" xml:space="preserve">
-    <value>u</value>
+    <value>or</value>
   </data>
   <data name="MenuPrincipal_CerrarSesion" xml:space="preserve">
-    <value>Cerrar sesión</value>
+    <value>Log out</value>
   </data>
   <data name="MenuPrincipal_CrearSala" xml:space="preserve">
-    <value>Crear sala</value>
+    <value>Create lobby</value>
   </data>
   <data name="MenuPrincipal_Inicio" xml:space="preserve">
-    <value>Inicio</value>
+    <value>Home</value>
   </data>
   <data name="MenuPrincipal_MiPerfil" xml:space="preserve">
-    <value>Mi perfil</value>
+    <value>Profile</value>
   </data>
   <data name="MenuPrincipal_Saludo" xml:space="preserve">
-    <value>Hola</value>
+    <value>Hi</value>
   </data>
   <data name="MenuPrincipal_UnirseSala" xml:space="preserve">
-    <value>Unirse a sala</value>
-  </data>
-  <data name="MiPerfil_Cuenta" xml:space="preserve">
-    <value>Cuenta</value>
-  </data>
-  <data name="MiPerfil_Titulo" xml:space="preserve">
-    <value>Mi perfil</value>
-  </data>
-  <data name="MiPerfil_Usuario" xml:space="preserve">
-    <value>Usuario</value>
+    <value>Join to lobby</value>
   </data>
 </root>

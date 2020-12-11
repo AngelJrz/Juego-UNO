@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNOGui.Ventanas"
+        xmlns:p="clr-namespace:UNOGui.Properties"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        Title="Inicio" Height="600" Width="800" Icon="/Imagenes/logo.png">
+        Title="{x:Static p:Resources.MenuPrincipal_Inicio}" Height="600" Width="800" Icon="/Imagenes/logo.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -29,20 +30,21 @@
                     </Ellipse.Fill>
                 </Ellipse>
                 <TextBlock Foreground="Gold" Style="{StaticResource TextoContenido}">
-                    <Run Text="Hola, "/>
+                    <Run Text="{x:Static p:Resources.MenuPrincipal_Saludo}"/>
+                    <Run Text=", "/>
                     <Run Text="{Binding Nickname, UpdateSourceTrigger=PropertyChanged}"/>
                 </TextBlock>
             </StackPanel>
 
             <StackPanel Grid.Row="1" VerticalAlignment="Center">
-                <Button Content="Inicio" Style="{StaticResource Button}" Width="137" Margin="10" Click="IrAInicio"/>
-                <Button Content="Mi perfil" Style="{StaticResource Button}" Width="137" Click="IrAMiPerfil" Margin="10"/>
-                <Button Content="Cear Sala" Style="{StaticResource Button}" Width="137" Click="IrACrearSala" Margin="10"/>
-                <Button Content="Unirse a sala" Style="{StaticResource Button}" Width="137" Click="IrAUnirseASala" Margin="10"/>
+                <Button Content="{x:Static p:Resources.MenuPrincipal_Inicio}" Style="{StaticResource Button}" Width="137" Margin="10" Click="IrAInicio"/>
+                <Button Content="{x:Static p:Resources.MenuPrincipal_MiPerfil}" Style="{StaticResource Button}" Width="137" Click="IrAMiPerfil" Margin="10"/>
+                <Button Content="{x:Static p:Resources.MenuPrincipal_CrearSala}" Style="{StaticResource Button}" Width="137" Click="IrACrearSala" Margin="10"/>
+                <Button Content="{x:Static p:Resources.MenuPrincipal_UnirseSala}" Style="{StaticResource Button}" Width="137" Click="IrAUnirseASala" Margin="10"/>
             </StackPanel>
 
             <StackPanel Grid.Row="2" VerticalAlignment="Center">
-                <Button Content="Cerrar sesión" Style="{StaticResource Button}" Width="137" Click="CerrarSecion"/>
+                <Button Content="{x:Static p:Resources.MenuPrincipal_CerrarSesion}" Style="{StaticResource Button}" Width="137" Click="CerrarSecion"/>
             </StackPanel>
         </Grid>
 
