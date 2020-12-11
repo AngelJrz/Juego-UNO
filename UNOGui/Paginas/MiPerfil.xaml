@@ -25,12 +25,12 @@
                     <Label Content="Cuenta" Style="{StaticResource TextoLabel}" FontSize="24"/>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Usuario:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center" Margin="0"/>
-                        <TextBlock Text="SammyGCh" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
+                        <TextBlock Text="{Binding Nickname, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Correo electronico:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
-                        <TextBlock Text="uncorreodeejemplo@gmail.com" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
+                        <TextBlock Text="{Binding CorreoElectronico, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
                     </StackPanel>
                 </StackPanel>
             </Border>
@@ -48,31 +48,31 @@
                         <StackPanel Grid.Column="0">
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="Nivel:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
-                                <TextBlock Text="100" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
+                                <TextBlock Text="{Binding Nivel, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="Experiencia:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
-                                <TextBlock Text="30" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
+                                <TextBlock Text="{Binding Experiencia, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1">
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="Puntaje total:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Left"/>
-                                <TextBlock Text="100000" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="7"/>
+                                <TextBlock Text="{Binding PuntajeTotal, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="7"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="Partidas juagadas:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
-                                <TextBlock Text="50000" Style="{StaticResource TextoContenido}" TextWrapping="Wrap"  TextAlignment="Center" Margin="7"/>
+                                <TextBlock Text="{Binding PartidasJugadas, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap"  TextAlignment="Center" Margin="7"/>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Label Content="Partidas ganadas:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
-                        <TextBlock Text="50000" Style="{StaticResource TextoContenido}" TextWrapping="Wrap"  TextAlignment="Center" Margin="7"/>
+                        <TextBlock Text="{Binding PartidasGanadas, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap"  TextAlignment="Center" Margin="7"/>
                     </StackPanel>
 
                 </StackPanel>
