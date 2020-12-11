@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Paginas;
 
@@ -19,7 +8,7 @@ namespace UNOGui.Ventanas
     /// <summary>
     /// Lógica de interacción para MenuPrincipal.xaml
     /// </summary>
-    public partial class MenuPrincipal : Window
+    public partial class MenuPrincipal : Window, IPerfilCallback
     {
         /// <summary>
         /// Obtiene la pagina de inicio del menu principal
@@ -61,7 +50,24 @@ namespace UNOGui.Ventanas
         {
             if (frameNavegacion.Content.GetType() != typeof(MiPerfil))
             {
-                frameNavegacion.Navigate(new MiPerfil());
+                InstanceContext contexto = new InstanceContext(this);
+                PerfilClient servidor = new PerfilClient(contexto);
+
+                string nicknameJugador = (this.DataContext as Jugador).Nickname;
+
+                try
+                {
+                    servidor.BuscarJugador(nicknameJugador);
+                }
+                catch (EndpointNotFoundException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = "Ups!",
+                        Contenido = "Lo sentimos, ocurrió un error en el servidor. Intente más tarde."
+                    }.ShowDialog();
+                }
+                
             }
         }
 
@@ -71,6 +77,14 @@ namespace UNOGui.Ventanas
             {
                 frameNavegacion.Navigate(this.PaginaIncio);
             }
+        }
+
+        public void ObtenerInformacionJugador(Jugador jugador)
+        {
+            frameNavegacion.Navigate(new MiPerfil() 
+            { 
+                DataContext = jugador 
+            });
         }
     }
 }

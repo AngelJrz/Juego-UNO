@@ -155,4 +155,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="BuscarJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerInformacionJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="jugador" nillable="true" type="q15:Jugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
