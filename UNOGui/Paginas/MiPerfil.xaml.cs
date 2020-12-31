@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using UNOGui.Logica;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Paginas
 {
@@ -20,9 +13,90 @@ namespace UNOGui.Paginas
     /// </summary>
     public partial class MiPerfil : Page
     {
+        private readonly List<Idioma> idiomas;
+        private bool cambioIdioma = false;
+        private Idioma idiomaSeleccionado;
+        private string nomenclaturaIdiomaActual;
+
         public MiPerfil()
         {
             InitializeComponent();
+
+            idiomas = new List<Idioma>()
+            {
+                new Idioma
+                {
+                    Nombre = Properties.Resources.Idioma_Español,
+                    Nomenclatura = "es-MX"
+                },
+
+                new Idioma
+                {
+                    Nombre = Properties.Resources.Idioma_Ingles,
+                    Nomenclatura = "en"
+                }
+            };
+
+            idiomaCombobox.ItemsSource = idiomas;
+            ObtenerIdiomaActual();
+        }
+
+        private void ObtenerIdiomaActual()
+        {
+            nomenclaturaIdiomaActual = Properties.Settings.Default.Idioma;
+            int idiomaEspañolIndex = 0;
+            int idiomaInglesIndex = 1;
+
+            switch (nomenclaturaIdiomaActual)
+            {
+                case "es-MX":
+                    idiomaCombobox.SelectedIndex = idiomaEspañolIndex;
+                    break;
+                case "en":
+                    idiomaCombobox.SelectedIndex = idiomaInglesIndex;
+                    break;
+            }
+        }
+
+        private void GuardarCambios(object sender, RoutedEventArgs e)
+        {
+            if (cambioIdioma)
+            {
+                CambiarIdioma();
+                RecargarVentana();
+            }
+        }
+
+        private void RecargarVentana()
+        {
+            MenuPrincipal nuevoMenu = new MenuPrincipal
+            {
+                DataContext = Window.GetWindow(this).DataContext
+            };
+
+            nuevoMenu.Show();
+            Window.GetWindow(this).Close();
+        }
+
+        private void CambiarIdioma()
+        {
+            Properties.Settings.Default.Idioma = idiomaSeleccionado.Nomenclatura;
+            Properties.Settings.Default.Save();
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(idiomaSeleccionado.Nomenclatura);
+        }
+
+        private void VerificarSeleccion(object sender, SelectionChangedEventArgs e)
+        {
+            idiomaSeleccionado = idiomaCombobox.SelectedItem as Idioma;
+
+            if (!idiomaSeleccionado.Nomenclatura.Equals(nomenclaturaIdiomaActual))
+            {
+                cambioIdioma = true;
+            }
+            else
+            {
+                cambioIdioma = false;
+            }
         }
     }
 }

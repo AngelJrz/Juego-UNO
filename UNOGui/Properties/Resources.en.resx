@@ -120,8 +120,32 @@
   <data name="CampoContraseña" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="CampoCorreo" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="CamposIncompletosTitulo" xml:space="preserve">
+    <value>Missing fields</value>
+  </data>
   <data name="CampoUsuario" xml:space="preserve">
     <value>Nickname</value>
+  </data>
+  <data name="CrearSala_ButonCrear" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CrearSala_CamposIncompletosMensaje" xml:space="preserve">
+    <value>Enter the Lobby password, please.</value>
+  </data>
+  <data name="CrearSala_NumeroJugadores" xml:space="preserve">
+    <value>How many players is the lobby for?</value>
+  </data>
+  <data name="CrearSala_Subtitulo" xml:space="preserve">
+    <value>Create a lobby to play with your friends.</value>
+  </data>
+  <data name="Idioma_Español" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="Idioma_Ingles" xml:space="preserve">
+    <value>English</value>
   </data>
   <data name="Inicio_Nivel" xml:space="preserve">
     <value>Level</value>
@@ -144,6 +168,9 @@
   <data name="Login_SeperadorO" xml:space="preserve">
     <value>or</value>
   </data>
+  <data name="Mensaje_Buton" xml:space="preserve">
+    <value>Ok</value>
+  </data>
   <data name="MenuPrincipal_CerrarSesion" xml:space="preserve">
     <value>Log out</value>
   </data>
@@ -161,5 +188,44 @@
   </data>
   <data name="MenuPrincipal_UnirseSala" xml:space="preserve">
     <value>Join to lobby</value>
+  </data>
+  <data name="MiPerfil_Configuracion" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="MiPerfil_Cuenta" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="MiPerfil_Experiencia" xml:space="preserve">
+    <value>Experience</value>
+  </data>
+  <data name="MiPerfil_GuardarCambios" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="MiPerfil_Idioma" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="MiPerfil_Juego" xml:space="preserve">
+    <value>Game</value>
+  </data>
+  <data name="MiPerfil_PartidasGanadas" xml:space="preserve">
+    <value>Games won</value>
+  </data>
+  <data name="MiPerfil_PartidasJugadas" xml:space="preserve">
+    <value>Games played</value>
+  </data>
+  <data name="MiPerfil_Titulo" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="UnirseSala_CamposIncompletosMensaje" xml:space="preserve">
+    <value>Enter the lobby's ID and password, please.</value>
+  </data>
+  <data name="UnirseSala_ClaveSala" xml:space="preserve">
+    <value>Lobby ID</value>
+  </data>
+  <data name="UnirseSala_Subtitulo" xml:space="preserve">
+    <value>Join to a lobby to play with your friends.</value>
+  </data>
+  <data name="UniseSala_BotonUnirse" xml:space="preserve">
+    <value>Join</value>
   </data>
 </root>

@@ -70,11 +70,83 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Correo electrónico.
+        /// </summary>
+        public static string CampoCorreo {
+            get {
+                return ResourceManager.GetString("CampoCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Campos incompletos.
+        /// </summary>
+        public static string CamposIncompletosTitulo {
+            get {
+                return ResourceManager.GetString("CamposIncompletosTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Usuario.
         /// </summary>
         public static string CampoUsuario {
             get {
                 return ResourceManager.GetString("CampoUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Crear.
+        /// </summary>
+        public static string CrearSala_ButonCrear {
+            get {
+                return ResourceManager.GetString("CrearSala_ButonCrear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor ingrese la contraseña de la sala..
+        /// </summary>
+        public static string CrearSala_CamposIncompletosMensaje {
+            get {
+                return ResourceManager.GetString("CrearSala_CamposIncompletosMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Para cuántos jugadores es la sala?.
+        /// </summary>
+        public static string CrearSala_NumeroJugadores {
+            get {
+                return ResourceManager.GetString("CrearSala_NumeroJugadores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Crea una sala para que juegues con tus amigos..
+        /// </summary>
+        public static string CrearSala_Subtitulo {
+            get {
+                return ResourceManager.GetString("CrearSala_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Español.
+        /// </summary>
+        public static string Idioma_Español {
+            get {
+                return ResourceManager.GetString("Idioma_Español", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inglés.
+        /// </summary>
+        public static string Idioma_Ingles {
+            get {
+                return ResourceManager.GetString("Idioma_Ingles", resourceCulture);
             }
         }
         
@@ -142,6 +214,15 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Aceptar.
+        /// </summary>
+        public static string Mensaje_Buton {
+            get {
+                return ResourceManager.GetString("Mensaje_Buton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cerrar sesión.
         /// </summary>
         public static string MenuPrincipal_CerrarSesion {
@@ -196,11 +277,74 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Configuracion.
+        /// </summary>
+        public static string MiPerfil_Configuracion {
+            get {
+                return ResourceManager.GetString("MiPerfil_Configuracion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cuenta.
         /// </summary>
         public static string MiPerfil_Cuenta {
             get {
                 return ResourceManager.GetString("MiPerfil_Cuenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Experiencia.
+        /// </summary>
+        public static string MiPerfil_Experiencia {
+            get {
+                return ResourceManager.GetString("MiPerfil_Experiencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Guardar cambios.
+        /// </summary>
+        public static string MiPerfil_GuardarCambios {
+            get {
+                return ResourceManager.GetString("MiPerfil_GuardarCambios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Idioma.
+        /// </summary>
+        public static string MiPerfil_Idioma {
+            get {
+                return ResourceManager.GetString("MiPerfil_Idioma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Juego.
+        /// </summary>
+        public static string MiPerfil_Juego {
+            get {
+                return ResourceManager.GetString("MiPerfil_Juego", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Partidas ganadas.
+        /// </summary>
+        public static string MiPerfil_PartidasGanadas {
+            get {
+                return ResourceManager.GetString("MiPerfil_PartidasGanadas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Partidas jugadas.
+        /// </summary>
+        public static string MiPerfil_PartidasJugadas {
+            get {
+                return ResourceManager.GetString("MiPerfil_PartidasJugadas", resourceCulture);
             }
         }
         
@@ -214,11 +358,38 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usuario.
+        ///   Busca una cadena traducida similar a Por favor ingrese la clave y contraseña de la sala..
         /// </summary>
-        public static string MiPerfil_Usuario {
+        public static string UnirseSala_CamposIncompletosMensaje {
             get {
-                return ResourceManager.GetString("MiPerfil_Usuario", resourceCulture);
+                return ResourceManager.GetString("UnirseSala_CamposIncompletosMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clave de la sala.
+        /// </summary>
+        public static string UnirseSala_ClaveSala {
+            get {
+                return ResourceManager.GetString("UnirseSala_ClaveSala", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Únute a una sala para jugar con tus amigos..
+        /// </summary>
+        public static string UnirseSala_Subtitulo {
+            get {
+                return ResourceManager.GetString("UnirseSala_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Unirme.
+        /// </summary>
+        public static string UniseSala_BotonUnirse {
+            get {
+                return ResourceManager.GetString("UniseSala_BotonUnirse", resourceCulture);
             }
         }
     }

@@ -13,9 +13,14 @@ namespace UNOGui
     /// </summary>
     public partial class App : Application
     {
+        public string Idioma { get; set; } = UNOGui.Properties.Settings.Default.Idioma;
+
+        private readonly System.Globalization.CultureInfo informacionCultural;
+
         App()
         {
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+            informacionCultural = new System.Globalization.CultureInfo(Idioma);
+            Thread.CurrentThread.CurrentUICulture = informacionCultural;
         }
     }
 }
