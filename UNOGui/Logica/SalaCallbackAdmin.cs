@@ -9,7 +9,7 @@ namespace UNOGui.Logica
 {
     public class SalaCallbackAdmin : IAdministrarSalaCallback
     {
-        private readonly MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
+        //private readonly MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
 
         public void ActualizarSala(string[] jugadores)
         {
@@ -41,6 +41,7 @@ namespace UNOGui.Logica
             lobby.jugadoresEnSala.ItemsSource = lobby.Jugadores;
             lobby.ConfigurarSalaParaHost();
             lobby.Show();
+            MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
             menuPrincipal.Hide();
         }
 
@@ -72,6 +73,7 @@ namespace UNOGui.Logica
                 case ResultadoUnionSala.UnionExitosa:
                     Lobby lobby = new Lobby();
                     lobby.Show();
+                    MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
                     menuPrincipal.Hide();
                     break;
                 default: break;
@@ -98,7 +100,7 @@ namespace UNOGui.Logica
         {
             var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
             lobby.Close();
-
+            MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
             menuPrincipal.Show();
         }
     }

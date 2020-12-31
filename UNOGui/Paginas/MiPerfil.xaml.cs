@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
@@ -63,18 +62,21 @@ namespace UNOGui.Paginas
             if (cambioIdioma)
             {
                 CambiarIdioma();
-                RecargarVentana();
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.Mensaje_CambioIdiomaTitulo,
+                    Contenido = Properties.Resources.Mensaje_CambioIdiomaMensaje,
+                    Title = Properties.Resources.Mensaje_CambioIdiomaTitulo
+                }.ShowDialog();
+
+                AbrirLogin();
             }
         }
 
-        private void RecargarVentana()
+        private void AbrirLogin()
         {
-            MenuPrincipal nuevoMenu = new MenuPrincipal
-            {
-                DataContext = Window.GetWindow(this).DataContext
-            };
-
-            nuevoMenu.Show();
+            Principal login = new Principal();
+            login.Show();
             Window.GetWindow(this).Close();
         }
 

@@ -178,6 +178,51 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Iniciar juego.
+        /// </summary>
+        public static string Lobby_IniciarPartidaBoton {
+            get {
+                return ResourceManager.GetString("Lobby_IniciarPartidaBoton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inicie la partida cuando haya al menos dos jugadores..
+        /// </summary>
+        public static string Lobby_MensajeHost {
+            get {
+                return ResourceManager.GetString("Lobby_MensajeHost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Espere a que el host inicie la partida..
+        /// </summary>
+        public static string Lobby_MensajeInvitado {
+            get {
+                return ResourceManager.GetString("Lobby_MensajeInvitado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Salir de sala.
+        /// </summary>
+        public static string Lobby_SalirBoton {
+            get {
+                return ResourceManager.GetString("Lobby_SalirBoton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sala de juego.
+        /// </summary>
+        public static string Lobby_Titulo {
+            get {
+                return ResourceManager.GetString("Lobby_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Iniciar sesión.
         /// </summary>
         public static string Login_IniciarSesion {
@@ -219,6 +264,24 @@ namespace UNOGui.Properties {
         public static string Mensaje_Buton {
             get {
                 return ResourceManager.GetString("Mensaje_Buton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se cambió el idioma. Por favor, inicie sesión de nuevo..
+        /// </summary>
+        public static string Mensaje_CambioIdiomaMensaje {
+            get {
+                return ResourceManager.GetString("Mensaje_CambioIdiomaMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se cambió el idioma.
+        /// </summary>
+        public static string Mensaje_CambioIdiomaTitulo {
+            get {
+                return ResourceManager.GetString("Mensaje_CambioIdiomaTitulo", resourceCulture);
             }
         }
         

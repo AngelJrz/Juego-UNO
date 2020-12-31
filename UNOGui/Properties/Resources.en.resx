@@ -156,6 +156,21 @@
   <data name="Inicio_TablaPuntaciones" xml:space="preserve">
     <value>High Scores</value>
   </data>
+  <data name="Lobby_IniciarPartidaBoton" xml:space="preserve">
+    <value>Start game</value>
+  </data>
+  <data name="Lobby_MensajeHost" xml:space="preserve">
+    <value>Start the game when there are at least two players.</value>
+  </data>
+  <data name="Lobby_MensajeInvitado" xml:space="preserve">
+    <value>Wait for the host to start the game.</value>
+  </data>
+  <data name="Lobby_SalirBoton" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Lobby_Titulo" xml:space="preserve">
+    <value>Lobby</value>
+  </data>
   <data name="Login_IniciarSesion" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -170,6 +185,12 @@
   </data>
   <data name="Mensaje_Buton" xml:space="preserve">
     <value>Ok</value>
+  </data>
+  <data name="Mensaje_CambioIdiomaMensaje" xml:space="preserve">
+    <value>The language was changed. Login again, please.</value>
+  </data>
+  <data name="Mensaje_CambioIdiomaTitulo" xml:space="preserve">
+    <value>Language changed</value>
   </data>
   <data name="MenuPrincipal_CerrarSesion" xml:space="preserve">
     <value>Log out</value>
