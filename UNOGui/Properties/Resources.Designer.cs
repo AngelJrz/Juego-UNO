@@ -61,6 +61,15 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Confirmar contraseña.
+        /// </summary>
+        public static string CampoConfirmacionContraseña {
+            get {
+                return ResourceManager.GetString("CampoConfirmacionContraseña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña.
         /// </summary>
         public static string CampoContraseña {
@@ -75,6 +84,24 @@ namespace UNOGui.Properties {
         public static string CampoCorreo {
             get {
                 return ResourceManager.GetString("CampoCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nueva contraseña.
+        /// </summary>
+        public static string CampoNuevaContraseña {
+            get {
+                return ResourceManager.GetString("CampoNuevaContraseña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor ingresa toda la información solicitada..
+        /// </summary>
+        public static string CamposIncompletosMensaje {
+            get {
+                return ResourceManager.GetString("CamposIncompletosMensaje", resourceCulture);
             }
         }
         
@@ -129,6 +156,24 @@ namespace UNOGui.Properties {
         public static string CrearSala_Subtitulo {
             get {
                 return ResourceManager.GetString("CrearSala_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Lo sentimos, ocurrió un error en el servidor. Intente más tarde..
+        /// </summary>
+        public static string ErrorServidor_MensajeContenido {
+            get {
+                return ResourceManager.GetString("ErrorServidor_MensajeContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ups!.
+        /// </summary>
+        public static string ErrorServidor_TituloContenido {
+            get {
+                return ResourceManager.GetString("ErrorServidor_TituloContenido", resourceCulture);
             }
         }
         
@@ -228,6 +273,60 @@ namespace UNOGui.Properties {
         public static string Login_IniciarSesion {
             get {
                 return ResourceManager.GetString("Login_IniciarSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor ingresa tu usuario y contraseña para iniciar sesión..
+        /// </summary>
+        public static string Login_MensajeCamposContenido {
+            get {
+                return ResourceManager.GetString("Login_MensajeCamposContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Campos vacíos.
+        /// </summary>
+        public static string Login_MensajeCamposTitulo {
+            get {
+                return ResourceManager.GetString("Login_MensajeCamposTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor verifique la contraseña ingresada e intente de nuevo..
+        /// </summary>
+        public static string Login_MensajeContraseñaContenido {
+            get {
+                return ResourceManager.GetString("Login_MensajeContraseñaContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña incorrecta.
+        /// </summary>
+        public static string Login_MensajeContraseñaTitulo {
+            get {
+                return ResourceManager.GetString("Login_MensajeContraseñaTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor verifique si el Nickname ingresado es correcto e intente de nuevo..
+        /// </summary>
+        public static string Login_MensajeNicknameContenido {
+            get {
+                return ResourceManager.GetString("Login_MensajeNicknameContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nickname incorrecto.
+        /// </summary>
+        public static string Login_MensajeNicknameTitulo {
+            get {
+                return ResourceManager.GetString("Login_MensajeNicknameTitulo", resourceCulture);
             }
         }
         
@@ -417,6 +516,276 @@ namespace UNOGui.Properties {
         public static string MiPerfil_Titulo {
             get {
                 return ResourceManager.GetString("MiPerfil_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar.
+        /// </summary>
+        public static string RecuperacionCuenta_BotonCancelar {
+            get {
+                return ResourceManager.GetString("RecuperacionCuenta_BotonCancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirmar.
+        /// </summary>
+        public static string RecuperacionCuenta_BotonConfirmar {
+            get {
+                return ResourceManager.GetString("RecuperacionCuenta_BotonConfirmar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor, ingresa una nueva contraseña..
+        /// </summary>
+        public static string RecuperacionCuenta_Contenido {
+            get {
+                return ResourceManager.GetString("RecuperacionCuenta_Contenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Recupera tu contraseña.
+        /// </summary>
+        public static string RecuperacionCuenta_Titulo {
+            get {
+                return ResourceManager.GetString("RecuperacionCuenta_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar.
+        /// </summary>
+        public static string Registro_BotonCancelar {
+            get {
+                return ResourceManager.GetString("Registro_BotonCancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registrar.
+        /// </summary>
+        public static string Registro_BotonRegistrar {
+            get {
+                return ResourceManager.GetString("Registro_BotonRegistrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La clave de validación ingresada es incorrecta. Por favor, verifique la información..
+        /// </summary>
+        public static string Registro_ClaveInvalidaMensaje {
+            get {
+                return ResourceManager.GetString("Registro_ClaveInvalidaMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clave de validación incorrecta.
+        /// </summary>
+        public static string Registro_ClaveInvalidaTitulo {
+            get {
+                return ResourceManager.GetString("Registro_ClaveInvalidaTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correo electrónico ingresado pertenece ya a una cuenta. Por favor, ingrese uno diferente..
+        /// </summary>
+        public static string Registro_CorreoExisteMensaje {
+            get {
+                return ResourceManager.GetString("Registro_CorreoExisteMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correo electrónico ya existe.
+        /// </summary>
+        public static string Registro_CorreoExisteTitulo {
+            get {
+                return ResourceManager.GetString("Registro_CorreoExisteTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registrado exitosamente. Inicia sesión para poder jugar con tus amigos..
+        /// </summary>
+        public static string Registro_ExitoMensaje {
+            get {
+                return ResourceManager.GetString("Registro_ExitoMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registro exitoso.
+        /// </summary>
+        public static string Registro_ExitoTitulo {
+            get {
+                return ResourceManager.GetString("Registro_ExitoTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Por favor verifica que las contraseñas ingresadas coincidan..
+        /// </summary>
+        public static string Registro_MensajeContraseñasContenido {
+            get {
+                return ResourceManager.GetString("Registro_MensajeContraseñasContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Las contraseñas no son iguales.
+        /// </summary>
+        public static string Registro_MensajeContraseñasTitulo {
+            get {
+                return ResourceManager.GetString("Registro_MensajeContraseñasTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correo generalmente se conforma por usuario@dominio. Ejemplos de dominio: gmail.com, hotmail.com, yahoo.com.
+        /// </summary>
+        public static string Registro_MensajeCorreoContenido {
+            get {
+                return ResourceManager.GetString("Registro_MensajeCorreoContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correo ingresado no es válido.
+        /// </summary>
+        public static string Registro_MensajeCorreoTitulo {
+            get {
+                return ResourceManager.GetString("Registro_MensajeCorreoTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El nickname ingresado ya existe. Por favor, ingrese otro diferente..
+        /// </summary>
+        public static string Registro_NicknameExisteMensaje {
+            get {
+                return ResourceManager.GetString("Registro_NicknameExisteMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El nickname ya existe.
+        /// </summary>
+        public static string Registro_NicknameExisteTitulo {
+            get {
+                return ResourceManager.GetString("Registro_NicknameExisteTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Te enviamos una nueva clave al correo especificado..
+        /// </summary>
+        public static string Registro_NuevaClaveMensaje {
+            get {
+                return ResourceManager.GetString("Registro_NuevaClaveMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clave de validación enviada.
+        /// </summary>
+        public static string Registro_NuevaClaveTituloMensaje {
+            get {
+                return ResourceManager.GetString("Registro_NuevaClaveTituloMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registrar cuenta.
+        /// </summary>
+        public static string Registro_Titulo {
+            get {
+                return ResourceManager.GetString("Registro_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar.
+        /// </summary>
+        public static string RegistroEnEspera_CancelarBoton {
+            get {
+                return ResourceManager.GetString("RegistroEnEspera_CancelarBoton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿No recibiste la clave de validación?.
+        /// </summary>
+        public static string RegistroEnEspera_ClaveNoRecibida {
+            get {
+                return ResourceManager.GetString("RegistroEnEspera_ClaveNoRecibida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clave de validación.
+        /// </summary>
+        public static string RegistroEnEspera_ClaveValidacion {
+            get {
+                return ResourceManager.GetString("RegistroEnEspera_ClaveValidacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirmar registro.
+        /// </summary>
+        public static string RegistroEnEspera_ConfirmarBoton {
+            get {
+                return ResourceManager.GetString("RegistroEnEspera_ConfirmarBoton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Ya casi terminamos!.
+        /// </summary>
+        public static string RegistroEnEspera_ContenidoTitulo {
+            get {
+                return ResourceManager.GetString("RegistroEnEspera_ContenidoTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enviar de nuevo.
+        /// </summary>
+        public static string RegistroEnEspera_EnviarDeNuevoBoton {
+            get {
+                return ResourceManager.GetString("RegistroEnEspera_EnviarDeNuevoBoton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Te enviamos una clave de validación al correo especificado para que confirmes tu registro. Por favor, ingresala en el siguiente campo..
+        /// </summary>
+        public static string RegistroEnEspera_Mensaje {
+            get {
+                return ResourceManager.GetString("RegistroEnEspera_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registro en espera.
+        /// </summary>
+        public static string RegistroEnEspera_VentanaTitulo {
+            get {
+                return ResourceManager.GetString("RegistroEnEspera_VentanaTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enviar de nuevo en.
+        /// </summary>
+        public static string Temporizador_Mensaje {
+            get {
+                return ResourceManager.GetString("Temporizador_Mensaje", resourceCulture);
             }
         }
         

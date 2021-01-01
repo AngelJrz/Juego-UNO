@@ -17,7 +17,12 @@ namespace UNOGui.Logica
 
         public void NotificarEnvioDeClave()
         {
-            MessageBox.Show("Te enviamos una nueva clave al correo especificado.", "", MessageBoxButton.OK);
+            new Mensaje
+            {
+                Title = Properties.Resources.RegistroEnEspera_ClaveValidacion,
+                TituloMensaje = Properties.Resources.Registro_NuevaClaveTituloMensaje,
+                Contenido = Properties.Resources.Registro_NuevaClaveMensaje
+            }.ShowDialog();
 
             (ventanaPrincipal.Content as RegistroEnEspera).IniciarTemporizador();
         }
@@ -26,11 +31,19 @@ namespace UNOGui.Logica
         {
             if (resultado == ResultadoRegistro.UsuarioYaExiste)
             {
-                MessageBox.Show("El nickname ya existe");
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.Registro_NicknameExisteTitulo,
+                    Contenido = Properties.Resources.Registro_NicknameExisteMensaje
+                }.ShowDialog();
             }
             else if (resultado == ResultadoRegistro.CorreoYaExiste)
             {
-                MessageBox.Show("El correo ya existe");
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.Registro_CorreoExisteTitulo,
+                    Contenido = Properties.Resources.Registro_CorreoExisteMensaje
+                }.ShowDialog();
             }
             else if (resultado == ResultadoRegistro.RegistroExitoso)
             {                
@@ -40,15 +53,22 @@ namespace UNOGui.Logica
 
         public void NotificarResultadoClave(bool claveValida)
         {
+            Mensaje ventanaMensaje = new Mensaje();
+
             if (claveValida)
             {
-                MessageBox.Show("Tu registro fue exitoso", "Exito", MessageBoxButton.OK);
+                ventanaMensaje.Title = Properties.Resources.Registro_ExitoTitulo;
+                ventanaMensaje.TituloMensaje = Properties.Resources.Registro_ExitoTitulo;
+                ventanaMensaje.Contenido = Properties.Resources.Registro_ExitoMensaje;
+                ventanaMensaje.ShowDialog();
 
                 ventanaPrincipal.Navigate(new Login());
             }
             else
             {
-                MessageBox.Show("La clave no es valida");
+                ventanaMensaje.TituloMensaje = Properties.Resources.Registro_ClaveInvalidaTitulo;
+                ventanaMensaje.Contenido = Properties.Resources.Registro_ClaveInvalidaMensaje;
+                ventanaMensaje.ShowDialog();
             }
         }
     }

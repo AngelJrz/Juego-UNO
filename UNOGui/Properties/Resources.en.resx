@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CampoConfirmacionContraseña" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
   <data name="CampoContraseña" xml:space="preserve">
     <value>Password</value>
   </data>
   <data name="CampoCorreo" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="CampoNuevaContraseña" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="CamposIncompletosMensaje" xml:space="preserve">
+    <value>Please enter all the requested information.</value>
   </data>
   <data name="CamposIncompletosTitulo" xml:space="preserve">
     <value>Missing fields</value>
@@ -140,6 +149,12 @@
   </data>
   <data name="CrearSala_Subtitulo" xml:space="preserve">
     <value>Create a lobby to play with your friends.</value>
+  </data>
+  <data name="ErrorServidor_MensajeContenido" xml:space="preserve">
+    <value>Sorry, a server error occurred. Please try again later.</value>
+  </data>
+  <data name="ErrorServidor_TituloContenido" xml:space="preserve">
+    <value>Ups!</value>
   </data>
   <data name="Idioma_Español" xml:space="preserve">
     <value>Spanish</value>
@@ -173,6 +188,24 @@
   </data>
   <data name="Login_IniciarSesion" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="Login_MensajeCamposContenido" xml:space="preserve">
+    <value>Please enter your nickname and password to log in.</value>
+  </data>
+  <data name="Login_MensajeCamposTitulo" xml:space="preserve">
+    <value>Empty fields</value>
+  </data>
+  <data name="Login_MensajeContraseñaContenido" xml:space="preserve">
+    <value>The password you've entered is incorrect. Please check it and try again.</value>
+  </data>
+  <data name="Login_MensajeContraseñaTitulo" xml:space="preserve">
+    <value>Incorrect password</value>
+  </data>
+  <data name="Login_MensajeNicknameContenido" xml:space="preserve">
+    <value>The nickname you've entered is incorrect. Please check it and try again.</value>
+  </data>
+  <data name="Login_MensajeNicknameTitulo" xml:space="preserve">
+    <value>Incorrect nickname</value>
   </data>
   <data name="Login_RecuperarCuenta" xml:space="preserve">
     <value>Forgot your password?</value>
@@ -236,6 +269,96 @@
   </data>
   <data name="MiPerfil_Titulo" xml:space="preserve">
     <value>Profile</value>
+  </data>
+  <data name="RecuperacionCuenta_BotonCancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RecuperacionCuenta_BotonConfirmar" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="RecuperacionCuenta_Contenido" xml:space="preserve">
+    <value>Please enter a new password.</value>
+  </data>
+  <data name="RecuperacionCuenta_Titulo" xml:space="preserve">
+    <value>Recover your password</value>
+  </data>
+  <data name="RegistroEnEspera_CancelarBoton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RegistroEnEspera_ClaveNoRecibida" xml:space="preserve">
+    <value>Didn't you receive the validation code?</value>
+  </data>
+  <data name="RegistroEnEspera_ClaveValidacion" xml:space="preserve">
+    <value>Validation code</value>
+  </data>
+  <data name="RegistroEnEspera_ConfirmarBoton" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="RegistroEnEspera_ContenidoTitulo" xml:space="preserve">
+    <value>We're almost done!</value>
+  </data>
+  <data name="RegistroEnEspera_EnviarDeNuevoBoton" xml:space="preserve">
+    <value>Send again</value>
+  </data>
+  <data name="RegistroEnEspera_Mensaje" xml:space="preserve">
+    <value>We send you a validation code to the specified email so that you can confirm your registration. Please enter it in the next field.</value>
+  </data>
+  <data name="RegistroEnEspera_VentanaTitulo" xml:space="preserve">
+    <value>Signing up on hold</value>
+  </data>
+  <data name="Registro_BotonCancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Registro_BotonRegistrar" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="Registro_ClaveInvalidaMensaje" xml:space="preserve">
+    <value>The validation code is incorrect. Please verify the information.</value>
+  </data>
+  <data name="Registro_ClaveInvalidaTitulo" xml:space="preserve">
+    <value>Incorrect validation code</value>
+  </data>
+  <data name="Registro_CorreoExisteMensaje" xml:space="preserve">
+    <value>The typed email already belongs to an account. Please enter a different one.</value>
+  </data>
+  <data name="Registro_CorreoExisteTitulo" xml:space="preserve">
+    <value>Email already exists</value>
+  </data>
+  <data name="Registro_ExitoMensaje" xml:space="preserve">
+    <value>Successfully registered. Log in to be able to play with your friends.</value>
+  </data>
+  <data name="Registro_ExitoTitulo" xml:space="preserve">
+    <value>Successful signing up</value>
+  </data>
+  <data name="Registro_MensajeContraseñasContenido" xml:space="preserve">
+    <value>Please verify that the entered passwords match each other.</value>
+  </data>
+  <data name="Registro_MensajeContraseñasTitulo" xml:space="preserve">
+    <value>Passwords are not the same</value>
+  </data>
+  <data name="Registro_MensajeCorreoContenido" xml:space="preserve">
+    <value>Mail is generally made up of user@domain. Domain examples: gmail.com, hotmail.com, yahoo.com</value>
+  </data>
+  <data name="Registro_MensajeCorreoTitulo" xml:space="preserve">
+    <value>The email is not valid</value>
+  </data>
+  <data name="Registro_NicknameExisteMensaje" xml:space="preserve">
+    <value>The typed nickname already exists. Please enter a different one.</value>
+  </data>
+  <data name="Registro_NicknameExisteTitulo" xml:space="preserve">
+    <value>Nickname already exists</value>
+  </data>
+  <data name="Registro_NuevaClaveMensaje" xml:space="preserve">
+    <value>We send you a new validation code to the specified email.</value>
+  </data>
+  <data name="Registro_NuevaClaveTituloMensaje" xml:space="preserve">
+    <value>Validation code sent</value>
+  </data>
+  <data name="Registro_Titulo" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="Temporizador_Mensaje" xml:space="preserve">
+    <value>Send again on</value>
   </data>
   <data name="UnirseSala_CamposIncompletosMensaje" xml:space="preserve">
     <value>Enter the lobby's ID and password, please.</value>
