@@ -4,8 +4,9 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using UNO.Contratos.LogicaJuego;
 
-namespace UNO.Contratos.AdministrarSala
+namespace UNO.Contratos.LogicaJuego
 {
     [ServiceContract(CallbackContract = typeof(ISalaCallback))]
     public interface IAdministrarSala
@@ -15,8 +16,5 @@ namespace UNO.Contratos.AdministrarSala
 
         [OperationContract(IsOneWay = true)]
         void UnirseASala(Sala salaAUnirse, Dominio.Jugador jugador);
-
-        [OperationContract(IsOneWay = true)]
-        void SalirDeSala(string idSala);
     }
 }

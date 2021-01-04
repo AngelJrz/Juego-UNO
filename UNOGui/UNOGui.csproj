@@ -82,8 +82,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Logica\JuegoAdmin.cs" />
+    <Compile Include="Logica\JuegoCallbackAdmin.cs" />
     <Compile Include="Logica\LoginAdmin.cs" />
     <Compile Include="Logica\LoginCallbackAdmin.cs" />
+    <Compile Include="Logica\PartidaAdmin.cs" />
+    <Compile Include="Logica\PartidaCallbackAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorCallback.cs" />
     <Compile Include="Paginas\CreacionDeSala.xaml.cs">
@@ -112,6 +116,9 @@
     </Compile>
     <Compile Include="Logica\SalaAdmin.cs" />
     <Compile Include="Logica\SalaCallbackAdmin.cs" />
+    <Compile Include="Ventanas\Juego.xaml.cs">
+      <DependentUpon>Juego.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Lobby.xaml.cs">
       <DependentUpon>Lobby.xaml</DependentUpon>
     </Compile>
@@ -201,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\UnirseASala.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\Juego.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

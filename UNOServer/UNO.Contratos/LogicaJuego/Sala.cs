@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UNO.Contratos.LogicaJuego;
 using UNO.Dominio;
 
-namespace UNO.Contratos.AdministrarSala
+namespace UNO.Contratos.LogicaJuego
 {
     public class Sala
     {
@@ -32,6 +33,6 @@ namespace UNO.Contratos.AdministrarSala
         /// <summary>
         /// Obtiene o establece los jugadores que se encuentran en la sala.
         /// </summary>
-        public Dictionary<ISalaCallback, Jugador> JugadoresEnSala { get; set; }
+        public Dictionary<IJuegoCallback, Jugador> JugadoresEnSala { get; set; }
     }
 }

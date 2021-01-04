@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -54,6 +55,23 @@ namespace UNOGui.Ventanas
             mensajeParaInvitado.Visibility = Visibility.Collapsed;
             mensajeParaHost.Visibility = Visibility.Visible;
             iniciarPartidaBoton.Visibility = Visibility.Visible;
+        }
+
+        private void IniciarPartida(object sender, RoutedEventArgs e)
+        {
+            string idSala = idSalaActual.Text;
+
+            try
+            {
+                PartidaAdmin.IniciarPartida(idSala);
+            }
+            catch (EndpointNotFoundException)
+            {
+                new Mensaje
+                {
+
+                }.ShowDialog();
+            }
         }
     }
 }

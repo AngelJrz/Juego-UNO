@@ -7,7 +7,7 @@ using UNOGui.Ventanas;
 
 namespace UNOGui.Logica
 {
-    public class SalaCallbackAdmin : IAdministrarSalaCallback
+    public class SalaCallbackAdmin : IAdministrarJuegoCallback, IAdministrarSalaCallback
     {
         private readonly MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
 
@@ -96,6 +96,7 @@ namespace UNOGui.Logica
 
         private void CerrarSala()
         {
+            MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
             var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
             lobby.Close();
 

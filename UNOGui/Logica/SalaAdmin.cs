@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using System;
+using System.ServiceModel;
 using UNOGui.JuegoUNOServicio;
 
 namespace UNOGui.Logica
@@ -37,7 +38,19 @@ namespace UNOGui.Logica
         /// <param name="idSala">Id de la sala</param>
         public static void SalirDeSala(string idSala)
         {
-            servidor.SalirDeSala(idSala);
+            AdministrarJuegoClient servidor = new AdministrarJuegoClient(contexto);
+            try
+            {
+                servidor.SalirDeSala(idSala);
+            }
+            catch (EndpointNotFoundException)
+            {
+                throw;
+            }
+            catch (TimeoutException)
+            {
+                throw;
+            }
         }
     }
 }

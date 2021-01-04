@@ -51,7 +51,7 @@
         <StackPanel Grid.Row="2">
             <TextBlock x:Name="mensajeParaInvitado" Text="Espere a que el host inicie la partida" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
             <TextBlock x:Name="mensajeParaHost" Text="Inicie la partida cuando haya al menos dos jugadores" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Center" Visibility="Collapsed"/>
-            <Button x:Name="iniciarPartidaBoton" Content="Iniciar juego" Style="{StaticResource Button}" Margin="10" Visibility="Collapsed"/>
+            <Button x:Name="iniciarPartidaBoton" Content="Iniciar juego" Style="{StaticResource Button}" Margin="10" Visibility="Collapsed" Click="IniciarPartida"/>
             <Button Content="Salir de sala" Style="{StaticResource Button}" Margin="10" Click="SalirDeSala" />
         </StackPanel>
     </Grid>

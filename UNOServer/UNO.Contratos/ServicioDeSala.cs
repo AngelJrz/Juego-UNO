@@ -4,7 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using UNO.Contratos.AdministrarSala;
+using UNO.Contratos.LogicaJuego;
 
 namespace UNO.Contratos
 {
@@ -14,79 +14,19 @@ namespace UNO.Contratos
 
         public void CrearSala(Sala nuevaSala, Dominio.Jugador jugador)
         {
-            ISalaCallback calbackActual = SalaCallbackActual;
+            IJuegoCallback callbackActual = JuegoCallbackActual;
 
             nuevaSala.Id = ObtenerNuevoCodigoSala();
-            nuevaSala.JugadoresEnSala.Add(calbackActual, jugador);
+            nuevaSala.JugadoresEnSala.Add(callbackActual, jugador);
 
             salasCreadas.Add(nuevaSala);
-            calbackActual.NotificarCreacionDeSala(nuevaSala);
-        }
-
-        public void SalirDeSala(string idSala)
-        {
-            var salaActual = salasCreadas.Find(sala => sala.Id.Equals(idSala));
-
-            if (salaActual != null)
-            {
-                ISalaCallback callbackActual = SalaCallbackActual;
-
-                salaActual.JugadoresEnSala.TryGetValue(callbackActual, out Dominio.Jugador jugadorASacar);
-
-                if (EsCreadorDeLaSala(salaActual, jugadorASacar))
-                {
-                    callbackActual.EliminarCreador();
-                    salaActual.JugadoresEnSala.Remove(callbackActual);
-                    EliminarSala(salaActual);
-                }
-                else
-                {
-                    callbackActual.NotificarSalidaDeSala();
-                    salaActual.JugadoresEnSala.Remove(callbackActual);
-                    NotificarJugadorEliminado(salaActual, jugadorASacar);
-                }
-            }
-        }
-
-        private void NotificarJugadorEliminado(Sala salaActual, Dominio.Jugador jugadorASacar)
-        {
-            foreach (var jugador in salaActual.JugadoresEnSala)
-            {
-                jugador.Key.SacarJugador(jugadorASacar);
-            }
-        }
-
-        private void EliminarSala(Sala salaActual)
-        {
-            if (salaActual.JugadoresEnSala.Count > 0)
-            {
-                foreach (var jugador in salaActual.JugadoresEnSala)
-                {
-                    jugador.Key.NotificarEliminacionDeSala();
-                }
-
-                salaActual.JugadoresEnSala.Clear();
-            }
-            
-            salasCreadas.Remove(salaActual);
-        }
-
-        private bool EsCreadorDeLaSala(Sala sala, Dominio.Jugador jugador)
-        {
-            bool esCreador = false;
-
-            if (sala.CreadaPor.Equals(jugador.Nickname))
-            {
-                esCreador = true;
-            }
-
-            return esCreador;
+            (callbackActual as ISalaCallback).NotificarCreacionDeSala(nuevaSala);
         }
 
         public void UnirseASala(Sala salaAUnirse, Dominio.Jugador jugador)
         {
             ResultadoUnionSala resultadoUnionSala = ResultadoUnionSala.NoExisteId;
-            ISalaCallback callbackActual = SalaCallbackActual;
+            IJuegoCallback callbackActual = JuegoCallbackActual;
 
             var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(salaAUnirse.Id));
 
@@ -109,10 +49,10 @@ namespace UNO.Contratos
                 }
             }
 
-            callbackActual.NotificarUnionASala(resultadoUnionSala);
+            (callbackActual as ISalaCallback).NotificarUnionASala(resultadoUnionSala);
             if (resultadoUnionSala == ResultadoUnionSala.UnionExitosa)
             {
-                callbackActual.ObtenerInformacionDeSala(salaBuscada);
+                (callbackActual as ISalaCallback).ObtenerInformacionDeSala(salaBuscada);
                 salaBuscada.JugadoresEnSala.Add(callbackActual, jugador);
                 AgregarNuevoJugadorEnSala(salaBuscada, jugador);
             }
@@ -122,7 +62,7 @@ namespace UNO.Contratos
         {
             foreach (var jugador in sala.JugadoresEnSala)
             {
-                jugador.Key.AgregarNuevoJugador(nuevoJugador);
+                (jugador.Key as ISalaCallback).AgregarNuevoJugador(nuevoJugador);
             }
         }
 

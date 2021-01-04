@@ -116,6 +116,64 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IAdministrarJuego_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IAdministrarPartida_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -123,7 +181,7 @@
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarJugador" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.Login" />
-      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarSala" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
@@ -166,9 +224,6 @@
   <wsdl:message name="IAdministrarSala_UnirseASala_InputMessage">
     <wsdl:part name="parameters" element="tns:UnirseASala" />
   </wsdl:message>
-  <wsdl:message name="IAdministrarSala_SalirDeSala_InputMessage">
-    <wsdl:part name="parameters" element="tns:SalirDeSala" />
-  </wsdl:message>
   <wsdl:message name="IAdministrarSala_NotificarCreacionDeSala_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarCreacionDeSala" />
   </wsdl:message>
@@ -184,23 +239,38 @@
   <wsdl:message name="IAdministrarSala_AgregarNuevoJugador_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:AgregarNuevoJugador" />
   </wsdl:message>
-  <wsdl:message name="IAdministrarSala_SacarJugador_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:SacarJugador" />
-  </wsdl:message>
-  <wsdl:message name="IAdministrarSala_NotificarSalidaDeSala_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:NotificarSalidaDeSala" />
-  </wsdl:message>
-  <wsdl:message name="IAdministrarSala_NotificarEliminacionDeSala_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:NotificarEliminacionDeSala" />
-  </wsdl:message>
-  <wsdl:message name="IAdministrarSala_EliminarCreador_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:EliminarCreador" />
-  </wsdl:message>
   <wsdl:message name="IPerfil_BuscarJugador_InputMessage">
     <wsdl:part name="parameters" element="tns:BuscarJugador" />
   </wsdl:message>
   <wsdl:message name="IPerfil_ObtenerInformacionJugador_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ObtenerInformacionJugador" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_SalirDeSala_InputMessage">
+    <wsdl:part name="parameters" element="tns:SalirDeSala" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_SacarJugador_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SacarJugador" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_NotificarSalidaDeSala_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarSalidaDeSala" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_NotificarEliminacionDeSala_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarEliminacionDeSala" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_EliminarCreador_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCreador" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarPartida_IniciarPartida_InputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarPartida" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarPartida_RepartirCartas_InputMessage">
+    <wsdl:part name="parameters" element="tns:RepartirCartas" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarPartida_NotificarInicioPartida_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarInicioPartida" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarPartida_ObtenerMaso_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMaso" />
   </wsdl:message>
   <wsdl:portType name="IRegistrarJugador">
     <wsdl:operation name="RegistrarJugador">
@@ -246,9 +316,6 @@
     <wsdl:operation name="UnirseASala">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarSala/UnirseASala" message="tns:IAdministrarSala_UnirseASala_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SalirDeSala">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarSala/SalirDeSala" message="tns:IAdministrarSala_SalirDeSala_InputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarSala/NotificarCreacionDeSala" message="tns:IAdministrarSala_NotificarCreacionDeSala_OutputCallbackMessage" />
     </wsdl:operation>
@@ -264,18 +331,6 @@
     <wsdl:operation name="AgregarNuevoJugador">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarSala/AgregarNuevoJugador" message="tns:IAdministrarSala_AgregarNuevoJugador_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SacarJugador">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarSala/SacarJugador" message="tns:IAdministrarSala_SacarJugador_OutputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="NotificarSalidaDeSala">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarSala/NotificarSalidaDeSala" message="tns:IAdministrarSala_NotificarSalidaDeSala_OutputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="NotificarEliminacionDeSala">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarSala/NotificarEliminacionDeSala" message="tns:IAdministrarSala_NotificarEliminacionDeSala_OutputCallbackMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="EliminarCreador">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarSala/EliminarCreador" message="tns:IAdministrarSala_EliminarCreador_OutputCallbackMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IPerfil">
     <wsdl:operation name="BuscarJugador">
@@ -283,6 +338,37 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerInformacionJugador">
       <wsdl:output wsaw:Action="http://tempuri.org/IPerfil/ObtenerInformacionJugador" message="tns:IPerfil_ObtenerInformacionJugador_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAdministrarJuego">
+    <wsdl:operation name="SalirDeSala">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/SalirDeSala" message="tns:IAdministrarJuego_SalirDeSala_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SacarJugador">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/SacarJugador" message="tns:IAdministrarJuego_SacarJugador_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarSalidaDeSala">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarSalidaDeSala" message="tns:IAdministrarJuego_NotificarSalidaDeSala_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarEliminacionDeSala">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarEliminacionDeSala" message="tns:IAdministrarJuego_NotificarEliminacionDeSala_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCreador">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/EliminarCreador" message="tns:IAdministrarJuego_EliminarCreador_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAdministrarPartida">
+    <wsdl:operation name="IniciarPartida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarPartida/IniciarPartida" message="tns:IAdministrarPartida_IniciarPartida_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RepartirCartas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarPartida/RepartirCartas" message="tns:IAdministrarPartida_RepartirCartas_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarInicioPartida">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarPartida/NotificarInicioPartida" message="tns:IAdministrarPartida_NotificarInicioPartida_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMaso">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarPartida/ObtenerMaso" message="tns:IAdministrarPartida_ObtenerMaso_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IRegistrarJugador" type="tns:IRegistrarJugador">
@@ -374,12 +460,6 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="SalirDeSala">
-      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/SalirDeSala" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-    </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/NotificarCreacionDeSala" style="document" />
       <wsdl:output>
@@ -410,30 +490,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SacarJugador">
-      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/SacarJugador" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NotificarSalidaDeSala">
-      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/NotificarSalidaDeSala" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="NotificarEliminacionDeSala">
-      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/NotificarEliminacionDeSala" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EliminarCreador">
-      <soap12:operation soapAction="http://tempuri.org/IAdministrarSala/EliminarCreador" style="document" />
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="NetTcpBinding_IPerfil" type="tns:IPerfil">
     <wsp:PolicyReference URI="#NetTcpBinding_IPerfil_policy" />
@@ -446,6 +502,68 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerInformacionJugador">
       <soap12:operation soapAction="http://tempuri.org/IPerfil/ObtenerInformacionJugador" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IAdministrarJuego" type="tns:IAdministrarJuego">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAdministrarJuego_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="SalirDeSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/SalirDeSala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SacarJugador">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/SacarJugador" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarSalidaDeSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarSalidaDeSala" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarEliminacionDeSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarEliminacionDeSala" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCreador">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/EliminarCreador" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IAdministrarPartida" type="tns:IAdministrarPartida">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAdministrarPartida_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="IniciarPartida">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarPartida/IniciarPartida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RepartirCartas">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarPartida/RepartirCartas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarInicioPartida">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarPartida/NotificarInicioPartida" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMaso">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarPartida/ObtenerMaso" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
@@ -480,6 +598,24 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IPerfil" binding="tns:NetTcpBinding_IPerfil">
+      <soap12:address location="net.tcp://localhost:8090/UNO.Contratos" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IAdministrarJuego" binding="tns:NetTcpBinding_IAdministrarJuego">
+      <soap12:address location="net.tcp://localhost:8090/UNO.Contratos" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IAdministrarPartida" binding="tns:NetTcpBinding_IAdministrarPartida">
       <soap12:address location="net.tcp://localhost:8090/UNO.Contratos" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
