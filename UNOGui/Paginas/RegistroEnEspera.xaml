@@ -25,7 +25,7 @@
                        Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center"/>
 
             <Label Content="{x:Static p:Resources.RegistroEnEspera_ClaveValidacion}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" Margin="65,20,0,0"/>
-            <TextBox x:Name="claveIngresada" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,0,0,30"/>
+            <TextBox x:Name="claveIngresada" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,0,0,30" MaxLength="5"/>
 
             <Button Content="{x:Static p:Resources.RegistroEnEspera_ConfirmarBoton}" Style="{StaticResource Button}" Margin="10" Click="ConfirmarRegistro"/>
             <Button Content="{x:Static p:Resources.RegistroEnEspera_CancelarBoton}" Style="{StaticResource Button}" Margin="10" Click="CancelarRegistro"/>
