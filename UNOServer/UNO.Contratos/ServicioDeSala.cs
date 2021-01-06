@@ -46,14 +46,21 @@ namespace UNO.Contratos
             {
                 if (salaBuscada.Contraseña.Equals(salaAUnirse.Contraseña))
                 {
-                    if (HayCupoEnSala(salaBuscada))
+                    if (salaBuscada.EnJuego)
                     {
-                        resultadoUnionSala = ResultadoUnionSala.UnionExitosa;
+                        resultadoUnionSala = ResultadoUnionSala.EnJuego;
                     }
                     else
                     {
-                        resultadoUnionSala = ResultadoUnionSala.NoHayCupo;
-                    }
+                        if (HayCupoEnSala(salaBuscada))
+                        {
+                            resultadoUnionSala = ResultadoUnionSala.UnionExitosa;
+                        }
+                        else
+                        {
+                            resultadoUnionSala = ResultadoUnionSala.NoHayCupo;
+                        }
+                    } 
                 }
                 else
                 {
@@ -111,12 +118,10 @@ namespace UNO.Contratos
             if (salaActual != null)
             {
                 IJuegoCallback callbackActual = JuegoCallbackActual;
-                Console.WriteLine($"Callback actual: {callbackActual.ToString()}");
                 //salaActual.JugadoresEnSala.TryGetValue(callbackActual, out Dominio.Jugador jugadorASacar);
 
                 foreach (var jugador in salaActual.JugadoresEnSala)
                 {
-                    Console.WriteLine($"Callback jugador buscando: {jugador.Value.ToString()}");
                     if (jugador.Key.Nickname.Equals(nickname))
                     {
                         if (EsCreadorDeLaSala(salaActual, jugador.Key))

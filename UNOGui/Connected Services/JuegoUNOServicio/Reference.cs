@@ -233,6 +233,9 @@ namespace UNOGui.JuegoUNOServicio {
         private string CreadaPorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool EnJuegoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -273,6 +276,19 @@ namespace UNOGui.JuegoUNOServicio {
                 if ((object.ReferenceEquals(this.CreadaPorField, value) != true)) {
                     this.CreadaPorField = value;
                     this.RaisePropertyChanged("CreadaPor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool EnJuego {
+            get {
+                return this.EnJuegoField;
+            }
+            set {
+                if ((this.EnJuegoField.Equals(value) != true)) {
+                    this.EnJuegoField = value;
+                    this.RaisePropertyChanged("EnJuego");
                 }
             }
         }
@@ -341,6 +357,9 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         UnionExitosa = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EnJuego = 5,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

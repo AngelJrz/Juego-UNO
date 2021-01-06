@@ -12,11 +12,17 @@ namespace UNO.Contratos
         public void IniciarPartida(string idSala)
         {
             var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSala));
+            PonerSalaEnJuego(idSala);
 
             foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
                 jugador.Value.NotificarInicioPartida(salaBuscada);
             }
+        }
+
+        private void PonerSalaEnJuego(string idSala)
+        {
+            salasCreadas.Where(sala => sala.Id.Equals(idSala)).FirstOrDefault().EnJuego = true;
         }
 
         public void RepartirCartas(Sala sala)

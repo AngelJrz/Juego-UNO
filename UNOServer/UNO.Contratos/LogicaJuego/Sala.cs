@@ -34,5 +34,10 @@ namespace UNO.Contratos.LogicaJuego
         /// Obtiene o establece los jugadores que se encuentran en la sala.
         /// </summary>
         public Dictionary<Jugador, IJuegoCallback> JugadoresEnSala { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece si la sala se encuentra ya en juego.
+        /// </summary>
+        public bool EnJuego { get; set; } = false;
     }
 }
