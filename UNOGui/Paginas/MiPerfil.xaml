@@ -4,11 +4,12 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UNOGui.Paginas"
+      xmlns:p="clr-namespace:UNOGui.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="550"
       Height="Auto" Width="Auto"
-      Title="MiPerfil">
-
+      WindowTitle="{x:Static p:Resources.MiPerfil_Titulo}">
+    
     <Grid Background="Red">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -16,20 +17,20 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Mi perfil" Style="{StaticResource TituloStyle}"/>
+            <TextBlock Text="{x:Static p:Resources.MiPerfil_Titulo}" Style="{StaticResource TituloStyle}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Background="Red" HorizontalAlignment="Center">
             <Border BorderBrush="Black" BorderThickness="0.3" CornerRadius="10" Padding="5" Width="450">
                 <StackPanel>
-                    <Label Content="Cuenta" Style="{StaticResource TextoLabel}" FontSize="24"/>
+                    <Label Content="{x:Static p:Resources.MiPerfil_Cuenta}" Style="{StaticResource TextoLabel}" FontSize="24"/>
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Usuario:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center" Margin="0"/>
+                        <Label Content="{x:Static p:Resources.CampoUsuario}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center" Margin="0"/>
                         <TextBlock Text="{Binding Nickname, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Correo electronico:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
+                        <Label Content="{x:Static p:Resources.CampoCorreo}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
                         <TextBlock Text="{Binding CorreoElectronico, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
                     </StackPanel>
                 </StackPanel>
@@ -37,7 +38,7 @@
 
             <Border BorderBrush="Black" BorderThickness="0.3" CornerRadius="10" Padding="5" Width="450" Margin="15">
                 <StackPanel>
-                    <Label Content="Juego" Style="{StaticResource TextoLabel}" FontSize="24"/>
+                    <Label Content="{x:Static p:Resources.MiPerfil_Juego}" Style="{StaticResource TextoLabel}" FontSize="24"/>
 
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -47,32 +48,56 @@
 
                         <StackPanel Grid.Column="0">
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Nivel:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
+                                <Label Content="{x:Static p:Resources.Inicio_Nivel}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
                                 <TextBlock Text="{Binding Nivel, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Experiencia:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
+                                <Label Content="{x:Static p:Resources.MiPerfil_Experiencia}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
                                 <TextBlock Text="{Binding Experiencia, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="7"/>
                             </StackPanel>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1">
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Puntaje total:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Left"/>
+                                <Label Content="{x:Static p:Resources.Inicio_Puntaje}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Left"/>
                                 <TextBlock Text="{Binding PuntajeTotal, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="7"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Partidas juagadas:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
+                                <Label Content="{x:Static p:Resources.MiPerfil_PartidasJugadas}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
                                 <TextBlock Text="{Binding PartidasJugadas, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap"  TextAlignment="Center" Margin="7"/>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Label Content="Partidas ganadas:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
+                        <Label Content="{x:Static p:Resources.MiPerfil_PartidasGanadas}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" HorizontalAlignment="Center"/>
                         <TextBlock Text="{Binding PartidasGanadas, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextoContenido}" TextWrapping="Wrap"  TextAlignment="Center" Margin="7"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="0.3" CornerRadius="10" Padding="5" Width="450" Margin="15">
+                <StackPanel>
+                    <Label Content="{x:Static p:Resources.MiPerfil_Configuracion}" Style="{StaticResource TextoLabel}" FontSize="24"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                        <TextBlock Style="{StaticResource TextoContenido}">
+                            <Run Text="{x:Static p:Resources.MiPerfil_Idioma}"/>
+                            <Run Text=":"/>
+                        </TextBlock>
+                        <ComboBox Width="120" Cursor="Hand" Margin="10,0,0,0" Name="idiomaCombobox" 
+                                  DisplayMemberPath="Nombre" IsSynchronizedWithCurrentItem="True"
+                                  SelectionChanged="VerificarSeleccion"
+                                  >
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <Button Content="{x:Static p:Resources.MiPerfil_GuardarCambios}" 
+                                Style="{StaticResource Button}" Width="140" Click="GuardarCambios"/>
                     </StackPanel>
 
                 </StackPanel>

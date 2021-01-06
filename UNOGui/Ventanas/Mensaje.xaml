@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNOGui.Ventanas"
+        xmlns:p = "clr-namespace:UNOGui.Properties"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -27,6 +28,6 @@
             </StackPanel>
         </StackPanel>
 
-        <Button Content="Aceptar" Style="{StaticResource Button}" Margin="10" Grid.Row="2" Click="CerrarVentana"/>
+        <Button Content="{x:Static p:Resources.Mensaje_Buton}" Style="{StaticResource Button}" Margin="10" Grid.Row="2" Click="CerrarVentana"/>
     </Grid>
 </Window>

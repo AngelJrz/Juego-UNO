@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.ServiceModel;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Logica;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Paginas
 {
@@ -44,7 +35,18 @@ namespace UNOGui.Paginas
                     Contraseña = contraseniaIngresada.Password
                 };
 
-                RegistroJugadorAdmin.RegistrarNuevoJugador(jugadorARegistrar);
+                try
+                {
+                    RegistroJugadorAdmin.RegistrarNuevoJugador(jugadorARegistrar);
+                }
+                catch (EndpointNotFoundException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                    }.ShowDialog();
+                }
             }
         }
 
@@ -61,7 +63,12 @@ namespace UNOGui.Paginas
             }
             else
             {
-                MessageBox.Show("Los campos estan incompletos", "Falta información", MessageBoxButton.OK, MessageBoxImage.Warning);
+                new Mensaje
+                {
+                    Title = Properties.Resources.CamposIncompletosTitulo,
+                    TituloMensaje = Properties.Resources.CamposIncompletosTitulo,
+                    Contenido = Properties.Resources.CamposIncompletosMensaje
+                }.ShowDialog();
             }
 
             return completo;
@@ -77,7 +84,11 @@ namespace UNOGui.Paginas
             }
             else
             {
-                MessageBox.Show("Las contraseñas no son iguales", "Información invalida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.Registro_MensajeContraseñasTitulo,
+                    Contenido = Properties.Resources.Registro_MensajeContraseñasContenido
+                }.ShowDialog();
             }
 
             return iguales;
@@ -95,7 +106,11 @@ namespace UNOGui.Paginas
             }
             else
             {
-                MessageBox.Show("El correo electronico ingresado no es valido", "Información invalida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.Registro_MensajeCorreoTitulo,
+                    Contenido = Properties.Resources.Registro_MensajeCorreoContenido
+                }.ShowDialog();
             }
 
             return valido;

@@ -53,8 +53,8 @@ namespace UNOGui.Paginas
                 {
                     new Mensaje
                     {
-                        TituloMensaje = "Ups!",
-                        Contenido = "Lo sentimos, ocurrió un error en el servidor. Intente más tarde."
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
                     }.ShowDialog();
                 }
             }
@@ -62,9 +62,9 @@ namespace UNOGui.Paginas
             {
                 new Mensaje
                 {
-                    Title = "Campos vacíos",
-                    TituloMensaje = "Campos vacíos",
-                    Contenido = "Por favor ingresa tu usuario y contraseña para iniciar sesión."
+                    Title = Properties.Resources.Login_MensajeCamposTitulo,
+                    TituloMensaje = Properties.Resources.Login_MensajeCamposTitulo,
+                    Contenido = Properties.Resources.Login_MensajeCamposContenido
                 }.ShowDialog();
             }
         }

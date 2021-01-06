@@ -4,9 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UNOGui.Paginas"
+      xmlns:p = "clr-namespace:UNOGui.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Registro en espera" Height="550" Width="500">
+      WindowTitle="{x:Static p:Resources.RegistroEnEspera_VentanaTitulo}" Height="550" Width="500">
 
     <Grid Background="Red">
         <Grid.RowDefinitions>
@@ -16,23 +17,23 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="¡Ya casi terminamos!" Style="{StaticResource TituloStyle}"/>
+            <TextBlock Text="{x:Static p:Resources.RegistroEnEspera_ContenidoTitulo}" Style="{StaticResource TituloStyle}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="31,0,31.6,140.8" Grid.RowSpan="2">
-            <TextBlock Text="Te enviamos una clave de validación al correo especificado para que confirmes tu registro. Por favor, ingresala en el siguiente campo." 
+            <TextBlock Text="{x:Static p:Resources.RegistroEnEspera_Mensaje}" 
                        Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center"/>
 
-            <Label Content="Clave:" Style="{StaticResource TextoLabel}" Margin="65,20,0,0"/>
+            <Label Content="{x:Static p:Resources.RegistroEnEspera_ClaveValidacion}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" Margin="65,20,0,0"/>
             <TextBox x:Name="claveIngresada" Template="{StaticResource TextBoxBaseControlTemplate}" Margin="0,0,0,30"/>
 
-            <Button Content="Confirmar registro" Style="{StaticResource Button}" Margin="10" Click="ConfirmarRegistro"/>
-            <Button Content="Cancelar" Style="{StaticResource Button}" Margin="10" Click="CancelarRegistro"/>
+            <Button Content="{x:Static p:Resources.RegistroEnEspera_ConfirmarBoton}" Style="{StaticResource Button}" Margin="10" Click="ConfirmarRegistro"/>
+            <Button Content="{x:Static p:Resources.RegistroEnEspera_CancelarBoton}" Style="{StaticResource Button}" Margin="10" Click="CancelarRegistro"/>
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Orientation="Horizontal">
-                <TextBlock Text="¿No recibiste la clave de validación?" Foreground="Gold" Margin="0,0,5,0"/>
+                <TextBlock Text="{x:Static p:Resources.RegistroEnEspera_ClaveNoRecibida}" Foreground="Gold" Margin="0,0,5,0"/>
                 <TextBlock x:Name="temporizadorTexto" Foreground="Gold"/>
-                <Button x:Name="enviarCorreoBotton" Content="Enviar de nuevo" Style="{StaticResource ButtonOutlined}" Visibility="Hidden" Click="EnviarCorreo"/>
+                <Button x:Name="enviarCorreoBotton" Content="{x:Static p:Resources.RegistroEnEspera_EnviarDeNuevoBoton}" Style="{StaticResource ButtonOutlined}" Visibility="Hidden" Click="EnviarCorreo"/>
             </StackPanel>
 
         </StackPanel>
