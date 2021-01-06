@@ -4,10 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UNOGui.Paginas"
+      xmlns:p="clr-namespace:UNOGui.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Height="Auto" Width="Auto"
-      WindowTitle="Inicio">
+      Height="Auto" Width="Auto">
     <Page.Resources>
         <local:IndexConverter x:Key="IndexConverter"/>
     </Page.Resources>
@@ -18,7 +18,7 @@
         </Grid.Background>
 
         <StackPanel>
-            <TextBlock Text="Tabla de puntuaciones" Style="{StaticResource TituloStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10"/>
+            <TextBlock Text="{x:Static p:Resources.Inicio_TablaPuntaciones}" Style="{StaticResource TituloStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10"/>
 
             <ListView Height="400" Width="260" VerticalAlignment="Top" Margin="10" 
                       Background="Transparent" BorderBrush="Transparent" 
@@ -39,11 +39,13 @@
                                     <TextBlock Text="{Binding Nickname, UpdateSourceTrigger=LostFocus}" Foreground="Gold" Style="{StaticResource TextoContenido}"/>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Style="{StaticResource TextoContenido}">
-                                            <Run Text="Puntaje: "/>
+                                            <Run Text="{x:Static p:Resources.Inicio_Puntaje}"/>
+                                            <Run Text=": "/>
                                             <Run Text="{Binding PuntajeTotal}" FontWeight="Bold"/>
                                         </TextBlock>
                                         <TextBlock Margin="10,0" Style="{StaticResource TextoContenido}">
-                                            <Run Text="Nivel: "/>
+                                            <Run Text="{x:Static p:Resources.Inicio_Nivel}"/>
+                                            <Run Text=": "/>
                                             <Run Text="{Binding Nivel}" FontWeight="Bold"/>
                                         </TextBlock>
                                     </StackPanel>

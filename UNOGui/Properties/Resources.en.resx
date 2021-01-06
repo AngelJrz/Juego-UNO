@@ -118,258 +118,258 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CampoConfirmacionContraseña" xml:space="preserve">
-    <value>Confirmar contraseña</value>
+    <value>Confirm password</value>
   </data>
   <data name="CampoContraseña" xml:space="preserve">
-    <value>Contraseña</value>
+    <value>Password</value>
   </data>
   <data name="CampoCorreo" xml:space="preserve">
-    <value>Correo electrónico</value>
+    <value>Email</value>
   </data>
   <data name="CampoNuevaContraseña" xml:space="preserve">
-    <value>Nueva contraseña</value>
+    <value>New password</value>
   </data>
   <data name="CamposIncompletosMensaje" xml:space="preserve">
-    <value>Por favor ingresa toda la información solicitada.</value>
+    <value>Please enter all the requested information.</value>
   </data>
   <data name="CamposIncompletosTitulo" xml:space="preserve">
-    <value>Campos incompletos</value>
+    <value>Missing fields</value>
   </data>
   <data name="CampoUsuario" xml:space="preserve">
-    <value>Usuario</value>
+    <value>Nickname</value>
   </data>
   <data name="CrearSala_ButonCrear" xml:space="preserve">
-    <value>Crear</value>
+    <value>Create</value>
   </data>
   <data name="CrearSala_CamposIncompletosMensaje" xml:space="preserve">
-    <value>Por favor ingrese la contraseña de la sala.</value>
+    <value>Enter the Lobby password, please.</value>
   </data>
   <data name="CrearSala_NumeroJugadores" xml:space="preserve">
-    <value>¿Para cuántos jugadores es la sala?</value>
+    <value>How many players is the lobby for?</value>
   </data>
   <data name="CrearSala_Subtitulo" xml:space="preserve">
-    <value>Crea una sala para que juegues con tus amigos.</value>
+    <value>Create a lobby to play with your friends.</value>
   </data>
   <data name="ErrorServidor_MensajeContenido" xml:space="preserve">
-    <value>Lo sentimos, ocurrió un error en el servidor. Intente más tarde.</value>
+    <value>Sorry, a server error occurred. Please try again later.</value>
   </data>
   <data name="ErrorServidor_TituloContenido" xml:space="preserve">
     <value>Ups!</value>
   </data>
   <data name="Idioma_Español" xml:space="preserve">
-    <value>Español</value>
+    <value>Spanish</value>
   </data>
   <data name="Idioma_Ingles" xml:space="preserve">
-    <value>Inglés</value>
+    <value>English</value>
   </data>
   <data name="Inicio_Nivel" xml:space="preserve">
-    <value>Nivel</value>
+    <value>Level</value>
   </data>
   <data name="Inicio_Puntaje" xml:space="preserve">
-    <value>Puntaje</value>
+    <value>Score</value>
   </data>
   <data name="Inicio_TablaPuntaciones" xml:space="preserve">
-    <value>Tabla de puntuaciones</value>
+    <value>High Scores</value>
   </data>
   <data name="Lobby_IniciarPartidaBoton" xml:space="preserve">
-    <value>Iniciar juego</value>
+    <value>Start game</value>
   </data>
   <data name="Lobby_MensajeHost" xml:space="preserve">
-    <value>Inicie la partida cuando haya al menos dos jugadores.</value>
+    <value>Start the game when there are at least two players.</value>
   </data>
   <data name="Lobby_MensajeInvitado" xml:space="preserve">
-    <value>Espere a que el host inicie la partida.</value>
+    <value>Wait for the host to start the game.</value>
   </data>
   <data name="Lobby_SalirBoton" xml:space="preserve">
-    <value>Salir de sala</value>
+    <value>Exit</value>
   </data>
   <data name="Lobby_Titulo" xml:space="preserve">
-    <value>Sala de juego</value>
+    <value>Lobby</value>
   </data>
   <data name="Login_IniciarSesion" xml:space="preserve">
-    <value>Iniciar sesión</value>
+    <value>Login</value>
   </data>
   <data name="Login_MensajeCamposContenido" xml:space="preserve">
-    <value>Por favor ingresa tu usuario y contraseña para iniciar sesión.</value>
+    <value>Please enter your nickname and password to log in.</value>
   </data>
   <data name="Login_MensajeCamposTitulo" xml:space="preserve">
-    <value>Campos vacíos</value>
+    <value>Empty fields</value>
   </data>
   <data name="Login_MensajeContraseñaContenido" xml:space="preserve">
-    <value>Por favor verifique la contraseña ingresada e intente de nuevo.</value>
+    <value>The password you've entered is incorrect. Please check it and try again.</value>
   </data>
   <data name="Login_MensajeContraseñaTitulo" xml:space="preserve">
-    <value>Contraseña incorrecta</value>
+    <value>Incorrect password</value>
   </data>
   <data name="Login_MensajeNicknameContenido" xml:space="preserve">
-    <value>Por favor verifique si el Nickname ingresado es correcto e intente de nuevo.</value>
+    <value>The nickname you've entered is incorrect. Please check it and try again.</value>
   </data>
   <data name="Login_MensajeNicknameTitulo" xml:space="preserve">
-    <value>Nickname incorrecto</value>
+    <value>Incorrect nickname</value>
   </data>
   <data name="Login_RecuperarCuenta" xml:space="preserve">
-    <value>¿Olvidaste tu contraseña?</value>
+    <value>Forgot your password?</value>
   </data>
   <data name="Login_Registrarse" xml:space="preserve">
-    <value>Registrate</value>
+    <value>Sign in</value>
   </data>
   <data name="Login_SeperadorO" xml:space="preserve">
-    <value>u</value>
+    <value>or</value>
   </data>
   <data name="Mensaje_Buton" xml:space="preserve">
-    <value>Aceptar</value>
+    <value>Ok</value>
   </data>
   <data name="Mensaje_CambioIdiomaMensaje" xml:space="preserve">
-    <value>Se cambió el idioma. Por favor, inicie sesión de nuevo.</value>
+    <value>The language was changed. Login again, please.</value>
   </data>
   <data name="Mensaje_CambioIdiomaTitulo" xml:space="preserve">
-    <value>Se cambió el idioma</value>
+    <value>Language changed</value>
   </data>
   <data name="MenuPrincipal_CerrarSesion" xml:space="preserve">
-    <value>Cerrar sesión</value>
+    <value>Log out</value>
   </data>
   <data name="MenuPrincipal_CrearSala" xml:space="preserve">
-    <value>Crear sala</value>
+    <value>Create lobby</value>
   </data>
   <data name="MenuPrincipal_Inicio" xml:space="preserve">
-    <value>Inicio</value>
+    <value>Home</value>
   </data>
   <data name="MenuPrincipal_MiPerfil" xml:space="preserve">
-    <value>Mi perfil</value>
+    <value>Profile</value>
   </data>
   <data name="MenuPrincipal_Saludo" xml:space="preserve">
-    <value>Hola</value>
+    <value>Hi</value>
   </data>
   <data name="MenuPrincipal_UnirseSala" xml:space="preserve">
-    <value>Unirse a sala</value>
+    <value>Join to lobby</value>
   </data>
   <data name="MiPerfil_Configuracion" xml:space="preserve">
-    <value>Configuracion</value>
+    <value>Settings</value>
   </data>
   <data name="MiPerfil_Cuenta" xml:space="preserve">
-    <value>Cuenta</value>
+    <value>Account</value>
   </data>
   <data name="MiPerfil_Experiencia" xml:space="preserve">
-    <value>Experiencia</value>
+    <value>Experience</value>
   </data>
   <data name="MiPerfil_GuardarCambios" xml:space="preserve">
-    <value>Guardar cambios</value>
+    <value>Save changes</value>
   </data>
   <data name="MiPerfil_Idioma" xml:space="preserve">
-    <value>Idioma</value>
+    <value>Language</value>
   </data>
   <data name="MiPerfil_Juego" xml:space="preserve">
-    <value>Juego</value>
+    <value>Game</value>
   </data>
   <data name="MiPerfil_PartidasGanadas" xml:space="preserve">
-    <value>Partidas ganadas</value>
+    <value>Games won</value>
   </data>
   <data name="MiPerfil_PartidasJugadas" xml:space="preserve">
-    <value>Partidas jugadas</value>
+    <value>Games played</value>
   </data>
   <data name="MiPerfil_Titulo" xml:space="preserve">
-    <value>Mi perfil</value>
+    <value>Profile</value>
   </data>
   <data name="RecuperacionCuenta_BotonCancelar" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Cancel</value>
   </data>
   <data name="RecuperacionCuenta_BotonConfirmar" xml:space="preserve">
-    <value>Confirmar</value>
+    <value>Confirm</value>
   </data>
   <data name="RecuperacionCuenta_Contenido" xml:space="preserve">
-    <value>Por favor, ingresa una nueva contraseña.</value>
+    <value>Please enter a new password.</value>
   </data>
   <data name="RecuperacionCuenta_Titulo" xml:space="preserve">
-    <value>Recupera tu contraseña</value>
+    <value>Recover your password</value>
   </data>
   <data name="RegistroEnEspera_CancelarBoton" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Cancel</value>
   </data>
   <data name="RegistroEnEspera_ClaveNoRecibida" xml:space="preserve">
-    <value>¿No recibiste la clave de validación?</value>
+    <value>Didn't you receive the validation code?</value>
   </data>
   <data name="RegistroEnEspera_ClaveValidacion" xml:space="preserve">
-    <value>Clave de validación</value>
+    <value>Validation code</value>
   </data>
   <data name="RegistroEnEspera_ConfirmarBoton" xml:space="preserve">
-    <value>Confirmar registro</value>
+    <value>Confirm</value>
   </data>
   <data name="RegistroEnEspera_ContenidoTitulo" xml:space="preserve">
-    <value>¡Ya casi terminamos!</value>
+    <value>We're almost done!</value>
   </data>
   <data name="RegistroEnEspera_EnviarDeNuevoBoton" xml:space="preserve">
-    <value>Enviar de nuevo</value>
+    <value>Send again</value>
   </data>
   <data name="RegistroEnEspera_Mensaje" xml:space="preserve">
-    <value>Te enviamos una clave de validación al correo especificado para que confirmes tu registro. Por favor, ingresala en el siguiente campo.</value>
+    <value>We send you a validation code to the specified email so that you can confirm your registration. Please enter it in the next field.</value>
   </data>
   <data name="RegistroEnEspera_VentanaTitulo" xml:space="preserve">
-    <value>Registro en espera</value>
+    <value>Signing up on hold</value>
   </data>
   <data name="Registro_BotonCancelar" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Cancel</value>
   </data>
   <data name="Registro_BotonRegistrar" xml:space="preserve">
-    <value>Registrar</value>
+    <value>Sign in</value>
   </data>
   <data name="Registro_ClaveInvalidaMensaje" xml:space="preserve">
-    <value>La clave de validación ingresada es incorrecta. Por favor, verifique la información.</value>
+    <value>The validation code is incorrect. Please verify the information.</value>
   </data>
   <data name="Registro_ClaveInvalidaTitulo" xml:space="preserve">
-    <value>Clave de validación incorrecta</value>
+    <value>Incorrect validation code</value>
   </data>
   <data name="Registro_CorreoExisteMensaje" xml:space="preserve">
-    <value>El correo electrónico ingresado pertenece ya a una cuenta. Por favor, ingrese uno diferente.</value>
+    <value>The typed email already belongs to an account. Please enter a different one.</value>
   </data>
   <data name="Registro_CorreoExisteTitulo" xml:space="preserve">
-    <value>El correo electrónico ya existe</value>
+    <value>Email already exists</value>
   </data>
   <data name="Registro_ExitoMensaje" xml:space="preserve">
-    <value>Registrado exitosamente. Inicia sesión para poder jugar con tus amigos.</value>
+    <value>Successfully registered. Log in to be able to play with your friends.</value>
   </data>
   <data name="Registro_ExitoTitulo" xml:space="preserve">
-    <value>Registro exitoso</value>
+    <value>Successful signing up</value>
   </data>
   <data name="Registro_MensajeContraseñasContenido" xml:space="preserve">
-    <value>Por favor verifica que las contraseñas ingresadas coincidan.</value>
+    <value>Please verify that the entered passwords match each other.</value>
   </data>
   <data name="Registro_MensajeContraseñasTitulo" xml:space="preserve">
-    <value>Las contraseñas no son iguales</value>
+    <value>Passwords are not the same</value>
   </data>
   <data name="Registro_MensajeCorreoContenido" xml:space="preserve">
-    <value>El correo generalmente se conforma por usuario@dominio. Ejemplos de dominio: gmail.com, hotmail.com, yahoo.com</value>
+    <value>Mail is generally made up of user@domain. Domain examples: gmail.com, hotmail.com, yahoo.com</value>
   </data>
   <data name="Registro_MensajeCorreoTitulo" xml:space="preserve">
-    <value>El correo ingresado no es válido</value>
+    <value>The email is not valid</value>
   </data>
   <data name="Registro_NicknameExisteMensaje" xml:space="preserve">
-    <value>El nickname ingresado ya existe. Por favor, ingrese otro diferente.</value>
+    <value>The typed nickname already exists. Please enter a different one.</value>
   </data>
   <data name="Registro_NicknameExisteTitulo" xml:space="preserve">
-    <value>El nickname ya existe</value>
+    <value>Nickname already exists</value>
   </data>
   <data name="Registro_NuevaClaveMensaje" xml:space="preserve">
-    <value>Te enviamos una nueva clave al correo especificado.</value>
+    <value>We send you a new validation code to the specified email.</value>
   </data>
   <data name="Registro_NuevaClaveTituloMensaje" xml:space="preserve">
-    <value>Clave de validación enviada</value>
+    <value>Validation code sent</value>
   </data>
   <data name="Registro_Titulo" xml:space="preserve">
-    <value>Registrar cuenta</value>
+    <value>Sign in</value>
   </data>
   <data name="Temporizador_Mensaje" xml:space="preserve">
-    <value>Enviar de nuevo en</value>
+    <value>Send again on</value>
   </data>
   <data name="UnirseSala_CamposIncompletosMensaje" xml:space="preserve">
-    <value>Por favor ingrese la clave y contraseña de la sala.</value>
+    <value>Enter the lobby's ID and password, please.</value>
   </data>
   <data name="UnirseSala_ClaveSala" xml:space="preserve">
-    <value>Clave de la sala</value>
+    <value>Lobby ID</value>
   </data>
   <data name="UnirseSala_Subtitulo" xml:space="preserve">
-    <value>Únute a una sala para jugar con tus amigos.</value>
+    <value>Join to a lobby to play with your friends.</value>
   </data>
   <data name="UniseSala_BotonUnirse" xml:space="preserve">
-    <value>Unirme</value>
+    <value>Join</value>
   </data>
 </root>

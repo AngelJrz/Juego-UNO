@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Logica;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Paginas
 {
@@ -44,7 +45,11 @@ namespace UNOGui.Paginas
             }
             else
             {
-                MessageBox.Show("Los campos estan incompletos");
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.CamposIncompletosTitulo,
+                    Contenido = Properties.Resources.UnirseSala_CamposIncompletosMensaje
+                }.ShowDialog();
             }
         }
 

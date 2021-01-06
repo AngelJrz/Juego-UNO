@@ -38,15 +38,15 @@ namespace UNOGui.Logica
 
                 if (resultado == ResultadoLogin.NoExisteNickname)
                 {
-                    ventanaMensaje.Title = "Nickname no encontrado";
-                    ventanaMensaje.TituloMensaje = "Nickname incorrecto";
-                    ventanaMensaje.Contenido = "Por favor verifique si el Nickname ingresado es correcto e intente de nuevo.";
+                    ventanaMensaje.Title = Properties.Resources.Login_MensajeNicknameTitulo;
+                    ventanaMensaje.TituloMensaje = Properties.Resources.Login_MensajeNicknameTitulo;
+                    ventanaMensaje.Contenido = Properties.Resources.Login_MensajeNicknameContenido;
                 }
                 else if (resultado == ResultadoLogin.ContraseñaIncorrecta) 
                 {
-                    ventanaMensaje.Title = "Contraseña incorrecta";
-                    ventanaMensaje.TituloMensaje = "La contraseña es incorrecta";
-                    ventanaMensaje.Contenido = "Por favor verifique la contraseña ingresada e intente de nuevo.";
+                    ventanaMensaje.Title = Properties.Resources.Login_MensajeContraseñaTitulo;
+                    ventanaMensaje.TituloMensaje = Properties.Resources.Login_MensajeContraseñaTitulo;
+                    ventanaMensaje.Contenido = Properties.Resources.Login_MensajeContraseñaContenido;
                 }
 
                 ventanaMensaje.ShowDialog();

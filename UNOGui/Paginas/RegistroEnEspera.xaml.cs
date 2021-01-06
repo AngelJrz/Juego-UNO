@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using UNOGui.Logica;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Paginas
 {
@@ -33,18 +24,44 @@ namespace UNOGui.Paginas
 
         private void CancelarRegistro(object sender, RoutedEventArgs e)
         {
-            RegistroJugadorAdmin.CancelarRegistrarJugador();
+            try
+            {
+                RegistroJugadorAdmin.CancelarRegistrarJugador();
+            }
+            catch (EndpointNotFoundException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            } 
         }
 
         private void ConfirmarRegistro(object sender, RoutedEventArgs e)
         {
             if (claveIngresada.Text.Trim() != "")
             {
-                RegistroJugadorAdmin.VerificarClaveIngresada(claveIngresada.Text);
+                try
+                {
+                    RegistroJugadorAdmin.VerificarClaveIngresada(claveIngresada.Text);
+                }
+                catch (EndpointNotFoundException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                    }.ShowDialog();
+                }                
             }
             else
             {
-                MessageBox.Show("El campo esta vacío", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.CamposIncompletosTitulo,
+                    Contenido = Properties.Resources.CamposIncompletosMensaje
+                }.ShowDialog();
             }
         }
 
@@ -64,7 +81,8 @@ namespace UNOGui.Paginas
             if (tiempoDeTemporizador > 0)
             {
                 tiempoDeTemporizador--;
-                temporizadorTexto.Text = string.Format("Enviar de nuevo en 00:0{0}:{1}", tiempoDeTemporizador / 60, tiempoDeTemporizador % 60);
+                string mensaje = Properties.Resources.Temporizador_Mensaje;
+                temporizadorTexto.Text = string.Format("{0} 00:0{1}:{2}", mensaje, tiempoDeTemporizador / 60, tiempoDeTemporizador % 60);
             }
             else
             {
@@ -76,7 +94,18 @@ namespace UNOGui.Paginas
 
         private void EnviarCorreo(object sender, RoutedEventArgs e)
         {
-            RegistroJugadorAdmin.EnviarClave();
+            try
+            {
+                RegistroJugadorAdmin.EnviarClave();
+            }
+            catch (EndpointNotFoundException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            } 
         }
     }
 }
