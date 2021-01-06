@@ -1,5 +1,5 @@
 ﻿
-namespace UNO.Contratos.AdministrarSala
+namespace UNO.Contratos.LogicaJuego
 {
     public enum ResultadoUnionSala
     {

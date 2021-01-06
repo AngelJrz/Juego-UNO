@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using System;
+using System.ServiceModel;
 using UNOGui.JuegoUNOServicio;
 
 namespace UNOGui.Logica
@@ -8,8 +9,8 @@ namespace UNOGui.Logica
     /// </summary>
     public static class SalaAdmin
     {
-        private static readonly InstanceContext contexto = new InstanceContext(new SalaCallbackAdmin());
-        private static readonly AdministrarSalaClient servidor = new AdministrarSalaClient(contexto);
+        private static readonly InstanceContext contexto = new InstanceContext(new JuegoCallbackAdmin());
+        private static readonly AdministrarJuegoClient servidor = new AdministrarJuegoClient(contexto);
 
         /// <summary>
         /// 
@@ -35,9 +36,20 @@ namespace UNOGui.Logica
         /// Saca al Jugador de la sala.
         /// </summary>
         /// <param name="idSala">Id de la sala</param>
-        public static void SalirDeSala(string idSala)
+        public static void SalirDeSala(string idSala, string nickname)
         {
-            servidor.SalirDeSala(idSala);
+            try
+            {
+                servidor.SalirDeSala(idSala, nickname);
+            }
+            catch (EndpointNotFoundException)
+            {
+                throw;
+            }
+            catch (TimeoutException)
+            {
+                throw;
+            }
         }
     }
 }

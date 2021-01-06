@@ -5,32 +5,30 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UNO.Contratos.AdministrarSala
+namespace UNO.Contratos.LogicaJuego
 {
-    /// <summary>
-    /// 
-    /// </summary>
     [ServiceContract]
-    public interface ISalaCallback
+    public interface IJuegoCallback
     {
+        #region SalaCallback
         /// <summary>
-        /// 
+        /// Notifica al jugador la sala creada.
         /// </summary>
-        /// <param name="salaCreada"></param>
+        /// <param name="salaCreada">Sala creada</param>
         [OperationContract(IsOneWay = true)]
         void NotificarCreacionDeSala(Sala salaCreada);
 
         /// <summary>
-        /// 
+        /// Notifica al jugador el estado de la union a una sala.
         /// </summary>
-        /// <param name="resultado"></param>
+        /// <param name="resultado">Resultado de la union a una sala</param>
         [OperationContract(IsOneWay = true)]
         void NotificarUnionASala(ResultadoUnionSala resultado);
 
         /// <summary>
-        /// 
+        /// Actualiza la sala del jugador con los nuevos jugadores.
         /// </summary>
-        /// <param name="jugadores"></param>
+        /// <param name="jugadores">Jugadores de la sala</param>
         [OperationContract(IsOneWay = true)]
         void ActualizarSala(List<string> jugadores);
 
@@ -72,5 +70,21 @@ namespace UNO.Contratos.AdministrarSala
         /// </summary>
         [OperationContract(IsOneWay = true)]
         void EliminarCreador();
+        #endregion
+
+        #region PartidaCallback
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sala"></param>
+        [OperationContract(IsOneWay = true)]
+        void NotificarInicioPartida(Sala sala);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [OperationContract(IsOneWay = true)]
+        void ObtenerMaso();
+        #endregion
     }
 }

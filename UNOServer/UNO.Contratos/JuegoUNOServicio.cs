@@ -13,7 +13,7 @@ using System.Data.Entity.Infrastructure;
 
 namespace UNO.Contratos
 {
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
+    
     public partial class JuegoUNOServicio : IRegistrarJugador
     {
         private readonly Dictionary<IRegistrarJugadorCallback, Jugador> jugadoresARegistrar = new Dictionary<IRegistrarJugadorCallback, Jugador>();

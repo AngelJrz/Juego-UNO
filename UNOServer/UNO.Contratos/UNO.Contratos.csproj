@@ -56,11 +56,15 @@
     <Compile Include="AdministrarJugador\GeneradorClave.cs" />
     <Compile Include="AdministrarJugador\IPerfil.cs" />
     <Compile Include="AdministrarJugador\IPerfilCallback.cs" />
-    <Compile Include="AdministrarSala\IAdministrarSala.cs" />
-    <Compile Include="AdministrarSala\ISalaCallback.cs" />
-    <Compile Include="AdministrarSala\ResultadoUnionSala.cs" />
-    <Compile Include="AdministrarSala\Sala.cs" />
+    <Compile Include="LogicaJuego\IAdministrarSala.cs" />
+    <Compile Include="LogicaJuego\ISalaCallback.cs" />
+    <Compile Include="LogicaJuego\ResultadoUnionSala.cs" />
+    <Compile Include="LogicaJuego\Sala.cs" />
     <Compile Include="JuegoUNOServicio.cs" />
+    <Compile Include="LogicaJuego\IAdministrarJuego.cs" />
+    <Compile Include="LogicaJuego\IAdministrarPartida.cs" />
+    <Compile Include="LogicaJuego\IJuegoCallback.cs" />
+    <Compile Include="LogicaJuego\IPartidaCallback.cs" />
     <Compile Include="LoginServicio.cs" />
     <Compile Include="Login\ILogin.cs" />
     <Compile Include="Login\ILoginCallback.cs" />
@@ -71,6 +75,8 @@
     <Compile Include="AdministrarJugador\IRegistrarJugadorCallback.cs" />
     <Compile Include="AdministrarJugador\ResultadoRegistro.cs" />
     <Compile Include="ServicioDeSala.cs" />
+    <Compile Include="ServicioJuego.cs" />
+    <Compile Include="ServicioPartida.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UNO.AccesoADatos\UNO.AccesoADatos.csproj">
@@ -85,6 +91,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AdministrarSala\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

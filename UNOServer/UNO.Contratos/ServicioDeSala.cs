@@ -4,89 +4,41 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using UNO.Contratos.AdministrarSala;
+using UNO.Contratos.LogicaJuego;
+using UNO.Dominio;
 
 namespace UNO.Contratos
 {
-    public partial class JuegoUNOServicio : IAdministrarSala
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
+    public partial class JuegoUNOServicio : IAdministrarJuego
     {
         private readonly List<Sala> salasCreadas = new List<Sala>();
 
-        public void CrearSala(Sala nuevaSala, Dominio.Jugador jugador)
+        /// <summary>
+        /// Lógica para crear una sala y que los jugadores se puedan unir.
+        /// </summary>
+        /// <param name="nuevaSala">Sala a crear</param>
+        /// <param name="jugador">Jugador que crea la sala</param>
+        public void CrearSala(Sala nuevaSala, Jugador jugador)
         {
-            ISalaCallback calbackActual = SalaCallbackActual;
+            IJuegoCallback callbackActual = JuegoCallbackActual;
 
             nuevaSala.Id = ObtenerNuevoCodigoSala();
-            nuevaSala.JugadoresEnSala.Add(calbackActual, jugador);
+            nuevaSala.JugadoresEnSala.Add(jugador, callbackActual);
 
             salasCreadas.Add(nuevaSala);
-            calbackActual.NotificarCreacionDeSala(nuevaSala);
+            callbackActual.NotificarCreacionDeSala(nuevaSala);
         }
 
-        public void SalirDeSala(string idSala)
-        {
-            var salaActual = salasCreadas.Find(sala => sala.Id.Equals(idSala));
-
-            if (salaActual != null)
-            {
-                ISalaCallback callbackActual = SalaCallbackActual;
-
-                salaActual.JugadoresEnSala.TryGetValue(callbackActual, out Dominio.Jugador jugadorASacar);
-
-                if (EsCreadorDeLaSala(salaActual, jugadorASacar))
-                {
-                    callbackActual.EliminarCreador();
-                    salaActual.JugadoresEnSala.Remove(callbackActual);
-                    EliminarSala(salaActual);
-                }
-                else
-                {
-                    callbackActual.NotificarSalidaDeSala();
-                    salaActual.JugadoresEnSala.Remove(callbackActual);
-                    NotificarJugadorEliminado(salaActual, jugadorASacar);
-                }
-            }
-        }
-
-        private void NotificarJugadorEliminado(Sala salaActual, Dominio.Jugador jugadorASacar)
-        {
-            foreach (var jugador in salaActual.JugadoresEnSala)
-            {
-                jugador.Key.SacarJugador(jugadorASacar);
-            }
-        }
-
-        private void EliminarSala(Sala salaActual)
-        {
-            if (salaActual.JugadoresEnSala.Count > 0)
-            {
-                foreach (var jugador in salaActual.JugadoresEnSala)
-                {
-                    jugador.Key.NotificarEliminacionDeSala();
-                }
-
-                salaActual.JugadoresEnSala.Clear();
-            }
-            
-            salasCreadas.Remove(salaActual);
-        }
-
-        private bool EsCreadorDeLaSala(Sala sala, Dominio.Jugador jugador)
-        {
-            bool esCreador = false;
-
-            if (sala.CreadaPor.Equals(jugador.Nickname))
-            {
-                esCreador = true;
-            }
-
-            return esCreador;
-        }
-
-        public void UnirseASala(Sala salaAUnirse, Dominio.Jugador jugador)
+        /// <summary>
+        /// Lógica para unir un jugador a la sala.
+        /// </summary>
+        /// <param name="salaAUnirse">Sala a la cual se va a unir</param>
+        /// <param name="jugador">Jugador que se va a unir a la sala</param>
+        public void UnirseASala(Sala salaAUnirse, Jugador jugador)
         {
             ResultadoUnionSala resultadoUnionSala = ResultadoUnionSala.NoExisteId;
-            ISalaCallback callbackActual = SalaCallbackActual;
+            IJuegoCallback callbackActual = JuegoCallbackActual;
 
             var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(salaAUnirse.Id));
 
@@ -113,16 +65,16 @@ namespace UNO.Contratos
             if (resultadoUnionSala == ResultadoUnionSala.UnionExitosa)
             {
                 callbackActual.ObtenerInformacionDeSala(salaBuscada);
-                salaBuscada.JugadoresEnSala.Add(callbackActual, jugador);
+                salaBuscada.JugadoresEnSala.Add(jugador, callbackActual);
                 AgregarNuevoJugadorEnSala(salaBuscada, jugador);
             }
         }
 
-        private void AgregarNuevoJugadorEnSala(Sala sala, Dominio.Jugador nuevoJugador)
+        private void AgregarNuevoJugadorEnSala(Sala sala, Jugador nuevoJugador)
         {
             foreach (var jugador in sala.JugadoresEnSala)
             {
-                jugador.Key.AgregarNuevoJugador(nuevoJugador);
+                jugador.Value.AgregarNuevoJugador(nuevoJugador);
             }
         }
 
@@ -147,11 +99,97 @@ namespace UNO.Contratos
             return idSala;
         }
 
-        private ISalaCallback SalaCallbackActual
+        /// <summary>
+        /// Lógica para eliminar al jugador de una sala.
+        /// </summary>
+        /// <param name="idSala">Id de sala a salirse</param>
+        /// <param name="nickname">Nickname del jugador a salirse</param>
+        public void SalirDeSala(string idSala, string nickname)
+        {
+            var salaActual = salasCreadas.Find(sala => sala.Id.Equals(idSala));
+
+            if (salaActual != null)
+            {
+                IJuegoCallback callbackActual = JuegoCallbackActual;
+                Console.WriteLine($"Callback actual: {callbackActual.ToString()}");
+                //salaActual.JugadoresEnSala.TryGetValue(callbackActual, out Dominio.Jugador jugadorASacar);
+
+                foreach (var jugador in salaActual.JugadoresEnSala)
+                {
+                    Console.WriteLine($"Callback jugador buscando: {jugador.Value.ToString()}");
+                    if (jugador.Key.Nickname.Equals(nickname))
+                    {
+                        if (EsCreadorDeLaSala(salaActual, jugador.Key))
+                        {
+                            callbackActual.EliminarCreador();
+                            salaActual.JugadoresEnSala.Remove(jugador.Key);
+                            EliminarSala(salaActual);
+                        }
+                        else
+                        {
+                            callbackActual.NotificarSalidaDeSala();
+                            salaActual.JugadoresEnSala.Remove(jugador.Key);
+                            NotificarJugadorEliminado(salaActual, jugador.Key);
+                        }
+                        break;
+                    }
+                }
+
+                //if (EsCreadorDeLaSala(salaActual, jugadorASacar))
+                //{
+                //    callbackActual.EliminarCreador();
+                //    salaActual.JugadoresEnSala.Remove(callbackActual);
+                //    EliminarSala(salaActual);
+                //}
+                //else
+                //{
+                //    callbackActual.NotificarSalidaDeSala();
+                //    salaActual.JugadoresEnSala.Remove(callbackActual);
+                //    NotificarJugadorEliminado(salaActual, jugadorASacar);
+                //}
+            }
+        }
+
+        private void NotificarJugadorEliminado(Sala salaActual, Dominio.Jugador jugadorASacar)
+        {
+            foreach (var jugador in salaActual.JugadoresEnSala)
+            {
+                jugador.Value.SacarJugador(jugadorASacar);
+            }
+        }
+
+        private void EliminarSala(Sala salaActual)
+        {
+            if (salaActual.JugadoresEnSala.Count > 0)
+            {
+                foreach (var jugador in salaActual.JugadoresEnSala)
+                {
+                    jugador.Value.NotificarEliminacionDeSala();
+                }
+
+                salaActual.JugadoresEnSala.Clear();
+            }
+
+            salasCreadas.Remove(salaActual);
+        }
+
+        private bool EsCreadorDeLaSala(Sala sala, Dominio.Jugador jugador)
+        {
+            bool esCreador = false;
+
+            if (sala.CreadaPor.Equals(jugador.Nickname))
+            {
+                esCreador = true;
+            }
+
+            return esCreador;
+        }
+
+        private IJuegoCallback JuegoCallbackActual
         {
             get
             {
-                return OperationContext.Current.GetCallbackChannel<ISalaCallback>();
+                return OperationContext.Current.GetCallbackChannel<IJuegoCallback>();
             }
         }
     }
