@@ -101,7 +101,7 @@ namespace UNOGui.Logica
             MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
             var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
             lobby.Close();
-            MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
+            
             menuPrincipal.Show();
         }
     }

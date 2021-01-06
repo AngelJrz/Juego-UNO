@@ -26,11 +26,11 @@
                        Style="{StaticResource TextoContenido}" TextWrapping="Wrap" TextAlignment="Center" Margin="10"/>
 
             <Label Content="{x:Static p:Resources.CampoNuevaContraseña}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
-            <PasswordBox x:Name="nuevaContrasenia" Template="{StaticResource PasswordBoxBaseControlTemplate}" />
+            <PasswordBox x:Name="nuevaContrasenia" Template="{StaticResource PasswordBoxBaseControlTemplate}" MaxLength="100"/>
 
 
             <Label Content="{x:Static p:Resources.CampoConfirmacionContraseña}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
-            <PasswordBox x:Name="nuevaContrasenia2" Template="{StaticResource PasswordBoxBaseControlTemplate}" />
+            <PasswordBox x:Name="nuevaContrasenia2" Template="{StaticResource PasswordBoxBaseControlTemplate}" MaxLength="100"/>
 
 
             <StackPanel Margin="20">
