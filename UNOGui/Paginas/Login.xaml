@@ -21,10 +21,10 @@
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center"  FocusManager.FocusedElement="{Binding ElementName=usuarioTextbox}">
             <Label Content="{x:Static p:Resources.CampoUsuario}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="usuarioTextbox"/>
+            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Name="usuarioTextbox" MaxLength="50"/>
 
             <Label Content="{x:Static p:Resources.CampoContraseña}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" Margin="100,0,0,0"/>
-            <PasswordBox Template="{StaticResource PasswordBoxBaseControlTemplate}" Name="contraseñaTextbox"/>
+            <PasswordBox Template="{StaticResource PasswordBoxBaseControlTemplate}" Name="contraseñaTextbox" MaxLength="100"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2">
