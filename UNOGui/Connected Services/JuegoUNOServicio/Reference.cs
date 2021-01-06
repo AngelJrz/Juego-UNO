@@ -236,7 +236,7 @@ namespace UNOGui.JuegoUNOServicio {
         private string IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.Dictionary<object, UNOGui.JuegoUNOServicio.Jugador> JugadoresEnSalaField;
+        private System.Collections.Generic.Dictionary<UNOGui.JuegoUNOServicio.Jugador, object> JugadoresEnSalaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NumeroTotalDeJugadoresField;
@@ -291,7 +291,7 @@ namespace UNOGui.JuegoUNOServicio {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.Dictionary<object, UNOGui.JuegoUNOServicio.Jugador> JugadoresEnSala {
+        public System.Collections.Generic.Dictionary<UNOGui.JuegoUNOServicio.Jugador, object> JugadoresEnSala {
             get {
                 return this.JugadoresEnSalaField;
             }
@@ -508,87 +508,6 @@ namespace UNOGui.JuegoUNOServicio {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicio.IAdministrarSala", CallbackContract=typeof(UNOGui.JuegoUNOServicio.IAdministrarSalaCallback))]
-    public interface IAdministrarSala {
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/CrearSala")]
-        void CrearSala(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/CrearSala")]
-        System.Threading.Tasks.Task CrearSalaAsync(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/UnirseASala")]
-        void UnirseASala(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/UnirseASala")]
-        System.Threading.Tasks.Task UnirseASalaAsync(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAdministrarSalaCallback {
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/NotificarCreacionDeSala")]
-        void NotificarCreacionDeSala(UNOGui.JuegoUNOServicio.Sala salaCreada);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/NotificarUnionASala")]
-        void NotificarUnionASala(UNOGui.JuegoUNOServicio.ResultadoUnionSala resultado);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/ActualizarSala")]
-        void ActualizarSala(string[] jugadores);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/ObtenerInformacionDeSala")]
-        void ObtenerInformacionDeSala(UNOGui.JuegoUNOServicio.Sala sala);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarSala/AgregarNuevoJugador")]
-        void AgregarNuevoJugador(UNOGui.JuegoUNOServicio.Jugador nuevoJugador);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAdministrarSalaChannel : UNOGui.JuegoUNOServicio.IAdministrarSala, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AdministrarSalaClient : System.ServiceModel.DuplexClientBase<UNOGui.JuegoUNOServicio.IAdministrarSala>, UNOGui.JuegoUNOServicio.IAdministrarSala {
-        
-        public AdministrarSalaClient(System.ServiceModel.InstanceContext callbackInstance) : 
-                base(callbackInstance) {
-        }
-        
-        public AdministrarSalaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
-                base(callbackInstance, endpointConfigurationName) {
-        }
-        
-        public AdministrarSalaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
-        }
-        
-        public AdministrarSalaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
-        }
-        
-        public AdministrarSalaClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, binding, remoteAddress) {
-        }
-        
-        public void CrearSala(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador) {
-            base.Channel.CrearSala(nuevaSala, jugador);
-        }
-        
-        public System.Threading.Tasks.Task CrearSalaAsync(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador) {
-            return base.Channel.CrearSalaAsync(nuevaSala, jugador);
-        }
-        
-        public void UnirseASala(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador) {
-            base.Channel.UnirseASala(salaAUnirse, jugador);
-        }
-        
-        public System.Threading.Tasks.Task UnirseASalaAsync(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador) {
-            return base.Channel.UnirseASalaAsync(salaAUnirse, jugador);
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicio.IPerfil", CallbackContract=typeof(UNOGui.JuegoUNOServicio.IPerfilCallback))]
     public interface IPerfil {
         
@@ -647,15 +566,54 @@ namespace UNOGui.JuegoUNOServicio {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicio.IAdministrarJuego", CallbackContract=typeof(UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback))]
     public interface IAdministrarJuego {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/SalirDeSala")]
-        void SalirDeSala(string idSala);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/CrearSala")]
+        void CrearSala(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/CrearSala")]
+        System.Threading.Tasks.Task CrearSalaAsync(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/UnirseASala")]
+        void UnirseASala(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/UnirseASala")]
+        System.Threading.Tasks.Task UnirseASalaAsync(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/SalirDeSala")]
-        System.Threading.Tasks.Task SalirDeSalaAsync(string idSala);
+        void SalirDeSala(string idSala, string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/SalirDeSala")]
+        System.Threading.Tasks.Task SalirDeSalaAsync(string idSala, string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/IniciarPartida")]
+        void IniciarPartida(string idSala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/IniciarPartida")]
+        System.Threading.Tasks.Task IniciarPartidaAsync(string idSala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RepartirCartas")]
+        void RepartirCartas(UNOGui.JuegoUNOServicio.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RepartirCartas")]
+        System.Threading.Tasks.Task RepartirCartasAsync(UNOGui.JuegoUNOServicio.Sala sala);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IAdministrarJuegoCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala")]
+        void NotificarCreacionDeSala(UNOGui.JuegoUNOServicio.Sala salaCreada);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarUnionASala")]
+        void NotificarUnionASala(UNOGui.JuegoUNOServicio.ResultadoUnionSala resultado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarSala")]
+        void ActualizarSala(string[] jugadores);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerInformacionDeSala")]
+        void ObtenerInformacionDeSala(UNOGui.JuegoUNOServicio.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AgregarNuevoJugador")]
+        void AgregarNuevoJugador(UNOGui.JuegoUNOServicio.Jugador nuevoJugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/SacarJugador")]
         void SacarJugador(UNOGui.JuegoUNOServicio.Jugador jugadorASacar);
@@ -668,6 +626,12 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/EliminarCreador")]
         void EliminarCreador();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarInicioPartida")]
+        void NotificarInicioPartida(UNOGui.JuegoUNOServicio.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerMaso")]
+        void ObtenerMaso();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -698,68 +662,28 @@ namespace UNOGui.JuegoUNOServicio {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void SalirDeSala(string idSala) {
-            base.Channel.SalirDeSala(idSala);
+        public void CrearSala(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador) {
+            base.Channel.CrearSala(nuevaSala, jugador);
         }
         
-        public System.Threading.Tasks.Task SalirDeSalaAsync(string idSala) {
-            return base.Channel.SalirDeSalaAsync(idSala);
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicio.IAdministrarPartida", CallbackContract=typeof(UNOGui.JuegoUNOServicio.IAdministrarPartidaCallback))]
-    public interface IAdministrarPartida {
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarPartida/IniciarPartida")]
-        void IniciarPartida(string idSala);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarPartida/IniciarPartida")]
-        System.Threading.Tasks.Task IniciarPartidaAsync(string idSala);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarPartida/RepartirCartas")]
-        void RepartirCartas(UNOGui.JuegoUNOServicio.Sala sala);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarPartida/RepartirCartas")]
-        System.Threading.Tasks.Task RepartirCartasAsync(UNOGui.JuegoUNOServicio.Sala sala);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAdministrarPartidaCallback {
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarPartida/NotificarInicioPartida")]
-        void NotificarInicioPartida(UNOGui.JuegoUNOServicio.Sala sala);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarPartida/ObtenerMaso")]
-        void ObtenerMaso();
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAdministrarPartidaChannel : UNOGui.JuegoUNOServicio.IAdministrarPartida, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AdministrarPartidaClient : System.ServiceModel.DuplexClientBase<UNOGui.JuegoUNOServicio.IAdministrarPartida>, UNOGui.JuegoUNOServicio.IAdministrarPartida {
-        
-        public AdministrarPartidaClient(System.ServiceModel.InstanceContext callbackInstance) : 
-                base(callbackInstance) {
+        public System.Threading.Tasks.Task CrearSalaAsync(UNOGui.JuegoUNOServicio.Sala nuevaSala, UNOGui.JuegoUNOServicio.Jugador jugador) {
+            return base.Channel.CrearSalaAsync(nuevaSala, jugador);
         }
         
-        public AdministrarPartidaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
-                base(callbackInstance, endpointConfigurationName) {
+        public void UnirseASala(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador) {
+            base.Channel.UnirseASala(salaAUnirse, jugador);
         }
         
-        public AdministrarPartidaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        public System.Threading.Tasks.Task UnirseASalaAsync(UNOGui.JuegoUNOServicio.Sala salaAUnirse, UNOGui.JuegoUNOServicio.Jugador jugador) {
+            return base.Channel.UnirseASalaAsync(salaAUnirse, jugador);
         }
         
-        public AdministrarPartidaClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        public void SalirDeSala(string idSala, string nickname) {
+            base.Channel.SalirDeSala(idSala, nickname);
         }
         
-        public AdministrarPartidaClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, binding, remoteAddress) {
+        public System.Threading.Tasks.Task SalirDeSalaAsync(string idSala, string nickname) {
+            return base.Channel.SalirDeSalaAsync(idSala, nickname);
         }
         
         public void IniciarPartida(string idSala) {

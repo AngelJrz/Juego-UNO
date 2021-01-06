@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace UNOGui.Logica
 {
-    public class PartidaCallbackAdmin : IAdministrarPartidaCallback
+    public partial class JuegoCallbackAdmin
     {
         public void NotificarInicioPartida(Sala sala)
         {
@@ -17,6 +17,8 @@ namespace UNOGui.Logica
             Juego ventanaJuego = new Juego();
 
             lobbyActual.Close();
+            var menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
+            menuPrincipal.Hide();
             ventanaJuego.Show();
         }
 

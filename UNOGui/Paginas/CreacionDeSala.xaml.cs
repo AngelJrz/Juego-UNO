@@ -46,7 +46,7 @@ namespace UNOGui.Paginas
                     Contraseña = contrasenia.Password,
                     NumeroTotalDeJugadores = ObtenerJugadores(),
                     CreadaPor = jugador.Nickname,
-                    JugadoresEnSala = new Dictionary<object, Jugador>()
+                    JugadoresEnSala = new Dictionary<Jugador, object>()
                 };
 
                 SalaAdmin.CrearSala(nuevaSala, jugador);

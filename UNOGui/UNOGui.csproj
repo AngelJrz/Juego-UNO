@@ -82,8 +82,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Logica\JuegoAdmin.cs" />
-    <Compile Include="Logica\JuegoCallbackAdmin.cs" />
     <Compile Include="Logica\LoginAdmin.cs" />
     <Compile Include="Logica\LoginCallbackAdmin.cs" />
     <Compile Include="Logica\PartidaAdmin.cs" />

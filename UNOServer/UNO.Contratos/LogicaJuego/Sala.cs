@@ -33,6 +33,6 @@ namespace UNO.Contratos.LogicaJuego
         /// <summary>
         /// Obtiene o establece los jugadores que se encuentran en la sala.
         /// </summary>
-        public Dictionary<IJuegoCallback, Jugador> JugadoresEnSala { get; set; }
+        public Dictionary<Jugador, IJuegoCallback> JugadoresEnSala { get; set; }
     }
 }

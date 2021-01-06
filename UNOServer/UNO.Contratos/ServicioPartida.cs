@@ -7,7 +7,7 @@ using UNO.Contratos.LogicaJuego;
 
 namespace UNO.Contratos
 {
-    public partial class JuegoUNOServicio : IAdministrarPartida
+    public partial class JuegoUNOServicio
     {
         public void IniciarPartida(string idSala)
         {
@@ -15,7 +15,7 @@ namespace UNO.Contratos
 
             foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
-                (jugador.Key as IPartidaCallback).NotificarInicioPartida(salaBuscada);
+                jugador.Value.NotificarInicioPartida(salaBuscada);
             }
         }
 
@@ -23,7 +23,7 @@ namespace UNO.Contratos
         {
             foreach (var jugador in sala.JugadoresEnSala)
             {
-                (jugador.Key as IPartidaCallback).ObtenerMaso();
+                jugador.Value.ObtenerMaso();
             }
         }
     }

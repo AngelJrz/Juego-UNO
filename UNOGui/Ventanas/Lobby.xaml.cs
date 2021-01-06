@@ -38,8 +38,10 @@ namespace UNOGui.Ventanas
         private void SalirDeSala(object sender, RoutedEventArgs e)
         {
             string idSala = idSalaActual.Text;
+            MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
+            var jugador = menuPrincipal.DataContext as Jugador;
 
-            SalaAdmin.SalirDeSala(idSala);
+            SalaAdmin.SalirDeSala(idSala, jugador.Nickname);
         }
 
         private void RegresarMenuPrincipal(object sender, System.ComponentModel.CancelEventArgs e)

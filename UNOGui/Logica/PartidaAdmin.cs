@@ -10,8 +10,8 @@ namespace UNOGui.Logica
 {
     public static class PartidaAdmin
     {
-        private static readonly InstanceContext contexto = new InstanceContext(new PartidaCallbackAdmin());
-        private static readonly AdministrarPartidaClient servidor = new AdministrarPartidaClient(contexto);
+        private static readonly InstanceContext contexto = new InstanceContext(new JuegoCallbackAdmin());
+        private static readonly AdministrarJuegoClient servidor = new AdministrarJuegoClient(contexto);
 
         public static void IniciarPartida(string idSala)
         {

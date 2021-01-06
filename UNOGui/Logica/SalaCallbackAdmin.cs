@@ -7,7 +7,7 @@ using UNOGui.Ventanas;
 
 namespace UNOGui.Logica
 {
-    public class SalaCallbackAdmin : IAdministrarJuegoCallback, IAdministrarSalaCallback
+    public partial class JuegoCallbackAdmin : IAdministrarJuegoCallback
     {
         private readonly MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
 
@@ -37,7 +37,7 @@ namespace UNOGui.Logica
                 DataContext = salaCreada
             };
 
-            lobby.Jugadores = new ObservableCollection<Jugador>(salaCreada.JugadoresEnSala.Values);
+            lobby.Jugadores = new ObservableCollection<Jugador>(salaCreada.JugadoresEnSala.Keys);
             lobby.jugadoresEnSala.ItemsSource = lobby.Jugadores;
             lobby.ConfigurarSalaParaHost();
             lobby.Show();
@@ -82,7 +82,7 @@ namespace UNOGui.Logica
         {
             var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
             lobby.DataContext = sala;
-            lobby.Jugadores = new ObservableCollection<Jugador>(sala.JugadoresEnSala.Values);
+            lobby.Jugadores = new ObservableCollection<Jugador>(sala.JugadoresEnSala.Keys);
             lobby.jugadoresEnSala.ItemsSource = lobby.Jugadores;
         }
 
