@@ -62,9 +62,10 @@ namespace UNO.Contratos
             }
 
             callbackActual.NotificarUnionASala(resultadoUnionSala);
-            if (resultadoUnionSala == ResultadoUnionSala.UnionExitosa)
+            if (salaBuscada != null && resultadoUnionSala == ResultadoUnionSala.UnionExitosa)
             {
                 callbackActual.ObtenerInformacionDeSala(salaBuscada);
+
                 salaBuscada.JugadoresEnSala.Add(jugador, callbackActual);
                 AgregarNuevoJugadorEnSala(salaBuscada, jugador);
             }

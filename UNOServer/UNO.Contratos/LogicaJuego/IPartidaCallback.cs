@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace UNO.Contratos.LogicaJuego
 {
     [ServiceContract]
-    public interface IPartidaCallback : IJuegoCallback
+    public interface IPartidaCallback
     {
         [OperationContract(IsOneWay = true)]
         void NotificarInicioPartida(Sala sala);

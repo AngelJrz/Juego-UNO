@@ -6,8 +6,8 @@ namespace UNO.Contratos.AdministradorEmail
 {
     public class CorreoElectronico
     {
-        private SmtpClient cliente;
-        private MailAddress remitente;
+        private readonly SmtpClient cliente;
+        private readonly MailAddress remitente;
         private const string USUARIO = "juegouno.proyecto@gmail.com";
         private const string CONTRASEÑA = "proyectoJuegoTecnologias2020";
         private const string DIRECCION = "juegouno.proyecto@gmail.com";
