@@ -42,6 +42,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -56,15 +57,11 @@
     <Compile Include="AdministrarJugador\GeneradorClave.cs" />
     <Compile Include="AdministrarJugador\IPerfil.cs" />
     <Compile Include="AdministrarJugador\IPerfilCallback.cs" />
-    <Compile Include="LogicaJuego\IAdministrarSala.cs" />
-    <Compile Include="LogicaJuego\ISalaCallback.cs" />
     <Compile Include="LogicaJuego\ResultadoUnionSala.cs" />
     <Compile Include="LogicaJuego\Sala.cs" />
     <Compile Include="JuegoUNOServicio.cs" />
     <Compile Include="LogicaJuego\IAdministrarJuego.cs" />
-    <Compile Include="LogicaJuego\IAdministrarPartida.cs" />
     <Compile Include="LogicaJuego\IJuegoCallback.cs" />
-    <Compile Include="LogicaJuego\IPartidaCallback.cs" />
     <Compile Include="LoginServicio.cs" />
     <Compile Include="Login\ILogin.cs" />
     <Compile Include="Login\ILoginCallback.cs" />

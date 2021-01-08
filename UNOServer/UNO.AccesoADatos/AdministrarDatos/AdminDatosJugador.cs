@@ -46,12 +46,11 @@ namespace UNO.AccesoADatos.AdministrarDatos
         public bool EsContraseñaCorrecta(string nickname, string contraseña)
         {
             bool esCorrecta = false;
-            string contraseñaConHash = AdministradorHash.GenerarHash(contraseña);
 
             var jugadorBuscado = baseDeDatos.Jugador.Where(jugador => jugador.Nickname.Equals(nickname))
                 .FirstOrDefault<Jugador>();
 
-            if (AdministradorHash.CompararHash(jugadorBuscado.Contraseña, contraseñaConHash))
+            if (AdministradorHash.CompararHash(contraseña, jugadorBuscado.Contraseña))
             {
                 esCorrecta = true;
             }

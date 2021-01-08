@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>UNO.AccesoADatos</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>66c6eba9-1510-479a-a50d-1a6a588a4f12</ProjectGuid>
+  <FullPath>D:\Juego-UNO\UNOServer\UNO.AccesoADatos\UNO.AccesoADatos.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="D:\Juego-UNO\UNOServer\.sonarqube\out\1\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">D:\Juego-UNO\UNOServer\UNO.AccesoADatos\bin\Debug\UNO.AccesoADatos.dll.RoslynCA.json|D:\Juego-UNO\UNOServer\UNO.AccesoADatos\bin\Debug\UNO.AccesoADatos.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">D:\Juego-UNO\UNOServer\.sonarqube\out\1</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+</ProjectInfo>

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using UNO.Contratos.AdministrarJugador;
 using UNO.Dominio;
 using UNO.AccesoADatos.AdministrarDatos;
@@ -13,7 +9,7 @@ using System.Data.Entity.Infrastructure;
 
 namespace UNO.Contratos
 {
-    
+
     public partial class JuegoUNOServicio : IRegistrarJugador
     {
         private readonly Dictionary<IRegistrarJugadorCallback, Jugador> jugadoresARegistrar = new Dictionary<IRegistrarJugadorCallback, Jugador>();

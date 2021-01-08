@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace UNO.Servicio
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             using (ServiceHost host = new ServiceHost(typeof(UNO.Contratos.JuegoUNOServicio)))
             {

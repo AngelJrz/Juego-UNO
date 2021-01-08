@@ -1,15 +1,16 @@
 ﻿using System.Net.Mail;
 using System.Net;
 using UNO.Dominio;
+using System.Configuration;
 
 namespace UNO.Contratos.AdministradorEmail
 {
     public class CorreoElectronico
     {
-        private SmtpClient cliente;
-        private MailAddress remitente;
-        private const string USUARIO = "juegouno.proyecto@gmail.com";
-        private const string CONTRASEÑA = "proyectoJuegoTecnologias2020";
+        private readonly SmtpClient cliente;
+        private readonly MailAddress remitente;
+        private readonly string usuario = ConfigurationManager.AppSettings["UsuarioCorreo"];
+        private readonly string contraseña = ConfigurationManager.AppSettings["ContraseñaCorreo"];
         private const string DIRECCION = "juegouno.proyecto@gmail.com";
         private const string NOMBRE_A_MOSTRAR = "Juego UNO Inc.";
 
@@ -17,7 +18,7 @@ namespace UNO.Contratos.AdministradorEmail
         {
             cliente = new SmtpClient
             {
-                Credentials = new NetworkCredential(USUARIO, CONTRASEÑA),
+                Credentials = new NetworkCredential(usuario, contraseña),
                 Port = 587,
                 EnableSsl = true,
                 Host = "smtp.gmail.com",

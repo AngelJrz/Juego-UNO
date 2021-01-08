@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using UNO.Contratos.LogicaJuego;
 using UNO.Dominio;
 
@@ -69,7 +66,7 @@ namespace UNO.Contratos
             }
 
             callbackActual.NotificarUnionASala(resultadoUnionSala);
-            if (resultadoUnionSala == ResultadoUnionSala.UnionExitosa)
+            if (salaBuscada != null && resultadoUnionSala == ResultadoUnionSala.UnionExitosa)
             {
                 callbackActual.ObtenerInformacionDeSala(salaBuscada);
                 salaBuscada.JugadoresEnSala.Add(jugador, callbackActual);
@@ -118,7 +115,6 @@ namespace UNO.Contratos
             if (salaActual != null)
             {
                 IJuegoCallback callbackActual = JuegoCallbackActual;
-                //salaActual.JugadoresEnSala.TryGetValue(callbackActual, out Dominio.Jugador jugadorASacar);
 
                 foreach (var jugador in salaActual.JugadoresEnSala)
                 {
@@ -139,19 +135,6 @@ namespace UNO.Contratos
                         break;
                     }
                 }
-
-                //if (EsCreadorDeLaSala(salaActual, jugadorASacar))
-                //{
-                //    callbackActual.EliminarCreador();
-                //    salaActual.JugadoresEnSala.Remove(callbackActual);
-                //    EliminarSala(salaActual);
-                //}
-                //else
-                //{
-                //    callbackActual.NotificarSalidaDeSala();
-                //    salaActual.JugadoresEnSala.Remove(callbackActual);
-                //    NotificarJugadorEliminado(salaActual, jugadorASacar);
-                //}
             }
         }
 
