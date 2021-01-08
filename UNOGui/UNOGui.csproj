@@ -51,10 +51,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -85,6 +90,7 @@
     <Compile Include="Logica\Idioma.cs" />
     <Compile Include="Logica\LoginAdmin.cs" />
     <Compile Include="Logica\LoginCallbackAdmin.cs" />
+    <Compile Include="Logica\Log\LoggerAdmin.cs" />
     <Compile Include="Logica\PartidaAdmin.cs" />
     <Compile Include="Logica\PartidaCallbackAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorAdmin.cs" />
@@ -185,6 +191,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\JuegoUNOServicio\JuegoUNOServicio.wsdl" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

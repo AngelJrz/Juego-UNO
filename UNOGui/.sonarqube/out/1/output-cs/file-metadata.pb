@@ -3,7 +3,8 @@
 DD:\Juego-UNO\UNOGui\Connected Services\JuegoUNOServicio\Reference.csutf-8-
 $D:\Juego-UNO\UNOGui\Logica\Idioma.csutf-81
 (D:\Juego-UNO\UNOGui\Logica\LoginAdmin.csutf-89
-0D:\Juego-UNO\UNOGui\Logica\LoginCallbackAdmin.csutf-83
+0D:\Juego-UNO\UNOGui\Logica\LoginCallbackAdmin.csutf-86
+-D:\Juego-UNO\UNOGui\Logica\Log\LoggerAdmin.csutf-83
 *D:\Juego-UNO\UNOGui\Logica\PartidaAdmin.csutf-8;
 2D:\Juego-UNO\UNOGui\Logica\PartidaCallbackAdmin.csutf-8;
 2D:\Juego-UNO\UNOGui\Logica\RegistroJugadorAdmin.csutf-8>

@@ -21,7 +21,7 @@ namespace UNOGui.Paginas
     /// </summary>
     public class IndexConverter : IValueConverter
     {
-        public object Convert(object value, Type TargetType, object parameter, CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var item = (ListViewItem)value;
             var listView = ItemsControl.ItemsControlFromItemContainer(item) as ListView;

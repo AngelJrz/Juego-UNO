@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using UNOGui.JuegoUNOServicio;
+using UNOGui.Logica.Log;
 
 namespace UNOGui.Logica
 {
@@ -19,8 +16,14 @@ namespace UNOGui.Logica
             {
                 servidor.IniciarPartida(idSala);
             }
-            catch (EndpointNotFoundException)
+            catch (EndpointNotFoundException ex)
             {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
         }

@@ -1,9 +1,9 @@
 func @_UNOGui.Paginas.IndexConverter.Convert$object.System.Type.object.System.Globalization.CultureInfo$(none, none, none, none) -> none loc("D:\\Juego-UNO\\UNOGui\\Paginas\\Inicio.xaml.cs" :23 :8) {
-^entry (%_value : none, %_TargetType : none, %_parameter : none, %_culture : none):
+^entry (%_value : none, %_targetType : none, %_parameter : none, %_culture : none):
 %0 = cbde.alloca none loc("D:\\Juego-UNO\\UNOGui\\Paginas\\Inicio.xaml.cs" :23 :30)
 cbde.store %_value, %0 : memref<none> loc("D:\\Juego-UNO\\UNOGui\\Paginas\\Inicio.xaml.cs" :23 :30)
 %1 = cbde.alloca none loc("D:\\Juego-UNO\\UNOGui\\Paginas\\Inicio.xaml.cs" :23 :44)
-cbde.store %_TargetType, %1 : memref<none> loc("D:\\Juego-UNO\\UNOGui\\Paginas\\Inicio.xaml.cs" :23 :44)
+cbde.store %_targetType, %1 : memref<none> loc("D:\\Juego-UNO\\UNOGui\\Paginas\\Inicio.xaml.cs" :23 :44)
 %2 = cbde.alloca none loc("D:\\Juego-UNO\\UNOGui\\Paginas\\Inicio.xaml.cs" :23 :61)
 cbde.store %_parameter, %2 : memref<none> loc("D:\\Juego-UNO\\UNOGui\\Paginas\\Inicio.xaml.cs" :23 :61)
 %3 = cbde.alloca none loc("D:\\Juego-UNO\\UNOGui\\Paginas\\Inicio.xaml.cs" :23 :79)
