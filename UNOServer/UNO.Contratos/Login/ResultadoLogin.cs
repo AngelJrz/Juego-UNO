@@ -13,6 +13,7 @@ namespace UNO.Contratos.Login
     {
         NoExisteNickname = 1,
         ContraseñaIncorrecta = 2,
-        ExisteJugador = 3
+        ExisteJugador = 3,
+        SesionIniciada = 4
     }
 }

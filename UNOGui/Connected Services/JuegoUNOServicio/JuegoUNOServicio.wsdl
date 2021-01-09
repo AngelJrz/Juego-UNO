@@ -154,6 +154,9 @@
   <wsdl:message name="ILogin_IniciarSesion_InputMessage">
     <wsdl:part name="parameters" element="tns:IniciarSesion" />
   </wsdl:message>
+  <wsdl:message name="ILogin_CerrarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarSesion" />
+  </wsdl:message>
   <wsdl:message name="ILogin_NotificarResultadoLogin_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarResultadoLogin" />
   </wsdl:message>
@@ -243,6 +246,9 @@
   <wsdl:portType name="ILogin">
     <wsdl:operation name="IniciarSesion">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogin/IniciarSesion" message="tns:ILogin_IniciarSesion_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/CerrarSesion" message="tns:ILogin_CerrarSesion_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotificarResultadoLogin">
       <wsdl:output wsaw:Action="http://tempuri.org/ILogin/NotificarResultadoLogin" message="tns:ILogin_NotificarResultadoLogin_OutputCallbackMessage" />
@@ -366,6 +372,12 @@
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="IniciarSesion">
       <soap12:operation soapAction="http://tempuri.org/ILogin/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSesion">
+      <soap12:operation soapAction="http://tempuri.org/ILogin/CerrarSesion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
