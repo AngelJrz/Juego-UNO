@@ -11,6 +11,8 @@ namespace UNO.Contratos
 {
     public partial class JuegoUNOServicio : ILogin
     {
+        private readonly List<string> jugadoresConectados = new List<string>();
+
         /// <summary>
         /// Inicia sesión de un Jugador existente en el juego.
         /// </summary>
@@ -21,22 +23,29 @@ namespace UNO.Contratos
             ResultadoLogin resultadoLogin;
             AdminDatosJugador adminDatosJugador = new AdminDatosJugador();
 
-            if (adminDatosJugador.ExisteNickname(nickname))
+            if (TieneSesionIniciada(nickname))
             {
-                if (adminDatosJugador.EsContraseñaCorrecta(nickname, contraseña))
-                {
-                    resultadoLogin = ResultadoLogin.ExisteJugador;
-                }
-                else
-                {
-                    resultadoLogin = ResultadoLogin.ContraseñaIncorrecta;
-                }
+                resultadoLogin = ResultadoLogin.SesionIniciada;
             }
             else
             {
-                resultadoLogin = ResultadoLogin.NoExisteNickname;
+                if (adminDatosJugador.ExisteNickname(nickname))
+                {
+                    if (adminDatosJugador.EsContraseñaCorrecta(nickname, contraseña))
+                    {
+                        resultadoLogin = ResultadoLogin.ExisteJugador;
+                    }
+                    else
+                    {
+                        resultadoLogin = ResultadoLogin.ContraseñaIncorrecta;
+                    }
+                }
+                else
+                {
+                    resultadoLogin = ResultadoLogin.NoExisteNickname;
+                }
             }
-
+            
             LoginCallback.NotificarResultadoLogin(resultadoLogin);
 
             if (resultadoLogin == ResultadoLogin.ExisteJugador)
@@ -44,6 +53,16 @@ namespace UNO.Contratos
                 List<Dominio.Jugador> jugadoresTop = adminDatosJugador.ObtenerMejoresJugadores();
                 LoginCallback.ObtenerJugadoresTop(jugadoresTop);
             }
+        }
+
+        private bool TieneSesionIniciada(string nickname)
+        {
+            return jugadoresConectados.Contains(nickname);
+        }
+
+        public void CerrarSesion(string nickname)
+        {
+            jugadoresConectados.Remove(nickname);
         }
 
         private ILoginCallback LoginCallback

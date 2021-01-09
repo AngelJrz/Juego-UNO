@@ -1,6 +1,7 @@
 ﻿using System.ServiceModel;
 using System.Windows;
 using UNOGui.JuegoUNOServicio;
+using UNOGui.Logica;
 using UNOGui.Paginas;
 
 namespace UNOGui.Ventanas
@@ -22,8 +23,23 @@ namespace UNOGui.Ventanas
             frameNavegacion.Content = PaginaIncio;
         }
 
-        private void CerrarSecion(object sender, RoutedEventArgs e)
+        private void CerrarSesion(object sender, RoutedEventArgs e)
         {
+            string nickname = (DataContext as Jugador).Nickname;
+
+            try
+            {
+                LoginAdmin.CerrarSesion(nickname);
+            }
+            catch (EndpointNotFoundException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+
             Principal ventanaLogin = new Principal();
 
             ventanaLogin.Show();
