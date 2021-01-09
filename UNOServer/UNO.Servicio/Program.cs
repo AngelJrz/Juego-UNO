@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UNO.Servicio
 {
@@ -16,6 +12,11 @@ namespace UNO.Servicio
                 host.Open();
                 Console.WriteLine("Server is running");
                 Console.ReadLine();
+
+                if (host.State == CommunicationState.Opened)
+                {
+                    host.Close();
+                }
             }
         }
     }

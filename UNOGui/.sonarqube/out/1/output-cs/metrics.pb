@@ -1,5 +1,6 @@
-K
-D:\Juego-UNO\UNOGui\App.xaml.cs 8jr	Ç˜	
+F
+D:\Juego-UNO\UNOGui\App.xaml.cs 8j	
+rÇ˜	
 DD:\Juego-UNO\UNOGui\Connected Services\JuegoUNOServicio\Reference.cs\ N8_r˛ "#%&()+,./12456789:;<>?@ABCDEFGHIKLMNOPQRSTUVXYZ[\]^_`abcefghijklmnoprstuvwxyz{|}ÄÅÇÉÑÖÜáàâäåçéèêëíìîïñóôöõúùûü†°¢£§¶ß®©™´¨≠ÆØ∞±≥µ∂∑∏π∫ªΩæø¡¬ƒ≈«» ÀÃŒœ–“”’÷ÿŸ⁄‹›ﬁﬂ‡‚„ÂÊËÈÎÏÓÔÒÚÙı˜¯˘˙˚¸˝˛ˇÅÇÉÑÖÜáàâäãåéèêëíìîïñóòôõúùûü†°¢£§•¶®©™´¨≠ÆØ∞±≤≥µ∂∑∏π∫ªºΩæø¿¬√ƒ≈∆«»… ÀÃÕœ—“”‘’÷◊Ÿ⁄€›ﬁ‡·„‰ÊÁÈÍÎÌÓÔÒÚÙı˜¯˙˚˝˛ÄÅÉÑÜáàäãçéêëìîñóòöõúûü†¢£§¶ß®™´¨ÆØ∞≤≥¥∂∑∏∫ªºæø¿¬√ƒ∆«» ÀÃŒœ–“”‘’◊ÿŸ€‹ﬁﬂ‡‚„ÂÊËÈÍÏÌÓÒÚÙıˆ¯˘˙¸˝˛ÄÅÇÑÖÜàâäåçéèëíìïñòôöúùü†°£§•ß®©´¨≠Ø∞±≥¥µ∑∏πªºΩø¿¡√ƒ≈∆»… ÃÕœ–“”’÷ÿŸ€‹ﬁﬂ·‚‰ÂÁËÈÎÏÓÔÒÚÙı˜¯˙˚˝˛ÄÅÉÑÜáâäåçéêëíîïñòôöúùû†°¢§•¶®©™¨≠Æ∞±≤¥µ∂∏π∫ºΩæ¿¡¬ƒ≈∆»… ÃÕŒ–—“”‘xÇ¢7:ADEFNQRS[^_`hklmuxyzÇÖÜáèíìîúü†°©¨≠Æ∂∑∏˙˝Ñáàâëîïñû°¢£´ÆØ∞∏ªºΩ≈»… “”‘∑ªø√«Àœ”âç¿ƒ≠±µπΩ¡≈…Õ—A
 $D:\Juego-UNO\UNOGui\Logica\Idioma.cs 8j		
 r]
@@ -20,9 +21,9 @@ $D:\Juego-UNO\UNOGui\Logica\Idioma.cs 8j	
 2D:\Juego-UNO\UNOGui\Paginas\CreacionDeSala.xaml.cs 8jrH	
  !#$%&'()+,-./012345689:;<=>?@ABDEFHIKLMNPQRSTUVxÇ!%&'-1348<>?FHMRSb
 *D:\Juego-UNO\UNOGui\Paginas\Inicio.xaml.cs 8j	
-r !"#$%Ç"£
-)D:\Juego-UNO\UNOGui\Paginas\Lobby.xaml.cs 8	j	&'(rN	
-!"#$)*+,-.012346789:;<=?@ABCDEFGHIJLMNOPRSUVWXZ[\]_`abxÇ#+,-248<DNOPRZ\_í
+r !"#$%Ç"ò
+)D:\Juego-UNO\UNOGui\Paginas\Lobby.xaml.cs 8	j	rC
+ !"#%&'()+,-./012456789:;<=>?ABCDEGHJKLMOPQRTUVWxÇ !"')-19CDEGOQTí
 )D:\Juego-UNO\UNOGui\Paginas\Login.xaml.cs 8j
 r@	 !"$%&')*+,-.0123456789:;<=>?@ABCDEFHIJKLMxÇ!&+-.2689?ABCJ∂
 ,D:\Juego-UNO\UNOGui\Paginas\MiPerfil.xaml.cs 8
@@ -33,10 +34,9 @@ j
 3D:\Juego-UNO\UNOGui\Paginas\RegistrarCuenta.xaml.cs 8jrf
  !"#$&'()*+,-./01235679:;<=>?@ABCDEFGHJKMNOQRSTUVWXYZ[\^_abceghijklmnopqrtuvwxÇ !"#(,./9:;<>BDEFJQSWYZ^gimopt 
 4D:\Juego-UNO\UNOGui\Paginas\RegistroEnEspera.xaml.cs 8jrd	
- !"#$%&')*+,-./0123456789:;<=>?@ABDEFGHIKLMOPQRSTUVWXYZ[\]_`abcdefghijklmnoxÇ!#$+/356<>?FKLQSTUYZ[cgijå
-/D:\Juego-UNO\UNOGui\Paginas\UnirseASala.xaml.cs
- 8jr:	
- !"#$%&')+,-./012345689:;<>?@ABCxÇ!%&)+,023:;@{
+ !"#$%&')*+,-./0123456789:;<=>?@ABDEFGHIKLMOPQRSTUVWXYZ[\]_`abcdefghijklmnoxÇ!#$+/356<>?FKLQSTUYZ[cgijè
+/D:\Juego-UNO\UNOGui\Paginas\UnirseASala.xaml.cs 8j
+r:	 !"#$%&'()*+-./012345679:;<=?@ABCDxÇ"&()-134;<A{
 3D:\Juego-UNO\UNOGui\Paginas\VerificarCodigo.xaml.cs 8j!"$r*	
 &'()*+-./0234567xÇ)/4û
 'D:\Juego-UNO\UNOGui\Logica\SalaAdmin.cs 8j
@@ -47,13 +47,12 @@ j
 *D:\Juego-UNO\UNOGui\Ventanas\Juego.xaml.cs 8jr	
  !"#Ç è
 *D:\Juego-UNO\UNOGui\Ventanas\Lobby.xaml.cs 8j	456r<	
-!"#$&'()*,-/012789:;<>?@BCDEFGHIKLMNOxÇ#()*,19:;@DHe
-,D:\Juego-UNO\UNOGui\Ventanas\Mensaje.xaml.cs 8j	r	
-!"#$&'()*+Ç#(£
+!"#$&'()*,-/012789:;<>?@BCDEFGHIKLMNOxÇ#()*,19:;@DHY
+,D:\Juego-UNO\UNOGui\Ventanas\Mensaje.xaml.cs 8j	r	Ç£
 2D:\Juego-UNO\UNOGui\Ventanas\MenuPrincipal.xaml.cs 	8j	
-rH!"#$%&')*+,-./1234568:;<=>?@ABCDEGHJKLMNOPRSTUVWXYZxÇ#%+-38<@LNT[
-.D:\Juego-UNO\UNOGui\Ventanas\Principal.xaml.cs 8jr	
-Çê
+rH!"#$%&')*+,-./1234568:;<=>?@ABCDEGHJKLMNOPRSTUVWXYZxÇ#%+-38<@LNTN
+.D:\Juego-UNO\UNOGui\Ventanas\Principal.xaml.cs 8jr	
+Çê
 7D:\Juego-UNO\UNOGui\Ventanas\RecuperacionCuenta.xaml.cs
  8j&')r6	
  !#$+-./123456789:;<=>?@BCDExÇ

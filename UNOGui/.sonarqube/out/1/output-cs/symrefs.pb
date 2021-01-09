@@ -1,11 +1,11 @@
 o
 D:\Juego-UNO\UNOGui\App.xaml.cs
 
- 
- G M
-: M 4 G
+ 
+ G M
+: M 4 G
 
- €7
+ €7
 DD:\Juego-UNO\UNOGui\Connected Services\JuegoUNOServicio\Reference.csä
   
 òòN U
@@ -903,31 +903,31 @@ $D:\Juego-UNO\UNOGui\Logica\Idioma.cs
   _ fÑ
 )D:\Juego-UNO\UNOGui\Paginas\Lobby.xaml.cs
 
- 
-- 6ZZ 
+ 
+- 6OO 
 
-!! 
+ 
 
-)) *
+ *
 
-00 #
+%% #
 
-00+ 1
+%%+ 1
 
-00C D
-UU )22 $
-44 880 6
+%%C D
+JJ )'' $
+)) --0 6
 
-LL  
+AA  
 
-LL( .
+AA( .
 
-LL@ A
-NN RR" (
-OO 'PP '
-PP RR* 1
-WW \\ __ 
-XX !ZZ# 4ý
+AA@ A
+CC GG" (
+DD 'EE '
+EE GG* 1
+LL QQ TT 
+MM !OO# 4ý
 )D:\Juego-UNO\UNOGui\Paginas\Login.xaml.cs
 
  
@@ -1047,19 +1047,19 @@ $D:\Juego-UNO\UNOGui\Logica\Idioma.cs
 __A BÅ
 /D:\Juego-UNO\UNOGui\Paginas\UnirseASala.xaml.cs
 
- $
+ $
 
- 
+ 
 
- 
+ 
 
-# )
+# )
 
-; <
->> $!! 
-##  ++& 1
-)) ++3 :
-88 ",, «
+; <
+?? $ 
+  ""* 5
+ ""7 >
+99 "-- «
 3D:\Juego-UNO\UNOGui\Paginas\VerificarCodigo.xaml.cs
 
  (
@@ -1222,19 +1222,19 @@ $D:\Juego-UNO\UNOGui\Logica\Idioma.cs
 @@ DD, 2‚
 ,D:\Juego-UNO\UNOGui\Ventanas\Mensaje.xaml.cs
 
-  
+  
 
- #
+ #
 
- 
+ 
 
-!! 
+ 
 
-&& "
+ "
 
-&&* 0
+* 0
 
-&&B C¤
+B C¤
 2D:\Juego-UNO\UNOGui\Ventanas\MenuPrincipal.xaml.cs
 
  &(
@@ -1280,9 +1280,11 @@ $D:\Juego-UNO\UNOGui\Logica\Idioma.cs
 RR6 =VV %H
 .D:\Juego-UNO\UNOGui\Ventanas\Principal.xaml.cs
 
- "
+ "
 
- Ï
+
+
+ Ï
 7D:\Juego-UNO\UNOGui\Ventanas\RecuperacionCuenta.xaml.cs
 
  +
