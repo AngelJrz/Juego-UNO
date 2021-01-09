@@ -36,7 +36,13 @@ namespace UNOGui.Logica
             {
                 Mensaje ventanaMensaje = new Mensaje();
 
-                if (resultado == ResultadoLogin.NoExisteNickname)
+                if (resultado == ResultadoLogin.SesionIniciada)
+                {
+                    ventanaMensaje.Title = Properties.Resources.Login_MensajeSesionIniciadaTitulo;
+                    ventanaMensaje.TituloMensaje = Properties.Resources.Login_MensajeSesionIniciadaTitulo;
+                    ventanaMensaje.Contenido = Properties.Resources.Login_MensajeSesionIniciadaContenido;
+                }
+                else if (resultado == ResultadoLogin.NoExisteNickname)
                 {
                     ventanaMensaje.Title = Properties.Resources.Login_MensajeNicknameTitulo;
                     ventanaMensaje.TituloMensaje = Properties.Resources.Login_MensajeNicknameTitulo;

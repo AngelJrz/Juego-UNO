@@ -207,6 +207,12 @@
   <data name="Login_MensajeNicknameTitulo" xml:space="preserve">
     <value>Incorrect nickname</value>
   </data>
+  <data name="Login_MensajeSesionIniciadaContenido" xml:space="preserve">
+    <value>We found that you already have an active session. Check it and log out.</value>
+  </data>
+  <data name="Login_MensajeSesionIniciadaTitulo" xml:space="preserve">
+    <value>Active session</value>
+  </data>
   <data name="Login_RecuperarCuenta" xml:space="preserve">
     <value>Forgot your password?</value>
   </data>

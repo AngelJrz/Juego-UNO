@@ -207,6 +207,12 @@
   <data name="Login_MensajeNicknameTitulo" xml:space="preserve">
     <value>Nickname incorrecto</value>
   </data>
+  <data name="Login_MensajeSesionIniciadaContenido" xml:space="preserve">
+    <value>Encontramos que ya cuenta con una sesión iniciada. Verifique y cierre sesión.</value>
+  </data>
+  <data name="Login_MensajeSesionIniciadaTitulo" xml:space="preserve">
+    <value>Sesión ya iniciada</value>
+  </data>
   <data name="Login_RecuperarCuenta" xml:space="preserve">
     <value>¿Olvidaste tu contraseña?</value>
   </data>

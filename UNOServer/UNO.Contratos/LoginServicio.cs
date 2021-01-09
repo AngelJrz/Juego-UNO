@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using UNO.Contratos.Login;
 using UNO.AccesoADatos.AdministrarDatos;
 
@@ -34,6 +30,7 @@ namespace UNO.Contratos
                     if (adminDatosJugador.EsContraseñaCorrecta(nickname, contraseña))
                     {
                         resultadoLogin = ResultadoLogin.ExisteJugador;
+                        jugadoresConectados.Add(nickname);
                     }
                     else
                     {
@@ -60,6 +57,10 @@ namespace UNO.Contratos
             return jugadoresConectados.Contains(nickname);
         }
 
+        /// <summary>
+        /// Lógica para cerrar sesión de un Jugador.
+        /// </summary>
+        /// <param name="nickname">Nickname del Jugador a cerrar sesión</param>
         public void CerrarSesion(string nickname)
         {
             jugadoresConectados.Remove(nickname);

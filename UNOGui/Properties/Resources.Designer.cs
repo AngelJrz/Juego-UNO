@@ -331,6 +331,24 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Encontramos que ya cuenta con una sesión iniciada. Verifique y cierre sesión..
+        /// </summary>
+        public static string Login_MensajeSesionIniciadaContenido {
+            get {
+                return ResourceManager.GetString("Login_MensajeSesionIniciadaContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sesión ya iniciada.
+        /// </summary>
+        public static string Login_MensajeSesionIniciadaTitulo {
+            get {
+                return ResourceManager.GetString("Login_MensajeSesionIniciadaTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¿Olvidaste tu contraseña?.
         /// </summary>
         public static string Login_RecuperarCuenta {
