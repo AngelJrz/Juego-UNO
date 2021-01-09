@@ -215,6 +215,9 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ExisteJugador = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SesionIniciada = 4,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -458,6 +461,12 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/IniciarSesion")]
         System.Threading.Tasks.Task IniciarSesionAsync(string nickname, string contraseña);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/CerrarSesion")]
+        void CerrarSesion(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/CerrarSesion")]
+        System.Threading.Tasks.Task CerrarSesionAsync(string nickname);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -504,6 +513,14 @@ namespace UNOGui.JuegoUNOServicio {
         
         public System.Threading.Tasks.Task IniciarSesionAsync(string nickname, string contraseña) {
             return base.Channel.IniciarSesionAsync(nickname, contraseña);
+        }
+        
+        public void CerrarSesion(string nickname) {
+            base.Channel.CerrarSesion(nickname);
+        }
+        
+        public System.Threading.Tasks.Task CerrarSesionAsync(string nickname) {
+            return base.Channel.CerrarSesionAsync(nickname);
         }
     }
     

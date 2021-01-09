@@ -21,5 +21,12 @@ namespace UNO.Contratos.Login
         /// <param name="contraseña">Contraseña del Jugador.</param>
         [OperationContract(IsOneWay = true)]
         void IniciarSesion(string nickname, string contraseña);
+
+        /// <summary>
+        /// Cerra sesión de un Jugador en el juego.
+        /// </summary>
+        /// <param name="nickname">Nickname del jugador que cerrará sesión</param>
+        [OperationContract(IsOneWay = true)]
+        void CerrarSesion(string nickname);
     }
 }
