@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UNOGui.JuegoUNOServicio;
+using UNOGui.Logica;
 
 namespace UNOGui.Paginas
 {
@@ -40,6 +41,8 @@ namespace UNOGui.Paginas
 
         public void Mostrarmano()
         {
+            manoJugador.Children.Clear();
+
             foreach (Carta carta in miMazo)
             {
                 RenderizarImagen(carta);
@@ -63,20 +66,20 @@ namespace UNOGui.Paginas
             imagen.HorizontalAlignment = HorizontalAlignment.Left;
             imagen.Margin = new Thickness(espacioEntreCartas, 0, 0, 0);
 
-            //imagen.MouseLeftButtonUp += (s, ev) =>
-            //{
-            //    if (Reglas.EsCartaValida(carta, cartaEnTablero))
-            //    {
-            //        ActualizarCartaActiva(carta);
-            //        miMazo.Remove(carta);
-            //        tablero.Children.Remove(imagen);
-            //        ActualizarMano();//Renderiza de nuevo la mano del jugador 
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("La carta no es valida");
-            //    }
-            //};
+            imagen.MouseLeftButtonUp += (s, ev) =>
+            {
+                if (Reglas.EsCartaValida(carta, cartaEnTablero))
+                {
+                    PartidaAdmin.ColocarCarta(carta, miSala);
+                    miMazo.Remove(carta);
+                    manoJugador.Children.Remove(imagen);
+                    Mostrarmano();
+                }
+                else
+                {
+                    MessageBox.Show("La carta no es valida");
+                }
+            };
 
             Grid.SetRow(imagen, 0);
             Grid.SetColumn(imagen, 0);

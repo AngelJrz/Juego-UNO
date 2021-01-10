@@ -27,5 +27,23 @@ namespace UNOGui.Logica
                 throw;
             }
         }
+
+        public static void ColocarCarta(Carta nuevaCarta, Sala salaDeJjugador)
+        {
+            try
+            {
+                servidor.ColocarCartaCentral(nuevaCarta, salaDeJjugador);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+        }
     }
 }
