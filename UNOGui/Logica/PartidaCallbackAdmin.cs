@@ -23,7 +23,7 @@ namespace UNOGui.Logica
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
             ventanaJuego.Height = 450;
             ventanaJuego.Width = 800;
-            ventanaJuego.frameNavegacion.Navigate(new Partida());
+            ventanaJuego.frameNavegacion.Navigate(new Partida(sala));
         }
 
         public void ObtenerMazo(List<Carta> manoJugador)
@@ -32,6 +32,14 @@ namespace UNOGui.Logica
             Partida ventanaPartida = ventanaJuego.frameNavegacion.Content as Partida;
 
             ventanaPartida.EntregarCartas(manoJugador);
+        }
+
+        public void ActualizarCartaCentral(Carta nuevaCarta)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Partida ventanaPartida = ventanaJuego.frameNavegacion.Content as Partida;
+
+            ventanaPartida.ActualizarCartaCentral(nuevaCarta);
         }
     }
 }

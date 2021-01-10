@@ -87,6 +87,13 @@ namespace UNO.Contratos.LogicaJuego
         /// <param name="mazoDeJugador"></param>
         [OperationContract(IsOneWay = true)]
         void ObtenerMazo(List<Carta> mazoDeJugador);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cartaCentral"></param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarCartaCentral(Carta cartaCentral);
         #endregion
     }
 }

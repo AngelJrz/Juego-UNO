@@ -757,6 +757,12 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/IniciarPartida")]
         System.Threading.Tasks.Task IniciarPartidaAsync(string idSala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral")]
+        void ColocarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral, UNOGui.JuegoUNOServicio.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral")]
+        System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOGui.JuegoUNOServicio.Carta cartaCentral, UNOGui.JuegoUNOServicio.Sala sala);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -794,6 +800,9 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerMazo")]
         void ObtenerMazo(System.Collections.Generic.List<UNOGui.JuegoUNOServicio.Carta> mazoDeJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarCartaCentral")]
+        void ActualizarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -854,6 +863,14 @@ namespace UNOGui.JuegoUNOServicio {
         
         public System.Threading.Tasks.Task IniciarPartidaAsync(string idSala) {
             return base.Channel.IniciarPartidaAsync(idSala);
+        }
+        
+        public void ColocarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral, UNOGui.JuegoUNOServicio.Sala sala) {
+            base.Channel.ColocarCartaCentral(cartaCentral, sala);
+        }
+        
+        public System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOGui.JuegoUNOServicio.Carta cartaCentral, UNOGui.JuegoUNOServicio.Sala sala) {
+            return base.Channel.ColocarCartaCentralAsync(cartaCentral, sala);
         }
     }
 }

@@ -24,9 +24,11 @@ namespace UNOGui.Paginas
         private List<Carta> miMazo = new List<Carta>();
         private int espacioEntreCartas = 0;
         private Carta cartaEnTablero;
+        private Sala miSala;
 
-        public Partida()
+        public Partida(Sala sala)
         {
+            miSala = sala;
             InitializeComponent();
         }
 
@@ -82,6 +84,17 @@ namespace UNOGui.Paginas
             manoJugador.Children.Add(imagen);
 
             espacioEntreCartas += 30;
+        }
+
+        public void ActualizarCartaCentral(Carta nuevaCarta)
+        {
+            cartaEnTablero = nuevaCarta;
+
+            BitmapImage src = new BitmapImage();
+            src.BeginInit();
+            src.UriSource = new Uri(nuevaCarta.Rutak__BackingField, UriKind.Relative);
+            src.EndInit();
+            cartaCentral.Source = src;
         }
     }
 }

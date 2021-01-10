@@ -21,12 +21,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfJugador" nillable="true" type="tns:ArrayOfJugador" />
-  <xs:complexType name="ArrayOfCarta">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Carta" nillable="true" type="tns:Carta" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCarta" nillable="true" type="tns:ArrayOfCarta" />
   <xs:complexType name="Carta">
     <xs:sequence>
       <xs:element name="_x003C_Color_x003E_k__BackingField" type="tns:ColoresCartas" />
@@ -117,4 +111,10 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="EfectosCarta" nillable="true" type="tns:EfectosCarta" />
+  <xs:complexType name="ArrayOfCarta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Carta" nillable="true" type="tns:Carta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarta" nillable="true" type="tns:ArrayOfCarta" />
 </xs:schema>

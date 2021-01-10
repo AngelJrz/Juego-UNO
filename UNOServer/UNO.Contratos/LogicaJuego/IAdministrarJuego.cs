@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using UNO.Dominio;
 
 namespace UNO.Contratos.LogicaJuego
 {
@@ -47,6 +48,14 @@ namespace UNO.Contratos.LogicaJuego
         /// <param name="idSala">Id de sala donde se inicia la partida</param>
         [OperationContract(IsOneWay = true)]
         void IniciarPartida(string idSala);
+
+        /// <summary>
+        /// Actualiza la carta central del tablero.
+        /// </summary>
+        /// <param name="cartaCentral">Información de la nueva carta central que se actualizará en los clientes</param>
+        /// <param name="sala">La sala a la que pertenece el usuario</param>
+        [OperationContract(IsOneWay = true)]
+        void ColocarCartaCentral(Carta cartaCentral, Sala sala);
 
         #endregion
     }

@@ -110,6 +110,12 @@ namespace UNO.Contratos
 
         }
 
-
+        public void ColocarCartaCentral(Carta cartaCentral, Sala sala)
+        {
+            foreach (var jugador in sala.JugadoresEnSala)
+            {
+                jugador.Value.ActualizarCartaCentral(cartaCentral);
+            }
+        }
     }
 }
