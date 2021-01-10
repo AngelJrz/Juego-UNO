@@ -16,11 +16,8 @@ namespace UNOGui.Logica
         public void ActualizarSala(List<string> jugadores)
         {
             ObservableCollection<string> jugadoresEnSala = new ObservableCollection<string>(jugadores);
-
-            //var lobbyActual = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
-            //lobbyActual.jugadoresEnSala.ItemsSource = jugadoresEnSala;
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
-            Paginas.Lobby paginaLobby = ventanaJuego.frameNavegacion.Content as Paginas.Lobby;
+            Paginas.Lobby paginaLobby = ventanaJuego.PaginaActual as Paginas.Lobby;
 
             paginaLobby.jugadoresEnSala.ItemsSource = jugadoresEnSala;
         }
@@ -31,10 +28,8 @@ namespace UNOGui.Logica
         /// <param name="nuevoJugador">Nuevo jugador a agregar</param>
         public void AgregarNuevoJugador(Jugador nuevoJugador)
         {
-            //var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
-            //lobby.Jugadores.Add(nuevoJugador);
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
-            Paginas.Lobby paginaLobby = ventanaJuego.frameNavegacion.Content as Paginas.Lobby;
+            Paginas.Lobby paginaLobby = ventanaJuego.PaginaActual as Paginas.Lobby;
 
             paginaLobby.Jugadores.Add(nuevoJugador);
         }
@@ -53,18 +48,6 @@ namespace UNOGui.Logica
         /// <param name="salaCreada">Sala que fue creada</param>
         public void NotificarCreacionDeSala(Sala salaCreada)
         {
-            //Lobby lobby = new Lobby
-            //{
-            //    DataContext = salaCreada
-            //};
-
-            //lobby.Jugadores = new ObservableCollection<Jugador>(salaCreada.JugadoresEnSala.Keys);
-            //lobby.jugadoresEnSala.ItemsSource = lobby.Jugadores;
-            //lobby.ConfigurarSalaParaHost();
-            //lobby.Show();
-            //MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
-            //menuPrincipal.Hide();
-
             Juego ventanaJuego = new Juego();
             ventanaJuego.Show();
             Paginas.Lobby paginaLobby = new Paginas.Lobby
@@ -74,6 +57,7 @@ namespace UNOGui.Logica
             };
             paginaLobby.jugadoresEnSala.ItemsSource = paginaLobby.Jugadores;
             paginaLobby.ConfigurarSalaParaHost();
+            ventanaJuego.PaginaActual = paginaLobby;
             ventanaJuego.frameNavegacion.Content = paginaLobby;
 
             MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
@@ -85,8 +69,6 @@ namespace UNOGui.Logica
         /// </summary>
         public void NotificarEliminacionDeSala()
         {
-            //MessageBox.Show("El host eliminó la sala. Unete a otra sala.", "Advertencia", MessageBoxButton.OK);
-
             new Mensaje
             {
                 Title = "Sala eliminada",
@@ -148,8 +130,6 @@ namespace UNOGui.Logica
                     break;
 
                 case ResultadoUnionSala.UnionExitosa:
-                    //Lobby lobby = new Lobby();
-                    //lobby.Show();
                     Juego ventanaJuego = new Juego();
                     ventanaJuego.Show();
                     MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
@@ -166,11 +146,6 @@ namespace UNOGui.Logica
         /// <param name="sala">Sala a unirse</param>
         public void ObtenerInformacionDeSala(Sala sala)
         {
-            //var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
-            //lobby.DataContext = sala;
-            //lobby.Jugadores = new ObservableCollection<Jugador>(sala.JugadoresEnSala.Keys);
-            //lobby.jugadoresEnSala.ItemsSource = lobby.Jugadores;
-
             Paginas.Lobby paginaLobby = new Paginas.Lobby
             {
                 DataContext = sala,
@@ -178,6 +153,7 @@ namespace UNOGui.Logica
             };
             paginaLobby.jugadoresEnSala.ItemsSource = paginaLobby.Jugadores;
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            ventanaJuego.PaginaActual = paginaLobby;
             ventanaJuego.frameNavegacion.Content = paginaLobby;
         }
 
@@ -187,10 +163,6 @@ namespace UNOGui.Logica
         /// <param name="jugadorASacar">Jugador a sacar.</param>
         public void SacarJugador(Jugador jugadorASacar)
         {
-            //var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
-
-            //var jugador = lobby.Jugadores.Single(jugadorAux => jugadorAux.Nickname.Equals(jugadorASacar.Nickname));
-            //lobby.Jugadores.Remove(jugador);
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
             Paginas.Lobby lobby = ventanaJuego.frameNavegacion.Content as Paginas.Lobby;
             Jugador jugador = lobby.Jugadores.Single(jugadorAux => jugadorAux.Nickname.Equals(jugadorASacar.Nickname));
@@ -199,11 +171,6 @@ namespace UNOGui.Logica
 
         private void CerrarSala()
         {
-            //MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
-            //var lobby = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
-            //lobby.Close();
-            //menuPrincipal.Show();
-
             MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
             var ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
             ventanaJuego.Close();

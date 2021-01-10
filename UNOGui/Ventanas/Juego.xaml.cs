@@ -20,6 +20,11 @@ namespace UNOGui.Ventanas
     /// </summary>
     public partial class Juego : Window
     {
+        /// <summary>
+        /// Obtiene o establece la pagina actual de la ventana.
+        /// </summary>
+        public Page PaginaActual { get; set; }
+
         public Juego()
         {
             InitializeComponent();
