@@ -24,6 +24,7 @@ namespace UNO.Contratos
 
             mazoSala = CrearMazo();
             RepartirCartas(salaBuscada);
+            ColocarCartaCentral(TomaCarta(), salaBuscada);
         }
 
         private void PonerSalaEnJuego(string idSala)
@@ -108,6 +109,18 @@ namespace UNO.Contratos
 
             return miMano;
 
+        }
+
+        private Carta TomaCarta()
+        {
+            Carta cartaTomada;
+            Random number = new Random();
+            int posicionAleatoria = number.Next(0, mazoSala.Count - 1);
+
+            cartaTomada = mazoSala.ElementAt(posicionAleatoria);
+            mazoSala.RemoveAt(posicionAleatoria);
+
+            return cartaTomada;
         }
 
         public void ColocarCartaCentral(Carta cartaCentral, Sala sala)
