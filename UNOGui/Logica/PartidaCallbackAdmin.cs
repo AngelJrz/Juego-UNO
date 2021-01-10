@@ -23,13 +23,17 @@ namespace UNOGui.Logica
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
             ventanaJuego.Height = 450;
             ventanaJuego.Width = 800;
-            ventanaJuego.frameNavegacion.Navigate(new Partida(sala));
+            //ventanaJuego.frameNavegacion.Navigate(new Partida(sala));
+
+            Partida paginaPartida = new Partida(sala.Id);
+            ventanaJuego.PaginaActual = paginaPartida;
+            ventanaJuego.frameNavegacion.Navigate(paginaPartida);
         }
 
         public void ObtenerMazo(List<Carta> manoJugador)
         {
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
-            Partida ventanaPartida = ventanaJuego.frameNavegacion.Content as Partida;
+            Partida ventanaPartida = ventanaJuego.PaginaActual as Partida;
 
             ventanaPartida.EntregarCartas(manoJugador);
         }
@@ -37,7 +41,7 @@ namespace UNOGui.Logica
         public void ActualizarCartaCentral(Carta nuevaCarta)
         {
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
-            Partida ventanaPartida = ventanaJuego.frameNavegacion.Content as Partida;
+            Partida ventanaPartida = ventanaJuego.PaginaActual as Partida;
 
             ventanaPartida.ActualizarCartaCentral(nuevaCarta);
         }
@@ -45,7 +49,7 @@ namespace UNOGui.Logica
         public void RecibirCarta(Carta cartaTomada)
         {
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
-            Partida ventanaPartida = ventanaJuego.frameNavegacion.Content as Partida;
+            Partida ventanaPartida = ventanaJuego.PaginaActual as Partida;
 
             ventanaPartida.AniadirCarta(cartaTomada);
         }
@@ -53,7 +57,7 @@ namespace UNOGui.Logica
         public void NotificarGanador(String jugadorGanador)
         {
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
-            Partida ventanaPartida = ventanaJuego.frameNavegacion.Content as Partida;
+            Partida ventanaPartida = ventanaJuego.PaginaActual as Partida;
 
             ventanaPartida.MostrarMensajeGanador(jugadorGanador);
         }

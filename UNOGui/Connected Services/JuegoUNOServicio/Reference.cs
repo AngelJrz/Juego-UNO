@@ -759,22 +759,22 @@ namespace UNOGui.JuegoUNOServicio {
         System.Threading.Tasks.Task IniciarPartidaAsync(string idSala);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral")]
-        void ColocarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral, UNOGui.JuegoUNOServicio.Sala sala);
+        void ColocarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral, string idSalaJugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral")]
-        System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOGui.JuegoUNOServicio.Carta cartaCentral, UNOGui.JuegoUNOServicio.Sala sala);
+        System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOGui.JuegoUNOServicio.Carta cartaCentral, string idSalaJugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/TomarCarta")]
-        void TomarCarta(UNOGui.JuegoUNOServicio.Sala salaJugador);
+        void TomarCarta(string idSalaJugador, string nickname);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/TomarCarta")]
-        System.Threading.Tasks.Task TomarCartaAsync(UNOGui.JuegoUNOServicio.Sala salaJugador);
+        System.Threading.Tasks.Task TomarCartaAsync(string idSalaJugador, string nickname);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador")]
-        void AnunciarGanador(UNOGui.JuegoUNOServicio.Sala salaJugador);
+        void AnunciarGanador(string idSalaJugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador")]
-        System.Threading.Tasks.Task AnunciarGanadorAsync(UNOGui.JuegoUNOServicio.Sala salaJugador);
+        System.Threading.Tasks.Task AnunciarGanadorAsync(string idSalaJugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -883,28 +883,28 @@ namespace UNOGui.JuegoUNOServicio {
             return base.Channel.IniciarPartidaAsync(idSala);
         }
         
-        public void ColocarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral, UNOGui.JuegoUNOServicio.Sala sala) {
-            base.Channel.ColocarCartaCentral(cartaCentral, sala);
+        public void ColocarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral, string idSalaJugador) {
+            base.Channel.ColocarCartaCentral(cartaCentral, idSalaJugador);
         }
         
-        public System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOGui.JuegoUNOServicio.Carta cartaCentral, UNOGui.JuegoUNOServicio.Sala sala) {
-            return base.Channel.ColocarCartaCentralAsync(cartaCentral, sala);
+        public System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOGui.JuegoUNOServicio.Carta cartaCentral, string idSalaJugador) {
+            return base.Channel.ColocarCartaCentralAsync(cartaCentral, idSalaJugador);
         }
         
-        public void TomarCarta(UNOGui.JuegoUNOServicio.Sala salaJugador) {
-            base.Channel.TomarCarta(salaJugador);
+        public void TomarCarta(string idSalaJugador, string nickname) {
+            base.Channel.TomarCarta(idSalaJugador, nickname);
         }
         
-        public System.Threading.Tasks.Task TomarCartaAsync(UNOGui.JuegoUNOServicio.Sala salaJugador) {
-            return base.Channel.TomarCartaAsync(salaJugador);
+        public System.Threading.Tasks.Task TomarCartaAsync(string idSalaJugador, string nickname) {
+            return base.Channel.TomarCartaAsync(idSalaJugador, nickname);
         }
         
-        public void AnunciarGanador(UNOGui.JuegoUNOServicio.Sala salaJugador) {
-            base.Channel.AnunciarGanador(salaJugador);
+        public void AnunciarGanador(string idSalaJugador) {
+            base.Channel.AnunciarGanador(idSalaJugador);
         }
         
-        public System.Threading.Tasks.Task AnunciarGanadorAsync(UNOGui.JuegoUNOServicio.Sala salaJugador) {
-            return base.Channel.AnunciarGanadorAsync(salaJugador);
+        public System.Threading.Tasks.Task AnunciarGanadorAsync(string idSalaJugador) {
+            return base.Channel.AnunciarGanadorAsync(idSalaJugador);
         }
     }
 }

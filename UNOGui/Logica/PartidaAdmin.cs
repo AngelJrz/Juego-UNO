@@ -28,11 +28,11 @@ namespace UNOGui.Logica
             }
         }
 
-        public static void ColocarCarta(Carta nuevaCarta, Sala salaDeJjugador)
+        public static void ColocarCarta(Carta nuevaCarta, String idSalaDeJjugador)
         {
             try
             {
-                servidor.ColocarCartaCentral(nuevaCarta, salaDeJjugador);
+                servidor.ColocarCartaCentral(nuevaCarta, idSalaDeJjugador);
             }
             catch (EndpointNotFoundException ex)
             {
@@ -46,11 +46,11 @@ namespace UNOGui.Logica
             }
         }
 
-        public static void TomarCarta(Sala salaDeJjugador)
+        public static void TomarCarta(String idSalaDeJjugador, String nickname)
         {
             try
             {
-                servidor.TomarCarta(salaDeJjugador);
+                servidor.TomarCarta(idSalaDeJjugador, nickname);
             }
             catch (EndpointNotFoundException ex)
             {
@@ -64,11 +64,11 @@ namespace UNOGui.Logica
             }
         }
 
-        public static void AnunciarGanador(Sala salaDeJjugador)
+        public static void AnunciarGanador(String idSalaDeJjugador)
         {
             try
             {
-                servidor.AnunciarGanador(salaDeJjugador);
+                servidor.AnunciarGanador(idSalaDeJjugador);
             }
             catch (EndpointNotFoundException ex)
             {

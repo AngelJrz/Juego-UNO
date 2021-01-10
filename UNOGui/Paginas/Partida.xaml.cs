@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Logica;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Paginas
 {
@@ -25,9 +26,9 @@ namespace UNOGui.Paginas
         private List<Carta> miMazo = new List<Carta>();
         private int espacioEntreCartas = 0;
         private Carta cartaEnTablero;
-        private Sala miSala;
+        private String miSala;
 
-        public Partida(Sala sala)
+        public Partida(String sala)
         {
             miSala = sala;
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace UNOGui.Paginas
             if (!Reglas.ElJugadorGano(miMazo))
             {
                 manoJugador.Children.Clear();
+                espacioEntreCartas = 0;
 
                 foreach (Carta carta in miMazo)
                 {
@@ -120,7 +122,11 @@ namespace UNOGui.Paginas
 
         private void TomarCarta(object sender, RoutedEventArgs e)
         {
-            PartidaAdmin.TomarCarta(miSala);
+            MenuPrincipal ventanaJuego = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
+            Jugador jugadorActual = ventanaJuego.DataContext as Jugador;
+            String nickname = jugadorActual.Nickname;
+
+            PartidaAdmin.TomarCarta(miSala, nickname);
         }
     }
 }

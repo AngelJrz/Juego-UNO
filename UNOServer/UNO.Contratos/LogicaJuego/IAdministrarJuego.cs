@@ -53,23 +53,24 @@ namespace UNO.Contratos.LogicaJuego
         /// Actualiza la carta central del tablero.
         /// </summary>
         /// <param name="cartaCentral">Información de la nueva carta central que se actualizará en los clientes</param>
-        /// <param name="sala">La sala a la que pertenece el usuario</param>
+        /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
         [OperationContract(IsOneWay = true)]
-        void ColocarCartaCentral(Carta cartaCentral, Sala sala);
+        void ColocarCartaCentral(Carta cartaCentral, String idSalaJugador);
 
         /// <summary>
         /// El jugador toma una carta del mazo.
         /// </summary>
-        /// <param name="salaJugador">La sala a la que pertenece el usuario</param>
+        /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
+        /// <param name="nickname">Nombre del jugador</param>
         [OperationContract(IsOneWay = true)]
-        void TomarCarta(Sala salaJugador);
+        void TomarCarta(String idSalaJugador, String nickname);
 
         /// <summary>
         /// El jugador toma una carta del mazo.
         /// </summary>
-        /// <param name="salaJugador">La sala a la que pertenece el usuario</param>
+        /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
         [OperationContract(IsOneWay = true)]
-        void AnunciarGanador(Sala salaJugador);
+        void AnunciarGanador(String idSalaJugador);
         #endregion
     }
 }

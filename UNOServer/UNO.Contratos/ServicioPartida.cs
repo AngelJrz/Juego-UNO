@@ -9,8 +9,8 @@ using UNO.Dominio;
 namespace UNO.Contratos
 {
     public partial class JuegoUNOServicio
-    {
-        private List<Carta> mazoSala;
+    { 
+        private List<Carta> mazoSala = CrearMazo();
 
         public void IniciarPartida(string idSala)
         {
@@ -22,9 +22,8 @@ namespace UNO.Contratos
                 jugador.Value.NotificarInicioPartida(salaBuscada);
             }
 
-            mazoSala = CrearMazo();
             RepartirCartas(salaBuscada);
-            ColocarCartaCentral(TomaCarta(), salaBuscada);
+            ColocarCartaCentral(TomaCarta(), salaBuscada.Id);
         }
 
         private void PonerSalaEnJuego(string idSala)
@@ -32,7 +31,7 @@ namespace UNO.Contratos
             salasCreadas.Where(sala => sala.Id.Equals(idSala)).FirstOrDefault().EnJuego = true;
         }
 
-        private List<Carta> CrearMazo()
+        private static List<Carta> CrearMazo()
         {
             List<Carta> mazocompleto = new List<Carta>();
             mazocompleto.AddRange(CrearCartasDeColor(ColoresCartas.Rojo));
@@ -45,7 +44,7 @@ namespace UNO.Contratos
 
         }
 
-        private List<Carta> CrearCartasDeColor(ColoresCartas colorMazo)
+        private static List<Carta> CrearCartasDeColor(ColoresCartas colorMazo)
         {
             List<Carta> cartasDelMazo = new List<Carta>();
             int NUMERO_MINIMO_CARTA = 1;
@@ -68,7 +67,7 @@ namespace UNO.Contratos
             return cartasDelMazo;
         }
 
-        private List<Carta> CrearCartasEspeciales()
+        private static List<Carta> CrearCartasEspeciales()
         {
             List<Carta> cartasEspeciales = new List<Carta>();
             Carta cartaMulticolor = new Carta(ColoresCartas.Negro, EfectosCarta.MultiColor);
@@ -118,35 +117,40 @@ namespace UNO.Contratos
             int posicionAleatoria = number.Next(0, mazoSala.Count - 1);
 
             cartaTomada = mazoSala.ElementAt(posicionAleatoria);
-            mazoSala.RemoveAt(posicionAleatoria);
 
             return cartaTomada;
         }
 
-        public void ColocarCartaCentral(Carta cartaCentral, Sala sala)
+        public void ColocarCartaCentral(Carta cartaCentral, String idSalaJugador)
         {
-            foreach (var jugador in sala.JugadoresEnSala)
+            var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));
+
+            foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
                 jugador.Value.ActualizarCartaCentral(cartaCentral);
             }
         }
 
-        public void TomarCarta(Sala salaJugador)
+        public void TomarCarta(String idSalaJugador, String nickname)
         {
-            foreach (var jugador in salaJugador.JugadoresEnSala)
+            var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));
+
+            foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
-                if (JuegoCallbackActual == jugador.Value)
+                if (jugador.Key.Nickname.Equals(nickname))
                 {
-                    JuegoCallbackActual.RecibirCarta(TomaCarta());
+                    jugador.Value.RecibirCarta(TomaCarta());
+                    break;
                 }
             }
         }
 
-        public void AnunciarGanador(Sala salaJugador)
+        public void AnunciarGanador(String idSalaJugador)
         {
             Jugador ganador = new Jugador();
+            var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));
 
-            foreach (var jugador in salaJugador.JugadoresEnSala)
+            foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
                 if (jugador.Value == JuegoCallbackActual)
                 {
@@ -154,7 +158,7 @@ namespace UNO.Contratos
                 }
             }
 
-            foreach (var jugador in salaJugador.JugadoresEnSala)
+            foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
                 jugador.Value.NotificarGanador(ganador.Nickname);
             }
