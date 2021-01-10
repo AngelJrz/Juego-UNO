@@ -154,11 +154,12 @@
             </summary>
             <param name="idSala">Id de sala donde se inicia la partida</param>
         </member>
-        <member name="M:UNO.Contratos.LogicaJuego.IAdministrarJuego.RepartirCartas(UNO.Contratos.LogicaJuego.Sala)">
+        <member name="M:UNO.Contratos.LogicaJuego.IAdministrarJuego.ColocarCartaCentral(UNO.Dominio.Carta,UNO.Contratos.LogicaJuego.Sala)">
             <summary>
-            Reparte las cartas a los jugadores de una sala.
+            Actualiza la carta central del tablero.
             </summary>
-            <param name="sala">Sala en la cual se van a repartir las cartas</param>
+            <param name="cartaCentral">Información de la nueva carta central que se actualizará en los clientes</param>
+            <param name="sala">La sala a la que pertenece el usuario</param>
         </member>
         <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.NotificarCreacionDeSala(UNO.Contratos.LogicaJuego.Sala)">
             <summary>
@@ -217,10 +218,17 @@
             </summary>
             <param name="sala"></param>
         </member>
-        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.ObtenerMaso">
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.ObtenerMazo(System.Collections.Generic.List{UNO.Dominio.Carta})">
             <summary>
             
             </summary>
+            <param name="mazoDeJugador"></param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.ActualizarCartaCentral(UNO.Dominio.Carta)">
+            <summary>
+            
+            </summary>
+            <param name="cartaCentral"></param>
         </member>
         <member name="M:UNO.Contratos.JuegoUNOServicio.IniciarSesion(System.String,System.String)">
             <summary>

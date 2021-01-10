@@ -21,7 +21,7 @@ namespace UNOGui.Logica
             //ventanaJuego.Show();
 
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
-            ventanaJuego.Height = 450;
+            ventanaJuego.Height = 550;
             ventanaJuego.Width = 800;
             //ventanaJuego.frameNavegacion.Navigate(new Partida(sala));
 

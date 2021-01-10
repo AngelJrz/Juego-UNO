@@ -164,7 +164,7 @@ namespace UNOGui.Logica
         public void SacarJugador(Jugador jugadorASacar)
         {
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
-            Paginas.Lobby lobby = ventanaJuego.frameNavegacion.Content as Paginas.Lobby;
+            Paginas.Lobby lobby = ventanaJuego.PaginaActual as Paginas.Lobby;
             Jugador jugador = lobby.Jugadores.Single(jugadorAux => jugadorAux.Nickname.Equals(jugadorASacar.Nickname));
             lobby.Jugadores.Remove(jugador);
         }
