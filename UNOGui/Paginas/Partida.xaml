@@ -8,7 +8,217 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Partida">
 
-    <Grid Background="Blue">
+    <Grid HorizontalAlignment="Center">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagenes/RecursosTablero/fondoMesa.jpg" Stretch="Fill" />
+        </Grid.Background>
         
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0">
+                <Image x:Name="cartaCentral" Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png"/>
+            </Grid>
+
+
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0">
+                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png"/>
+                <Button Content="Toma carta" HorizontalAlignment="Left" Margin="10,112,0,-16.6" VerticalAlignment="Top" Width="75"/>
+            </Grid>
+
+        </Grid>
+
+        <ScrollViewer  HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Disabled" Grid.Row="1" Grid.Column="1" >
+            <Grid x:Name="manoJugador" HorizontalAlignment="Center"></Grid>
+        </ScrollViewer>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0">
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,23,0,-23">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="-1,49,1,-49">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,72,0,-72">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0">
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,23,0,-23">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="-1,49,1,-49">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,72,0,-72">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1">
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,23,0,-23">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="-1,49,1,-49">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,72,0,-72">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,23,0,-23">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="-1,49,1,-49">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,72,0,-72">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+
     </Grid>
 </Page>
