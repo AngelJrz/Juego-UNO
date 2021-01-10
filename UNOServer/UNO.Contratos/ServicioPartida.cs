@@ -141,5 +141,23 @@ namespace UNO.Contratos
                 }
             }
         }
+
+        public void AnunciarGanador(Sala salaJugador)
+        {
+            Jugador ganador = new Jugador();
+
+            foreach (var jugador in salaJugador.JugadoresEnSala)
+            {
+                if (jugador.Value == JuegoCallbackActual)
+                {
+                    ganador = jugador.Key;
+                }
+            }
+
+            foreach (var jugador in salaJugador.JugadoresEnSala)
+            {
+                jugador.Value.NotificarGanador(ganador.Nickname);
+            }
+        }
     }
 }

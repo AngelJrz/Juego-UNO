@@ -101,6 +101,13 @@ namespace UNO.Contratos.LogicaJuego
         /// <param name="cartaTomada"></param>
         [OperationContract(IsOneWay = true)]
         void RecibirCarta(Carta cartaTomada);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jugadorGanador"></param>
+        [OperationContract(IsOneWay = true)]
+        void NotificarGanador(String jugadorGanador);
         #endregion
     }
 }

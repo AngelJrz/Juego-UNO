@@ -41,11 +41,18 @@ namespace UNOGui.Paginas
 
         public void MostrarMano()
         {
-            manoJugador.Children.Clear();
-
-            foreach (Carta carta in miMazo)
+            if (!Reglas.ElJugadorGano(miMazo))
             {
-                RenderizarImagen(carta);
+                manoJugador.Children.Clear();
+
+                foreach (Carta carta in miMazo)
+                {
+                    RenderizarImagen(carta);
+                }
+            }
+            else
+            {
+                PartidaAdmin.AnunciarGanador(miSala);
             }
         }
 
@@ -104,6 +111,16 @@ namespace UNOGui.Paginas
         {
             miMazo.Add(nuevaCarta);
             MostrarMano();
+        }
+
+        public void MostrarMensajeGanador(String ganador)
+        {
+            MessageBox.Show("El ganador de la partida es " + ganador);
+        }
+
+        private void TomarCarta(object sender, RoutedEventArgs e)
+        {
+            PartidaAdmin.TomarCarta(miSala);
         }
     }
 }

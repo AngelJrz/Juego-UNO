@@ -187,6 +187,9 @@
   <wsdl:message name="IAdministrarJuego_TomarCarta_InputMessage">
     <wsdl:part name="parameters" element="tns:TomarCarta" />
   </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_AnunciarGanador_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnunciarGanador" />
+  </wsdl:message>
   <wsdl:message name="IAdministrarJuego_NotificarCreacionDeSala_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarCreacionDeSala" />
   </wsdl:message>
@@ -225,6 +228,9 @@
   </wsdl:message>
   <wsdl:message name="IAdministrarJuego_RecibirCarta_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:RecibirCarta" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_NotificarGanador_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarGanador" />
   </wsdl:message>
   <wsdl:portType name="IRegistrarJugador">
     <wsdl:operation name="RegistrarJugador">
@@ -293,6 +299,9 @@
     <wsdl:operation name="TomarCarta">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/TomarCarta" message="tns:IAdministrarJuego_TomarCarta_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AnunciarGanador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador" message="tns:IAdministrarJuego_AnunciarGanador_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala" message="tns:IAdministrarJuego_NotificarCreacionDeSala_OutputCallbackMessage" />
     </wsdl:operation>
@@ -331,6 +340,9 @@
     </wsdl:operation>
     <wsdl:operation name="RecibirCarta">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/RecibirCarta" message="tns:IAdministrarJuego_RecibirCarta_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarGanador">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarGanador" message="tns:IAdministrarJuego_NotificarGanador_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IRegistrarJugador" type="tns:IRegistrarJugador">
@@ -468,6 +480,12 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="AnunciarGanador">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/AnunciarGanador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala" style="document" />
       <wsdl:output>
@@ -542,6 +560,12 @@
     </wsdl:operation>
     <wsdl:operation name="RecibirCarta">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/RecibirCarta" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarGanador">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarGanador" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

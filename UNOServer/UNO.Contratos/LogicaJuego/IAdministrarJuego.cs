@@ -60,9 +60,16 @@ namespace UNO.Contratos.LogicaJuego
         /// <summary>
         /// El jugador toma una carta del mazo.
         /// </summary>
-        /// <param name="sala">La sala a la que pertenece el usuario</param>
+        /// <param name="salaJugador">La sala a la que pertenece el usuario</param>
         [OperationContract(IsOneWay = true)]
         void TomarCarta(Sala salaJugador);
+
+        /// <summary>
+        /// El jugador toma una carta del mazo.
+        /// </summary>
+        /// <param name="salaJugador">La sala a la que pertenece el usuario</param>
+        [OperationContract(IsOneWay = true)]
+        void AnunciarGanador(Sala salaJugador);
         #endregion
     }
 }

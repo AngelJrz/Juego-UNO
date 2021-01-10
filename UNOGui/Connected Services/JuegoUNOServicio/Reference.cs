@@ -769,6 +769,12 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/TomarCarta")]
         System.Threading.Tasks.Task TomarCartaAsync(UNOGui.JuegoUNOServicio.Sala salaJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador")]
+        void AnunciarGanador(UNOGui.JuegoUNOServicio.Sala salaJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador")]
+        System.Threading.Tasks.Task AnunciarGanadorAsync(UNOGui.JuegoUNOServicio.Sala salaJugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -812,6 +818,9 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RecibirCarta")]
         void RecibirCarta(UNOGui.JuegoUNOServicio.Carta cartaTomada);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarGanador")]
+        void NotificarGanador(string jugadorGanador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -888,6 +897,14 @@ namespace UNOGui.JuegoUNOServicio {
         
         public System.Threading.Tasks.Task TomarCartaAsync(UNOGui.JuegoUNOServicio.Sala salaJugador) {
             return base.Channel.TomarCartaAsync(salaJugador);
+        }
+        
+        public void AnunciarGanador(UNOGui.JuegoUNOServicio.Sala salaJugador) {
+            base.Channel.AnunciarGanador(salaJugador);
+        }
+        
+        public System.Threading.Tasks.Task AnunciarGanadorAsync(UNOGui.JuegoUNOServicio.Sala salaJugador) {
+            return base.Channel.AnunciarGanadorAsync(salaJugador);
         }
     }
 }

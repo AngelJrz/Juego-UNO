@@ -45,5 +45,41 @@ namespace UNOGui.Logica
                 throw;
             }
         }
+
+        public static void TomarCarta(Sala salaDeJjugador)
+        {
+            try
+            {
+                servidor.TomarCarta(salaDeJjugador);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+        }
+
+        public static void AnunciarGanador(Sala salaDeJjugador)
+        {
+            try
+            {
+                servidor.AnunciarGanador(salaDeJjugador);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+        }
     }
 }

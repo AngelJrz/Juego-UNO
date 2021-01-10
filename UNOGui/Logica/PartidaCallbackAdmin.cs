@@ -49,5 +49,13 @@ namespace UNOGui.Logica
 
             ventanaPartida.AniadirCarta(cartaTomada);
         }
+
+        public void NotificarGanador(String jugadorGanador)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Partida ventanaPartida = ventanaJuego.frameNavegacion.Content as Partida;
+
+            ventanaPartida.MostrarMensajeGanador(jugadorGanador);
+        }
     }
 }
