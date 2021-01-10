@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using UNO.Dominio;
 
 namespace UNO.Contratos.LogicaJuego
 {
@@ -83,8 +84,9 @@ namespace UNO.Contratos.LogicaJuego
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="mazoDeJugador"></param>
         [OperationContract(IsOneWay = true)]
-        void ObtenerMaso();
+        void ObtenerMazo(List<Carta> mazoDeJugador);
         #endregion
     }
 }

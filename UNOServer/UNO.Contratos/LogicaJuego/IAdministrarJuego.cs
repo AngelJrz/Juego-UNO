@@ -40,6 +40,7 @@ namespace UNO.Contratos.LogicaJuego
         #endregion
 
         #region Administracion de Partida
+
         /// <summary>
         /// Inicia la partida en una sala.
         /// </summary>
@@ -47,12 +48,6 @@ namespace UNO.Contratos.LogicaJuego
         [OperationContract(IsOneWay = true)]
         void IniciarPartida(string idSala);
 
-        /// <summary>
-        /// Reparte las cartas a los jugadores de una sala.
-        /// </summary>
-        /// <param name="sala">Sala en la cual se van a repartir las cartas</param>
-        [OperationContract(IsOneWay = true)]
-        void RepartirCartas(Sala sala);
         #endregion
     }
 }

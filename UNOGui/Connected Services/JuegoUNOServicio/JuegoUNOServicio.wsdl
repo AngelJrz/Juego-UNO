@@ -181,9 +181,6 @@
   <wsdl:message name="IAdministrarJuego_IniciarPartida_InputMessage">
     <wsdl:part name="parameters" element="tns:IniciarPartida" />
   </wsdl:message>
-  <wsdl:message name="IAdministrarJuego_RepartirCartas_InputMessage">
-    <wsdl:part name="parameters" element="tns:RepartirCartas" />
-  </wsdl:message>
   <wsdl:message name="IAdministrarJuego_NotificarCreacionDeSala_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarCreacionDeSala" />
   </wsdl:message>
@@ -214,8 +211,8 @@
   <wsdl:message name="IAdministrarJuego_NotificarInicioPartida_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarInicioPartida" />
   </wsdl:message>
-  <wsdl:message name="IAdministrarJuego_ObtenerMaso_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerMaso" />
+  <wsdl:message name="IAdministrarJuego_ObtenerMazo_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMazo" />
   </wsdl:message>
   <wsdl:portType name="IRegistrarJugador">
     <wsdl:operation name="RegistrarJugador">
@@ -278,9 +275,6 @@
     <wsdl:operation name="IniciarPartida">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/IniciarPartida" message="tns:IAdministrarJuego_IniciarPartida_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="RepartirCartas">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/RepartirCartas" message="tns:IAdministrarJuego_RepartirCartas_InputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala" message="tns:IAdministrarJuego_NotificarCreacionDeSala_OutputCallbackMessage" />
     </wsdl:operation>
@@ -311,8 +305,8 @@
     <wsdl:operation name="NotificarInicioPartida">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarInicioPartida" message="tns:IAdministrarJuego_NotificarInicioPartida_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ObtenerMaso">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ObtenerMaso" message="tns:IAdministrarJuego_ObtenerMaso_OutputCallbackMessage" />
+    <wsdl:operation name="ObtenerMazo">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ObtenerMazo" message="tns:IAdministrarJuego_ObtenerMazo_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IRegistrarJugador" type="tns:IRegistrarJugador">
@@ -438,12 +432,6 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="RepartirCartas">
-      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/RepartirCartas" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-    </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala" style="document" />
       <wsdl:output>
@@ -504,8 +492,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ObtenerMaso">
-      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ObtenerMaso" style="document" />
+    <wsdl:operation name="ObtenerMazo">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ObtenerMazo" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
@@ -517,7 +505,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -526,7 +514,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -535,7 +523,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -544,7 +532,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

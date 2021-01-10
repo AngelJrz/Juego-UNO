@@ -4,6 +4,7 @@ using System.Windows;
 using UNOGui.Ventanas;
 using UNOGui.Paginas;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace UNOGui.Logica
 {
@@ -59,7 +60,7 @@ namespace UNOGui.Logica
             }
         }
 
-        public void ObtenerJugadoresTop(Jugador[] jugadoresTop)
+        public void ObtenerJugadoresTop(List<Jugador> jugadoresTop)
         {
             MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>()
                     .SingleOrDefault();

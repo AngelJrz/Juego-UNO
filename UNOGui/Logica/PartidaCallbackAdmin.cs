@@ -4,6 +4,7 @@ using UNOGui.JuegoUNOServicio;
 using UNOGui.Ventanas;
 using UNOGui.Paginas;
 using System.Windows;
+using System.Collections.Generic;
 
 namespace UNOGui.Logica
 {
@@ -25,9 +26,12 @@ namespace UNOGui.Logica
             ventanaJuego.frameNavegacion.Navigate(new Partida());
         }
 
-        public void ObtenerMaso()
+        public void ObtenerMazo(List<Carta> manoJugador)
         {
-            throw new NotImplementedException();
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Partida ventanaPartida = ventanaJuego.frameNavegacion.Content as Partida;
+
+            ventanaPartida.EntregarCartas(manoJugador);
         }
     }
 }

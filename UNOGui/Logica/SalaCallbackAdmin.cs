@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using UNOGui.JuegoUNOServicio;
@@ -12,7 +13,7 @@ namespace UNOGui.Logica
         /// Lógica para actualizar la sala de un jugador.
         /// </summary>
         /// <param name="jugadores">Jugadores a agregar en la sala</param>
-        public void ActualizarSala(string[] jugadores)
+        public void ActualizarSala(List<string> jugadores)
         {
             ObservableCollection<string> jugadoresEnSala = new ObservableCollection<string>(jugadores);
 
