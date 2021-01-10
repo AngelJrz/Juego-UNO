@@ -763,6 +763,12 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral")]
         System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOGui.JuegoUNOServicio.Carta cartaCentral, UNOGui.JuegoUNOServicio.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/TomarCarta")]
+        void TomarCarta(UNOGui.JuegoUNOServicio.Sala salaJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/TomarCarta")]
+        System.Threading.Tasks.Task TomarCartaAsync(UNOGui.JuegoUNOServicio.Sala salaJugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -803,6 +809,9 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarCartaCentral")]
         void ActualizarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RecibirCarta")]
+        void RecibirCarta(UNOGui.JuegoUNOServicio.Carta cartaTomada);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -871,6 +880,14 @@ namespace UNOGui.JuegoUNOServicio {
         
         public System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOGui.JuegoUNOServicio.Carta cartaCentral, UNOGui.JuegoUNOServicio.Sala sala) {
             return base.Channel.ColocarCartaCentralAsync(cartaCentral, sala);
+        }
+        
+        public void TomarCarta(UNOGui.JuegoUNOServicio.Sala salaJugador) {
+            base.Channel.TomarCarta(salaJugador);
+        }
+        
+        public System.Threading.Tasks.Task TomarCartaAsync(UNOGui.JuegoUNOServicio.Sala salaJugador) {
+            return base.Channel.TomarCartaAsync(salaJugador);
         }
     }
 }

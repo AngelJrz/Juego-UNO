@@ -184,6 +184,9 @@
   <wsdl:message name="IAdministrarJuego_ColocarCartaCentral_InputMessage">
     <wsdl:part name="parameters" element="tns:ColocarCartaCentral" />
   </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_TomarCarta_InputMessage">
+    <wsdl:part name="parameters" element="tns:TomarCarta" />
+  </wsdl:message>
   <wsdl:message name="IAdministrarJuego_NotificarCreacionDeSala_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarCreacionDeSala" />
   </wsdl:message>
@@ -219,6 +222,9 @@
   </wsdl:message>
   <wsdl:message name="IAdministrarJuego_ActualizarCartaCentral_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ActualizarCartaCentral" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_RecibirCarta_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirCarta" />
   </wsdl:message>
   <wsdl:portType name="IRegistrarJugador">
     <wsdl:operation name="RegistrarJugador">
@@ -284,6 +290,9 @@
     <wsdl:operation name="ColocarCartaCentral">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral" message="tns:IAdministrarJuego_ColocarCartaCentral_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="TomarCarta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/TomarCarta" message="tns:IAdministrarJuego_TomarCarta_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala" message="tns:IAdministrarJuego_NotificarCreacionDeSala_OutputCallbackMessage" />
     </wsdl:operation>
@@ -319,6 +328,9 @@
     </wsdl:operation>
     <wsdl:operation name="ActualizarCartaCentral">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarCartaCentral" message="tns:IAdministrarJuego_ActualizarCartaCentral_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecibirCarta">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/RecibirCarta" message="tns:IAdministrarJuego_RecibirCarta_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IRegistrarJugador" type="tns:IRegistrarJugador">
@@ -450,6 +462,12 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="TomarCarta">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/TomarCarta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala" style="document" />
       <wsdl:output>
@@ -518,6 +536,12 @@
     </wsdl:operation>
     <wsdl:operation name="ActualizarCartaCentral">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ActualizarCartaCentral" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecibirCarta">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/RecibirCarta" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

@@ -41,5 +41,13 @@ namespace UNOGui.Logica
 
             ventanaPartida.ActualizarCartaCentral(nuevaCarta);
         }
+
+        public void RecibirCarta(Carta cartaTomada)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Partida ventanaPartida = ventanaJuego.frameNavegacion.Content as Partida;
+
+            ventanaPartida.AniadirCarta(cartaTomada);
+        }
     }
 }

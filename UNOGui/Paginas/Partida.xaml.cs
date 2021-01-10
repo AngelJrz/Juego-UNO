@@ -36,10 +36,10 @@ namespace UNOGui.Paginas
         public void EntregarCartas(List<Carta> cartasDeMano)
         {
             miMazo.AddRange(cartasDeMano);
-            Mostrarmano();
+            MostrarMano();
         }
 
-        public void Mostrarmano()
+        public void MostrarMano()
         {
             manoJugador.Children.Clear();
 
@@ -73,7 +73,7 @@ namespace UNOGui.Paginas
                     PartidaAdmin.ColocarCarta(carta, miSala);
                     miMazo.Remove(carta);
                     manoJugador.Children.Remove(imagen);
-                    Mostrarmano();
+                    MostrarMano();
                 }
                 else
                 {
@@ -98,6 +98,12 @@ namespace UNOGui.Paginas
             src.UriSource = new Uri(nuevaCarta.Rutak__BackingField, UriKind.Relative);
             src.EndInit();
             cartaCentral.Source = src;
+        }
+
+        public void AniadirCarta(Carta nuevaCarta)
+        {
+            miMazo.Add(nuevaCarta);
+            MostrarMano();
         }
     }
 }

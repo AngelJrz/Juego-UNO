@@ -130,5 +130,16 @@ namespace UNO.Contratos
                 jugador.Value.ActualizarCartaCentral(cartaCentral);
             }
         }
+
+        public void TomarCarta(Sala salaJugador)
+        {
+            foreach (var jugador in salaJugador.JugadoresEnSala)
+            {
+                if (JuegoCallbackActual == jugador.Value)
+                {
+                    JuegoCallbackActual.RecibirCarta(TomaCarta());
+                }
+            }
+        }
     }
 }

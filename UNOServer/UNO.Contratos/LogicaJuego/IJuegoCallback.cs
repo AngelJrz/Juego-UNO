@@ -94,6 +94,13 @@ namespace UNO.Contratos.LogicaJuego
         /// <param name="cartaCentral"></param>
         [OperationContract(IsOneWay = true)]
         void ActualizarCartaCentral(Carta cartaCentral);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cartaTomada"></param>
+        [OperationContract(IsOneWay = true)]
+        void RecibirCarta(Carta cartaTomada);
         #endregion
     }
 }

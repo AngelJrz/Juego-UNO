@@ -57,6 +57,12 @@ namespace UNO.Contratos.LogicaJuego
         [OperationContract(IsOneWay = true)]
         void ColocarCartaCentral(Carta cartaCentral, Sala sala);
 
+        /// <summary>
+        /// El jugador toma una carta del mazo.
+        /// </summary>
+        /// <param name="sala">La sala a la que pertenece el usuario</param>
+        [OperationContract(IsOneWay = true)]
+        void TomarCarta(Sala salaJugador);
         #endregion
     }
 }
