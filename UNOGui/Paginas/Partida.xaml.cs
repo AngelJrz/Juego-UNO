@@ -24,6 +24,7 @@ namespace UNOGui.Paginas
     public partial class Partida : Page
     {
         private List<Carta> miMazo = new List<Carta>();
+        List<ContenedorJugador> contenedoresJugador;
         private int espacioEntreCartas = 0;
         private Carta cartaEnTablero;
         private String miSala;
@@ -77,16 +78,31 @@ namespace UNOGui.Paginas
 
             imagen.MouseLeftButtonUp += (s, ev) =>
             {
-                if (Reglas.EsCartaValida(carta, cartaEnTablero))
+                if (EsMiTurno())
                 {
-                    PartidaAdmin.ColocarCarta(carta, miSala);
-                    miMazo.Remove(carta);
-                    manoJugador.Children.Remove(imagen);
-                    MostrarMano();
+                    if (Reglas.EsCartaValida(carta, cartaEnTablero))
+                    {
+                        PartidaAdmin.ColocarCarta(carta, miSala);
+                        miMazo.Remove(carta);
+                        manoJugador.Children.Remove(imagen);
+                        PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMickname(), miMazo.Count.ToString());
+                        MostrarMano();
+                    }
+                    else
+                    {
+                        new Mensaje {
+                            TituloMensaje = "Carta no permitida",
+                            Contenido = "La carta que seleccionaste no es valida"
+                        }.ShowDialog();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("La carta no es valida");
+                    new Mensaje
+                    {
+                        TituloMensaje = "Accion no permitida",
+                        Contenido = "Espera tu turno"
+                    }.ShowDialog();
                 }
             };
 
@@ -113,6 +129,7 @@ namespace UNOGui.Paginas
         {
             miMazo.Add(nuevaCarta);
             MostrarMano();
+            PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMickname(), miMazo.Count.ToString());
         }
 
         public void MostrarMensajeGanador(String ganador)
@@ -122,11 +139,80 @@ namespace UNOGui.Paginas
 
         private void TomarCarta(object sender, RoutedEventArgs e)
         {
+            String miNickname = ObtenerMickname();
+
+            PartidaAdmin.TomarCarta(miSala, miNickname);
+        }
+
+        public void EstablecerJugadorEnTurno(String nickname)
+        {
+            turnoActual.Text = nickname;
+        }
+
+        private bool EsMiTurno()
+        {
+            String miNickname = ObtenerMickname();
+            bool esMiTurno = false;
+
+            if (turnoActual.Text.Equals(miNickname))
+            {
+                esMiTurno = true;
+            }
+
+            return esMiTurno;
+        }
+
+        public void PintarJungadores(Sala sala)
+        {
+            List<StackPanel> paneles = new List<StackPanel>
+            {
+                panel1,
+                panel2,
+                panel3,
+                panel4
+            };
+
+            contenedoresJugador = new List<ContenedorJugador>();
+
+            String miNickname = ObtenerMickname();
+
+            int posicionJugador = sala.JugadoresEnSala.Keys.ToList().FindIndex(jugador => jugador.Nickname.Equals(miNickname));
+
+            for (int i = 0; i < sala.JugadoresEnSala.Count; i++)
+            {
+                if (i != posicionJugador)
+                {
+                    contenedoresJugador.Add(new ContenedorJugador() { DataContext = sala.JugadoresEnSala.Keys.ToList().ElementAt(i) });
+                }
+            }
+
+            for (int i = 0; i < contenedoresJugador.Count; i++)
+            {
+                    paneles.ElementAt(i).Children.Add(contenedoresJugador.ElementAt(i));
+            }
+        }
+
+        private String ObtenerMickname()
+        {
             MenuPrincipal ventanaJuego = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
             Jugador jugadorActual = ventanaJuego.DataContext as Jugador;
-            String nickname = jugadorActual.Nickname;
+            String miNickname = jugadorActual.Nickname;
 
-            PartidaAdmin.TomarCarta(miSala, nickname);
+            return miNickname;
+        }
+
+        public void ActualizarNumeroCartas(String nickname, String numeroDeCartas)
+        {
+            foreach (ContenedorJugador contenedor in contenedoresJugador)
+            {
+                Jugador jugador = contenedor.DataContext as Jugador;
+
+                if (jugador.Nickname.Equals(nickname))
+                {
+                    contenedor.numeroDeCartas.Text = numeroDeCartas;
+                    break;
+                }
+            }
         }
     }
 }

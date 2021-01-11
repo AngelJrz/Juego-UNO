@@ -17,6 +17,11 @@ namespace UNO.Contratos
             var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSala));
             PonerSalaEnJuego(idSala);
 
+            salaBuscada.PartidaDeSala = new Partida()
+            {
+                JugadoresEnPartida = salaBuscada.JugadoresEnSala.Keys.ToList()
+            };
+
             foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
                 jugador.Value.NotificarInicioPartida(salaBuscada);
@@ -24,6 +29,7 @@ namespace UNO.Contratos
 
             RepartirCartas(salaBuscada);
             ColocarCartaCentral(TomaCarta(), salaBuscada.Id);
+            CambiarTurno(salaBuscada);
         }
 
         private void PonerSalaEnJuego(string idSala)
@@ -129,6 +135,18 @@ namespace UNO.Contratos
             {
                 jugador.Value.ActualizarCartaCentral(cartaCentral);
             }
+
+            CambiarTurno(salaBuscada);
+        }
+
+        private void CambiarTurno(Sala sala)
+        {
+            String nuevoTurno = sala.PartidaDeSala.CambiarTurno();
+
+            foreach (var jugador in sala.JugadoresEnSala)
+            {
+                jugador.Value.CambiarTurno(nuevoTurno);
+            }
         }
 
         public void TomarCarta(String idSalaJugador, String nickname)
@@ -161,6 +179,16 @@ namespace UNO.Contratos
             foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
                 jugador.Value.NotificarGanador(ganador.Nickname);
+            }
+        }
+
+        public void ActualizarNumeroDeCarta(String idSalaJugador, String nickname, String numeroDeCartas)
+        {
+            var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));
+
+            foreach (var jugador in salaBuscada.JugadoresEnSala)
+            {
+                jugador.Value.ActualizarNumeroDeCartas(nickname,numeroDeCartas);
             }
         }
     }

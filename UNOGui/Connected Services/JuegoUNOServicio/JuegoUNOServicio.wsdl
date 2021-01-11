@@ -190,6 +190,9 @@
   <wsdl:message name="IAdministrarJuego_AnunciarGanador_InputMessage">
     <wsdl:part name="parameters" element="tns:AnunciarGanador" />
   </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ActualizarNumeroDeCarta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarNumeroDeCarta" />
+  </wsdl:message>
   <wsdl:message name="IAdministrarJuego_NotificarCreacionDeSala_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarCreacionDeSala" />
   </wsdl:message>
@@ -231,6 +234,12 @@
   </wsdl:message>
   <wsdl:message name="IAdministrarJuego_NotificarGanador_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarGanador" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_CambiarTurno_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:CambiarTurno" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ActualizarNumeroDeCartas_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarNumeroDeCartas" />
   </wsdl:message>
   <wsdl:portType name="IRegistrarJugador">
     <wsdl:operation name="RegistrarJugador">
@@ -302,6 +311,9 @@
     <wsdl:operation name="AnunciarGanador">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador" message="tns:IAdministrarJuego_AnunciarGanador_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ActualizarNumeroDeCarta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta" message="tns:IAdministrarJuego_ActualizarNumeroDeCarta_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala" message="tns:IAdministrarJuego_NotificarCreacionDeSala_OutputCallbackMessage" />
     </wsdl:operation>
@@ -343,6 +355,12 @@
     </wsdl:operation>
     <wsdl:operation name="NotificarGanador">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarGanador" message="tns:IAdministrarJuego_NotificarGanador_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarTurno">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/CambiarTurno" message="tns:IAdministrarJuego_CambiarTurno_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNumeroDeCartas">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCartas" message="tns:IAdministrarJuego_ActualizarNumeroDeCartas_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IRegistrarJugador" type="tns:IRegistrarJugador">
@@ -486,6 +504,12 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="ActualizarNumeroDeCarta">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala" style="document" />
       <wsdl:output>
@@ -566,6 +590,18 @@
     </wsdl:operation>
     <wsdl:operation name="NotificarGanador">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarGanador" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarTurno">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/CambiarTurno" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNumeroDeCartas">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCartas" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

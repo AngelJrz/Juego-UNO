@@ -108,6 +108,21 @@ namespace UNO.Contratos.LogicaJuego
         /// <param name="jugadorGanador"></param>
         [OperationContract(IsOneWay = true)]
         void NotificarGanador(String jugadorGanador);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nuevoTurno"></param>
+        [OperationContract(IsOneWay = true)]
+        void CambiarTurno(String nuevoTurno);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nickname"></param>
+        /// <param name="numeroDeCartas"></param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarNumeroDeCartas(String nickname, String numeroDeCartas);
         #endregion
     }
 }

@@ -33,7 +33,7 @@
             <StackPanel Grid.Row="0">
                 <StackPanel HorizontalAlignment="Center" Margin="10">
                     <TextBlock Text="Jugador en turno: " Style="{StaticResource ContenidoMensaje}" TextAlignment="Center"/>
-                    <TextBlock Text="elrevo" Style="{StaticResource TituloMensaje}" TextAlignment="Center"/>
+                    <TextBlock x:Name="turnoActual" Text="" Style="{StaticResource TituloMensaje}" TextAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
 
@@ -81,9 +81,10 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             
-            <ScrollViewer  HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Disabled" Margin="0,10,0,10">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Disabled" Margin="0,10,0,10">
                 <Grid x:Name="manoJugador" HorizontalAlignment="Center" Cursor="Hand"></Grid>
             </ScrollViewer>
+            
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
                 <TextBlock Text="Mi puntaje: " Style="{StaticResource TextoContenido}"/>
@@ -94,19 +95,19 @@
             <Button Content="Salir" Style="{StaticResource Button}" Margin="0,5,0,0"/>
         </StackPanel>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0">
-            <StackPanel>
+        <StackPanel x:Name="panel3" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0">
+            <!--<StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Jugador: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
+                    <TextBlock x:Name="nicknameJugador3" Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="No. Cartas: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="5" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                    <TextBlock Text="7" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Puntaje: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="120" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                    <TextBlock Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
                 </StackPanel>
             </StackPanel>
 
@@ -151,22 +152,22 @@
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
-            </Grid>
+            </Grid>-->
         </StackPanel>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0">
-            <StackPanel>
+        <StackPanel x:Name="panel2" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0">
+            <!--<StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Jugador: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
+                    <TextBlock x:Name="nicknameJugador2" Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="No. Cartas: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="5" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                    <TextBlock Text="7" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Puntaje: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="120" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                    <TextBlock Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
                 </StackPanel>
             </StackPanel>
 
@@ -211,22 +212,22 @@
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
-            </Grid>
+            </Grid>-->
         </StackPanel>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1" Visibility="Hidden">
-            <StackPanel>
+        <StackPanel x:Name="panel1" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1">
+            <!--<StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Jugador: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
+                    <TextBlock x:Name="nicknameJugador1" Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="No. Cartas: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="5" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                    <TextBlock Text="7" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Puntaje: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="120" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                    <TextBlock Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
                 </StackPanel>
             </StackPanel>
 
@@ -271,23 +272,23 @@
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
-            </Grid>
+            </Grid>-->
             
         </StackPanel>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">
-            <StackPanel>
+        <StackPanel x:Name="panel4" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">
+            <!--<StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Jugador: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
+                    <TextBlock x:Name="nicknameJugador4" Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="No. Cartas: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="5" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                    <TextBlock Text="7" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Puntaje: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="120" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                    <TextBlock Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
                 </StackPanel>
             </StackPanel>
 
@@ -332,7 +333,7 @@
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
-            </Grid>
+            </Grid>-->
         </StackPanel>
 
     </Grid>

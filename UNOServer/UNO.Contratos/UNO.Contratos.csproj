@@ -58,6 +58,7 @@
     <Compile Include="AdministrarJugador\GeneradorClave.cs" />
     <Compile Include="AdministrarJugador\IPerfil.cs" />
     <Compile Include="AdministrarJugador\IPerfilCallback.cs" />
+    <Compile Include="LogicaJuego\Partida.cs" />
     <Compile Include="LogicaJuego\ResultadoUnionSala.cs" />
     <Compile Include="LogicaJuego\Sala.cs" />
     <Compile Include="JuegoUNOServicio.cs" />

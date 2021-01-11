@@ -247,6 +247,9 @@ namespace UNOGui.JuegoUNOServicio {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NumeroTotalDeJugadoresField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UNOGui.JuegoUNOServicio.Partida PartidaDeSalaField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -331,6 +334,80 @@ namespace UNOGui.JuegoUNOServicio {
                 if ((this.NumeroTotalDeJugadoresField.Equals(value) != true)) {
                     this.NumeroTotalDeJugadoresField = value;
                     this.RaisePropertyChanged("NumeroTotalDeJugadores");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UNOGui.JuegoUNOServicio.Partida PartidaDeSala {
+            get {
+                return this.PartidaDeSalaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartidaDeSalaField, value) != true)) {
+                    this.PartidaDeSalaField = value;
+                    this.RaisePropertyChanged("PartidaDeSala");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Partida", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego")]
+    [System.SerializableAttribute()]
+    public partial class Partida : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<UNOGui.JuegoUNOServicio.Jugador> JugadoresEnPartidaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SentidoJuegoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<UNOGui.JuegoUNOServicio.Jugador> JugadoresEnPartida {
+            get {
+                return this.JugadoresEnPartidaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JugadoresEnPartidaField, value) != true)) {
+                    this.JugadoresEnPartidaField = value;
+                    this.RaisePropertyChanged("JugadoresEnPartida");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SentidoJuego {
+            get {
+                return this.SentidoJuegoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SentidoJuegoField, value) != true)) {
+                    this.SentidoJuegoField = value;
+                    this.RaisePropertyChanged("SentidoJuego");
                 }
             }
         }
@@ -775,6 +852,12 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador")]
         System.Threading.Tasks.Task AnunciarGanadorAsync(string idSalaJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta")]
+        void ActualizarNumeroDeCarta(string idSalaJugador, string nickname, string numeroDeCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta")]
+        System.Threading.Tasks.Task ActualizarNumeroDeCartaAsync(string idSalaJugador, string nickname, string numeroDeCartas);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -821,6 +904,12 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarGanador")]
         void NotificarGanador(string jugadorGanador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/CambiarTurno")]
+        void CambiarTurno(string nuevoTurno);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCartas")]
+        void ActualizarNumeroDeCartas(string nickname, string numeroDeCartas);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -905,6 +994,14 @@ namespace UNOGui.JuegoUNOServicio {
         
         public System.Threading.Tasks.Task AnunciarGanadorAsync(string idSalaJugador) {
             return base.Channel.AnunciarGanadorAsync(idSalaJugador);
+        }
+        
+        public void ActualizarNumeroDeCarta(string idSalaJugador, string nickname, string numeroDeCartas) {
+            base.Channel.ActualizarNumeroDeCarta(idSalaJugador, nickname, numeroDeCartas);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarNumeroDeCartaAsync(string idSalaJugador, string nickname, string numeroDeCartas) {
+            return base.Channel.ActualizarNumeroDeCartaAsync(idSalaJugador, nickname, numeroDeCartas);
         }
     }
 }

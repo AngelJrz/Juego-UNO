@@ -39,5 +39,10 @@ namespace UNO.Contratos.LogicaJuego
         /// Obtiene o establece si la sala se encuentra ya en juego.
         /// </summary>
         public bool EnJuego { get; set; } = false;
+
+        /// <summary>
+        /// Obtiene o establece una partida para la sala de juego.
+        /// </summary>
+        public Partida PartidaDeSala { get; set; }
     }
 }

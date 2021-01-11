@@ -96,6 +96,9 @@
     <Compile Include="Logica\RegistroJugadorAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorCallback.cs" />
     <Compile Include="Logica\Reglas.cs" />
+    <Compile Include="Paginas\ContenedorJugador.xaml.cs">
+      <DependentUpon>ContenedorJugador.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\CreacionDeSala.xaml.cs">
       <DependentUpon>CreacionDeSala.xaml</DependentUpon>
     </Compile>
@@ -202,6 +205,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Paginas\ContenedorJugador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\CreacionDeSala.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

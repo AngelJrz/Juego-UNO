@@ -150,6 +150,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ActualizarNumeroDeCarta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSalaJugador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroDeCartas" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NotificarCreacionDeSala">
     <xs:complexType>
       <xs:sequence>
@@ -239,6 +248,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="jugadorGanador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarTurno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nuevoTurno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarNumeroDeCartas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroDeCartas" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

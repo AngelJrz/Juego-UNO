@@ -81,5 +81,23 @@ namespace UNOGui.Logica
                 throw;
             }
         }
+
+        public static void ActualizarNumeroDeCartas(String idSala, String nickname, String nuevoNumero)
+        {
+            try
+            {
+                servidor.ActualizarNumeroDeCarta(idSala, nickname, nuevoNumero);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+        }
     }
 }

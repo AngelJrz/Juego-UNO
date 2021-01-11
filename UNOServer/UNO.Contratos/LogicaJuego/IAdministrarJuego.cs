@@ -71,6 +71,15 @@ namespace UNO.Contratos.LogicaJuego
         /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
         [OperationContract(IsOneWay = true)]
         void AnunciarGanador(String idSalaJugador);
+
+        /// <summary>
+        /// El jugador toma una carta del mazo.
+        /// </summary>
+        /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
+        /// <param name="nickname">Nombre del usuario a actualizar</param>
+        /// <param name="numeroDeCartas">Numero nuevo de cartas</param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarNumeroDeCarta(String idSalaJugador, String nickname, String numeroDeCartas);
         #endregion
     }
 }
