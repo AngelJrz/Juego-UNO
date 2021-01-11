@@ -12,18 +12,9 @@ namespace UNOGui.Logica
     {
         public void NotificarInicioPartida(Sala sala)
         {
-            //var lobbyActual = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
-            //Juego ventanaJuego = new Juego();
-
-            //lobbyActual.Close();
-            //var menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
-            //menuPrincipal.Hide();
-            //ventanaJuego.Show();
-
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
             ventanaJuego.Height = 550;
             ventanaJuego.Width = 800;
-            //ventanaJuego.frameNavegacion.Navigate(new Partida(sala));
 
             Paginas.Partida paginaPartida = new Paginas.Partida(sala.Id);
             paginaPartida.EstablecerJugadorEnTurno(sala.CreadaPor);
@@ -86,6 +77,36 @@ namespace UNOGui.Logica
             Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
 
             ventanaPartida.ActualizarPuntajeDeJugador(nickname, puntajeASumar);
+        }
+
+        public void ObtenerCuatroCartas(List<Carta> nuevasCartas)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            foreach (Carta carta in nuevasCartas)
+            {
+                ventanaPartida.AniadirCarta(carta);
+            }
+        }
+
+        public void ObtenerDosCartas(List<Carta> nuevasCartas)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            foreach (Carta carta in nuevasCartas)
+            {
+                ventanaPartida.AniadirCarta(carta);
+            }
+        }
+
+        public void ObtenerTurnoActual(string turnoActual)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            ventanaPartida.EstablecerJugadorEnTurno(turnoActual);
         }
     }
 }

@@ -538,6 +538,24 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El ganador de la partida es.
+        /// </summary>
+        public static string Partida_GanadorMensajeContenido {
+            get {
+                return ResourceManager.GetString("Partida_GanadorMensajeContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Hay un ganador!.
+        /// </summary>
+        public static string Partida_GanadorMensajeTitulo {
+            get {
+                return ResourceManager.GetString("Partida_GanadorMensajeTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancelar.
         /// </summary>
         public static string RecuperacionCuenta_BotonCancelar {

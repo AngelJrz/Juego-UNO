@@ -69,8 +69,9 @@ namespace UNO.Contratos.LogicaJuego
         /// Se anuncia el ganador de la partida a todos los clientes.
         /// </summary>
         /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
+        /// <param name="jugadorGanador">Jugador ganador</param>
         [OperationContract(IsOneWay = true)]
-        void AnunciarGanador(String idSalaJugador);
+        void AnunciarGanador(String idSalaJugador, Jugador jugadorGanador);
 
         /// <summary>
         /// Actualiza el numero de cartas que tiene el jugador en la mano.

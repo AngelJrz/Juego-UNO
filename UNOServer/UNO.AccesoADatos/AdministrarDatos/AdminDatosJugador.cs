@@ -73,9 +73,9 @@ namespace UNO.AccesoADatos.AdministrarDatos
         }
 
         /// <summary>
-        /// 
+        /// Guarda un nuevo jugador en la base de datos
         /// </summary>
-        /// <param name="nuevoJugador"></param>
+        /// <param name="nuevoJugador">Nuevo jugador a guardar</param>
         public void GuardarJugador(Dominio.Jugador nuevoJugador)
         {
             Jugador entidadJugador = new Jugador
@@ -130,6 +130,11 @@ namespace UNO.AccesoADatos.AdministrarDatos
             return mejoresJugadores;
         }
 
+        /// <summary>
+        /// Obtiene un Jugador.
+        /// </summary>
+        /// <param name="nickname">Nickname del jugador a obtener</param>
+        /// <returns>Jugador buscado</returns>
         public Dominio.Jugador ObtenerJugador(string nickname)
         {
             Dominio.Jugador jugador;
@@ -148,6 +153,56 @@ namespace UNO.AccesoADatos.AdministrarDatos
             };
 
             return jugador;
+        }
+
+        /// <summary>
+        /// Actualiza las estadísticas en el juego de un jugador.
+        /// </summary>
+        /// <param name="jugador">Jugador a actualizar estadísticas</param>
+        public void ActualizarEstadisticasDeJugador(Dominio.Jugador jugador)
+        {
+            Jugador jugadorBuscado = baseDeDatos.Jugador.Find(jugador.Nickname);
+
+            jugadorBuscado.PuntajeTotal = jugador.PuntajeTotal;
+            jugadorBuscado.PartidasJugadas += 1;
+            jugadorBuscado.PartidasGanadas += 1;
+
+            int experienciaCalculada = 75 + jugador.PuntajeTotal;
+            
+            jugadorBuscado.Experiencia += experienciaCalculada;
+
+            int nivelCalculado = (int)jugadorBuscado.Experiencia / 100;
+            jugadorBuscado.Nivel = nivelCalculado;
+
+            try
+            {
+                baseDeDatos.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                throw new DbUpdateException("Error al agregar nuevo jugador");
+            }
+        }
+
+        public void ActualizarPartidasJugadas(Dominio.Jugador jugador)
+        {
+            Jugador jugadorBuscado = baseDeDatos.Jugador.Find(jugador.Nickname);
+
+            jugadorBuscado.PartidasJugadas++;
+            int experienciaCalculada = 40 + jugador.PuntajeTotal;
+            jugadorBuscado.Experiencia += experienciaCalculada;
+
+            int nivelCalculado = (int)jugadorBuscado.Experiencia / 100;
+            jugadorBuscado.Nivel = nivelCalculado;
+
+            try
+            {
+                baseDeDatos.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                throw new DbUpdateException("Error al agregar nuevo jugador");
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Ventanas;
+using System.Windows.Controls;
 
 namespace UNOGui.Logica
 {
@@ -74,6 +75,21 @@ namespace UNOGui.Logica
                 Title = "Sala eliminada",
                 TituloMensaje = "Sala eliminada",
                 Contenido = "El host eliminó la sala. Unete a otra sala."
+            }.ShowDialog();
+
+            CerrarSala();
+        }
+
+        /// <summary>
+        /// Lógica para notificar la falta de jugadores en la sala
+        /// </summary>
+        public void NotificarFaltaDeJugadores()
+        {
+            new Mensaje
+            {
+                Title = "Sala eliminada",
+                TituloMensaje = "Sala eliminada",
+                Contenido = "No existen suficientes jugadores en la sala para seguir jugando."
             }.ShowDialog();
 
             CerrarSala();
@@ -164,9 +180,17 @@ namespace UNOGui.Logica
         public void SacarJugador(Jugador jugadorASacar)
         {
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
-            Paginas.Lobby lobby = ventanaJuego.PaginaActual as Paginas.Lobby;
-            Jugador jugador = lobby.Jugadores.Single(jugadorAux => jugadorAux.Nickname.Equals(jugadorASacar.Nickname));
-            lobby.Jugadores.Remove(jugador);
+            Page paginaActual = ventanaJuego.PaginaActual;
+
+            if (paginaActual.GetType() == typeof(Paginas.Lobby))
+            {
+                Jugador jugador = ((Paginas.Lobby)paginaActual).Jugadores.Single(jugadorAux => jugadorAux.Nickname.Equals(jugadorASacar.Nickname));
+                ((Paginas.Lobby)paginaActual).Jugadores.Remove(jugador);
+            }
+            else
+            {
+                ((Paginas.Partida)paginaActual).SacarJugador(jugadorASacar.Nickname);
+            }
         }
 
         private void CerrarSala()

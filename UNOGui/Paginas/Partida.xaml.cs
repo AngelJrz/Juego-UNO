@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Logica;
 using UNOGui.Ventanas;
@@ -23,11 +16,11 @@ namespace UNOGui.Paginas
     /// </summary>
     public partial class Partida : Page
     {
-        private List<Carta> miMazo = new List<Carta>();
+        private readonly List<Carta> miMazo = new List<Carta>();
         List<ContenedorJugador> contenedoresJugador;
         private int espacioEntreCartas = 0;
         private Carta cartaEnTablero;
-        private String miSala;
+        private readonly String miSala;
 
         public Partida(String sala)
         {
@@ -55,8 +48,19 @@ namespace UNOGui.Paginas
             }
             else
             {
-                PartidaAdmin.AnunciarGanador(miSala);
+                Jugador juadorGanador = new Jugador
+                {
+                    Nickname = ObtenerMiNickname(),
+                    PuntajeTotal = ObtenerMiPuntaje()
+                };
+
+                PartidaAdmin.AnunciarGanador(miSala, juadorGanador);
             }
+        }
+
+        private int ObtenerMiPuntaje()
+        {
+            return int.Parse(miPuntajeText.Text);
         }
 
         private void RenderizarImagen(Carta carta)
@@ -85,8 +89,9 @@ namespace UNOGui.Paginas
                         PartidaAdmin.ColocarCarta(carta, miSala);
                         miMazo.Remove(carta);
                         manoJugador.Children.Remove(imagen);
-                        PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMickname(), miMazo.Count.ToString());
-                        PartidaAdmin.ActualizarPuntaje(miSala, ObtenerMickname(), carta.Numerok__BackingField);
+                        PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMiNickname(), miMazo.Count.ToString());
+                        PartidaAdmin.ActualizarPuntaje(miSala, ObtenerMiNickname(), carta.Numerok__BackingField);
+                        ActualizarMiPuntaje(carta.Numerok__BackingField);
                         MostrarMano();
                     }
                     else
@@ -115,6 +120,13 @@ namespace UNOGui.Paginas
             espacioEntreCartas += 30;
         }
 
+        private void ActualizarMiPuntaje(int puntaje)
+        {
+            int nuevoPuntaje = int.Parse(miPuntajeText.Text) + puntaje;
+
+            miPuntajeText.Text = nuevoPuntaje.ToString();
+        }
+
         public void ActualizarCartaCentral(Carta nuevaCarta)
         {
             cartaEnTablero = nuevaCarta;
@@ -135,7 +147,22 @@ namespace UNOGui.Paginas
 
         public void MostrarMensajeGanador(String ganador)
         {
-            MessageBox.Show("El ganador de la partida es " + ganador);
+            new Mensaje
+            {
+                Title = Properties.Resources.Partida_GanadorMensajeTitulo,
+                TituloMensaje = Properties.Resources.Partida_GanadorMensajeTitulo,
+                Contenido = $"{Properties.Resources.Partida_GanadorMensajeContenido} {ganador}"
+            }.ShowDialog();
+
+            TerminarPartida();
+        }
+
+        private void TerminarPartida()
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            MenuPrincipal ventanaMenu = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
+            ventanaJuego.Close();
+            ventanaMenu.Show();
         }
 
         private void TomarCarta(object sender, RoutedEventArgs e)
@@ -227,6 +254,30 @@ namespace UNOGui.Paginas
                     int puntajeActual = int.Parse(contenedor.puntaje.Text);
 
                     contenedor.puntaje.Text = (puntajeActual + puntaje).ToString();
+                    break;
+                }
+            }
+        }
+
+        private void SalirDePartida(object sender, RoutedEventArgs e)
+        {
+            SalaAdmin.SalirDeSala(miSala, ObtenerMiNickname());
+        }
+
+        /// <summary>
+        /// Lógica para sacar al jugador de la página Partida.
+        /// </summary>
+        /// <param name="nickname">Nickname del jugador a sacar</param>
+        public void SacarJugador(string nickname)
+        {
+            foreach (ContenedorJugador contenedor in contenedoresJugador)
+            {
+                Jugador jugador = contenedor.DataContext as Jugador;
+
+                if (jugador.Nickname.Equals(nickname))
+                {
+                    contenedor.Visibility = Visibility.Collapsed;
+                    contenedoresJugador.Remove(contenedor);
                     break;
                 }
             }

@@ -223,6 +223,9 @@
   <wsdl:message name="IAdministrarJuego_EliminarCreador_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EliminarCreador" />
   </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_NotificarFaltaDeJugadores_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarFaltaDeJugadores" />
+  </wsdl:message>
   <wsdl:message name="IAdministrarJuego_NotificarInicioPartida_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarInicioPartida" />
   </wsdl:message>
@@ -243,6 +246,15 @@
   </wsdl:message>
   <wsdl:message name="IAdministrarJuego_ActualizarNumeroDeCartas_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ActualizarNumeroDeCartas" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ObtenerDosCartas_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDosCartas" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ObtenerCuatroCartas_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCuatroCartas" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ObtenerTurnoActual_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTurnoActual" />
   </wsdl:message>
   <wsdl:message name="IAdministrarJuego_ActualizarPuntajeDeJugador_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ActualizarPuntajeDeJugador" />
@@ -350,6 +362,9 @@
     <wsdl:operation name="EliminarCreador">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/EliminarCreador" message="tns:IAdministrarJuego_EliminarCreador_OutputCallbackMessage" />
     </wsdl:operation>
+    <wsdl:operation name="NotificarFaltaDeJugadores">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarFaltaDeJugadores" message="tns:IAdministrarJuego_NotificarFaltaDeJugadores_OutputCallbackMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotificarInicioPartida">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarInicioPartida" message="tns:IAdministrarJuego_NotificarInicioPartida_OutputCallbackMessage" />
     </wsdl:operation>
@@ -370,6 +385,15 @@
     </wsdl:operation>
     <wsdl:operation name="ActualizarNumeroDeCartas">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCartas" message="tns:IAdministrarJuego_ActualizarNumeroDeCartas_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDosCartas">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ObtenerDosCartas" message="tns:IAdministrarJuego_ObtenerDosCartas_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCuatroCartas">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ObtenerCuatroCartas" message="tns:IAdministrarJuego_ObtenerCuatroCartas_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTurnoActual">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ObtenerTurnoActual" message="tns:IAdministrarJuego_ObtenerTurnoActual_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="ActualizarPuntajeDeJugador">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntajeDeJugador" message="tns:IAdministrarJuego_ActualizarPuntajeDeJugador_OutputCallbackMessage" />
@@ -582,6 +606,12 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="NotificarFaltaDeJugadores">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarFaltaDeJugadores" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NotificarInicioPartida">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarInicioPartida" style="document" />
       <wsdl:output>
@@ -624,6 +654,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ObtenerDosCartas">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ObtenerDosCartas" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCuatroCartas">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ObtenerCuatroCartas" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTurnoActual">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ObtenerTurnoActual" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ActualizarPuntajeDeJugador">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ActualizarPuntajeDeJugador" style="document" />
       <wsdl:output>
@@ -637,7 +685,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
+          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -646,7 +694,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
+          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -655,7 +703,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
+          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -664,7 +712,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>LAPTOP-MSC2EQ33\Angel</Upn>
+          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

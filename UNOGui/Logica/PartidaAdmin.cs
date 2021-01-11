@@ -64,11 +64,16 @@ namespace UNOGui.Logica
             }
         }
 
-        public static void AnunciarGanador(String idSalaDeJjugador)
+        /// <summary>
+        /// Implementa la lógica para cumunicarse al servidor y anunciar el jugador ganador
+        /// </summary>
+        /// <param name="idSalaDeJjugador">ID sala del jugador ganador</param>
+        /// <param name="jugadorGanador">Jugador ganador</param>
+        public static void AnunciarGanador(String idSalaDeJjugador, Jugador jugadorGanador)
         {
             try
             {
-                servidor.AnunciarGanador(idSalaDeJjugador);
+                servidor.AnunciarGanador(idSalaDeJjugador, jugadorGanador);
             }
             catch (EndpointNotFoundException ex)
             {

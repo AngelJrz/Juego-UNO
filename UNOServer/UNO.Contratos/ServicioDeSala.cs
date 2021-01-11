@@ -131,11 +131,41 @@ namespace UNO.Contratos
                             callbackActual.NotificarSalidaDeSala();
                             salaActual.JugadoresEnSala.Remove(jugador.Key);
                             NotificarJugadorEliminado(salaActual, jugador.Key);
+
+                            if (salaActual.EnJuego)
+                            {
+                                salaActual.PartidaDeSala.SacarJugador(jugador.Key);
+
+                                if (salaActual.PartidaDeSala.HaySuficientesJugadores())
+                                {
+                                    salaActual.PartidaDeSala.ReiniciarTurnos();
+                                    CambiarTurno(salaActual);
+                                }
+                                else
+                                {
+                                    EliminarSalaPorFaltaDeJugadores(salaActual);
+                                }
+                            }
                         }
                         break;
                     }
                 }
             }
+        }
+
+        private void EliminarSalaPorFaltaDeJugadores(Sala salaActual)
+        {
+            if (salaActual.JugadoresEnSala.Count > 0)
+            {
+                foreach (var jugador in salaActual.JugadoresEnSala)
+                {
+                    jugador.Value.NotificarFaltaDeJugadores();
+                }
+
+                salaActual.JugadoresEnSala.Clear();
+            }
+
+            salasCreadas.Remove(salaActual);
         }
 
         private void NotificarJugadorEliminado(Sala salaActual, Dominio.Jugador jugadorASacar)

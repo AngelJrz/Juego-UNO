@@ -276,6 +276,12 @@
   <data name="MiPerfil_Titulo" xml:space="preserve">
     <value>Profile</value>
   </data>
+  <data name="Partida_GanadorMensajeContenido" xml:space="preserve">
+    <value>The game winner is</value>
+  </data>
+  <data name="Partida_GanadorMensajeTitulo" xml:space="preserve">
+    <value>There is a winner!</value>
+  </data>
   <data name="RecuperacionCuenta_BotonCancelar" xml:space="preserve">
     <value>Cancel</value>
   </data>

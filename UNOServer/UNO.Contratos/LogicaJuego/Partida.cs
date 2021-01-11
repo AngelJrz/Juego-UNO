@@ -126,6 +126,32 @@ namespace UNO.Contratos.LogicaJuego
             return JugadoresEnPartida.ElementAt(turno - 1).Nickname;
         }
 
+        /// <summary>
+        /// Reinicia el turno de los jugadores
+        /// </summary>
+        public void ReiniciarTurnos()
+        {
+            turno = 0;
+        }
+
+        /// <summary>
+        /// Saca al jugador de los jugadores en la partida.
+        /// </summary>
+        /// <param name="jugador">Jugador a sacar</param>
+        public void SacarJugador(Dominio.Jugador jugador)
+        {
+            JugadoresEnPartida.Remove(jugador);
+        }
+
+        /// <summary>
+        /// Comprueba si hay suficientes jugadores en la partida
+        /// </summary>
+        /// <returns>true si hay suficientes jugadors, falso si no lo hay</returns>
+        public bool HaySuficientesJugadores()
+        {
+            return JugadoresEnPartida.Count >= 2;
+        }
+
         private bool SonDosJugadores()
         {
             return JugadoresEnPartida.Count == 2;

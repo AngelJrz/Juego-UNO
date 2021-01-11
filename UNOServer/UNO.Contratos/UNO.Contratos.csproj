@@ -74,7 +74,6 @@
     <Compile Include="AdministrarJugador\IRegistrarJugadorCallback.cs" />
     <Compile Include="AdministrarJugador\ResultadoRegistro.cs" />
     <Compile Include="ServicioDeSala.cs" />
-    <Compile Include="ServicioJuego.cs" />
     <Compile Include="ServicioPartida.cs" />
   </ItemGroup>
   <ItemGroup>

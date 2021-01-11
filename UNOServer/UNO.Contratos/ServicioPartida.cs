@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UNO.Contratos.LogicaJuego;
 using UNO.Dominio;
 
@@ -10,8 +8,12 @@ namespace UNO.Contratos
 {
     public partial class JuegoUNOServicio
     { 
-        private List<Carta> mazoSala = CrearMazo();
+        private readonly List<Carta> mazoSala = CrearMazo();
 
+        /// <summary>
+        /// Lógica para iniciar la partida en una sala.
+        /// </summary>
+        /// <param name="idSala">Id de la sala donde se inicia la partida</param>
         public void IniciarPartida(string idSala)
         {
             var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSala));
@@ -184,9 +186,9 @@ namespace UNO.Contratos
         {
             foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
-                if (jugador.Key.Equals(nicknameJugador))
+                if (jugador.Key.Nickname.Equals(nicknameJugador))
                 {
-                    jugador.Value.ObtenerDosCartas(TomarDosCartasDelMazo());
+                    jugador.Value.ObtenerCuatroCartas(TomarCuatroCartasDelMazo());
                     break;
                 }
             }
@@ -226,9 +228,9 @@ namespace UNO.Contratos
         {
             foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
-                if (jugador.Key.Equals(nicknameJugador))
+                if (jugador.Key.Nickname.Equals(nicknameJugador))
                 {
-                    jugador.Value.ObtenerCuatroCartas(TomarCuatroCartasDelMazo());
+                    jugador.Value.ObtenerDosCartas(TomarDosCartasDelMazo());
                     break;
                 }
             }
@@ -249,6 +251,11 @@ namespace UNO.Contratos
             }
         }
 
+        /// <summary>
+        /// Lógica para tomar una carta del mazo.
+        /// </summary>
+        /// <param name="idSalaJugador">Id de la sala donde se tomará la carta</param>
+        /// <param name="nickname">Nickname del jugador que tomará la carta</param>
         public void TomarCarta(String idSalaJugador, String nickname)
         {
             var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));
@@ -263,35 +270,64 @@ namespace UNO.Contratos
             }
         }
 
-        public void AnunciarGanador(String idSalaJugador)
+        /// <summary>
+        /// Lógica para anunciar a los clientes el ganador.
+        /// </summary>
+        /// <param name="idSalaJugador">Id de la sala donde ganó el jugador</param>
+        /// <param name="jugadorGanador">Jugador que ganó la partida</param>
+        public void AnunciarGanador(String idSalaJugador, Jugador jugadorGanador)
         {
-            Jugador ganador = new Jugador();
             var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));
 
             foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
-                if (jugador.Value == JuegoCallbackActual)
+                jugador.Value.NotificarGanador(jugadorGanador.Nickname);
+
+                if (jugador.Key.Nickname.Equals(jugadorGanador.Nickname))
                 {
-                    ganador = jugador.Key;
+                    ActualizarDatosJugadorGanador(jugadorGanador);
+                }
+                else
+                {
+                    ActualizarDatosJugador(jugador.Key);
                 }
             }
 
-            foreach (var jugador in salaBuscada.JugadoresEnSala)
-            {
-                jugador.Value.NotificarGanador(ganador.Nickname);
-            }
+            TerminarPartida(salaBuscada);
         }
 
+        private void ActualizarDatosJugador(Jugador jugador)
+        {
+            administradorDatosJugador.ActualizarPartidasJugadas(jugador);
+        }
+
+        private void ActualizarDatosJugadorGanador(Jugador jugadorGanador)
+        {
+            administradorDatosJugador.ActualizarEstadisticasDeJugador(jugadorGanador);
+        }
+
+        /// <summary>
+        /// Lógica para actualizar el número de cartas de un jugador.
+        /// </summary>
+        /// <param name="idSalaJugador">Id de sala donde se actualizará</param>
+        /// <param name="nickname">Nickname del jugador que se actualizará su número de carta</param>
+        /// <param name="numeroDeCartas">Número de cartas que se actualizará</param>
         public void ActualizarNumeroDeCarta(String idSalaJugador, String nickname, String numeroDeCartas)
         {
             var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));
 
             foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
-                jugador.Value.ActualizarNumeroDeCartas(nickname,numeroDeCartas);
+                jugador.Value.ActualizarNumeroDeCartas(nickname, numeroDeCartas);
             }
         }
 
+        /// <summary>
+        /// Lógica pra actualizar el puntaje de un jugador en la sala.
+        /// </summary>
+        /// <param name="idSalaJugador">Id de sala donde se actualizará</param>
+        /// <param name="nickname">Nickname del jugador que se actualizará su puntaje</param>
+        /// <param name="puntajeASumar">Puntaje a sumar en el jugador</param>
         public void ActualizarPuntaje(String idSalaJugador, String nickname, int puntajeASumar)
         {
             var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));
@@ -300,6 +336,11 @@ namespace UNO.Contratos
             {
                 jugador.Value.ActualizarPuntajeDeJugador(nickname, puntajeASumar);
             }
+        }
+
+        private void TerminarPartida(Sala sala)
+        {
+            salasCreadas.Remove(sala);
         }
     }
 }

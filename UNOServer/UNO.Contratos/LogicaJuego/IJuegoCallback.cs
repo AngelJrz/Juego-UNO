@@ -71,6 +71,12 @@ namespace UNO.Contratos.LogicaJuego
         /// </summary>
         [OperationContract(IsOneWay = true)]
         void EliminarCreador();
+
+        /// <summary>
+        /// Notifica al jugador la falta de jugadores en la partida
+        /// </summary>
+        [OperationContract(IsOneWay = true)]
+        void NotificarFaltaDeJugadores();
         #endregion
 
         #region PartidaCallback
