@@ -123,6 +123,14 @@ namespace UNO.Contratos.LogicaJuego
         /// <param name="numeroDeCartas"></param>
         [OperationContract(IsOneWay = true)]
         void ActualizarNumeroDeCartas(String nickname, String numeroDeCartas);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nickname"></param>
+        /// <param name="puntajeASumar"></param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarPuntajeDeJugador(String nickname, int puntajeASumar);
         #endregion
     }
 }

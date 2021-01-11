@@ -19,7 +19,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Puntaje: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                    <TextBlock x:Name="puntaje" Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
                 </StackPanel>
             </StackPanel>
 

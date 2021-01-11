@@ -858,6 +858,12 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta")]
         System.Threading.Tasks.Task ActualizarNumeroDeCartaAsync(string idSalaJugador, string nickname, string numeroDeCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntaje")]
+        void ActualizarPuntaje(string idSalaJugador, string nickname, int puntajeASumar);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntaje")]
+        System.Threading.Tasks.Task ActualizarPuntajeAsync(string idSalaJugador, string nickname, int puntajeASumar);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -910,6 +916,9 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCartas")]
         void ActualizarNumeroDeCartas(string nickname, string numeroDeCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntajeDeJugador")]
+        void ActualizarPuntajeDeJugador(string nickname, int puntajeASumar);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1002,6 +1011,14 @@ namespace UNOGui.JuegoUNOServicio {
         
         public System.Threading.Tasks.Task ActualizarNumeroDeCartaAsync(string idSalaJugador, string nickname, string numeroDeCartas) {
             return base.Channel.ActualizarNumeroDeCartaAsync(idSalaJugador, nickname, numeroDeCartas);
+        }
+        
+        public void ActualizarPuntaje(string idSalaJugador, string nickname, int puntajeASumar) {
+            base.Channel.ActualizarPuntaje(idSalaJugador, nickname, puntajeASumar);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarPuntajeAsync(string idSalaJugador, string nickname, int puntajeASumar) {
+            return base.Channel.ActualizarPuntajeAsync(idSalaJugador, nickname, puntajeASumar);
         }
     }
 }

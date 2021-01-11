@@ -79,5 +79,13 @@ namespace UNOGui.Logica
 
             ventanaPartida.ActualizarNumeroCartas(nickname, numeroDeCartas);
         }
+
+        public void ActualizarPuntajeDeJugador(String nickname, int puntajeASumar)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            ventanaPartida.ActualizarPuntajeDeJugador(nickname, puntajeASumar);
+        }
     }
 }

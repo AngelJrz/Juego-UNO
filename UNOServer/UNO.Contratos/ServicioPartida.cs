@@ -76,10 +76,10 @@ namespace UNO.Contratos
         private static List<Carta> CrearCartasEspeciales()
         {
             List<Carta> cartasEspeciales = new List<Carta>();
-            Carta cartaMulticolor = new Carta(ColoresCartas.Negro, EfectosCarta.MultiColor);
-            Carta cartaMulticolor2 = new Carta(ColoresCartas.Negro, EfectosCarta.MultiColor);
-            Carta cartaTomaCuatro = new Carta(ColoresCartas.Negro, EfectosCarta.TomaCuatro);
-            Carta cartaTomaCuatro2 = new Carta(ColoresCartas.Negro, EfectosCarta.TomaCuatro);
+            Carta cartaMulticolor = new Carta(ColoresCartas.Negro, EfectosCarta.MultiColor) { Numero = 10 };
+            Carta cartaMulticolor2 = new Carta(ColoresCartas.Negro, EfectosCarta.MultiColor) { Numero = 10 };
+            Carta cartaTomaCuatro = new Carta(ColoresCartas.Negro, EfectosCarta.TomaCuatro) { Numero = 10 };
+            Carta cartaTomaCuatro2 = new Carta(ColoresCartas.Negro, EfectosCarta.TomaCuatro) { Numero = 10 };
 
             cartasEspeciales.Add(cartaMulticolor);
             cartasEspeciales.Add(cartaMulticolor2);
@@ -189,6 +189,16 @@ namespace UNO.Contratos
             foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
                 jugador.Value.ActualizarNumeroDeCartas(nickname,numeroDeCartas);
+            }
+        }
+
+        public void ActualizarPuntaje(String idSalaJugador, String nickname, int puntajeASumar)
+        {
+            var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));
+
+            foreach (var jugador in salaBuscada.JugadoresEnSala)
+            {
+                jugador.Value.ActualizarPuntajeDeJugador(nickname, puntajeASumar);
             }
         }
     }

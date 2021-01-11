@@ -99,5 +99,23 @@ namespace UNOGui.Logica
                 throw;
             }
         }
+
+        public static void ActualizarPuntaje(String idSalaJugador, String nickname, int puntajeASumar)
+        {
+            try
+            {
+                servidor.ActualizarPuntaje(idSalaJugador, nickname, puntajeASumar);
+            }
+            catch (EndpointNotFoundException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+        }
     }
 }
