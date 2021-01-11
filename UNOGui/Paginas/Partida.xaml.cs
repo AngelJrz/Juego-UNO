@@ -85,7 +85,7 @@ namespace UNOGui.Paginas
                         PartidaAdmin.ColocarCarta(carta, miSala);
                         miMazo.Remove(carta);
                         manoJugador.Children.Remove(imagen);
-                        PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMickname(), miMazo.Count.ToString());
+                        PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMiNickname(), miMazo.Count.ToString());
                         MostrarMano();
                     }
                     else
@@ -129,7 +129,7 @@ namespace UNOGui.Paginas
         {
             miMazo.Add(nuevaCarta);
             MostrarMano();
-            PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMickname(), miMazo.Count.ToString());
+            PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMiNickname(), miMazo.Count.ToString());
         }
 
         public void MostrarMensajeGanador(String ganador)
@@ -139,7 +139,7 @@ namespace UNOGui.Paginas
 
         private void TomarCarta(object sender, RoutedEventArgs e)
         {
-            String miNickname = ObtenerMickname();
+            String miNickname = ObtenerMiNickname();
 
             PartidaAdmin.TomarCarta(miSala, miNickname);
         }
@@ -151,7 +151,7 @@ namespace UNOGui.Paginas
 
         private bool EsMiTurno()
         {
-            String miNickname = ObtenerMickname();
+            String miNickname = ObtenerMiNickname();
             bool esMiTurno = false;
 
             if (turnoActual.Text.Equals(miNickname))
@@ -174,7 +174,7 @@ namespace UNOGui.Paginas
 
             contenedoresJugador = new List<ContenedorJugador>();
 
-            String miNickname = ObtenerMickname();
+            String miNickname = ObtenerMiNickname();
 
             int posicionJugador = sala.JugadoresEnSala.Keys.ToList().FindIndex(jugador => jugador.Nickname.Equals(miNickname));
 
@@ -192,7 +192,7 @@ namespace UNOGui.Paginas
             }
         }
 
-        private String ObtenerMickname()
+        private String ObtenerMiNickname()
         {
             MenuPrincipal ventanaJuego = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
             Jugador jugadorActual = ventanaJuego.DataContext as Jugador;

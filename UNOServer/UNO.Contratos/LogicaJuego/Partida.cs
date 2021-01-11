@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UNO.Contratos.LogicaJuego
 {
+    /// <summary>
+    /// Lógica para la Partida del juego
+    /// </summary>
     public class Partida
     {
         private int turno = 1;
@@ -49,6 +50,85 @@ namespace UNO.Contratos.LogicaJuego
             }
 
             return JugadoresEnPartida.ElementAt(turno - 1).Nickname;
+        }
+
+        /// <summary>
+        /// Obtiene el Nickname del siguiente jugador en turno.
+        /// </summary>
+        /// <returns>Nickname del siguiente Jugador</returns>
+        public string ObtenerSiguienteJugador()
+        {
+            int turnoAuxiliar = turno;
+
+            if (SentidoJuego.Equals("DERECHA"))
+            {
+                if (turno < JugadoresEnPartida.Count)
+                {
+                    turnoAuxiliar++;
+                }
+                else
+                {
+                    turnoAuxiliar = 1;
+                }
+            }
+            else
+            {
+                if (turnoAuxiliar > 1)
+                {
+                    turnoAuxiliar--;
+                }
+                else
+                {
+                    turnoAuxiliar = JugadoresEnPartida.Count;
+                }
+            }
+
+            return JugadoresEnPartida.ElementAt(turnoAuxiliar - 1).Nickname;
+        }
+
+        /// <summary>
+        /// Cancela el siguiente jugador.
+        /// </summary>
+        public void CancelarSiguienteJugador()
+        {
+            if (SentidoJuego.Equals("DERECHA"))
+            {
+                if (!SonDosJugadores())
+                {
+                    turno += 2;
+
+                    if (turno > JugadoresEnPartida.Count)
+                    {
+                        turno = 1;
+                    }
+                }
+            }
+            else
+            {
+                if (!SonDosJugadores())
+                {
+                    turno -= 2;
+
+                    if (turno < 1)
+                    {
+                        turno = JugadoresEnPartida.Count;
+                    }
+                }  
+            }
+        }
+
+        /// <summary>
+        /// Obtiene el Nickname del jugador en turno
+        /// </summary>
+        /// <returns>Nickname del jugador en turno</returns>
+        public string ObtenerJugadorEnTurno()
+        {
+            return JugadoresEnPartida.ElementAt(turno - 1).Nickname;
+        }
+
+        private bool SonDosJugadores()
+        {
+            return JugadoresEnPartida.Count == 2;
         }
     }
 }

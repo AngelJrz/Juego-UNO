@@ -123,6 +123,27 @@ namespace UNO.Contratos.LogicaJuego
         /// <param name="numeroDeCartas"></param>
         [OperationContract(IsOneWay = true)]
         void ActualizarNumeroDeCartas(String nickname, String numeroDeCartas);
+
+        /// <summary>
+        /// Agrega dos nuevas cartas al jugador.
+        /// </summary>
+        /// <param name="nuevasCartas">Las dos nuevas cartas</param>
+        [OperationContract(IsOneWay = true)]
+        void ObtenerDosCartas(List<Carta> nuevasCartas);
+
+        /// <summary>
+        /// Agrega cuatro nuevas cartas al jugador.
+        /// </summary>
+        /// <param name="nuevasCartas">Las cuatro nuevas cartas</param>
+        [OperationContract(IsOneWay = true)]
+        void ObtenerCuatroCartas(List<Carta> nuevasCartas);
+
+        /// <summary>
+        /// Obtiene el turno actual de la sala.
+        /// </summary>
+        /// <param name="turnoActual">Nickname del jugador del turno actual</param>
+        [OperationContract(IsOneWay = true)]
+        void ObtenerTurnoActual(string turnoActual);
         #endregion
     }
 }

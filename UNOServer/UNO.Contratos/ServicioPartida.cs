@@ -127,16 +127,116 @@ namespace UNO.Contratos
             return cartaTomada;
         }
 
+        /// <summary>
+        /// Lógica para colocar la nueva carta central.
+        /// </summary>
+        /// <param name="cartaCentral">Nueva carta central</param>
+        /// <param name="idSalaJugador">Id de la sala a colocar la carta</param>
         public void ColocarCartaCentral(Carta cartaCentral, String idSalaJugador)
         {
-            var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));
+            var salaBuscada = salasCreadas.Find(sala => sala.Id.Equals(idSalaJugador));           
+
+            if (cartaCentral.Efecto == EfectosCarta.Cancelar)
+            {
+                salaBuscada.PartidaDeSala.CancelarSiguienteJugador();
+                string turnoActual = salaBuscada.PartidaDeSala.ObtenerJugadorEnTurno();
+
+                NotificarJugadorCancelado(salaBuscada, turnoActual);
+            }
+            else
+            {
+                if (cartaCentral.Efecto == EfectosCarta.Reversa)
+                {
+                    CambiarSentidoPartida(salaBuscada);
+                }
+                else
+                {
+                    string nicknameSiguienteJugador = salaBuscada.PartidaDeSala.ObtenerSiguienteJugador();
+
+                    if (cartaCentral.Efecto == EfectosCarta.TomaDos)
+                    {
+                        AgregarDosCartas(salaBuscada, nicknameSiguienteJugador);
+                    }
+                    else if (cartaCentral.Efecto == EfectosCarta.TomaCuatro)
+                    {
+                        AgregarCuatroCartas(salaBuscada, nicknameSiguienteJugador);
+                    }
+                }
+
+                CambiarTurno(salaBuscada);
+            }
 
             foreach (var jugador in salaBuscada.JugadoresEnSala)
             {
                 jugador.Value.ActualizarCartaCentral(cartaCentral);
-            }
+            }  
+        }
 
-            CambiarTurno(salaBuscada);
+        private void NotificarJugadorCancelado(Sala sala, string turnoActual)
+        {
+            foreach (var jugador in sala.JugadoresEnSala)
+            {
+                jugador.Value.ObtenerTurnoActual(turnoActual);
+            }
+        }
+
+        private void AgregarCuatroCartas(Sala salaBuscada, string nicknameJugador)
+        {
+            foreach (var jugador in salaBuscada.JugadoresEnSala)
+            {
+                if (jugador.Key.Equals(nicknameJugador))
+                {
+                    jugador.Value.ObtenerDosCartas(TomarDosCartasDelMazo());
+                    break;
+                }
+            }
+        }
+
+        private List<Carta> TomarDosCartasDelMazo()
+        {
+            List<Carta> cartasTomadas = new List<Carta>();
+            Random number = new Random();
+            int posicionAleatoriaCarta1 = number.Next(0, mazoSala.Count - 1);
+            int posicionAleatoriaCarta2 = number.Next(0, mazoSala.Count - 1);
+
+            cartasTomadas.Add(mazoSala.ElementAt(posicionAleatoriaCarta1));
+            cartasTomadas.Add(mazoSala.ElementAt(posicionAleatoriaCarta2));
+
+            return cartasTomadas;
+        }
+
+        private List<Carta> TomarCuatroCartasDelMazo()
+        {
+            List<Carta> cartasTomadas = new List<Carta>();
+            Random number = new Random();
+            int posicionAleatoriaCarta1 = number.Next(0, mazoSala.Count - 1);
+            int posicionAleatoriaCarta2 = number.Next(0, mazoSala.Count - 1);
+            int posicionAleatoriaCarta3 = number.Next(0, mazoSala.Count - 1);
+            int posicionAleatoriaCarta4 = number.Next(0, mazoSala.Count - 1);
+
+            cartasTomadas.Add(mazoSala.ElementAt(posicionAleatoriaCarta1));
+            cartasTomadas.Add(mazoSala.ElementAt(posicionAleatoriaCarta2));
+            cartasTomadas.Add(mazoSala.ElementAt(posicionAleatoriaCarta3));
+            cartasTomadas.Add(mazoSala.ElementAt(posicionAleatoriaCarta4));
+
+            return cartasTomadas;
+        }
+
+        private void AgregarDosCartas(Sala salaBuscada, string nicknameJugador)
+        {
+            foreach (var jugador in salaBuscada.JugadoresEnSala)
+            {
+                if (jugador.Key.Equals(nicknameJugador))
+                {
+                    jugador.Value.ObtenerCuatroCartas(TomarCuatroCartasDelMazo());
+                    break;
+                }
+            }
+        }
+
+        private void CambiarSentidoPartida(Sala salaBuscada)
+        {
+            salaBuscada.PartidaDeSala.SentidoJuego = "IZQUIERDA";
         }
 
         private void CambiarTurno(Sala sala)
