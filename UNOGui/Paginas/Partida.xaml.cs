@@ -85,7 +85,8 @@ namespace UNOGui.Paginas
                         PartidaAdmin.ColocarCarta(carta, miSala);
                         miMazo.Remove(carta);
                         manoJugador.Children.Remove(imagen);
-                        PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMiNickname(), miMazo.Count.ToString());
+                        PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMickname(), miMazo.Count.ToString());
+                        PartidaAdmin.ActualizarPuntaje(miSala, ObtenerMickname(), carta.Numerok__BackingField);
                         MostrarMano();
                     }
                     else
@@ -210,6 +211,22 @@ namespace UNOGui.Paginas
                 if (jugador.Nickname.Equals(nickname))
                 {
                     contenedor.numeroDeCartas.Text = numeroDeCartas;
+                    break;
+                }
+            }
+        }
+
+        public void ActualizarPuntajeDeJugador(String nickname, int puntaje)
+        {
+            foreach (ContenedorJugador contenedor in contenedoresJugador)
+            {
+                Jugador jugador = contenedor.DataContext as Jugador;
+
+                if (jugador.Nickname.Equals(nickname))
+                {
+                    int puntajeActual = int.Parse(contenedor.puntaje.Text);
+
+                    contenedor.puntaje.Text = (puntajeActual + puntaje).ToString();
                     break;
                 }
             }

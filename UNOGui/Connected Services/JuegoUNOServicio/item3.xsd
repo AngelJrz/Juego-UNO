@@ -159,6 +159,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ActualizarPuntaje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSalaJugador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="puntajeASumar" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NotificarCreacionDeSala">
     <xs:complexType>
       <xs:sequence>
@@ -263,6 +272,14 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="numeroDeCartas" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarPuntajeDeJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="puntajeASumar" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

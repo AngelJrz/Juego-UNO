@@ -144,6 +144,14 @@ namespace UNO.Contratos.LogicaJuego
         /// <param name="turnoActual">Nickname del jugador del turno actual</param>
         [OperationContract(IsOneWay = true)]
         void ObtenerTurnoActual(string turnoActual);
+
+        ///<summary>
+        /// 
+        /// </summary>
+        /// <param name="nickname"></param>
+        /// <param name="puntajeASumar"></param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarPuntajeDeJugador(String nickname, int puntajeASumar);
         #endregion
     }
 }
