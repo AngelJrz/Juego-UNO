@@ -13,6 +13,10 @@ namespace UNOGui.Logica
     /// </summary>
     public class LoginCallbackAdmin : ILoginCallback
     {
+        /// <summary>
+        /// Notifica el resultado del login al usuario
+        /// </summary>
+        /// <param name="resultado">Resultado del inicio de sesión</param>
         public void NotificarResultadoLogin(ResultadoLogin resultado)
         {
             if (resultado == ResultadoLogin.ExisteJugador)
@@ -60,6 +64,10 @@ namespace UNOGui.Logica
             }
         }
 
+        /// <summary>
+        /// Muestra en pantalla a los jugadores con mas puntaje dentro del sistema
+        /// </summary>
+        /// <param name="jugadoresTop">Lista de los jugadores a mostrar</param>
         public void ObtenerJugadoresTop(List<Jugador> jugadoresTop)
         {
             MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>()

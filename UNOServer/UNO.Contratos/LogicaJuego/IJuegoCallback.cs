@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using UNO.Dominio;
 
 namespace UNO.Contratos.LogicaJuego
 {
+    /// <summary>
+    /// Establece los comportamientos que tendra el cliente del servidor
+    /// </summary>
     [ServiceContract]
     public interface IJuegoCallback
     {
@@ -81,49 +81,49 @@ namespace UNO.Contratos.LogicaJuego
 
         #region PartidaCallback
         /// <summary>
-        /// 
+        /// Notifica el inicio de la partida
         /// </summary>
         /// <param name="sala"></param>
         [OperationContract(IsOneWay = true)]
         void NotificarInicioPartida(Sala sala);
 
         /// <summary>
-        /// 
+        /// Establece la mano inicial del jugador en la partida
         /// </summary>
         /// <param name="mazoDeJugador"></param>
         [OperationContract(IsOneWay = true)]
         void ObtenerMazo(List<Carta> mazoDeJugador);
 
         /// <summary>
-        /// 
+        /// Actualiza la carta central del tablero
         /// </summary>
         /// <param name="cartaCentral"></param>
         [OperationContract(IsOneWay = true)]
         void ActualizarCartaCentral(Carta cartaCentral);
 
         /// <summary>
-        /// 
+        /// Añade una nueva carta a la mano del jugador
         /// </summary>
         /// <param name="cartaTomada"></param>
         [OperationContract(IsOneWay = true)]
         void RecibirCarta(Carta cartaTomada);
 
         /// <summary>
-        /// 
+        /// Notifica que jugador fue el ganador de la partida
         /// </summary>
         /// <param name="jugadorGanador"></param>
         [OperationContract(IsOneWay = true)]
         void NotificarGanador(String jugadorGanador);
 
         /// <summary>
-        /// 
+        /// Actualiza el nombre del jugador en turno
         /// </summary>
         /// <param name="nuevoTurno"></param>
         [OperationContract(IsOneWay = true)]
         void CambiarTurno(String nuevoTurno);
 
         /// <summary>
-        /// 
+        /// Actualiza el numero de cartas de un jugador
         /// </summary>
         /// <param name="nickname"></param>
         /// <param name="numeroDeCartas"></param>
@@ -152,7 +152,7 @@ namespace UNO.Contratos.LogicaJuego
         void ObtenerTurnoActual(string turnoActual);
 
         ///<summary>
-        /// 
+        /// Actualiza el puntaje de un jugador en la partida
         /// </summary>
         /// <param name="nickname"></param>
         /// <param name="puntajeASumar"></param>

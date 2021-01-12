@@ -11,6 +11,10 @@ namespace UNO.Contratos
 {
     public partial class JuegoUNOServicio : IPerfil
     {
+        /// <summary>
+        /// Nusca un jugador registrado en el sistema
+        /// </summary>
+        /// <param name="nickname">Nickname del jugador que se desea buscar</param>
         public void BuscarJugador(string nickname)
         {
             AdminDatosJugador adminDatosJugador = new AdminDatosJugador();

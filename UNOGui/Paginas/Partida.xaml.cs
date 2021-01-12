@@ -12,12 +12,12 @@ using UNOGui.Ventanas;
 namespace UNOGui.Paginas
 {
     /// <summary>
-    /// Lógica de interacción para Partida.xaml
+    /// Establece los comportamientos para 
     /// </summary>
     public partial class Partida : Page
     {
         private readonly List<Carta> miMazo = new List<Carta>();
-        List<ContenedorJugador> contenedoresJugador;
+        private List<ContenedorJugador> contenedoresJugador;
         private int espacioEntreCartas = 0;
         private Carta cartaEnTablero;
         private readonly String miSala;
@@ -28,13 +28,17 @@ namespace UNOGui.Paginas
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Muestra en pantalla las cartas entregadas al jugador
+        /// </summary>
+        /// <param name="cartasDeMano">Lista de las cartas entregadas</param>
         public void EntregarCartas(List<Carta> cartasDeMano)
         {
             miMazo.AddRange(cartasDeMano);
             MostrarMano();
         }
 
-        public void MostrarMano()
+        private void MostrarMano()
         {
             if (!Reglas.ElJugadorGano(miMazo))
             {
@@ -127,6 +131,10 @@ namespace UNOGui.Paginas
             miPuntajeText.Text = nuevoPuntaje.ToString();
         }
 
+        /// <summary>
+        /// Actualiza la imagen de la carta central
+        /// </summary>
+        /// <param name="nuevaCarta">Nueva carta a mostrar</param>
         public void ActualizarCartaCentral(Carta nuevaCarta)
         {
             cartaEnTablero = nuevaCarta;
@@ -138,6 +146,10 @@ namespace UNOGui.Paginas
             cartaCentral.Source = src;
         }
 
+        /// <summary>
+        /// Añade una carta a la mano del jugador
+        /// </summary>
+        /// <param name="nuevaCarta">Nueva carta a añadir</param>
         public void AniadirCarta(Carta nuevaCarta)
         {
             miMazo.Add(nuevaCarta);
@@ -145,6 +157,10 @@ namespace UNOGui.Paginas
             PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMiNickname(), miMazo.Count.ToString());
         }
 
+        /// <summary>
+        /// Muestra en pantalla el nombre del usuario ganador
+        /// </summary>
+        /// <param name="ganador">Nombre del usuario ganador</param>
         public void MostrarMensajeGanador(String ganador)
         {
             new Mensaje
@@ -172,6 +188,10 @@ namespace UNOGui.Paginas
             PartidaAdmin.TomarCarta(miSala, miNickname);
         }
 
+        /// <summary>
+        /// Actualiza el nombre del jugador en turno en la pantalla
+        /// </summary>
+        /// <param name="nickname">Nombre del jugador en turno</param>
         public void EstablecerJugadorEnTurno(String nickname)
         {
             turnoActual.Text = nickname;
@@ -190,6 +210,10 @@ namespace UNOGui.Paginas
             return esMiTurno;
         }
 
+        /// <summary>
+        /// Coloca los graficos de cada jugador de la sala en la pantalla del usuario
+        /// </summary>
+        /// <param name="sala">Sala donde se encuentra el jugador</param>
         public void PintarJungadores(Sala sala)
         {
             List<StackPanel> paneles = new List<StackPanel>
@@ -229,6 +253,11 @@ namespace UNOGui.Paginas
             return miNickname;
         }
 
+        /// <summary>
+        /// Actualiza el numero de cartas de un usuario en particular
+        /// </summary>
+        /// <param name="nickname">Nickname del jugador a actualizar</param>
+        /// <param name="numeroDeCartas">Nuevo numero de cartas con las que cuenta</param>
         public void ActualizarNumeroCartas(String nickname, String numeroDeCartas)
         {
             foreach (ContenedorJugador contenedor in contenedoresJugador)
@@ -243,6 +272,11 @@ namespace UNOGui.Paginas
             }
         }
 
+        /// <summary>
+        /// Actualiza el puntaje de un usuario en particular
+        /// </summary>
+        /// <param name="nickname">Nickname del jugador a actualizar</param>
+        /// <param name="puntaje">Nuevo puntaje con el que cuenta</param>
         public void ActualizarPuntajeDeJugador(String nickname, int puntaje)
         {
             foreach (ContenedorJugador contenedor in contenedoresJugador)

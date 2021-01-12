@@ -95,6 +95,10 @@ namespace UNOGui.Ventanas
             }
         }
 
+        /// <summary>
+        /// Muestra la información del jugador
+        /// </summary>
+        /// <param name="jugador">Jugador del cual se desea tener información</param>
         public void ObtenerInformacionJugador(Jugador jugador)
         {
             frameNavegacion.Navigate(new MiPerfil() 

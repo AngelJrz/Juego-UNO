@@ -17,13 +17,14 @@ namespace UNO.Contratos.LogicaJuego
         public String SentidoJuego { get; set; } = "DERECHA";
 
         /// <summary>
-        /// Obtiene o establece el jugador en turno
+        /// Obtiene o establece una lista de los jugadores de la partida
         /// </summary>
         public List<Dominio.Jugador> JugadoresEnPartida { get; set; }
 
         /// <summary>
         /// Realiza un cambio de turno en la partida
         /// </summary>
+        /// <returns>Nickname del nuevo jugador en turno</returns>
         public String CambiarTurno()
         {
             if (SentidoJuego.Equals("DERECHA"))
@@ -87,7 +88,7 @@ namespace UNO.Contratos.LogicaJuego
         }
 
         /// <summary>
-        /// Cancela el siguiente jugador.
+        /// Cancela el turno del siguiente jugador.
         /// </summary>
         public void CancelarSiguienteJugador()
         {

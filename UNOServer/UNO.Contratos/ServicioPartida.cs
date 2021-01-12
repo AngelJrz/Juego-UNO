@@ -6,6 +6,9 @@ using UNO.Dominio;
 
 namespace UNO.Contratos
 {
+    /// <summary>
+    /// Establece la logica del servicio
+    /// </summary>
     public partial class JuegoUNOServicio
     { 
         private readonly List<Carta> mazoSala = CrearMazo();
@@ -271,7 +274,7 @@ namespace UNO.Contratos
         }
 
         /// <summary>
-        /// Lógica para anunciar a los clientes el ganador.
+        /// Lógica para anunciar a los clientes el ganador de la partida.
         /// </summary>
         /// <param name="idSalaJugador">Id de la sala donde ganó el jugador</param>
         /// <param name="jugadorGanador">Jugador que ganó la partida</param>
@@ -323,7 +326,7 @@ namespace UNO.Contratos
         }
 
         /// <summary>
-        /// Lógica pra actualizar el puntaje de un jugador en la sala.
+        /// Lógica para actualizar el puntaje de un jugador en la sala.
         /// </summary>
         /// <param name="idSalaJugador">Id de sala donde se actualizará</param>
         /// <param name="nickname">Nickname del jugador que se actualizará su puntaje</param>

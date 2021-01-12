@@ -5,11 +5,18 @@ using UNOGui.Logica.Log;
 
 namespace UNOGui.Logica
 {
+    /// <summary>
+    /// Establece la comunicación con el servidor para hacer uso de sus métodos
+    /// </summary>
     public static class PartidaAdmin
     {
         private static readonly InstanceContext contexto = new InstanceContext(new JuegoCallbackAdmin());
         private static readonly AdministrarJuegoClient servidor = new AdministrarJuegoClient(contexto);
 
+        /// <summary>
+        /// Se comunica con el servidor para dar inicio a una partida
+        /// </summary>
+        /// <param name="idSala">Identificador de la sala que iniciará la partida</param>
         public static void IniciarPartida(string idSala)
         {
             try
@@ -28,6 +35,11 @@ namespace UNOGui.Logica
             }
         }
 
+        /// <summary>
+        /// Se comunica con el servidor para colocar una nueva carta en el tablero
+        /// </summary>
+        /// <param name="nuevaCarta">Nueva carta a colocar</param>
+        /// <param name="idSalaDeJjugador">Identificador de la sala a actualizar</param>
         public static void ColocarCarta(Carta nuevaCarta, String idSalaDeJjugador)
         {
             try
@@ -46,6 +58,11 @@ namespace UNOGui.Logica
             }
         }
 
+        /// <summary>
+        /// Se comunica con el servidor para pedir una nueva carta para añadirla a la mano del jugador
+        /// </summary>
+        /// <param name="idSalaDeJjugador">Identificador de la sala a la que pertenece el jugador</param>
+        /// <param name="nickname">Nickname del jugador que requiere una carta</param>
         public static void TomarCarta(String idSalaDeJjugador, String nickname)
         {
             try
@@ -87,6 +104,12 @@ namespace UNOGui.Logica
             }
         }
 
+        /// <summary>
+        /// Actualiza el numero de cartas del jugador
+        /// </summary>
+        /// <param name="idSala">Identificador de la sala a la que pertenece el jugador</param>
+        /// <param name="nickname">Nickname del jugador</param>
+        /// <param name="nuevoNumero">Nuevo numero de cartas con las que cuenta el jugador</param>
         public static void ActualizarNumeroDeCartas(String idSala, String nickname, String nuevoNumero)
         {
             try
@@ -105,6 +128,12 @@ namespace UNOGui.Logica
             }
         }
 
+        /// <summary>
+        /// Se comunica con el servidor para actualizar el puntaje actual en la partida de un jugador
+        /// </summary>
+        /// <param name="idSalaJugador">Identificador de la sala a la que pertenece el jugador</param>
+        /// <param name="nickname">Nickname del jugador</param>
+        /// <param name="puntajeASumar">Puntaje del jugador actualizado</param>
         public static void ActualizarPuntaje(String idSalaJugador, String nickname, int puntajeASumar)
         {
             try

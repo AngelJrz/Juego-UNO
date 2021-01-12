@@ -7,8 +7,17 @@ using UNOGui.JuegoUNOServicio;
 
 namespace UNOGui.Logica
 {
+    /// <summary>
+    /// Establece las reglas del juego
+    /// </summary>
     public static class Reglas
     {
+        /// <summary>
+        /// Verifica si la carta que se desea colocar es valida
+        /// </summary>
+        /// <param name="cartaDeMano">Carta que se desea poner</param>
+        /// <param name="cartaEnTablero">Carta actual en el tablero</param>
+        /// <returns>True si es valida, de otro modo false</returns>
         public static bool EsCartaValida(Carta cartaDeMano, Carta cartaEnTablero)
         {
             bool esValida = false;
@@ -33,6 +42,11 @@ namespace UNOGui.Logica
             return esValida;
         }
 
+        /// <summary>
+        /// Verifica si el jugador gano la partida
+        /// </summary>
+        /// <param name="mazoJugador">Mano actual del jugador</param>
+        /// <returns>True si el jugador gano, de otro modo false</returns>
         public static bool ElJugadorGano(List<Carta> mazoJugador)
         {
             return mazoJugador.Count == 0;

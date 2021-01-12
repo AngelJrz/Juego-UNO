@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UNO.Contratos.LogicaJuego;
+﻿using System.Collections.Generic;
 using UNO.Dominio;
 
 namespace UNO.Contratos.LogicaJuego
 {
+    /// <summary>
+    /// Clase que controla la información de la sala
+    /// </summary>
     public class Sala
     {
         /// <summary>

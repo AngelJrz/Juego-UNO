@@ -44,7 +44,7 @@ namespace UNOGui.Logica
         }
 
         /// <summary>
-        /// Lógica para crear la sala.
+        /// Lógica para notificar la creación de la sala.
         /// </summary>
         /// <param name="salaCreada">Sala que fue creada</param>
         public void NotificarCreacionDeSala(Sala salaCreada)

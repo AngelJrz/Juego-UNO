@@ -184,6 +184,10 @@ namespace UNO.AccesoADatos.AdministrarDatos
             }
         }
 
+        /// <summary>
+        /// Actualiza las estadisticas de un jugador en la base de datos
+        /// </summary>
+        /// <param name="jugador">Jugador a actualizar</param>
         public void ActualizarPartidasJugadas(Dominio.Jugador jugador)
         {
             Jugador jugadorBuscado = baseDeDatos.Jugador.Find(jugador.Nickname);
