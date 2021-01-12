@@ -4,22 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UNOGui.Paginas"
+             xmlns:p = "clr-namespace:UNOGui.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
         <StackPanel Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="Jugador: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="{Binding Nickname}" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
+                <TextBlock Text="{x:Static p:Resources.Partida_NombreJugador}" Style="{StaticResource TextoContenido}"/>
+                    <TextBlock Text="{Binding Nickname}" Style="{StaticResource TextoContenido}" FontWeight="Regular" Margin="10,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="No. Cartas: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock x:Name="numeroDeCartas" Text="7" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                <TextBlock Text="{x:Static p:Resources.Partida_NumeroCartas}" Style="{StaticResource TextoContenido}"/>
+                <TextBlock x:Name="numeroDeCartas" Text="7" Style="{StaticResource TextoContenido}" FontWeight="Normal" Margin="10,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="Puntaje: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock x:Name="puntaje" Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
+                <TextBlock Text="{x:Static p:Resources.Partida_Puntaje}" Style="{StaticResource TextoContenido}"/>
+                <TextBlock x:Name="puntaje" Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal" Margin="10,0,0,0"/>
                 </StackPanel>
             </StackPanel>
 

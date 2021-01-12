@@ -556,6 +556,60 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Mi puntaje.
+        /// </summary>
+        public static string Partida_MiPutaje {
+            get {
+                return ResourceManager.GetString("Partida_MiPutaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Jugador.
+        /// </summary>
+        public static string Partida_NombreJugador {
+            get {
+                return ResourceManager.GetString("Partida_NombreJugador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No. Cartas.
+        /// </summary>
+        public static string Partida_NumeroCartas {
+            get {
+                return ResourceManager.GetString("Partida_NumeroCartas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Puntaje.
+        /// </summary>
+        public static string Partida_Puntaje {
+            get {
+                return ResourceManager.GetString("Partida_Puntaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Salir.
+        /// </summary>
+        public static string Partida_Salir {
+            get {
+                return ResourceManager.GetString("Partida_Salir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Turno actual.
+        /// </summary>
+        public static string Partida_TurnoActual {
+            get {
+                return ResourceManager.GetString("Partida_TurnoActual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancelar.
         /// </summary>
         public static string RecuperacionCuenta_BotonCancelar {
@@ -858,6 +912,51 @@ namespace UNOGui.Properties {
         public static string UniseSala_BotonUnirse {
             get {
                 return ResourceManager.GetString("UniseSala_BotonUnirse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código de recuperación.
+        /// </summary>
+        public static string VerificarCodigo_Campo {
+            get {
+                return ResourceManager.GetString("VerificarCodigo_Campo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Te enviamos un código de recuperación a su dirección de correo. Por favor, ingreselo en el siguiente campo..
+        /// </summary>
+        public static string VerificarCodigo_Contenido {
+            get {
+                return ResourceManager.GetString("VerificarCodigo_Contenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿No recibiste el código de recuperación?.
+        /// </summary>
+        public static string VerificarCodigo_Pregunta {
+            get {
+                return ResourceManager.GetString("VerificarCodigo_Pregunta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enviar de nuevo.
+        /// </summary>
+        public static string VerificarCodigo_Reenvio {
+            get {
+                return ResourceManager.GetString("VerificarCodigo_Reenvio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Verificar código.
+        /// </summary>
+        public static string VerificarCodigo_Titulo {
+            get {
+                return ResourceManager.GetString("VerificarCodigo_Titulo", resourceCulture);
             }
         }
     }
