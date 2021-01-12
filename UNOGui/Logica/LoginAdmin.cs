@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel;
 using UNOGui.JuegoUNOServicio;
-using UNOGui.Ventanas;
+using UNOGui.Logica.Log;
 
 namespace UNOGui.Logica
 {
@@ -28,8 +23,9 @@ namespace UNOGui.Logica
             {
                 servidor.IniciarSesion(nickname, contraseña);
             }
-            catch (EndpointNotFoundException)
+            catch (EndpointNotFoundException ex)
             {
+                LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
         }
@@ -45,8 +41,9 @@ namespace UNOGui.Logica
             {
                 servidor.CerrarSesion(nickname);
             }
-            catch (EndpointNotFoundException)
+            catch (EndpointNotFoundException ex)
             {
+                LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
         }

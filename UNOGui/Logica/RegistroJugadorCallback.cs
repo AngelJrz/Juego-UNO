@@ -6,15 +6,24 @@ using UNOGui.Paginas;
 
 namespace UNOGui.Logica
 {
+    /// <summary>
+    /// Administra la logica del proceso de registro de un jugador
+    /// </summary>
     public class RegistroJugadorCallback : IRegistrarJugadorCallback
     {
         private readonly Principal ventanaPrincipal = Application.Current.Windows.OfType<Principal>().SingleOrDefault();
 
+        /// <summary>
+        /// Cancela el registro de un jugador
+        /// </summary>
         public void NotificarCancelacionRegistro()
         {
             ventanaPrincipal.Navigate(new Login());
         }
 
+        /// <summary>
+        /// Notifica al usuario el envio de una clave de registro
+        /// </summary>
         public void NotificarEnvioDeClave()
         {
             new Mensaje
@@ -27,6 +36,10 @@ namespace UNOGui.Logica
             (ventanaPrincipal.Content as RegistroEnEspera).IniciarTemporizador();
         }
 
+        /// <summary>
+        /// Notifica el resultado del registro de un usuario
+        /// </summary>
+        /// <param name="resultado">Resultado del registro del jugador</param>
         public void NotificarRegistro(ResultadoRegistro resultado)
         {
             if (resultado == ResultadoRegistro.UsuarioYaExiste)
@@ -51,6 +64,10 @@ namespace UNOGui.Logica
             }
         }
 
+        /// <summary>
+        /// Notifica al jugador el resultado de la comprobación de la clave de registro ingresada
+        /// </summary>
+        /// <param name="claveValida">Resultado de la comprovación de la clave</param>
         public void NotificarResultadoClave(bool claveValida)
         {
             Mensaje ventanaMensaje = new Mensaje();

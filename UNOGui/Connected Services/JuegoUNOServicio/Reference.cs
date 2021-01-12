@@ -236,6 +236,9 @@ namespace UNOGui.JuegoUNOServicio {
         private string CreadaPorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool EnJuegoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -243,6 +246,9 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NumeroTotalDeJugadoresField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UNOGui.JuegoUNOServicio.Partida PartidaDeSalaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -276,6 +282,19 @@ namespace UNOGui.JuegoUNOServicio {
                 if ((object.ReferenceEquals(this.CreadaPorField, value) != true)) {
                     this.CreadaPorField = value;
                     this.RaisePropertyChanged("CreadaPor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool EnJuego {
+            get {
+                return this.EnJuegoField;
+            }
+            set {
+                if ((this.EnJuegoField.Equals(value) != true)) {
+                    this.EnJuegoField = value;
+                    this.RaisePropertyChanged("EnJuego");
                 }
             }
         }
@@ -319,6 +338,19 @@ namespace UNOGui.JuegoUNOServicio {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UNOGui.JuegoUNOServicio.Partida PartidaDeSala {
+            get {
+                return this.PartidaDeSalaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartidaDeSalaField, value) != true)) {
+                    this.PartidaDeSalaField = value;
+                    this.RaisePropertyChanged("PartidaDeSala");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -327,6 +359,199 @@ namespace UNOGui.JuegoUNOServicio {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Partida", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego")]
+    [System.SerializableAttribute()]
+    public partial class Partida : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<UNOGui.JuegoUNOServicio.Jugador> JugadoresEnPartidaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SentidoJuegoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<UNOGui.JuegoUNOServicio.Jugador> JugadoresEnPartida {
+            get {
+                return this.JugadoresEnPartidaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JugadoresEnPartidaField, value) != true)) {
+                    this.JugadoresEnPartidaField = value;
+                    this.RaisePropertyChanged("JugadoresEnPartida");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SentidoJuego {
+            get {
+                return this.SentidoJuegoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SentidoJuegoField, value) != true)) {
+                    this.SentidoJuegoField = value;
+                    this.RaisePropertyChanged("SentidoJuego");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Carta", Namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio")]
+    [System.SerializableAttribute()]
+    public partial class Carta : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private UNOGui.JuegoUNOServicio.ColoresCartas Colork__BackingFieldField;
+        
+        private UNOGui.JuegoUNOServicio.EfectosCarta Efectok__BackingFieldField;
+        
+        private int Numerok__BackingFieldField;
+        
+        private string Rutak__BackingFieldField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Color>k__BackingField", IsRequired=true)]
+        public UNOGui.JuegoUNOServicio.ColoresCartas Colork__BackingField {
+            get {
+                return this.Colork__BackingFieldField;
+            }
+            set {
+                if ((this.Colork__BackingFieldField.Equals(value) != true)) {
+                    this.Colork__BackingFieldField = value;
+                    this.RaisePropertyChanged("Colork__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Efecto>k__BackingField", IsRequired=true)]
+        public UNOGui.JuegoUNOServicio.EfectosCarta Efectok__BackingField {
+            get {
+                return this.Efectok__BackingFieldField;
+            }
+            set {
+                if ((this.Efectok__BackingFieldField.Equals(value) != true)) {
+                    this.Efectok__BackingFieldField = value;
+                    this.RaisePropertyChanged("Efectok__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Numero>k__BackingField", IsRequired=true)]
+        public int Numerok__BackingField {
+            get {
+                return this.Numerok__BackingFieldField;
+            }
+            set {
+                if ((this.Numerok__BackingFieldField.Equals(value) != true)) {
+                    this.Numerok__BackingFieldField = value;
+                    this.RaisePropertyChanged("Numerok__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Ruta>k__BackingField", IsRequired=true)]
+        public string Rutak__BackingField {
+            get {
+                return this.Rutak__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Rutak__BackingFieldField, value) != true)) {
+                    this.Rutak__BackingFieldField = value;
+                    this.RaisePropertyChanged("Rutak__BackingField");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ColoresCartas", Namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio")]
+    public enum ColoresCartas : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Rojo = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Amarillo = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Verde = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Azul = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Negro = 5,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EfectosCarta", Namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio")]
+    public enum EfectosCarta : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SinEfecto = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Cancelar = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Reversa = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TomaDos = 30,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TomaCuatro = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MultiColor = 50,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -344,6 +569,9 @@ namespace UNOGui.JuegoUNOServicio {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         UnionExitosa = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EnJuego = 5,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -476,7 +704,7 @@ namespace UNOGui.JuegoUNOServicio {
         void NotificarResultadoLogin(UNOGui.JuegoUNOServicio.ResultadoLogin resultado);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/ObtenerJugadoresTop")]
-        void ObtenerJugadoresTop(UNOGui.JuegoUNOServicio.Jugador[] jugadoresTop);
+        void ObtenerJugadoresTop(System.Collections.Generic.List<UNOGui.JuegoUNOServicio.Jugador> jugadoresTop);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -607,11 +835,35 @@ namespace UNOGui.JuegoUNOServicio {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/IniciarPartida")]
         System.Threading.Tasks.Task IniciarPartidaAsync(string idSala);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RepartirCartas")]
-        void RepartirCartas(UNOGui.JuegoUNOServicio.Sala sala);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral")]
+        void ColocarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral, string idSalaJugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RepartirCartas")]
-        System.Threading.Tasks.Task RepartirCartasAsync(UNOGui.JuegoUNOServicio.Sala sala);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral")]
+        System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOGui.JuegoUNOServicio.Carta cartaCentral, string idSalaJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/TomarCarta")]
+        void TomarCarta(string idSalaJugador, string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/TomarCarta")]
+        System.Threading.Tasks.Task TomarCartaAsync(string idSalaJugador, string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador")]
+        void AnunciarGanador(string idSalaJugador, UNOGui.JuegoUNOServicio.Jugador jugadorGanador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador")]
+        System.Threading.Tasks.Task AnunciarGanadorAsync(string idSalaJugador, UNOGui.JuegoUNOServicio.Jugador jugadorGanador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta")]
+        void ActualizarNumeroDeCarta(string idSalaJugador, string nickname, string numeroDeCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta")]
+        System.Threading.Tasks.Task ActualizarNumeroDeCartaAsync(string idSalaJugador, string nickname, string numeroDeCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntaje")]
+        void ActualizarPuntaje(string idSalaJugador, string nickname, int puntajeASumar);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntaje")]
+        System.Threading.Tasks.Task ActualizarPuntajeAsync(string idSalaJugador, string nickname, int puntajeASumar);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -624,7 +876,7 @@ namespace UNOGui.JuegoUNOServicio {
         void NotificarUnionASala(UNOGui.JuegoUNOServicio.ResultadoUnionSala resultado);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarSala")]
-        void ActualizarSala(string[] jugadores);
+        void ActualizarSala(System.Collections.Generic.List<string> jugadores);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerInformacionDeSala")]
         void ObtenerInformacionDeSala(UNOGui.JuegoUNOServicio.Sala sala);
@@ -644,11 +896,41 @@ namespace UNOGui.JuegoUNOServicio {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/EliminarCreador")]
         void EliminarCreador();
         
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarFaltaDeJugadores")]
+        void NotificarFaltaDeJugadores();
+        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarInicioPartida")]
         void NotificarInicioPartida(UNOGui.JuegoUNOServicio.Sala sala);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerMaso")]
-        void ObtenerMaso();
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerMazo")]
+        void ObtenerMazo(System.Collections.Generic.List<UNOGui.JuegoUNOServicio.Carta> mazoDeJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarCartaCentral")]
+        void ActualizarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RecibirCarta")]
+        void RecibirCarta(UNOGui.JuegoUNOServicio.Carta cartaTomada);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarGanador")]
+        void NotificarGanador(string jugadorGanador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/CambiarTurno")]
+        void CambiarTurno(string nuevoTurno);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCartas")]
+        void ActualizarNumeroDeCartas(string nickname, string numeroDeCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerDosCartas")]
+        void ObtenerDosCartas(System.Collections.Generic.List<UNOGui.JuegoUNOServicio.Carta> nuevasCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerCuatroCartas")]
+        void ObtenerCuatroCartas(System.Collections.Generic.List<UNOGui.JuegoUNOServicio.Carta> nuevasCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerTurnoActual")]
+        void ObtenerTurnoActual(string turnoActual);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntajeDeJugador")]
+        void ActualizarPuntajeDeJugador(string nickname, int puntajeASumar);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -711,12 +993,44 @@ namespace UNOGui.JuegoUNOServicio {
             return base.Channel.IniciarPartidaAsync(idSala);
         }
         
-        public void RepartirCartas(UNOGui.JuegoUNOServicio.Sala sala) {
-            base.Channel.RepartirCartas(sala);
+        public void ColocarCartaCentral(UNOGui.JuegoUNOServicio.Carta cartaCentral, string idSalaJugador) {
+            base.Channel.ColocarCartaCentral(cartaCentral, idSalaJugador);
         }
         
-        public System.Threading.Tasks.Task RepartirCartasAsync(UNOGui.JuegoUNOServicio.Sala sala) {
-            return base.Channel.RepartirCartasAsync(sala);
+        public System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOGui.JuegoUNOServicio.Carta cartaCentral, string idSalaJugador) {
+            return base.Channel.ColocarCartaCentralAsync(cartaCentral, idSalaJugador);
+        }
+        
+        public void TomarCarta(string idSalaJugador, string nickname) {
+            base.Channel.TomarCarta(idSalaJugador, nickname);
+        }
+        
+        public System.Threading.Tasks.Task TomarCartaAsync(string idSalaJugador, string nickname) {
+            return base.Channel.TomarCartaAsync(idSalaJugador, nickname);
+        }
+        
+        public void AnunciarGanador(string idSalaJugador, UNOGui.JuegoUNOServicio.Jugador jugadorGanador) {
+            base.Channel.AnunciarGanador(idSalaJugador, jugadorGanador);
+        }
+        
+        public System.Threading.Tasks.Task AnunciarGanadorAsync(string idSalaJugador, UNOGui.JuegoUNOServicio.Jugador jugadorGanador) {
+            return base.Channel.AnunciarGanadorAsync(idSalaJugador, jugadorGanador);
+        }
+        
+        public void ActualizarNumeroDeCarta(string idSalaJugador, string nickname, string numeroDeCartas) {
+            base.Channel.ActualizarNumeroDeCarta(idSalaJugador, nickname, numeroDeCartas);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarNumeroDeCartaAsync(string idSalaJugador, string nickname, string numeroDeCartas) {
+            return base.Channel.ActualizarNumeroDeCartaAsync(idSalaJugador, nickname, numeroDeCartas);
+        }
+        
+        public void ActualizarPuntaje(string idSalaJugador, string nickname, int puntajeASumar) {
+            base.Channel.ActualizarPuntaje(idSalaJugador, nickname, puntajeASumar);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarPuntajeAsync(string idSalaJugador, string nickname, int puntajeASumar) {
+            return base.Channel.ActualizarPuntajeAsync(idSalaJugador, nickname, puntajeASumar);
         }
     }
 }

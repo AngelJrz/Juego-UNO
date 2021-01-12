@@ -1,30 +1,160 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Ventanas;
 using System.Windows;
+using System.Collections.Generic;
 
 namespace UNOGui.Logica
 {
+    /// <summary>
+    /// Establecimiento de la logica para el control de la partida
+    /// </summary>
     public partial class JuegoCallbackAdmin
     {
+        /// <summary>
+        /// Notifica a los usuarios que la partida inicio
+        /// </summary>
+        /// <param name="sala">Sala creada para la partida</param>
         public void NotificarInicioPartida(Sala sala)
         {
-            var lobbyActual = Application.Current.Windows.OfType<Lobby>().SingleOrDefault();
-            Juego ventanaJuego = new Juego();
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            ventanaJuego.Height = 550;
+            ventanaJuego.Width = 800;
 
-            lobbyActual.Close();
-            var menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
-            menuPrincipal.Hide();
-            ventanaJuego.Show();
+            Paginas.Partida paginaPartida = new Paginas.Partida(sala.Id);
+            paginaPartida.EstablecerJugadorEnTurno(sala.CreadaPor);
+            paginaPartida.PintarJungadores(sala);
+            ventanaJuego.PaginaActual = paginaPartida;
+            ventanaJuego.frameNavegacion.Navigate(paginaPartida);
         }
 
-        public void ObtenerMaso()
+        /// <summary>
+        /// Establece el mazo inicial de un jugador en la partida
+        /// </summary>
+        /// <param name="manoJugador">Lista de las cartas iniciales de un jugador</param>
+        public void ObtenerMazo(List<Carta> manoJugador)
         {
-            throw new NotImplementedException();
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            ventanaPartida.EntregarCartas(manoJugador);
+        }
+
+        /// <summary>
+        /// Actualiza la carta central del tablero en la partida
+        /// </summary>
+        /// <param name="nuevaCarta">Nueva carta en el tablero</param>
+        public void ActualizarCartaCentral(Carta nuevaCarta)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            ventanaPartida.ActualizarCartaCentral(nuevaCarta);
+        }
+
+        /// <summary>
+        /// Otorga una nueva carta para la mano del jugador
+        /// </summary>
+        /// <param name="cartaTomada">Nueva carta para la mano del jugador</param>
+        public void RecibirCarta(Carta cartaTomada)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            ventanaPartida.AniadirCarta(cartaTomada);
+        }
+
+        /// <summary>
+        /// Notifica al usuario el ganador de la partida
+        /// </summary>
+        /// <param name="jugadorGanador">Nombre del jugador ganador</param>
+        public void NotificarGanador(String jugadorGanador)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            ventanaPartida.MostrarMensajeGanador(jugadorGanador);
+        }
+
+        /// <summary>
+        /// Establece el nombre de la persona en turno en la partida
+        /// </summary>
+        /// <param name="nuevoTurno">Nombre del usuario en turno</param>
+        public void CambiarTurno(String nuevoTurno)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            ventanaPartida.EstablecerJugadorEnTurno(nuevoTurno);
+        }
+
+        /// <summary>
+        /// Actualiza el numero de cartas de un jugador
+        /// </summary>
+        /// <param name="nickname">Nombre del jugador a actualizar</param>
+        /// <param name="numeroDeCartas">Nuevo numero de cartas del jugador</param>
+        public void ActualizarNumeroDeCartas(String nickname, String numeroDeCartas)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            ventanaPartida.ActualizarNumeroCartas(nickname, numeroDeCartas);
+        }
+
+        /// <summary>
+        /// Actualiza el puntaje de un jugador
+        /// </summary>
+        /// <param name="nickname">Nombre del jugador a actualizar</param>
+        /// <param name="puntajeASumar">Nuevo puntaje del jugador</param>
+        public void ActualizarPuntajeDeJugador(String nickname, int puntajeASumar)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            ventanaPartida.ActualizarPuntajeDeJugador(nickname, puntajeASumar);
+        }
+
+        /// <summary>
+        /// Añade cuatro cartas a la mano del jugador
+        /// </summary>
+        /// <param name="nuevasCartas">Lista de las nuevas cartas</param>
+        public void ObtenerCuatroCartas(List<Carta> nuevasCartas)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            foreach (Carta carta in nuevasCartas)
+            {
+                ventanaPartida.AniadirCarta(carta);
+            }
+        }
+
+        /// <summary>
+        /// Añade dos cartas a la mano del jugador
+        /// </summary>
+        /// <param name="nuevasCartas">Lista de las nuevas cartas</param>
+        public void ObtenerDosCartas(List<Carta> nuevasCartas)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            foreach (Carta carta in nuevasCartas)
+            {
+                ventanaPartida.AniadirCarta(carta);
+            }
+        }
+
+        /// <summary>
+        /// Otorga un nuevo nickname del jugador en turno
+        /// </summary>
+        /// <param name="turnoActual">Nickname del turno actual</param>
+        public void ObtenerTurnoActual(string turnoActual)
+        {
+            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
+            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
+
+            ventanaPartida.EstablecerJugadorEnTurno(turnoActual);
         }
     }
 }

@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -51,10 +51,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -85,21 +90,32 @@
     <Compile Include="Logica\Idioma.cs" />
     <Compile Include="Logica\LoginAdmin.cs" />
     <Compile Include="Logica\LoginCallbackAdmin.cs" />
+    <Compile Include="Logica\Log\LoggerAdmin.cs" />
     <Compile Include="Logica\PartidaAdmin.cs" />
     <Compile Include="Logica\PartidaCallbackAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorCallback.cs" />
+    <Compile Include="Logica\Reglas.cs" />
+    <Compile Include="Paginas\ContenedorJugador.xaml.cs">
+      <DependentUpon>ContenedorJugador.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\CreacionDeSala.xaml.cs">
       <DependentUpon>CreacionDeSala.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Lobby.xaml.cs">
+      <DependentUpon>Lobby.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\MiPerfil.xaml.cs">
       <DependentUpon>MiPerfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Partida.xaml.cs">
+      <DependentUpon>Partida.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\RegistrarCuenta.xaml.cs">
       <DependentUpon>RegistrarCuenta.xaml</DependentUpon>
@@ -179,6 +195,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\JuegoUNOServicio\JuegoUNOServicio.wsdl" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -188,6 +205,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Paginas\ContenedorJugador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\CreacionDeSala.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,11 +217,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Paginas\Lobby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\MiPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Partida.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -287,6 +316,61 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Imagenes\RecursosTablero\amarillo-1.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-2.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-3.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-4.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-5.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-6.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-7.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-8.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-9.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-Cancelar.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-Reversa.png" />
+    <Resource Include="Imagenes\RecursosTablero\amarillo-TomaDos.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-1.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-2.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-3.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-4.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-5.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-6.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-7.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-8.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-9.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-Cancelar.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-Reversa.png" />
+    <Resource Include="Imagenes\RecursosTablero\azul-TomaDos.png" />
+    <Resource Include="Imagenes\RecursosTablero\BackCard.png" />
+    <Resource Include="Imagenes\RecursosTablero\fondoMesa.jpg" />
+    <Resource Include="Imagenes\RecursosTablero\Negro-Multicolor.png" />
+    <Resource Include="Imagenes\RecursosTablero\Negro-TomaCuatro.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-1.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-2.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-3.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-4.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-5.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-6.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-7.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-8.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-9.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-Cancelar.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-Reversa.png" />
+    <Resource Include="Imagenes\RecursosTablero\Rojo-TomaDos.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-1.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-2.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-3.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-4.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-5.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-6.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-7.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-8.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-9.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-Cancelar.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-Reversa.png" />
+    <Resource Include="Imagenes\RecursosTablero\verde-TomaDos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -331,6 +331,24 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Encontramos que ya cuenta con una sesión iniciada. Verifique y cierre sesión..
+        /// </summary>
+        public static string Login_MensajeSesionIniciadaContenido {
+            get {
+                return ResourceManager.GetString("Login_MensajeSesionIniciadaContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sesión ya iniciada.
+        /// </summary>
+        public static string Login_MensajeSesionIniciadaTitulo {
+            get {
+                return ResourceManager.GetString("Login_MensajeSesionIniciadaTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¿Olvidaste tu contraseña?.
         /// </summary>
         public static string Login_RecuperarCuenta {
@@ -516,6 +534,24 @@ namespace UNOGui.Properties {
         public static string MiPerfil_Titulo {
             get {
                 return ResourceManager.GetString("MiPerfil_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El ganador de la partida es.
+        /// </summary>
+        public static string Partida_GanadorMensajeContenido {
+            get {
+                return ResourceManager.GetString("Partida_GanadorMensajeContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Hay un ganador!.
+        /// </summary>
+        public static string Partida_GanadorMensajeTitulo {
+            get {
+                return ResourceManager.GetString("Partida_GanadorMensajeTitulo", resourceCulture);
             }
         }
         

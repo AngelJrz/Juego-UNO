@@ -65,6 +65,9 @@ namespace UNOGui.Paginas
             }
         }
 
+        /// <summary>
+        /// Inicia el temporizador de la ventana de registro
+        /// </summary>
         public void IniciarTemporizador()
         {
             temporizador = new DispatcherTimer

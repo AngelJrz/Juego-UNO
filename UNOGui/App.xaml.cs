@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading;
+﻿using System.Threading;
 using System.Windows;
+
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
 namespace UNOGui
 {
@@ -17,7 +14,7 @@ namespace UNOGui
 
         private readonly System.Globalization.CultureInfo informacionCultural;
 
-        App()
+        public App()
         {
             informacionCultural = new System.Globalization.CultureInfo(Idioma);
             Thread.CurrentThread.CurrentUICulture = informacionCultural;

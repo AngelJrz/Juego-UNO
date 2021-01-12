@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using UNO.Contratos.AdministrarJugador;
 using UNO.Dominio;
 using UNO.AccesoADatos.AdministrarDatos;
@@ -13,13 +9,17 @@ using System.Data.Entity.Infrastructure;
 
 namespace UNO.Contratos
 {
-    
+
     public partial class JuegoUNOServicio : IRegistrarJugador
     {
         private readonly Dictionary<IRegistrarJugadorCallback, Jugador> jugadoresARegistrar = new Dictionary<IRegistrarJugadorCallback, Jugador>();
         private readonly AdminDatosJugador administradorDatosJugador = new AdminDatosJugador();
         private readonly CorreoElectronico adminCorreoElectronico = new CorreoElectronico();
 
+        /// <summary>
+        /// REgistra un nuevo jugador en el sistema
+        /// </summary>
+        /// <param name="jugador">Jugador que se desa registrar</param>
         public void RegistrarJugador(Jugador jugador)
         {
             ResultadoRegistro resultadoRegistro;
@@ -53,6 +53,10 @@ namespace UNO.Contratos
             ObtenerCallbackActual.NotificarRegistro(resultadoRegistro);
         }
 
+        /// <summary>
+        /// Verifica si la clave enviada por correo electronico es valida
+        /// </summary>
+        /// <param name="clave">Clave enviada por correo electronico</param>
         public void VerificarClave(string clave)
         {
             bool esClaveCorrecta = false;
@@ -86,6 +90,9 @@ namespace UNO.Contratos
             ObtenerCallbackActual.NotificarResultadoClave(esClaveCorrecta);
         }
 
+        /// <summary>
+        /// Cancela en registro del jugador en el sistema
+        /// </summary>
         public void CancelarRegistro()
         {
             IRegistrarJugadorCallback callbackActual = ObtenerCallbackActual;
@@ -98,6 +105,9 @@ namespace UNO.Contratos
             callbackActual.NotificarCancelacionRegistro();
         }
 
+        /// <summary>
+        /// Vuelve a enviar la clave asignada para la verificación al correo electronico ingresado
+        /// </summary>
         public void EnviarClaveDeNuevo()
         {
             IRegistrarJugadorCallback callbackActual = ObtenerCallbackActual;

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UNOGui.Paginas;
 
 namespace UNOGui.Ventanas
 {
@@ -19,9 +20,21 @@ namespace UNOGui.Ventanas
     /// </summary>
     public partial class Juego : Window
     {
+        /// <summary>
+        /// Obtiene o establece la pagina actual de la ventana.
+        /// </summary>
+        public Page PaginaActual { get; set; }
+
         public Juego()
         {
             InitializeComponent();
+            //frameNavegacion.Content = new Paginas.Lobby();
+        }
+
+        private void RegresarMenuPrincipal(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
+            menuPrincipal.Show();
         }
     }
 }

@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNOGui.Ventanas"
         mc:Ignorable="d"
-        Title="Juego" Height="450" Width="800">
+        Closing="RegresarMenuPrincipal"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
+        Title="Juego" Height="500" Width="500" Icon="/Imagenes/logo.png">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame x:Name="frameNavegacion" NavigationUIVisibility="Hidden" Grid.Column="0" DataContext="{Binding DataContext}"/>
     </Grid>
 </Window>

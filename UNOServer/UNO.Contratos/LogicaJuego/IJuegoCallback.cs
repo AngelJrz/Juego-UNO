@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+using UNO.Dominio;
 
 namespace UNO.Contratos.LogicaJuego
 {
+    /// <summary>
+    /// Establece los comportamientos que tendra el cliente del servidor
+    /// </summary>
     [ServiceContract]
     public interface IJuegoCallback
     {
@@ -70,21 +71,93 @@ namespace UNO.Contratos.LogicaJuego
         /// </summary>
         [OperationContract(IsOneWay = true)]
         void EliminarCreador();
+
+        /// <summary>
+        /// Notifica al jugador la falta de jugadores en la partida
+        /// </summary>
+        [OperationContract(IsOneWay = true)]
+        void NotificarFaltaDeJugadores();
         #endregion
 
         #region PartidaCallback
         /// <summary>
-        /// 
+        /// Notifica el inicio de la partida
         /// </summary>
         /// <param name="sala"></param>
         [OperationContract(IsOneWay = true)]
         void NotificarInicioPartida(Sala sala);
 
         /// <summary>
-        /// 
+        /// Establece la mano inicial del jugador en la partida
         /// </summary>
+        /// <param name="mazoDeJugador"></param>
         [OperationContract(IsOneWay = true)]
-        void ObtenerMaso();
+        void ObtenerMazo(List<Carta> mazoDeJugador);
+
+        /// <summary>
+        /// Actualiza la carta central del tablero
+        /// </summary>
+        /// <param name="cartaCentral"></param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarCartaCentral(Carta cartaCentral);
+
+        /// <summary>
+        /// Añade una nueva carta a la mano del jugador
+        /// </summary>
+        /// <param name="cartaTomada"></param>
+        [OperationContract(IsOneWay = true)]
+        void RecibirCarta(Carta cartaTomada);
+
+        /// <summary>
+        /// Notifica que jugador fue el ganador de la partida
+        /// </summary>
+        /// <param name="jugadorGanador"></param>
+        [OperationContract(IsOneWay = true)]
+        void NotificarGanador(String jugadorGanador);
+
+        /// <summary>
+        /// Actualiza el nombre del jugador en turno
+        /// </summary>
+        /// <param name="nuevoTurno"></param>
+        [OperationContract(IsOneWay = true)]
+        void CambiarTurno(String nuevoTurno);
+
+        /// <summary>
+        /// Actualiza el numero de cartas de un jugador
+        /// </summary>
+        /// <param name="nickname"></param>
+        /// <param name="numeroDeCartas"></param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarNumeroDeCartas(String nickname, String numeroDeCartas);
+
+        /// <summary>
+        /// Agrega dos nuevas cartas al jugador.
+        /// </summary>
+        /// <param name="nuevasCartas">Las dos nuevas cartas</param>
+        [OperationContract(IsOneWay = true)]
+        void ObtenerDosCartas(List<Carta> nuevasCartas);
+
+        /// <summary>
+        /// Agrega cuatro nuevas cartas al jugador.
+        /// </summary>
+        /// <param name="nuevasCartas">Las cuatro nuevas cartas</param>
+        [OperationContract(IsOneWay = true)]
+        void ObtenerCuatroCartas(List<Carta> nuevasCartas);
+
+        /// <summary>
+        /// Obtiene el turno actual de la sala.
+        /// </summary>
+        /// <param name="turnoActual">Nickname del jugador del turno actual</param>
+        [OperationContract(IsOneWay = true)]
+        void ObtenerTurnoActual(string turnoActual);
+
+        ///<summary>
+        /// Actualiza el puntaje de un jugador en la partida
+        /// </summary>
+        /// <param name="nickname"></param>
+        /// <param name="puntajeASumar"></param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarPuntajeDeJugador(String nickname, int puntajeASumar);
         #endregion
     }
 }

@@ -49,7 +49,7 @@ namespace UNOGui.Ventanas
             */
         }
 
-        public bool CamposCompletos()
+        private bool CamposCompletos()
         {
             return codigoIngresado.Text.Trim() != ""; 
         }

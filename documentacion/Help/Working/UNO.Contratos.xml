@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UNO.Contratos</name>
+    </assembly>
+    <members>
+        <member name="M:UNO.Contratos.AdministradorEmail.CorreoElectronico.EnviarClaveValidacion(UNO.Dominio.Jugador)">
+            <summary>
+            Envía la clave de validación por correo electrónico de registro de cuenta.
+            </summary>
+            <param name="jugadorDestino">Jugador al que se le va a enviar la clave.</param>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.GeneradorClave.GenerarClaveValidacion">
+            <summary>
+            Genera una clave de validación.
+            </summary>
+            <returns>Clave de validación.</returns>
+        </member>
+        <member name="T:UNO.Contratos.AdministrarJugador.IPerfil">
+            <summary>
+            Expone métodos para la administración del perfil de un Jugador.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.IPerfil.BuscarJugador(System.String)">
+            <summary>
+            Busca la información del Jugador.
+            </summary>
+            <param name="nickname">Nickname del Jugador a buscar.</param>
+        </member>
+        <member name="T:UNO.Contratos.AdministrarJugador.IPerfilCallback">
+            <summary>
+            Interfaz que expone métodos para enviar información del Jugador al cliente.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.IPerfilCallback.ObtenerInformacionJugador(UNO.Dominio.Jugador)">
+            <summary>
+            Envía al cliente la información del jugador.
+            </summary>
+            <param name="jugador">Jugador consultado.</param>
+        </member>
+        <member name="T:UNO.Contratos.AdministrarJugador.IRegistrarJugador">
+            <summary>
+            Interfaz comunicarse con el servidor y realizar operaciones del registro de un Jugador.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.IRegistrarJugador.RegistrarJugador(UNO.Dominio.Jugador)">
+            <summary>
+            Registra un nuevo Jugador en el juego UNO.
+            </summary>
+            <param name="jugador">Jugador que va a ser registrado.</param>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.IRegistrarJugador.VerificarClave(System.String)">
+            <summary>
+            Verifica si la clave de registro es correcta.
+            </summary>
+            <param name="clave">Clave de registro a comprobar.</param>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.IRegistrarJugador.CancelarRegistro">
+            <summary>
+            Cancela el registro de un Jugador en el juego UNO.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.IRegistrarJugador.EnviarClaveDeNuevo">
+            <summary>
+            Envía la clave de registro nuevamente.
+            </summary>
+        </member>
+        <member name="T:UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback">
+            <summary>
+            Interfaz para comunicarse con cliente y notificar sobre el resultado de ciertas operaciones.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback.NotificarRegistro(UNO.Contratos.AdministrarJugador.ResultadoRegistro)">
+            <summary>
+            Notifica el resultado de registrar un nuevo Jugador.
+            </summary>
+            <param name="resultado">Resultado del registro de un Jugador.</param>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback.NotificarResultadoClave(System.Boolean)">
+            <summary>
+            Notifica el resultado de comprobación de la clave de registro.
+            </summary>
+            <param name="claveValida">Notifica si la clave fue valida.</param>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback.NotificarCancelacionRegistro">
+            <summary>
+            Notifica cuando se cancela el registro de un Jugador.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback.NotificarEnvioDeClave">
+            <summary>
+            Notifica cuando se envía de nuevo la clave al Jugador.
+            </summary>
+        </member>
+        <member name="P:UNO.Contratos.LogicaJuego.Sala.Id">
+            <summary>
+            Obtiene o establece el Id de la sala.
+            </summary>
+        </member>
+        <member name="P:UNO.Contratos.LogicaJuego.Sala.Contraseña">
+            <summary>
+            Obtiene o establece la contraseña de la sala.
+            </summary>
+        </member>
+        <member name="P:UNO.Contratos.LogicaJuego.Sala.NumeroTotalDeJugadores">
+            <summary>
+            Obtiene o establece el número total de jugadores permitidos en la sala.
+            </summary>
+        </member>
+        <member name="P:UNO.Contratos.LogicaJuego.Sala.CreadaPor">
+            <summary>
+            Obtiene o establece el Nickname del jugador que creó la sala.
+            </summary>
+        </member>
+        <member name="P:UNO.Contratos.LogicaJuego.Sala.JugadoresEnSala">
+            <summary>
+            Obtiene o establece los jugadores que se encuentran en la sala.
+            </summary>
+        </member>
+        <member name="P:UNO.Contratos.LogicaJuego.Sala.EnJuego">
+            <summary>
+            Obtiene o establece si la sala se encuentra ya en juego.
+            </summary>
+        </member>
+        <member name="T:UNO.Contratos.LogicaJuego.IAdministrarJuego">
+            <summary>
+            Interfaz encargada de administrar los métodos que pueden llamar desde el cliente.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IAdministrarJuego.CrearSala(UNO.Contratos.LogicaJuego.Sala,UNO.Dominio.Jugador)">
+            <summary>
+            Crea una sala para que los jugadores se puedan unir.
+            </summary>
+            <param name="nuevaSala">Sala a crear</param>
+            <param name="jugador">Jugador que crea la sala</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IAdministrarJuego.UnirseASala(UNO.Contratos.LogicaJuego.Sala,UNO.Dominio.Jugador)">
+            <summary>
+            Une un jugador a la sala.
+            </summary>
+            <param name="salaAUnirse">Sala a la cual se va a unir</param>
+            <param name="jugador">Jugador que se va a unir a la sala</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IAdministrarJuego.SalirDeSala(System.String,System.String)">
+            <summary>
+            Elimina al jugador de una sala.
+            </summary>
+            <param name="idSala">Id de sala a salirse</param>
+            <param name="nickname">Nickname del jugador a salirse</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IAdministrarJuego.IniciarPartida(System.String)">
+            <summary>
+            Inicia la partida en una sala.
+            </summary>
+            <param name="idSala">Id de sala donde se inicia la partida</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IAdministrarJuego.ColocarCartaCentral(UNO.Dominio.Carta,UNO.Contratos.LogicaJuego.Sala)">
+            <summary>
+            Actualiza la carta central del tablero.
+            </summary>
+            <param name="cartaCentral">Información de la nueva carta central que se actualizará en los clientes</param>
+            <param name="sala">La sala a la que pertenece el usuario</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.NotificarCreacionDeSala(UNO.Contratos.LogicaJuego.Sala)">
+            <summary>
+            Notifica al jugador la sala creada.
+            </summary>
+            <param name="salaCreada">Sala creada</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.NotificarUnionASala(UNO.Contratos.LogicaJuego.ResultadoUnionSala)">
+            <summary>
+            Notifica al jugador el estado de la union a una sala.
+            </summary>
+            <param name="resultado">Resultado de la union a una sala</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.ActualizarSala(System.Collections.Generic.List{System.String})">
+            <summary>
+            Actualiza la sala del jugador con los nuevos jugadores.
+            </summary>
+            <param name="jugadores">Jugadores de la sala</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.ObtenerInformacionDeSala(UNO.Contratos.LogicaJuego.Sala)">
+            <summary>
+            Obtiene la información de sala para mostrarla en el cliente.
+            </summary>
+            <param name="sala">Sala con la información necesaria.</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.AgregarNuevoJugador(UNO.Dominio.Jugador)">
+            <summary>
+            Agrega un nuevo jugador para mostrarla en el cliente.
+            </summary>
+            <param name="nuevoJugador">Nuevo jugador.</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.SacarJugador(UNO.Dominio.Jugador)">
+            <summary>
+            Saca el jugador especificado de la sala.
+            </summary>
+            <param name="jugadorASacar">Jugador a sacar de la sala.</param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.NotificarSalidaDeSala">
+            <summary>
+            Notifica al jugador que se salió de la sala.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.NotificarEliminacionDeSala">
+            <summary>
+            Notifica a los jugadores que el creador de la sala la eliminó.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.EliminarCreador">
+            <summary>
+            Notifica al creador de la sala que se salió de ella.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.NotificarInicioPartida(UNO.Contratos.LogicaJuego.Sala)">
+            <summary>
+            
+            </summary>
+            <param name="sala"></param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.ObtenerMazo(System.Collections.Generic.List{UNO.Dominio.Carta})">
+            <summary>
+            
+            </summary>
+            <param name="mazoDeJugador"></param>
+        </member>
+        <member name="M:UNO.Contratos.LogicaJuego.IJuegoCallback.ActualizarCartaCentral(UNO.Dominio.Carta)">
+            <summary>
+            
+            </summary>
+            <param name="cartaCentral"></param>
+        </member>
+        <member name="M:UNO.Contratos.JuegoUNOServicio.IniciarSesion(System.String,System.String)">
+            <summary>
+            Inicia sesión de un Jugador existente en el juego.
+            </summary>
+            <param name="nickname">Nickname del Jugador.</param>
+            <param name="contraseña">Contraseña del Jugador.</param>
+        </member>
+        <member name="M:UNO.Contratos.JuegoUNOServicio.CerrarSesion(System.String)">
+            <summary>
+            Lógica para cerrar sesión de un Jugador.
+            </summary>
+            <param name="nickname">Nickname del Jugador a cerrar sesión</param>
+        </member>
+        <member name="M:UNO.Contratos.JuegoUNOServicio.CrearSala(UNO.Contratos.LogicaJuego.Sala,UNO.Dominio.Jugador)">
+            <summary>
+            Lógica para crear una sala y que los jugadores se puedan unir.
+            </summary>
+            <param name="nuevaSala">Sala a crear</param>
+            <param name="jugador">Jugador que crea la sala</param>
+        </member>
+        <member name="M:UNO.Contratos.JuegoUNOServicio.UnirseASala(UNO.Contratos.LogicaJuego.Sala,UNO.Dominio.Jugador)">
+            <summary>
+            Lógica para unir un jugador a la sala.
+            </summary>
+            <param name="salaAUnirse">Sala a la cual se va a unir</param>
+            <param name="jugador">Jugador que se va a unir a la sala</param>
+        </member>
+        <member name="M:UNO.Contratos.JuegoUNOServicio.SalirDeSala(System.String,System.String)">
+            <summary>
+            Lógica para eliminar al jugador de una sala.
+            </summary>
+            <param name="idSala">Id de sala a salirse</param>
+            <param name="nickname">Nickname del jugador a salirse</param>
+        </member>
+        <member name="T:UNO.Contratos.Login.ILogin">
+            <summary>
+            Interfaz para el inicio de sesión de un Jugador.
+            Expone los métodos necesarios para realizar el inicio de sesión.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.Login.ILogin.IniciarSesion(System.String,System.String)">
+            <summary>
+            Inicia sesión de un Jugador existente en el juego.
+            </summary>
+            <param name="nickname">Nickname del Jugador.</param>
+            <param name="contraseña">Contraseña del Jugador.</param>
+        </member>
+        <member name="M:UNO.Contratos.Login.ILogin.CerrarSesion(System.String)">
+            <summary>
+            Cerra sesión de un Jugador en el juego.
+            </summary>
+            <param name="nickname">Nickname del jugador que cerrará sesión</param>
+        </member>
+        <member name="T:UNO.Contratos.Login.ILoginCallback">
+            <summary>
+            Interfaz para la comunicación con el cliente del juego.
+            Expone métodos para informar sobre el inicio de sesión.
+            </summary>
+        </member>
+        <member name="M:UNO.Contratos.Login.ILoginCallback.NotificarResultadoLogin(UNO.Contratos.Login.ResultadoLogin)">
+            <summary>
+            Notifica al cliente el resultado de inicio de sesión.
+            </summary>
+            <param name="resultado">Paramétro de tipo enumeración ResultadoLogin</param>
+        </member>
+        <member name="M:UNO.Contratos.Login.ILoginCallback.ObtenerJugadoresTop(System.Collections.Generic.List{UNO.Dominio.Jugador})">
+            <summary>
+            Envía los Jugadores Top 5, con mayor puntaje.
+            </summary>
+            <param name="jugadoresTop">Lista de los Jugadores Top</param>
+        </member>
+        <member name="T:UNO.Contratos.Login.ResultadoLogin">
+            <summary>
+            Enumeracion para los resultados posibles de un inicio de sesión.
+            </summary>
+        </member>
+    </members>
+</doc>

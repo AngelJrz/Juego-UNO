@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UNO.Contratos.LogicaJuego;
+﻿using System.Collections.Generic;
 using UNO.Dominio;
 
 namespace UNO.Contratos.LogicaJuego
 {
+    /// <summary>
+    /// Clase que controla la información de la sala
+    /// </summary>
     public class Sala
     {
         /// <summary>
@@ -34,5 +32,15 @@ namespace UNO.Contratos.LogicaJuego
         /// Obtiene o establece los jugadores que se encuentran en la sala.
         /// </summary>
         public Dictionary<Jugador, IJuegoCallback> JugadoresEnSala { get; set; }
+
+        /// <summary>
+        /// Obtiene o establece si la sala se encuentra ya en juego.
+        /// </summary>
+        public bool EnJuego { get; set; } = false;
+
+        /// <summary>
+        /// Obtiene o establece una partida para la sala de juego.
+        /// </summary>
+        public Partida PartidaDeSala { get; set; }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System.ServiceModel;
+﻿using System;
+using System.ServiceModel;
 using UNOGui.JuegoUNOServicio;
+using UNOGui.Logica.Log;
 
 namespace UNOGui.Logica
 {
@@ -21,8 +23,14 @@ namespace UNOGui.Logica
             {
                 servidor.RegistrarJugador(nuevoJugador);
             }
-            catch (EndpointNotFoundException)
+            catch (EndpointNotFoundException ex)
             {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
         }
@@ -37,8 +45,14 @@ namespace UNOGui.Logica
             {
                 servidor.VerificarClave(clave);
             }
-            catch (EndpointNotFoundException)
+            catch (EndpointNotFoundException ex)
             {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
         }
@@ -52,8 +66,14 @@ namespace UNOGui.Logica
             {
                 servidor.CancelarRegistro();
             }
-            catch (EndpointNotFoundException)
+            catch (EndpointNotFoundException ex)
             {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
         }
@@ -67,8 +87,14 @@ namespace UNOGui.Logica
             {
                 servidor.EnviarClaveDeNuevo();
             }
-            catch (EndpointNotFoundException)
+            catch (EndpointNotFoundException ex)
             {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
         }

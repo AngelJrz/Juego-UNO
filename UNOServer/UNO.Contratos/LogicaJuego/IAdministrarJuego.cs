@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+using UNO.Dominio;
 
 namespace UNO.Contratos.LogicaJuego
 {
@@ -40,6 +37,7 @@ namespace UNO.Contratos.LogicaJuego
         #endregion
 
         #region Administracion de Partida
+
         /// <summary>
         /// Inicia la partida en una sala.
         /// </summary>
@@ -48,11 +46,46 @@ namespace UNO.Contratos.LogicaJuego
         void IniciarPartida(string idSala);
 
         /// <summary>
-        /// Reparte las cartas a los jugadores de una sala.
+        /// Actualiza la carta central del tablero.
         /// </summary>
-        /// <param name="sala">Sala en la cual se van a repartir las cartas</param>
+        /// <param name="cartaCentral">Información de la nueva carta central que se actualizará en los clientes</param>
+        /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
         [OperationContract(IsOneWay = true)]
-        void RepartirCartas(Sala sala);
+        void ColocarCartaCentral(Carta cartaCentral, String idSalaJugador);
+
+        /// <summary>
+        /// El jugador toma una carta del mazo.
+        /// </summary>
+        /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
+        /// <param name="nickname">Nombre del jugador</param>
+        [OperationContract(IsOneWay = true)]
+        void TomarCarta(String idSalaJugador, String nickname);
+
+        /// <summary>
+        /// Se anuncia el ganador de la partida a todos los clientes.
+        /// </summary>
+        /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
+        /// <param name="jugadorGanador">Jugador ganador</param>
+        [OperationContract(IsOneWay = true)]
+        void AnunciarGanador(String idSalaJugador, Jugador jugadorGanador);
+
+        /// <summary>
+        /// Actualiza el numero de cartas que tiene el jugador en la mano.
+        /// </summary>
+        /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
+        /// <param name="nickname">Nombre del usuario a actualizar</param>
+        /// <param name="numeroDeCartas">Numero nuevo de cartas</param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarNumeroDeCarta(String idSalaJugador, String nickname, String numeroDeCartas);
+
+        /// <summary>
+        /// Actualiza el puntaje del jugador en la partida.
+        /// </summary>
+        /// <param name="idSalaJugador">La sala a la que pertenece el usuario</param>
+        /// <param name="nickname">Nombre del usuario a actualizar</param>
+        /// <param name="puntajeASumar">Puntaje a sumar del jugador</param>
+        [OperationContract(IsOneWay = true)]
+        void ActualizarPuntaje(String idSalaJugador, String nickname, int puntajeASumar);
         #endregion
     }
 }

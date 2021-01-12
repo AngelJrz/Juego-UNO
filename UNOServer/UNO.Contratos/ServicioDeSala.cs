@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using UNO.Contratos.LogicaJuego;
 using UNO.Dominio;
 
@@ -46,14 +43,21 @@ namespace UNO.Contratos
             {
                 if (salaBuscada.Contraseña.Equals(salaAUnirse.Contraseña))
                 {
-                    if (HayCupoEnSala(salaBuscada))
+                    if (salaBuscada.EnJuego)
                     {
-                        resultadoUnionSala = ResultadoUnionSala.UnionExitosa;
+                        resultadoUnionSala = ResultadoUnionSala.EnJuego;
                     }
                     else
                     {
-                        resultadoUnionSala = ResultadoUnionSala.NoHayCupo;
-                    }
+                        if (HayCupoEnSala(salaBuscada))
+                        {
+                            resultadoUnionSala = ResultadoUnionSala.UnionExitosa;
+                        }
+                        else
+                        {
+                            resultadoUnionSala = ResultadoUnionSala.NoHayCupo;
+                        }
+                    } 
                 }
                 else
                 {
@@ -62,7 +66,7 @@ namespace UNO.Contratos
             }
 
             callbackActual.NotificarUnionASala(resultadoUnionSala);
-            if (resultadoUnionSala == ResultadoUnionSala.UnionExitosa)
+            if (salaBuscada != null && resultadoUnionSala == ResultadoUnionSala.UnionExitosa)
             {
                 callbackActual.ObtenerInformacionDeSala(salaBuscada);
                 salaBuscada.JugadoresEnSala.Add(jugador, callbackActual);
@@ -111,12 +115,9 @@ namespace UNO.Contratos
             if (salaActual != null)
             {
                 IJuegoCallback callbackActual = JuegoCallbackActual;
-                Console.WriteLine($"Callback actual: {callbackActual.ToString()}");
-                //salaActual.JugadoresEnSala.TryGetValue(callbackActual, out Dominio.Jugador jugadorASacar);
 
                 foreach (var jugador in salaActual.JugadoresEnSala)
                 {
-                    Console.WriteLine($"Callback jugador buscando: {jugador.Value.ToString()}");
                     if (jugador.Key.Nickname.Equals(nickname))
                     {
                         if (EsCreadorDeLaSala(salaActual, jugador.Key))
@@ -130,24 +131,41 @@ namespace UNO.Contratos
                             callbackActual.NotificarSalidaDeSala();
                             salaActual.JugadoresEnSala.Remove(jugador.Key);
                             NotificarJugadorEliminado(salaActual, jugador.Key);
+
+                            if (salaActual.EnJuego)
+                            {
+                                salaActual.PartidaDeSala.SacarJugador(jugador.Key);
+
+                                if (salaActual.PartidaDeSala.HaySuficientesJugadores())
+                                {
+                                    salaActual.PartidaDeSala.ReiniciarTurnos();
+                                    CambiarTurno(salaActual);
+                                }
+                                else
+                                {
+                                    EliminarSalaPorFaltaDeJugadores(salaActual);
+                                }
+                            }
                         }
                         break;
                     }
                 }
-
-                //if (EsCreadorDeLaSala(salaActual, jugadorASacar))
-                //{
-                //    callbackActual.EliminarCreador();
-                //    salaActual.JugadoresEnSala.Remove(callbackActual);
-                //    EliminarSala(salaActual);
-                //}
-                //else
-                //{
-                //    callbackActual.NotificarSalidaDeSala();
-                //    salaActual.JugadoresEnSala.Remove(callbackActual);
-                //    NotificarJugadorEliminado(salaActual, jugadorASacar);
-                //}
             }
+        }
+
+        private void EliminarSalaPorFaltaDeJugadores(Sala salaActual)
+        {
+            if (salaActual.JugadoresEnSala.Count > 0)
+            {
+                foreach (var jugador in salaActual.JugadoresEnSala)
+                {
+                    jugador.Value.NotificarFaltaDeJugadores();
+                }
+
+                salaActual.JugadoresEnSala.Clear();
+            }
+
+            salasCreadas.Remove(salaActual);
         }
 
         private void NotificarJugadorEliminado(Sala salaActual, Dominio.Jugador jugadorASacar)

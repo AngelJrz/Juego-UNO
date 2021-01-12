@@ -4,6 +4,7 @@ using System.Windows;
 using UNOGui.Ventanas;
 using UNOGui.Paginas;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace UNOGui.Logica
 {
@@ -12,6 +13,10 @@ namespace UNOGui.Logica
     /// </summary>
     public class LoginCallbackAdmin : ILoginCallback
     {
+        /// <summary>
+        /// Notifica el resultado del login al usuario
+        /// </summary>
+        /// <param name="resultado">Resultado del inicio de sesión</param>
         public void NotificarResultadoLogin(ResultadoLogin resultado)
         {
             if (resultado == ResultadoLogin.ExisteJugador)
@@ -36,7 +41,13 @@ namespace UNOGui.Logica
             {
                 Mensaje ventanaMensaje = new Mensaje();
 
-                if (resultado == ResultadoLogin.NoExisteNickname)
+                if (resultado == ResultadoLogin.SesionIniciada)
+                {
+                    ventanaMensaje.Title = Properties.Resources.Login_MensajeSesionIniciadaTitulo;
+                    ventanaMensaje.TituloMensaje = Properties.Resources.Login_MensajeSesionIniciadaTitulo;
+                    ventanaMensaje.Contenido = Properties.Resources.Login_MensajeSesionIniciadaContenido;
+                }
+                else if (resultado == ResultadoLogin.NoExisteNickname)
                 {
                     ventanaMensaje.Title = Properties.Resources.Login_MensajeNicknameTitulo;
                     ventanaMensaje.TituloMensaje = Properties.Resources.Login_MensajeNicknameTitulo;
@@ -53,7 +64,11 @@ namespace UNOGui.Logica
             }
         }
 
-        public void ObtenerJugadoresTop(Jugador[] jugadoresTop)
+        /// <summary>
+        /// Muestra en pantalla a los jugadores con mas puntaje dentro del sistema
+        /// </summary>
+        /// <param name="jugadoresTop">Lista de los jugadores a mostrar</param>
+        public void ObtenerJugadoresTop(List<Jugador> jugadoresTop)
         {
             MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>()
                     .SingleOrDefault();

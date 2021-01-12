@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\UNO.Contratos.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -56,15 +58,12 @@
     <Compile Include="AdministrarJugador\GeneradorClave.cs" />
     <Compile Include="AdministrarJugador\IPerfil.cs" />
     <Compile Include="AdministrarJugador\IPerfilCallback.cs" />
-    <Compile Include="LogicaJuego\IAdministrarSala.cs" />
-    <Compile Include="LogicaJuego\ISalaCallback.cs" />
+    <Compile Include="LogicaJuego\Partida.cs" />
     <Compile Include="LogicaJuego\ResultadoUnionSala.cs" />
     <Compile Include="LogicaJuego\Sala.cs" />
     <Compile Include="JuegoUNOServicio.cs" />
     <Compile Include="LogicaJuego\IAdministrarJuego.cs" />
-    <Compile Include="LogicaJuego\IAdministrarPartida.cs" />
     <Compile Include="LogicaJuego\IJuegoCallback.cs" />
-    <Compile Include="LogicaJuego\IPartidaCallback.cs" />
     <Compile Include="LoginServicio.cs" />
     <Compile Include="Login\ILogin.cs" />
     <Compile Include="Login\ILoginCallback.cs" />
@@ -75,7 +74,6 @@
     <Compile Include="AdministrarJugador\IRegistrarJugadorCallback.cs" />
     <Compile Include="AdministrarJugador\ResultadoRegistro.cs" />
     <Compile Include="ServicioDeSala.cs" />
-    <Compile Include="ServicioJuego.cs" />
     <Compile Include="ServicioPartida.cs" />
   </ItemGroup>
   <ItemGroup>
