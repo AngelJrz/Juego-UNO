@@ -76,6 +76,7 @@ namespace UNO.AccesoADatos.AdministrarDatos
         /// Guarda un nuevo jugador en la base de datos
         /// </summary>
         /// <param name="nuevoJugador">Nuevo jugador a guardar</param>
+        /// <exception cref="DbUpdateException"></exception>
         public void GuardarJugador(Dominio.Jugador nuevoJugador)
         {
             Jugador entidadJugador = new Jugador
@@ -137,21 +138,24 @@ namespace UNO.AccesoADatos.AdministrarDatos
         /// <returns>Jugador buscado</returns>
         public Dominio.Jugador ObtenerJugador(string nickname)
         {
-            Dominio.Jugador jugador;
+            Dominio.Jugador jugador = null;
 
             var jugadorBuscado = baseDeDatos.Jugador.Find(nickname);
 
-            jugador = new Dominio.Jugador
+            if (jugadorBuscado != null)
             {
-                Nickname = nickname,
-                CorreoElectronico = jugadorBuscado.CorreoElectronico,
-                PuntajeTotal = (int)jugadorBuscado.PuntajeTotal,
-                Nivel = jugadorBuscado.Nivel,
-                Experiencia = (int)jugadorBuscado.Experiencia,
-                PartidasGanadas = (int)jugadorBuscado.PartidasGanadas,
-                PartidasJugadas = (int)jugadorBuscado.PartidasJugadas
-            };
-
+                jugador = new Dominio.Jugador
+                {
+                    Nickname = nickname,
+                    CorreoElectronico = jugadorBuscado.CorreoElectronico,
+                    PuntajeTotal = (int)jugadorBuscado.PuntajeTotal,
+                    Nivel = jugadorBuscado.Nivel,
+                    Experiencia = (int)jugadorBuscado.Experiencia,
+                    PartidasGanadas = (int)jugadorBuscado.PartidasGanadas,
+                    PartidasJugadas = (int)jugadorBuscado.PartidasJugadas
+                };
+            }
+            
             return jugador;
         }
 
@@ -159,6 +163,7 @@ namespace UNO.AccesoADatos.AdministrarDatos
         /// Actualiza las estadísticas en el juego de un jugador.
         /// </summary>
         /// <param name="jugador">Jugador a actualizar estadísticas</param>
+        /// <exception cref="DbUpdateException"></exception>
         public void ActualizarEstadisticasDeJugador(Dominio.Jugador jugador)
         {
             Jugador jugadorBuscado = baseDeDatos.Jugador.Find(jugador.Nickname);
@@ -171,7 +176,7 @@ namespace UNO.AccesoADatos.AdministrarDatos
             
             jugadorBuscado.Experiencia += experienciaCalculada;
 
-            int nivelCalculado = (int)jugadorBuscado.Experiencia / 100;
+            int nivelCalculado = CalcularNuevoNivel((int)jugadorBuscado.Experiencia);
             jugadorBuscado.Nivel = nivelCalculado;
 
             try
@@ -188,6 +193,7 @@ namespace UNO.AccesoADatos.AdministrarDatos
         /// Actualiza las estadisticas de un jugador en la base de datos
         /// </summary>
         /// <param name="jugador">Jugador a actualizar</param>
+        /// <exception cref="DbUpdateException"></exception>
         public void ActualizarPartidasJugadas(Dominio.Jugador jugador)
         {
             Jugador jugadorBuscado = baseDeDatos.Jugador.Find(jugador.Nickname);
@@ -196,7 +202,7 @@ namespace UNO.AccesoADatos.AdministrarDatos
             int experienciaCalculada = 40 + jugador.PuntajeTotal;
             jugadorBuscado.Experiencia += experienciaCalculada;
 
-            int nivelCalculado = (int)jugadorBuscado.Experiencia / 100;
+            int nivelCalculado = CalcularNuevoNivel((int)jugadorBuscado.Experiencia);
             jugadorBuscado.Nivel = nivelCalculado;
 
             try
@@ -207,6 +213,18 @@ namespace UNO.AccesoADatos.AdministrarDatos
             {
                 throw new DbUpdateException("Error al agregar nuevo jugador");
             }
+        }
+
+        private int CalcularNuevoNivel(int experiencia)
+        {
+            int nivelCalculado = experiencia / 100;
+
+            if (nivelCalculado == 0)
+            {
+                nivelCalculado = 1;
+            }
+
+            return nivelCalculado;
         }
     }
 }
