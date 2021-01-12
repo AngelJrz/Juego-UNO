@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UNOGui.Paginas"
       mc:Ignorable="d" 
+      xmlns:p = "clr-namespace:UNOGui.Properties"
       d:DesignHeight="550" d:DesignWidth="800"
       Title="Partida">
 
@@ -32,7 +33,7 @@
 
             <StackPanel Grid.Row="0">
                 <StackPanel HorizontalAlignment="Center" Margin="10">
-                    <TextBlock Text="Jugador en turno: " Style="{StaticResource ContenidoMensaje}" TextAlignment="Center"/>
+                    <TextBlock Text="{x:Static p:Resources.Partida_TurnoActual}" Style="{StaticResource ContenidoMensaje}" TextAlignment="Center"/>
                     <TextBlock x:Name="turnoActual" Text="" Style="{StaticResource TituloMensaje}" TextAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
@@ -49,8 +50,6 @@
 
 
                 <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0">
-                    <!--<Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png"/>
-                    <Button Content="Toma carta" HorizontalAlignment="Left" Margin="10,112,0,-16.6" VerticalAlignment="Top" Width="75" Click="TomarCarta"/>-->
                     <Button Height="120"  Width="120" Click="TomarCarta">
                         <Button.Style>
                             <Style TargetType="Button">
@@ -87,253 +86,23 @@
             
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
-                <TextBlock Text="Mi puntaje: " Style="{StaticResource TextoContenido}"/>
-                <TextBlock x:Name="miPuntajeText" Text="0" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
+                <TextBlock Text="{x:Static p:Resources.Partida_MiPutaje}" Style="{StaticResource TextoContenido}"/>
+                <TextBlock x:Name="miPuntajeText" Text="0" Style="{StaticResource TextoContenido}" FontWeight="Regular" Margin="10,0,0,0"/>
             </StackPanel>
             
-            <Button Content="UNO" Style="{StaticResource Button}" Margin="0,5,0,0"/>
-            <Button Content="Salir" Style="{StaticResource Button}" Margin="0,5,0,0" Click="SalirDePartida"/>
+            <Button Content="{x:Static p:Resources.Partida_Salir}" Style="{StaticResource Button}" Margin="0,5,0,0" Click="SalirDePartida"/>
         </StackPanel>
 
         <StackPanel x:Name="panel3" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0">
-            <!--<StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="Jugador: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock x:Name="nicknameJugador3" Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="No. Cartas: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="7" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="Puntaje: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
-                </StackPanel>
-            </StackPanel>
-
-            <Grid Margin="0,0,0,40">
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,23,0,-23">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="-1,49,1,-49">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,72,0,-72">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-            </Grid>-->
         </StackPanel>
 
         <StackPanel x:Name="panel2" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0">
-            <!--<StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="Jugador: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock x:Name="nicknameJugador2" Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="No. Cartas: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="7" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="Puntaje: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
-                </StackPanel>
-            </StackPanel>
-
-            <Grid Margin="0,0,0,40">
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,23,0,-23">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="-1,49,1,-49">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,72,0,-72">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-            </Grid>-->
         </StackPanel>
 
         <StackPanel x:Name="panel1" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1">
-            <!--<StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="Jugador: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock x:Name="nicknameJugador1" Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="No. Cartas: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="7" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="Puntaje: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
-                </StackPanel>
-            </StackPanel>
-
-            <Grid Margin="0,0,0,40">
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,23,0,-23">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="-1,49,1,-49">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,72,0,-72">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-            </Grid>-->
-            
         </StackPanel>
 
         <StackPanel x:Name="panel4" Visibility="Visible" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">
-            <!--<StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="Jugador: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock x:Name="nicknameJugador4" Text="SammyGCh" Style="{StaticResource TextoContenido}" FontWeight="Regular"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="No. Cartas: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="7" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <TextBlock Text="Puntaje: " Style="{StaticResource TextoContenido}"/>
-                    <TextBlock Text="0" Style="{StaticResource TextoContenido}" FontWeight="Normal"/>
-                </StackPanel>
-            </StackPanel>
-
-            <Grid Margin="0,0,0,40">
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,23,0,-23">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="-1,49,1,-49">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image Height="100"  Width="100" Source="/Imagenes/RecursosTablero/BackCard.png" RenderTransformOrigin="0.5,0.5" Margin="0,72,0,-72">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="90"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-            </Grid>-->
         </StackPanel>
 
     </Grid>

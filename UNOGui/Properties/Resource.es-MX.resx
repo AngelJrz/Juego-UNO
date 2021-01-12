@@ -282,6 +282,24 @@
   <data name="Partida_GanadorMensajeTitulo" xml:space="preserve">
     <value>¡Hay un ganador!</value>
   </data>
+  <data name="Partida_MiPutaje" xml:space="preserve">
+    <value>Mi puntaje</value>
+  </data>
+  <data name="Partida_NombreJugador" xml:space="preserve">
+    <value>Jugador</value>
+  </data>
+  <data name="Partida_NumeroCartas" xml:space="preserve">
+    <value>No. Cartas</value>
+  </data>
+  <data name="Partida_Puntaje" xml:space="preserve">
+    <value>Puntaje</value>
+  </data>
+  <data name="Partida_Salir" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="Partida_TurnoActual" xml:space="preserve">
+    <value>Turno actual</value>
+  </data>
   <data name="RecuperacionCuenta_BotonCancelar" xml:space="preserve">
     <value>Cancelar</value>
   </data>
@@ -383,5 +401,20 @@
   </data>
   <data name="UniseSala_BotonUnirse" xml:space="preserve">
     <value>Unirme</value>
+  </data>
+  <data name="VerificarCodigo_Campo" xml:space="preserve">
+    <value>Código de recuperación</value>
+  </data>
+  <data name="VerificarCodigo_Contenido" xml:space="preserve">
+    <value>Te enviamos un código de recuperación a su dirección de correo. Por favor, ingreselo en el siguiente campo.</value>
+  </data>
+  <data name="VerificarCodigo_Pregunta" xml:space="preserve">
+    <value>¿No recibiste el código de recuperación?</value>
+  </data>
+  <data name="VerificarCodigo_Reenvio" xml:space="preserve">
+    <value>Enviar de nuevo</value>
+  </data>
+  <data name="VerificarCodigo_Titulo" xml:space="preserve">
+    <value>Verificar código</value>
   </data>
 </root>
