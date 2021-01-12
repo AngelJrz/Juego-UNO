@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UNOServerTest.UNOServer {
+namespace UNOServerTest.JuegoUNOServicioTest {
     using System.Runtime.Serialization;
     using System;
     
@@ -239,7 +239,7 @@ namespace UNOServerTest.UNOServer {
         private string IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.Dictionary<UNOServerTest.UNOServer.Jugador, object> JugadoresEnSalaField;
+        private System.Collections.Generic.Dictionary<UNOServerTest.JuegoUNOServicioTest.Jugador, object> JugadoresEnSalaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int NumeroTotalDeJugadoresField;
@@ -307,7 +307,7 @@ namespace UNOServerTest.UNOServer {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.Dictionary<UNOServerTest.UNOServer.Jugador, object> JugadoresEnSala {
+        public System.Collections.Generic.Dictionary<UNOServerTest.JuegoUNOServicioTest.Jugador, object> JugadoresEnSala {
             get {
                 return this.JugadoresEnSalaField;
             }
@@ -363,14 +363,14 @@ namespace UNOServerTest.UNOServer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UNOServer.IRegistrarJugador", CallbackContract=typeof(UNOServerTest.UNOServer.IRegistrarJugadorCallback))]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicioTest.IRegistrarJugador", CallbackContract=typeof(UNOServerTest.JuegoUNOServicioTest.IRegistrarJugadorCallback))]
     public interface IRegistrarJugador {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/RegistrarJugador")]
-        void RegistrarJugador(UNOServerTest.UNOServer.Jugador jugador);
+        void RegistrarJugador(UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/RegistrarJugador")]
-        System.Threading.Tasks.Task RegistrarJugadorAsync(UNOServerTest.UNOServer.Jugador jugador);
+        System.Threading.Tasks.Task RegistrarJugadorAsync(UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/VerificarClave")]
         void VerificarClave(string clave);
@@ -395,7 +395,7 @@ namespace UNOServerTest.UNOServer {
     public interface IRegistrarJugadorCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/NotificarRegistro")]
-        void NotificarRegistro(UNOServerTest.UNOServer.ResultadoRegistro resultado);
+        void NotificarRegistro(UNOServerTest.JuegoUNOServicioTest.ResultadoRegistro resultado);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/NotificarResultadoClave")]
         void NotificarResultadoClave(bool claveValida);
@@ -408,12 +408,12 @@ namespace UNOServerTest.UNOServer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRegistrarJugadorChannel : UNOServerTest.UNOServer.IRegistrarJugador, System.ServiceModel.IClientChannel {
+    public interface IRegistrarJugadorChannel : UNOServerTest.JuegoUNOServicioTest.IRegistrarJugador, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RegistrarJugadorClient : System.ServiceModel.DuplexClientBase<UNOServerTest.UNOServer.IRegistrarJugador>, UNOServerTest.UNOServer.IRegistrarJugador {
+    public partial class RegistrarJugadorClient : System.ServiceModel.DuplexClientBase<UNOServerTest.JuegoUNOServicioTest.IRegistrarJugador>, UNOServerTest.JuegoUNOServicioTest.IRegistrarJugador {
         
         public RegistrarJugadorClient(System.ServiceModel.InstanceContext callbackInstance) : 
                 base(callbackInstance) {
@@ -435,11 +435,11 @@ namespace UNOServerTest.UNOServer {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void RegistrarJugador(UNOServerTest.UNOServer.Jugador jugador) {
+        public void RegistrarJugador(UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
             base.Channel.RegistrarJugador(jugador);
         }
         
-        public System.Threading.Tasks.Task RegistrarJugadorAsync(UNOServerTest.UNOServer.Jugador jugador) {
+        public System.Threading.Tasks.Task RegistrarJugadorAsync(UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
             return base.Channel.RegistrarJugadorAsync(jugador);
         }
         
@@ -469,7 +469,7 @@ namespace UNOServerTest.UNOServer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UNOServer.ILogin", CallbackContract=typeof(UNOServerTest.UNOServer.ILoginCallback))]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicioTest.ILogin", CallbackContract=typeof(UNOServerTest.JuegoUNOServicioTest.ILoginCallback))]
     public interface ILogin {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/IniciarSesion")]
@@ -483,19 +483,19 @@ namespace UNOServerTest.UNOServer {
     public interface ILoginCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/NotificarResultadoLogin")]
-        void NotificarResultadoLogin(UNOServerTest.UNOServer.ResultadoLogin resultado);
+        void NotificarResultadoLogin(UNOServerTest.JuegoUNOServicioTest.ResultadoLogin resultado);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/ObtenerJugadoresTop")]
-        void ObtenerJugadoresTop(UNOServerTest.UNOServer.Jugador[] jugadoresTop);
+        void ObtenerJugadoresTop(UNOServerTest.JuegoUNOServicioTest.Jugador[] jugadoresTop);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ILoginChannel : UNOServerTest.UNOServer.ILogin, System.ServiceModel.IClientChannel {
+    public interface ILoginChannel : UNOServerTest.JuegoUNOServicioTest.ILogin, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class LoginClient : System.ServiceModel.DuplexClientBase<UNOServerTest.UNOServer.ILogin>, UNOServerTest.UNOServer.ILogin {
+    public partial class LoginClient : System.ServiceModel.DuplexClientBase<UNOServerTest.JuegoUNOServicioTest.ILogin>, UNOServerTest.JuegoUNOServicioTest.ILogin {
         
         public LoginClient(System.ServiceModel.InstanceContext callbackInstance) : 
                 base(callbackInstance) {
@@ -527,7 +527,7 @@ namespace UNOServerTest.UNOServer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UNOServer.IPerfil", CallbackContract=typeof(UNOServerTest.UNOServer.IPerfilCallback))]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicioTest.IPerfil", CallbackContract=typeof(UNOServerTest.JuegoUNOServicioTest.IPerfilCallback))]
     public interface IPerfil {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPerfil/BuscarJugador")]
@@ -541,16 +541,16 @@ namespace UNOServerTest.UNOServer {
     public interface IPerfilCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IPerfil/ObtenerInformacionJugador")]
-        void ObtenerInformacionJugador(UNOServerTest.UNOServer.Jugador jugador);
+        void ObtenerInformacionJugador(UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPerfilChannel : UNOServerTest.UNOServer.IPerfil, System.ServiceModel.IClientChannel {
+    public interface IPerfilChannel : UNOServerTest.JuegoUNOServicioTest.IPerfil, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PerfilClient : System.ServiceModel.DuplexClientBase<UNOServerTest.UNOServer.IPerfil>, UNOServerTest.UNOServer.IPerfil {
+    public partial class PerfilClient : System.ServiceModel.DuplexClientBase<UNOServerTest.JuegoUNOServicioTest.IPerfil>, UNOServerTest.JuegoUNOServicioTest.IPerfil {
         
         public PerfilClient(System.ServiceModel.InstanceContext callbackInstance) : 
                 base(callbackInstance) {
@@ -582,20 +582,20 @@ namespace UNOServerTest.UNOServer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UNOServer.IAdministrarJuego", CallbackContract=typeof(UNOServerTest.UNOServer.IAdministrarJuegoCallback))]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="JuegoUNOServicioTest.IAdministrarJuego", CallbackContract=typeof(UNOServerTest.JuegoUNOServicioTest.IAdministrarJuegoCallback))]
     public interface IAdministrarJuego {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/CrearSala")]
-        void CrearSala(UNOServerTest.UNOServer.Sala nuevaSala, UNOServerTest.UNOServer.Jugador jugador);
+        void CrearSala(UNOServerTest.JuegoUNOServicioTest.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/CrearSala")]
-        System.Threading.Tasks.Task CrearSalaAsync(UNOServerTest.UNOServer.Sala nuevaSala, UNOServerTest.UNOServer.Jugador jugador);
+        System.Threading.Tasks.Task CrearSalaAsync(UNOServerTest.JuegoUNOServicioTest.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/UnirseASala")]
-        void UnirseASala(UNOServerTest.UNOServer.Sala salaAUnirse, UNOServerTest.UNOServer.Jugador jugador);
+        void UnirseASala(UNOServerTest.JuegoUNOServicioTest.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/UnirseASala")]
-        System.Threading.Tasks.Task UnirseASalaAsync(UNOServerTest.UNOServer.Sala salaAUnirse, UNOServerTest.UNOServer.Jugador jugador);
+        System.Threading.Tasks.Task UnirseASalaAsync(UNOServerTest.JuegoUNOServicioTest.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/SalirDeSala")]
         void SalirDeSala(string idSala, string nickname);
@@ -610,32 +610,32 @@ namespace UNOServerTest.UNOServer {
         System.Threading.Tasks.Task IniciarPartidaAsync(string idSala);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RepartirCartas")]
-        void RepartirCartas(UNOServerTest.UNOServer.Sala sala);
+        void RepartirCartas(UNOServerTest.JuegoUNOServicioTest.Sala sala);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RepartirCartas")]
-        System.Threading.Tasks.Task RepartirCartasAsync(UNOServerTest.UNOServer.Sala sala);
+        System.Threading.Tasks.Task RepartirCartasAsync(UNOServerTest.JuegoUNOServicioTest.Sala sala);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IAdministrarJuegoCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala")]
-        void NotificarCreacionDeSala(UNOServerTest.UNOServer.Sala salaCreada);
+        void NotificarCreacionDeSala(UNOServerTest.JuegoUNOServicioTest.Sala salaCreada);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarUnionASala")]
-        void NotificarUnionASala(UNOServerTest.UNOServer.ResultadoUnionSala resultado);
+        void NotificarUnionASala(UNOServerTest.JuegoUNOServicioTest.ResultadoUnionSala resultado);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarSala")]
         void ActualizarSala(string[] jugadores);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerInformacionDeSala")]
-        void ObtenerInformacionDeSala(UNOServerTest.UNOServer.Sala sala);
+        void ObtenerInformacionDeSala(UNOServerTest.JuegoUNOServicioTest.Sala sala);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AgregarNuevoJugador")]
-        void AgregarNuevoJugador(UNOServerTest.UNOServer.Jugador nuevoJugador);
+        void AgregarNuevoJugador(UNOServerTest.JuegoUNOServicioTest.Jugador nuevoJugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/SacarJugador")]
-        void SacarJugador(UNOServerTest.UNOServer.Jugador jugadorASacar);
+        void SacarJugador(UNOServerTest.JuegoUNOServicioTest.Jugador jugadorASacar);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarSalidaDeSala")]
         void NotificarSalidaDeSala();
@@ -647,19 +647,19 @@ namespace UNOServerTest.UNOServer {
         void EliminarCreador();
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarInicioPartida")]
-        void NotificarInicioPartida(UNOServerTest.UNOServer.Sala sala);
+        void NotificarInicioPartida(UNOServerTest.JuegoUNOServicioTest.Sala sala);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerMaso")]
         void ObtenerMaso();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAdministrarJuegoChannel : UNOServerTest.UNOServer.IAdministrarJuego, System.ServiceModel.IClientChannel {
+    public interface IAdministrarJuegoChannel : UNOServerTest.JuegoUNOServicioTest.IAdministrarJuego, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AdministrarJuegoClient : System.ServiceModel.DuplexClientBase<UNOServerTest.UNOServer.IAdministrarJuego>, UNOServerTest.UNOServer.IAdministrarJuego {
+    public partial class AdministrarJuegoClient : System.ServiceModel.DuplexClientBase<UNOServerTest.JuegoUNOServicioTest.IAdministrarJuego>, UNOServerTest.JuegoUNOServicioTest.IAdministrarJuego {
         
         public AdministrarJuegoClient(System.ServiceModel.InstanceContext callbackInstance) : 
                 base(callbackInstance) {
@@ -681,19 +681,19 @@ namespace UNOServerTest.UNOServer {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void CrearSala(UNOServerTest.UNOServer.Sala nuevaSala, UNOServerTest.UNOServer.Jugador jugador) {
+        public void CrearSala(UNOServerTest.JuegoUNOServicioTest.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
             base.Channel.CrearSala(nuevaSala, jugador);
         }
         
-        public System.Threading.Tasks.Task CrearSalaAsync(UNOServerTest.UNOServer.Sala nuevaSala, UNOServerTest.UNOServer.Jugador jugador) {
+        public System.Threading.Tasks.Task CrearSalaAsync(UNOServerTest.JuegoUNOServicioTest.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
             return base.Channel.CrearSalaAsync(nuevaSala, jugador);
         }
         
-        public void UnirseASala(UNOServerTest.UNOServer.Sala salaAUnirse, UNOServerTest.UNOServer.Jugador jugador) {
+        public void UnirseASala(UNOServerTest.JuegoUNOServicioTest.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
             base.Channel.UnirseASala(salaAUnirse, jugador);
         }
         
-        public System.Threading.Tasks.Task UnirseASalaAsync(UNOServerTest.UNOServer.Sala salaAUnirse, UNOServerTest.UNOServer.Jugador jugador) {
+        public System.Threading.Tasks.Task UnirseASalaAsync(UNOServerTest.JuegoUNOServicioTest.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
             return base.Channel.UnirseASalaAsync(salaAUnirse, jugador);
         }
         
@@ -713,11 +713,11 @@ namespace UNOServerTest.UNOServer {
             return base.Channel.IniciarPartidaAsync(idSala);
         }
         
-        public void RepartirCartas(UNOServerTest.UNOServer.Sala sala) {
+        public void RepartirCartas(UNOServerTest.JuegoUNOServicioTest.Sala sala) {
             base.Channel.RepartirCartas(sala);
         }
         
-        public System.Threading.Tasks.Task RepartirCartasAsync(UNOServerTest.UNOServer.Sala sala) {
+        public System.Threading.Tasks.Task RepartirCartasAsync(UNOServerTest.JuegoUNOServicioTest.Sala sala) {
             return base.Channel.RepartirCartasAsync(sala);
         }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="06mUwqfY9mqnsLmUxDEibxm3zis=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Tgs3ri+9X32Jv4CWQzekp6ecPRA=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IRegistrarJugador">
       <properties>
@@ -475,7 +475,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IRegistrarJugador" contract="UNOServer.IRegistrarJugador" bindingType="netTcpBinding" address="net.tcp://localhost:8090/UNO.Contratos" bindingConfiguration="NetTcpBinding_IRegistrarJugador">
+    <endpoint name="NetTcpBinding_IRegistrarJugador" contract="JuegoUNOServicioTest.IRegistrarJugador" bindingType="netTcpBinding" address="net.tcp://localhost:8090/UNO.Contratos" bindingConfiguration="NetTcpBinding_IRegistrarJugador">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.tcp://localhost:8090/UNO.Contratos</serializedValue>
@@ -490,7 +490,7 @@
           <serializedValue>NetTcpBinding_IRegistrarJugador</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>UNOServer.IRegistrarJugador</serializedValue>
+          <serializedValue>JuegoUNOServicioTest.IRegistrarJugador</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -560,7 +560,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="NetTcpBinding_ILogin" contract="UNOServer.ILogin" bindingType="netTcpBinding" address="net.tcp://localhost:8090/UNO.Contratos" bindingConfiguration="NetTcpBinding_ILogin">
+    <endpoint name="NetTcpBinding_ILogin" contract="JuegoUNOServicioTest.ILogin" bindingType="netTcpBinding" address="net.tcp://localhost:8090/UNO.Contratos" bindingConfiguration="NetTcpBinding_ILogin">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.tcp://localhost:8090/UNO.Contratos</serializedValue>
@@ -575,7 +575,7 @@
           <serializedValue>NetTcpBinding_ILogin</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>UNOServer.ILogin</serializedValue>
+          <serializedValue>JuegoUNOServicioTest.ILogin</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -645,7 +645,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="NetTcpBinding_IPerfil" contract="UNOServer.IPerfil" bindingType="netTcpBinding" address="net.tcp://localhost:8090/UNO.Contratos" bindingConfiguration="NetTcpBinding_IPerfil">
+    <endpoint name="NetTcpBinding_IPerfil" contract="JuegoUNOServicioTest.IPerfil" bindingType="netTcpBinding" address="net.tcp://localhost:8090/UNO.Contratos" bindingConfiguration="NetTcpBinding_IPerfil">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.tcp://localhost:8090/UNO.Contratos</serializedValue>
@@ -660,7 +660,7 @@
           <serializedValue>NetTcpBinding_IPerfil</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>UNOServer.IPerfil</serializedValue>
+          <serializedValue>JuegoUNOServicioTest.IPerfil</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -730,7 +730,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="NetTcpBinding_IAdministrarJuego" contract="UNOServer.IAdministrarJuego" bindingType="netTcpBinding" address="net.tcp://localhost:8090/UNO.Contratos" bindingConfiguration="NetTcpBinding_IAdministrarJuego">
+    <endpoint name="NetTcpBinding_IAdministrarJuego" contract="JuegoUNOServicioTest.IAdministrarJuego" bindingType="netTcpBinding" address="net.tcp://localhost:8090/UNO.Contratos" bindingConfiguration="NetTcpBinding_IAdministrarJuego">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.tcp://localhost:8090/UNO.Contratos</serializedValue>
@@ -745,7 +745,7 @@
           <serializedValue>NetTcpBinding_IAdministrarJuego</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>UNOServer.IAdministrarJuego</serializedValue>
+          <serializedValue>JuegoUNOServicioTest.IAdministrarJuego</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
