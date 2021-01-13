@@ -4,15 +4,11 @@
 \begin{DoxyCompactItemize}
 \item 
 class {\bfseries Generador\+Clave}
-\begin{DoxyCompactList}\small\item\em Implementa la lógica para generar una clave de validación. \end{DoxyCompactList}\item 
+\item 
 interface \textbf{ IPerfil}
 \begin{DoxyCompactList}\small\item\em Expone métodos para la administración del perfil de un Jugador. \end{DoxyCompactList}\item 
 interface \textbf{ IPerfil\+Callback}
 \begin{DoxyCompactList}\small\item\em Interfaz que expone métodos para enviar información del Jugador al cliente. \end{DoxyCompactList}\item 
-interface \textbf{ IRecuperar\+Cuenta}
-\begin{DoxyCompactList}\small\item\em Interfaz de servicio para recuperar la cuenta de un Jugador. \end{DoxyCompactList}\item 
-interface \textbf{ IRecuperar\+Cuenta\+Callback}
-\begin{DoxyCompactList}\small\item\em Interfaz para la recuperación de una cuenta. \end{DoxyCompactList}\item 
 interface \textbf{ IRegistrar\+Jugador}
 \begin{DoxyCompactList}\small\item\em Interfaz comunicarse con el servidor y realizar operaciones del registro de un Jugador. \end{DoxyCompactList}\item 
 interface \textbf{ IRegistrar\+Jugador\+Callback}
@@ -25,7 +21,7 @@ enum class \textbf{ Resultado\+Registro} \{ \textbf{ Registro\+Exitoso} = 1
 , \textbf{ Usuario\+Ya\+Existe} = 3
 , \textbf{ Correo\+Ya\+Existe} = 4
  \}
-\begin{DoxyCompactList}\small\item\em Posibles resultados que tiene un registro hecho \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -35,25 +31,21 @@ enum class \textbf{ Resultado\+Registro} \{ \textbf{ Registro\+Exitoso} = 1
 \doxysubsubsection{ResultadoRegistro}
 {\footnotesize\ttfamily enum \textbf{ UNO.\+Contratos.\+Administrar\+Jugador.\+Resultado\+Registro}\hspace{0.3cm}{\ttfamily [strong]}}
 
-
-
-Posibles resultados que tiene un registro hecho 
-
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{RegistroExitoso@{RegistroExitoso}!UNO.Contratos.AdministrarJugador@{UNO.Contratos.AdministrarJugador}}\index{UNO.Contratos.AdministrarJugador@{UNO.Contratos.AdministrarJugador}!RegistroExitoso@{RegistroExitoso}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_administrar_jugador_a470791768f61744c6d120bdbe281d4dba2c79ef60cd292a6d21e1dd1f06871afb}} 
-Registro\+Exitoso&El registro concluyo exitosamente \\
+Registro\+Exitoso&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ErrorRegistro@{ErrorRegistro}!UNO.Contratos.AdministrarJugador@{UNO.Contratos.AdministrarJugador}}\index{UNO.Contratos.AdministrarJugador@{UNO.Contratos.AdministrarJugador}!ErrorRegistro@{ErrorRegistro}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_administrar_jugador_a470791768f61744c6d120bdbe281d4dba140402f629a22e74430ae9110f8e86f4}} 
-Error\+Registro&Ocurrio un error durante el registro \\
+Error\+Registro&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{UsuarioYaExiste@{UsuarioYaExiste}!UNO.Contratos.AdministrarJugador@{UNO.Contratos.AdministrarJugador}}\index{UNO.Contratos.AdministrarJugador@{UNO.Contratos.AdministrarJugador}!UsuarioYaExiste@{UsuarioYaExiste}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_administrar_jugador_a470791768f61744c6d120bdbe281d4dba7ac6b6974600241f30b0adba7b5be599}} 
-Usuario\+Ya\+Existe&El usuario que se intenta registrar ya existe \\
+Usuario\+Ya\+Existe&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CorreoYaExiste@{CorreoYaExiste}!UNO.Contratos.AdministrarJugador@{UNO.Contratos.AdministrarJugador}}\index{UNO.Contratos.AdministrarJugador@{UNO.Contratos.AdministrarJugador}!CorreoYaExiste@{CorreoYaExiste}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_administrar_jugador_a470791768f61744c6d120bdbe281d4dba5935a00a3543ac4696ac3b4108481159}} 
-Correo\+Ya\+Existe&El correo ingresado ya cuenta con un registro en el juego \\
+Correo\+Ya\+Existe&\\
 \hline
 
 \end{DoxyEnumFields}

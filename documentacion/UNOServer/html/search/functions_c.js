@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tomarcarta_303',['TomarCarta',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego.html#ac58cbaae937b668b5c6cc7b9c8a4d1d0',1,'UNO.Contratos.LogicaJuego.IAdministrarJuego.TomarCarta()'],['../class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio.html#a6eb5597933cc28c1ebcff4877e1b9447',1,'UNO.Contratos.JuegoUNOServicio.TomarCarta()']]]
+  ['verificarclave_228',['VerificarClave',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador.html#a895a9118e313dc10305d7ae85b9d15a0',1,'UNO.Contratos.AdministrarJugador.IRegistrarJugador.VerificarClave()'],['../class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio.html#aef9436adb4d4aa548e094b630f4db280',1,'UNO.Contratos.JuegoUNOServicio.VerificarClave()']]]
 ];

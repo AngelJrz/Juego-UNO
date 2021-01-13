@@ -1,22 +1,6 @@
 var searchData=
 [
-  ['iadministrarjuego_386',['IAdministrarJuego',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['iadministrarjuegocallback_387',['IAdministrarJuegoCallback',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['iadministrarjuegochannel_388',['IAdministrarJuegoChannel',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_channel.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['idioma_389',['Idioma',['../class_u_n_o_gui_1_1_logica_1_1_idioma.html',1,'UNOGui::Logica']]],
-  ['ilogin_390',['ILogin',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_login.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['ilogincallback_391',['ILoginCallback',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_login_callback.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['iloginchannel_392',['ILoginChannel',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_login_channel.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['indexconverter_393',['IndexConverter',['../class_u_n_o_gui_1_1_paginas_1_1_index_converter.html',1,'UNOGui::Paginas']]],
-  ['ingresodecorreo_394',['IngresoDeCorreo',['../class_u_n_o_gui_1_1_paginas_1_1_ingreso_de_correo.html',1,'UNOGui::Paginas']]],
-  ['inicio_395',['Inicio',['../class_u_n_o_gui_1_1_paginas_1_1_inicio.html',1,'UNOGui::Paginas']]],
-  ['iperfil_396',['IPerfil',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_perfil.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['iperfilcallback_397',['IPerfilCallback',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_perfil_callback.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['iperfilchannel_398',['IPerfilChannel',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_perfil_channel.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['irecuperarcuenta_399',['IRecuperarCuenta',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_recuperar_cuenta.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['irecuperarcuentacallback_400',['IRecuperarCuentaCallback',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_recuperar_cuenta_callback.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['irecuperarcuentachannel_401',['IRecuperarCuentaChannel',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_recuperar_cuenta_channel.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['iregistrarjugador_402',['IRegistrarJugador',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_registrar_jugador.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['iregistrarjugadorcallback_403',['IRegistrarJugadorCallback',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_registrar_jugador_callback.html',1,'UNOGui::JuegoUNOServicio']]],
-  ['iregistrarjugadorchannel_404',['IRegistrarJugadorChannel',['../interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_registrar_jugador_channel.html',1,'UNOGui::JuegoUNOServicio']]]
+  ['juego_261',['Juego',['../class_u_n_o_gui_1_1_ventanas_1_1_juego.html',1,'UNOGui::Ventanas']]],
+  ['juegocallbackadmin_262',['JuegoCallbackAdmin',['../class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin.html',1,'UNOGui::Logica']]],
+  ['jugador_263',['Jugador',['../class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_jugador.html',1,'UNOGui::JuegoUNOServicio']]]
 ];

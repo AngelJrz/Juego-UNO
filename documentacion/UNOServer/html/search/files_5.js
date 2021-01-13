@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['iadministrarjuego_2ecs_212',['IAdministrarJuego.cs',['../_i_administrar_juego_8cs.html',1,'']]],
-  ['ijuegocallback_2ecs_213',['IJuegoCallback.cs',['../_i_juego_callback_8cs.html',1,'']]],
-  ['ilogin_2ecs_214',['ILogin.cs',['../_i_login_8cs.html',1,'']]],
-  ['ilogincallback_2ecs_215',['ILoginCallback.cs',['../_i_login_callback_8cs.html',1,'']]],
-  ['iperfil_2ecs_216',['IPerfil.cs',['../_i_perfil_8cs.html',1,'']]],
-  ['iperfilcallback_2ecs_217',['IPerfilCallback.cs',['../_i_perfil_callback_8cs.html',1,'']]],
-  ['irecuperarcuenta_2ecs_218',['IRecuperarCuenta.cs',['../_i_recuperar_cuenta_8cs.html',1,'']]],
-  ['irecuperarcuentacallback_2ecs_219',['IRecuperarCuentaCallback.cs',['../_i_recuperar_cuenta_callback_8cs.html',1,'']]],
-  ['iregistrarjugador_2ecs_220',['IRegistrarJugador.cs',['../_i_registrar_jugador_8cs.html',1,'']]],
-  ['iregistrarjugadorcallback_2ecs_221',['IRegistrarJugadorCallback.cs',['../_i_registrar_jugador_callback_8cs.html',1,'']]]
+  ['juegounomodel_2econtext_2ecs_173',['JuegoUNOModel.Context.cs',['../_juego_u_n_o_model_8_context_8cs.html',1,'']]],
+  ['juegounomodel_2ecs_174',['JuegoUNOModel.cs',['../_juego_u_n_o_model_8cs.html',1,'']]],
+  ['juegounomodel_2edesigner_2ecs_175',['JuegoUNOModel.Designer.cs',['../_juego_u_n_o_model_8_designer_8cs.html',1,'']]],
+  ['juegounoservicio_2ecs_176',['JuegoUNOServicio.cs',['../_juego_u_n_o_servicio_8cs.html',1,'']]],
+  ['jugador_2ecs_177',['Jugador.cs',['../_u_n_o_8_acceso_a_datos_2_jugador_8cs.html',1,'(Global Namespace)'],['../_u_n_o_8_dominio_2_jugador_8cs.html',1,'(Global Namespace)']]]
 ];

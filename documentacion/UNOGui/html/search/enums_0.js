@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['colorescartas_623',['ColoresCartas',['../namespace_u_n_o_gui_1_1_juego_u_n_o_servicio.html#ab6d5b3c9b168899f839ae6a4fe8c8bd0',1,'UNOGui::JuegoUNOServicio']]]
+  ['resultadologin_381',['ResultadoLogin',['../namespace_u_n_o_gui_1_1_juego_u_n_o_servicio.html#a94bd413609e7bce8e0b4487add1ec00a',1,'UNOGui::JuegoUNOServicio']]],
+  ['resultadoregistro_382',['ResultadoRegistro',['../namespace_u_n_o_gui_1_1_juego_u_n_o_servicio.html#a3eaf97ddd2901e28091fd6ef59a34241',1,'UNOGui::JuegoUNOServicio']]],
+  ['resultadounionsala_383',['ResultadoUnionSala',['../namespace_u_n_o_gui_1_1_juego_u_n_o_servicio.html#a6184ae33c0b6a2ab44909a185b275e6d',1,'UNOGui::JuegoUNOServicio']]]
 ];

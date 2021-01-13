@@ -1,39 +1,28 @@
 \doxysection{UNO.\+Contratos.\+Juego\+UNOServicio Class Reference}
 \label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio}\index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
-
-
-Establece la logica del servicio  
-
-
 Inheritance diagram for UNO.\+Contratos.\+Juego\+UNOServicio\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=0.777778cm]{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio}
+\includegraphics[height=0.972222cm]{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ Registrar\+Jugador} (\textbf{ Jugador} jugador)
-\begin{DoxyCompactList}\small\item\em REgistra un nuevo jugador en el sistema \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Verificar\+Clave} (string clave)
-\begin{DoxyCompactList}\small\item\em Verifica si la clave enviada por correo electronico es valida \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Cancelar\+Registro} ()
-\begin{DoxyCompactList}\small\item\em Cancela en registro del jugador en el sistema \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Enviar\+Clave\+De\+Nuevo} ()
-\begin{DoxyCompactList}\small\item\em Vuelve a enviar la clave asignada para la verificación al correo electronico ingresado \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Iniciar\+Sesion} (string nickname, string contraseña)
 \begin{DoxyCompactList}\small\item\em Inicia sesión de un Jugador existente en el juego. \end{DoxyCompactList}\item 
 void \textbf{ Cerrar\+Sesion} (string nickname)
-\begin{DoxyCompactList}\small\item\em Lógica para cerrar sesión de un Jugador. \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Buscar\+Jugador} (string nickname)
-\begin{DoxyCompactList}\small\item\em Nusca un jugador registrado en el sistema \end{DoxyCompactList}\item 
-void \textbf{ Enviar\+Clave\+Recuperacion} (\textbf{ Jugador} info\+Jugador)
-\begin{DoxyCompactList}\small\item\em Lógica para enviar la clave recuperación de cuenta. \end{DoxyCompactList}\item 
-void \textbf{ Verificar\+Clave\+Recuperacion} (string clave)
-\begin{DoxyCompactList}\small\item\em Lógica para verificar la clave de recuperación. \end{DoxyCompactList}\item 
-void \textbf{ Actualizar\+Contrasenia} (string contrasenia)
-\begin{DoxyCompactList}\small\item\em Lógica para actualizar la contraseña de un Jugador. \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Crear\+Sala} (\textbf{ Sala} nueva\+Sala, \textbf{ Jugador} jugador)
 \begin{DoxyCompactList}\small\item\em Lógica para crear una sala y que los jugadores se puedan unir. \end{DoxyCompactList}\item 
 void \textbf{ Unirse\+ASala} (\textbf{ Sala} sala\+AUnirse, \textbf{ Jugador} jugador)
@@ -41,167 +30,29 @@ void \textbf{ Unirse\+ASala} (\textbf{ Sala} sala\+AUnirse, \textbf{ Jugador} ju
 void \textbf{ Salir\+De\+Sala} (string id\+Sala, string nickname)
 \begin{DoxyCompactList}\small\item\em Lógica para eliminar al jugador de una sala. \end{DoxyCompactList}\item 
 void \textbf{ Iniciar\+Partida} (string id\+Sala)
-\begin{DoxyCompactList}\small\item\em Lógica para iniciar la partida en una sala. \end{DoxyCompactList}\item 
-void \textbf{ Colocar\+Carta\+Central} (\textbf{ Carta} carta\+Central, String id\+Sala\+Jugador)
-\begin{DoxyCompactList}\small\item\em Lógica para colocar la nueva carta central. \end{DoxyCompactList}\item 
-void \textbf{ Tomar\+Carta} (String id\+Sala\+Jugador, String nickname)
-\begin{DoxyCompactList}\small\item\em Lógica para tomar una carta del mazo. \end{DoxyCompactList}\item 
-void \textbf{ Anunciar\+Ganador} (String id\+Sala\+Jugador, \textbf{ Jugador} jugador\+Ganador)
-\begin{DoxyCompactList}\small\item\em Lógica para anunciar a los clientes el ganador de la partida. \end{DoxyCompactList}\item 
-void \textbf{ Actualizar\+Numero\+De\+Carta} (String id\+Sala\+Jugador, String nickname, String numero\+De\+Cartas)
-\begin{DoxyCompactList}\small\item\em Lógica para actualizar el número de cartas de un jugador. \end{DoxyCompactList}\item 
-void \textbf{ Actualizar\+Puntaje} (String id\+Sala\+Jugador, String nickname, int puntaje\+ASumar)
-\begin{DoxyCompactList}\small\item\em Lógica para actualizar el puntaje de un jugador en la sala. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-Establece la logica del servicio 
-
+\begin{DoxyCompactList}\small\item\em Inicia la partida en una sala. \end{DoxyCompactList}\item 
+void \textbf{ Repartir\+Cartas} (\textbf{ Sala} sala)
+\begin{DoxyCompactList}\small\item\em Reparte las cartas a los jugadores de una sala. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a759724cbea6fa683d54c7d1ada07befa}} 
-\index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!ActualizarContrasenia@{ActualizarContrasenia}}
-\index{ActualizarContrasenia@{ActualizarContrasenia}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
-\doxysubsubsection{ActualizarContrasenia()}
-{\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Actualizar\+Contrasenia (\begin{DoxyParamCaption}\item[{string}]{contrasenia }\end{DoxyParamCaption})}
-
-
-
-Lógica para actualizar la contraseña de un Jugador. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em contrasenia} & Nueva contraseña\\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a0f64452fe60f4905daef409006009a6c}} 
-\index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!ActualizarNumeroDeCarta@{ActualizarNumeroDeCarta}}
-\index{ActualizarNumeroDeCarta@{ActualizarNumeroDeCarta}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
-\doxysubsubsection{ActualizarNumeroDeCarta()}
-{\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Actualizar\+Numero\+De\+Carta (\begin{DoxyParamCaption}\item[{String}]{id\+Sala\+Jugador,  }\item[{String}]{nickname,  }\item[{String}]{numero\+De\+Cartas }\end{DoxyParamCaption})}
-
-
-
-Lógica para actualizar el número de cartas de un jugador. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em id\+Sala\+Jugador} & Id de sala donde se actualizará\\
-\hline
-{\em nickname} & Nickname del jugador que se actualizará su número de carta\\
-\hline
-{\em numero\+De\+Cartas} & Número de cartas que se actualizará\\
-\hline
-\end{DoxyParams}
-
-
-Implements \textbf{ UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_a207b89f5060572a0d490166d231b2906}.
-
-\mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a9f54b63b1c4a29da936e5618ba3348fd}} 
-\index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!ActualizarPuntaje@{ActualizarPuntaje}}
-\index{ActualizarPuntaje@{ActualizarPuntaje}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
-\doxysubsubsection{ActualizarPuntaje()}
-{\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Actualizar\+Puntaje (\begin{DoxyParamCaption}\item[{String}]{id\+Sala\+Jugador,  }\item[{String}]{nickname,  }\item[{int}]{puntaje\+ASumar }\end{DoxyParamCaption})}
-
-
-
-Lógica para actualizar el puntaje de un jugador en la sala. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em id\+Sala\+Jugador} & Id de sala donde se actualizará\\
-\hline
-{\em nickname} & Nickname del jugador que se actualizará su puntaje\\
-\hline
-{\em puntaje\+ASumar} & Puntaje a sumar en el jugador\\
-\hline
-\end{DoxyParams}
-
-
-Implements \textbf{ UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_aa4404b363529cde5452e013690d62f0e}.
-
-\mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a508df912374c5b908fad611e514003ae}} 
-\index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!AnunciarGanador@{AnunciarGanador}}
-\index{AnunciarGanador@{AnunciarGanador}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
-\doxysubsubsection{AnunciarGanador()}
-{\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Anunciar\+Ganador (\begin{DoxyParamCaption}\item[{String}]{id\+Sala\+Jugador,  }\item[{\textbf{ Jugador}}]{jugador\+Ganador }\end{DoxyParamCaption})}
-
-
-
-Lógica para anunciar a los clientes el ganador de la partida. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em id\+Sala\+Jugador} & Id de la sala donde ganó el jugador\\
-\hline
-{\em jugador\+Ganador} & Jugador que ganó la partida\\
-\hline
-\end{DoxyParams}
-
-
-Implements \textbf{ UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_a9e07f5429a79d779b65e98cf7883b311}.
-
 \mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_ae192038bd181460e4e82c4bfcb269bb2}} 
 \index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!BuscarJugador@{BuscarJugador}}
 \index{BuscarJugador@{BuscarJugador}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
 \doxysubsubsection{BuscarJugador()}
 {\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Buscar\+Jugador (\begin{DoxyParamCaption}\item[{string}]{nickname }\end{DoxyParamCaption})}
 
-
-
-Nusca un jugador registrado en el sistema 
-
-
-\begin{DoxyParams}{Parameters}
-{\em nickname} & Nickname del jugador que se desea buscar\\
-\hline
-\end{DoxyParams}
 \mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a9971c4de7c738e96e459ad4256f6a41d}} 
 \index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!CancelarRegistro@{CancelarRegistro}}
 \index{CancelarRegistro@{CancelarRegistro}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
 \doxysubsubsection{CancelarRegistro()}
 {\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Cancelar\+Registro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-Cancela en registro del jugador en el sistema 
-
 \mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_ad63d6a34b3e1afbff4cec6d5f1e4a962}} 
 \index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!CerrarSesion@{CerrarSesion}}
 \index{CerrarSesion@{CerrarSesion}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
 \doxysubsubsection{CerrarSesion()}
 {\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Cerrar\+Sesion (\begin{DoxyParamCaption}\item[{string}]{nickname }\end{DoxyParamCaption})}
-
-
-
-Lógica para cerrar sesión de un Jugador. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em nickname} & Nickname del Jugador a cerrar sesión\\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a7f9e274b8da1005dc97e7cd1807786d3}} 
-\index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!ColocarCartaCentral@{ColocarCartaCentral}}
-\index{ColocarCartaCentral@{ColocarCartaCentral}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
-\doxysubsubsection{ColocarCartaCentral()}
-{\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Colocar\+Carta\+Central (\begin{DoxyParamCaption}\item[{\textbf{ Carta}}]{carta\+Central,  }\item[{String}]{id\+Sala\+Jugador }\end{DoxyParamCaption})}
-
-
-
-Lógica para colocar la nueva carta central. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em carta\+Central} & Nueva carta central\\
-\hline
-{\em id\+Sala\+Jugador} & Id de la sala a colocar la carta\\
-\hline
-\end{DoxyParams}
-
-
-Implements \textbf{ UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_af37275e4ea084c355281ef400ba93c1d}.
 
 \mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a70add8578d5c7871e98676ffba93bfc2}} 
 \index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!CrearSala@{CrearSala}}
@@ -226,30 +77,6 @@ Lógica para crear una sala y que los jugadores se puedan unir.
 \doxysubsubsection{EnviarClaveDeNuevo()}
 {\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Enviar\+Clave\+De\+Nuevo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-Vuelve a enviar la clave asignada para la verificación al correo electronico ingresado 
-
-\mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a8110c57cb7a16c91d758a91a79a35168}} 
-\index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!EnviarClaveRecuperacion@{EnviarClaveRecuperacion}}
-\index{EnviarClaveRecuperacion@{EnviarClaveRecuperacion}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
-\doxysubsubsection{EnviarClaveRecuperacion()}
-{\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Enviar\+Clave\+Recuperacion (\begin{DoxyParamCaption}\item[{\textbf{ Jugador}}]{info\+Jugador }\end{DoxyParamCaption})}
-
-
-
-Lógica para enviar la clave recuperación de cuenta. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em info\+Jugador} & Jugador al que se enviará la clave\\
-\hline
-\end{DoxyParams}
-
-\begin{DoxyExceptions}{Exceptions}
-{\em Smtp\+Exception} & \\
-\hline
-\end{DoxyExceptions}
 \mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a4b5bc544981afebd743efff8347f169a}} 
 \index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!IniciarPartida@{IniciarPartida}}
 \index{IniciarPartida@{IniciarPartida}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
@@ -258,11 +85,11 @@ Lógica para enviar la clave recuperación de cuenta.
 
 
 
-Lógica para iniciar la partida en una sala. 
+Inicia la partida en una sala. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em id\+Sala} & Id de la sala donde se inicia la partida\\
+{\em id\+Sala} & Id de sala donde se inicia la partida\\
 \hline
 \end{DoxyParams}
 
@@ -292,15 +119,25 @@ Inicia sesión de un Jugador existente en el juego.
 \doxysubsubsection{RegistrarJugador()}
 {\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Registrar\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ Jugador}}]{jugador }\end{DoxyParamCaption})}
 
+\mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a79e576b1d53a49c5a1ddd70fc70dcaf7}} 
+\index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!RepartirCartas@{RepartirCartas}}
+\index{RepartirCartas@{RepartirCartas}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
+\doxysubsubsection{RepartirCartas()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Repartir\+Cartas (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{sala }\end{DoxyParamCaption})}
 
 
-REgistra un nuevo jugador en el sistema 
+
+Reparte las cartas a los jugadores de una sala. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em jugador} & Jugador que se desa registrar\\
+{\em sala} & Sala en la cual se van a repartir las cartas\\
 \hline
 \end{DoxyParams}
+
+
+Implements \textbf{ UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_ab9ed543c7c8f722dfdbba61acc2cf0a3}.
+
 \mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_aa9434d42e3eff5c3e14f989d4fe6226f}} 
 \index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!SalirDeSala@{SalirDeSala}}
 \index{SalirDeSala@{SalirDeSala}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
@@ -321,27 +158,6 @@ Lógica para eliminar al jugador de una sala.
 
 
 Implements \textbf{ UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_adbd39e47131d18cd598be3b0f09a19bf}.
-
-\mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a6eb5597933cc28c1ebcff4877e1b9447}} 
-\index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!TomarCarta@{TomarCarta}}
-\index{TomarCarta@{TomarCarta}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
-\doxysubsubsection{TomarCarta()}
-{\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Tomar\+Carta (\begin{DoxyParamCaption}\item[{String}]{id\+Sala\+Jugador,  }\item[{String}]{nickname }\end{DoxyParamCaption})}
-
-
-
-Lógica para tomar una carta del mazo. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em id\+Sala\+Jugador} & Id de la sala donde se tomará la carta\\
-\hline
-{\em nickname} & Nickname del jugador que tomará la carta\\
-\hline
-\end{DoxyParams}
-
-
-Implements \textbf{ UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_ac58cbaae937b668b5c6cc7b9c8a4d1d0}.
 
 \mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a3ce44a9b052f0f588ae5a629228a8a6f}} 
 \index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!UnirseASala@{UnirseASala}}
@@ -368,40 +184,10 @@ Lógica para unir un jugador a la sala.
 
 
 
-Verifica si la clave enviada por correo electronico es valida 
-
-
-\begin{DoxyParams}{Parameters}
-{\em clave} & Clave enviada por correo electronico\\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a4c053779094c29765d7b8bf9316d039c}} 
-\index{UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}!VerificarClaveRecuperacion@{VerificarClaveRecuperacion}}
-\index{VerificarClaveRecuperacion@{VerificarClaveRecuperacion}!UNO.Contratos.JuegoUNOServicio@{UNO.Contratos.JuegoUNOServicio}}
-\doxysubsubsection{VerificarClaveRecuperacion()}
-{\footnotesize\ttfamily void UNO.\+Contratos.\+Juego\+UNOServicio.\+Verificar\+Clave\+Recuperacion (\begin{DoxyParamCaption}\item[{string}]{clave }\end{DoxyParamCaption})}
-
-
-
-Lógica para verificar la clave de recuperación. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em clave} & Clave a verificar\\
-\hline
-\end{DoxyParams}
-
-\begin{DoxyExceptions}{Exceptions}
-{\em Smtp\+Exception} & \\
-\hline
-\end{DoxyExceptions}
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\textbf{ Juego\+UNOServicio.\+cs}\item 
 C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\textbf{ Login\+Servicio.\+cs}\item 
 C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\textbf{ Perfil\+Servicio.\+cs}\item 
-C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\textbf{ Servicio\+De\+Recuperacion.\+cs}\item 
 C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\textbf{ Servicio\+De\+Sala.\+cs}\item 
 C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\textbf{ Servicio\+Partida.\+cs}\end{DoxyCompactItemize}

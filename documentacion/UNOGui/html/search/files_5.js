@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['juego_2eg_2ecs_457',['Juego.g.cs',['../_juego_8g_8cs.html',1,'']]],
-  ['juego_2eg_2ei_2ecs_458',['Juego.g.i.cs',['../_juego_8g_8i_8cs.html',1,'']]],
-  ['juego_2examl_2ecs_459',['Juego.xaml.cs',['../_juego_8xaml_8cs.html',1,'']]]
+  ['mensaje_2examl_2ecs_298',['Mensaje.xaml.cs',['../_mensaje_8xaml_8cs.html',1,'']]],
+  ['menuprincipal_2examl_2ecs_299',['MenuPrincipal.xaml.cs',['../_menu_principal_8xaml_8cs.html',1,'']]],
+  ['miperfil_2examl_2ecs_300',['MiPerfil.xaml.cs',['../_mi_perfil_8xaml_8cs.html',1,'']]]
 ];

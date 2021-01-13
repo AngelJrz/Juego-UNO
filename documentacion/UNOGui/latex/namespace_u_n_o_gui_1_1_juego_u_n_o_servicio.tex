@@ -7,10 +7,6 @@ class \textbf{ Jugador}
 \item 
 class \textbf{ Sala}
 \item 
-class \textbf{ Partida}
-\item 
-class \textbf{ Carta}
-\item 
 interface \textbf{ IRegistrar\+Jugador}
 \item 
 interface \textbf{ IRegistrar\+Jugador\+Callback}
@@ -42,14 +38,6 @@ interface \textbf{ IAdministrar\+Juego\+Callback}
 interface \textbf{ IAdministrar\+Juego\+Channel}
 \item 
 class \textbf{ Administrar\+Juego\+Client}
-\item 
-interface \textbf{ IRecuperar\+Cuenta}
-\item 
-interface \textbf{ IRecuperar\+Cuenta\+Callback}
-\item 
-interface \textbf{ IRecuperar\+Cuenta\+Channel}
-\item 
-class \textbf{ Recuperar\+Cuenta\+Client}
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -66,97 +54,15 @@ enum class \textbf{ Resultado\+Login} \+: int \{ \textbf{ No\+Existe\+Nickname} 
 , \textbf{ Sesion\+Iniciada} = 4
  \}
 \item 
-enum class \textbf{ Colores\+Cartas} \+: int \{ \newline
-\textbf{ Rojo} = 1
-, \textbf{ Amarillo} = 2
-, \textbf{ Verde} = 3
-, \textbf{ Azul} = 4
-, \newline
-\textbf{ Negro} = 5
- \}
-\item 
-enum class \textbf{ Efectos\+Carta} \+: int \{ \newline
-\textbf{ Sin\+Efecto} = 0
-, \textbf{ Cancelar} = 10
-, \textbf{ Reversa} = 20
-, \textbf{ Toma\+Dos} = 30
-, \newline
-\textbf{ Toma\+Cuatro} = 40
-, \textbf{ Multi\+Color} = 50
- \}
-\item 
-enum class \textbf{ Resultado\+Union\+Sala} \+: int \{ \newline
-\textbf{ No\+Existe\+Id} = 1
+enum class \textbf{ Resultado\+Union\+Sala} \+: int \{ \textbf{ No\+Existe\+Id} = 1
 , \textbf{ Contraseña\+Incorrecta} = 2
 , \textbf{ No\+Hay\+Cupo} = 3
 , \textbf{ Union\+Exitosa} = 4
-, \newline
-\textbf{ En\+Juego} = 5
  \}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
-\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_ab6d5b3c9b168899f839ae6a4fe8c8bd0}} 
-\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!ColoresCartas@{ColoresCartas}}
-\index{ColoresCartas@{ColoresCartas}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}
-\doxysubsubsection{ColoresCartas}
-{\footnotesize\ttfamily enum \textbf{ UNOGui.\+Juego\+UNOServicio.\+Colores\+Cartas} \+: int\hspace{0.3cm}{\ttfamily [strong]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Rojo@{Rojo}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!Rojo@{Rojo}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_ab6d5b3c9b168899f839ae6a4fe8c8bd0a3ded744c42b8b6f3f614d8de50b35a26}} 
-Rojo&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Amarillo@{Amarillo}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!Amarillo@{Amarillo}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_ab6d5b3c9b168899f839ae6a4fe8c8bd0a911b4130e2757091497334955f022d33}} 
-Amarillo&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Verde@{Verde}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!Verde@{Verde}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_ab6d5b3c9b168899f839ae6a4fe8c8bd0a14e6261890e07b8ec2c28ada3961b427}} 
-Verde&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Azul@{Azul}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!Azul@{Azul}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_ab6d5b3c9b168899f839ae6a4fe8c8bd0a582d2648b6346370231ebef979dab3f3}} 
-Azul&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Negro@{Negro}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!Negro@{Negro}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_ab6d5b3c9b168899f839ae6a4fe8c8bd0a660e413be78188bf2aa293b75e86c3dd}} 
-Negro&\\
-\hline
-
-\end{DoxyEnumFields}
-\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_a42cf6cd3447795150e046c10c4650342}} 
-\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!EfectosCarta@{EfectosCarta}}
-\index{EfectosCarta@{EfectosCarta}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}
-\doxysubsubsection{EfectosCarta}
-{\footnotesize\ttfamily enum \textbf{ UNOGui.\+Juego\+UNOServicio.\+Efectos\+Carta} \+: int\hspace{0.3cm}{\ttfamily [strong]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SinEfecto@{SinEfecto}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!SinEfecto@{SinEfecto}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_a42cf6cd3447795150e046c10c4650342aa4d49ca30e798e23faec01e606a86dcf}} 
-Sin\+Efecto&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Cancelar@{Cancelar}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!Cancelar@{Cancelar}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_a42cf6cd3447795150e046c10c4650342a847607d75e504090b5aff16a6e6c8351}} 
-Cancelar&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Reversa@{Reversa}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!Reversa@{Reversa}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_a42cf6cd3447795150e046c10c4650342a4ab004107e26624ed7f17eaa0ec16dac}} 
-Reversa&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TomaDos@{TomaDos}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!TomaDos@{TomaDos}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_a42cf6cd3447795150e046c10c4650342a3d775cb7f60c5b26ab58b8bccfdd110f}} 
-Toma\+Dos&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TomaCuatro@{TomaCuatro}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!TomaCuatro@{TomaCuatro}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_a42cf6cd3447795150e046c10c4650342a3a26246faaf8287f7eff12d1bbe7710c}} 
-Toma\+Cuatro&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MultiColor@{MultiColor}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!MultiColor@{MultiColor}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_a42cf6cd3447795150e046c10c4650342af70c02f5646478e8deb981cc28cfe6a1}} 
-Multi\+Color&\\
-\hline
-
-\end{DoxyEnumFields}
 \mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_a94bd413609e7bce8e0b4487add1ec00a}} 
 \index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!ResultadoLogin@{ResultadoLogin}}
 \index{ResultadoLogin@{ResultadoLogin}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}
@@ -226,10 +132,6 @@ No\+Hay\+Cupo&\\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{UnionExitosa@{UnionExitosa}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!UnionExitosa@{UnionExitosa}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_a6184ae33c0b6a2ab44909a185b275e6da666ea6c4e1597c4ab6cca3da99bdf591}} 
 Union\+Exitosa&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{EnJuego@{EnJuego}!UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}}\index{UNOGui.JuegoUNOServicio@{UNOGui.JuegoUNOServicio}!EnJuego@{EnJuego}}}\mbox{\label{namespace_u_n_o_gui_1_1_juego_u_n_o_servicio_a6184ae33c0b6a2ab44909a185b275e6da1b7263f3208fd1092f37e0f48981767e}} 
-En\+Juego&\\
 \hline
 
 \end{DoxyEnumFields}
