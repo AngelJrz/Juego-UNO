@@ -1,0 +1,230 @@
+\doxysection{UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego Interface Reference}
+\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego}\index{UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}}
+
+
+Interfaz encargada de administrar los métodos que pueden llamar desde el cliente.  
+
+
+Inheritance diagram for UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Crear\+Sala} (\textbf{ Sala} nueva\+Sala, \textbf{ Dominio.\+Jugador} jugador)
+\begin{DoxyCompactList}\small\item\em Crea una sala para que los jugadores se puedan unir. \end{DoxyCompactList}\item 
+void \textbf{ Unirse\+ASala} (\textbf{ Sala} sala\+AUnirse, \textbf{ Dominio.\+Jugador} jugador)
+\begin{DoxyCompactList}\small\item\em Une un jugador a la sala. \end{DoxyCompactList}\item 
+void \textbf{ Salir\+De\+Sala} (string id\+Sala, string nickname)
+\begin{DoxyCompactList}\small\item\em Elimina al jugador de una sala. \end{DoxyCompactList}\item 
+void \textbf{ Iniciar\+Partida} (string id\+Sala)
+\begin{DoxyCompactList}\small\item\em Inicia la partida en una sala. \end{DoxyCompactList}\item 
+void \textbf{ Colocar\+Carta\+Central} (\textbf{ Carta} carta\+Central, String id\+Sala\+Jugador)
+\begin{DoxyCompactList}\small\item\em Actualiza la carta central del tablero. \end{DoxyCompactList}\item 
+void \textbf{ Tomar\+Carta} (String id\+Sala\+Jugador, String nickname)
+\begin{DoxyCompactList}\small\item\em El jugador toma una carta del mazo. \end{DoxyCompactList}\item 
+void \textbf{ Anunciar\+Ganador} (String id\+Sala\+Jugador, \textbf{ Jugador} jugador\+Ganador)
+\begin{DoxyCompactList}\small\item\em Se anuncia el ganador de la partida a todos los clientes. \end{DoxyCompactList}\item 
+void \textbf{ Actualizar\+Numero\+De\+Carta} (String id\+Sala\+Jugador, String nickname, String numero\+De\+Cartas)
+\begin{DoxyCompactList}\small\item\em Actualiza el numero de cartas que tiene el jugador en la mano. \end{DoxyCompactList}\item 
+void \textbf{ Actualizar\+Puntaje} (String id\+Sala\+Jugador, String nickname, int puntaje\+ASumar)
+\begin{DoxyCompactList}\small\item\em Actualiza el puntaje del jugador en la partida. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interfaz encargada de administrar los métodos que pueden llamar desde el cliente. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_a207b89f5060572a0d490166d231b2906}} 
+\index{UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}!ActualizarNumeroDeCarta@{ActualizarNumeroDeCarta}}
+\index{ActualizarNumeroDeCarta@{ActualizarNumeroDeCarta}!UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}}
+\doxysubsubsection{ActualizarNumeroDeCarta()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego.\+Actualizar\+Numero\+De\+Carta (\begin{DoxyParamCaption}\item[{String}]{id\+Sala\+Jugador,  }\item[{String}]{nickname,  }\item[{String}]{numero\+De\+Cartas }\end{DoxyParamCaption})}
+
+
+
+Actualiza el numero de cartas que tiene el jugador en la mano. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Sala\+Jugador} & La sala a la que pertenece el usuario\\
+\hline
+{\em nickname} & Nombre del usuario a actualizar\\
+\hline
+{\em numero\+De\+Cartas} & Numero nuevo de cartas\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ UNO.\+Contratos.\+Juego\+UNOServicio} \doxyref{}{p.}{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a0f64452fe60f4905daef409006009a6c}.
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_aa4404b363529cde5452e013690d62f0e}} 
+\index{UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}!ActualizarPuntaje@{ActualizarPuntaje}}
+\index{ActualizarPuntaje@{ActualizarPuntaje}!UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}}
+\doxysubsubsection{ActualizarPuntaje()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego.\+Actualizar\+Puntaje (\begin{DoxyParamCaption}\item[{String}]{id\+Sala\+Jugador,  }\item[{String}]{nickname,  }\item[{int}]{puntaje\+ASumar }\end{DoxyParamCaption})}
+
+
+
+Actualiza el puntaje del jugador en la partida. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Sala\+Jugador} & La sala a la que pertenece el usuario\\
+\hline
+{\em nickname} & Nombre del usuario a actualizar\\
+\hline
+{\em puntaje\+ASumar} & Puntaje a sumar del jugador\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ UNO.\+Contratos.\+Juego\+UNOServicio} \doxyref{}{p.}{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a9f54b63b1c4a29da936e5618ba3348fd}.
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_a9e07f5429a79d779b65e98cf7883b311}} 
+\index{UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}!AnunciarGanador@{AnunciarGanador}}
+\index{AnunciarGanador@{AnunciarGanador}!UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}}
+\doxysubsubsection{AnunciarGanador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego.\+Anunciar\+Ganador (\begin{DoxyParamCaption}\item[{String}]{id\+Sala\+Jugador,  }\item[{\textbf{ Jugador}}]{jugador\+Ganador }\end{DoxyParamCaption})}
+
+
+
+Se anuncia el ganador de la partida a todos los clientes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Sala\+Jugador} & La sala a la que pertenece el usuario\\
+\hline
+{\em jugador\+Ganador} & Jugador ganador\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ UNO.\+Contratos.\+Juego\+UNOServicio} \doxyref{}{p.}{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a508df912374c5b908fad611e514003ae}.
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_af37275e4ea084c355281ef400ba93c1d}} 
+\index{UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}!ColocarCartaCentral@{ColocarCartaCentral}}
+\index{ColocarCartaCentral@{ColocarCartaCentral}!UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}}
+\doxysubsubsection{ColocarCartaCentral()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego.\+Colocar\+Carta\+Central (\begin{DoxyParamCaption}\item[{\textbf{ Carta}}]{carta\+Central,  }\item[{String}]{id\+Sala\+Jugador }\end{DoxyParamCaption})}
+
+
+
+Actualiza la carta central del tablero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carta\+Central} & Información de la nueva carta central que se actualizará en los clientes\\
+\hline
+{\em id\+Sala\+Jugador} & La sala a la que pertenece el usuario\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ UNO.\+Contratos.\+Juego\+UNOServicio} \doxyref{}{p.}{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a7f9e274b8da1005dc97e7cd1807786d3}.
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_a407ecd3e419e0e6351dfa6c83223ad80}} 
+\index{UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}!CrearSala@{CrearSala}}
+\index{CrearSala@{CrearSala}!UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}}
+\doxysubsubsection{CrearSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego.\+Crear\+Sala (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{nueva\+Sala,  }\item[{\textbf{ Dominio.\+Jugador}}]{jugador }\end{DoxyParamCaption})}
+
+
+
+Crea una sala para que los jugadores se puedan unir. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nueva\+Sala} & \doxyref{Sala}{p.}{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_sala} a crear\\
+\hline
+{\em jugador} & Jugador que crea la sala\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_a95a50df59908d26e3bd8dc4304fd2021}} 
+\index{UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}!IniciarPartida@{IniciarPartida}}
+\index{IniciarPartida@{IniciarPartida}!UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}}
+\doxysubsubsection{IniciarPartida()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego.\+Iniciar\+Partida (\begin{DoxyParamCaption}\item[{string}]{id\+Sala }\end{DoxyParamCaption})}
+
+
+
+Inicia la partida en una sala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Sala} & Id de sala donde se inicia la partida\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ UNO.\+Contratos.\+Juego\+UNOServicio} \doxyref{}{p.}{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a4b5bc544981afebd743efff8347f169a}.
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_adbd39e47131d18cd598be3b0f09a19bf}} 
+\index{UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}!SalirDeSala@{SalirDeSala}}
+\index{SalirDeSala@{SalirDeSala}!UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}}
+\doxysubsubsection{SalirDeSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego.\+Salir\+De\+Sala (\begin{DoxyParamCaption}\item[{string}]{id\+Sala,  }\item[{string}]{nickname }\end{DoxyParamCaption})}
+
+
+
+Elimina al jugador de una sala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Sala} & Id de sala a salirse\\
+\hline
+{\em nickname} & Nickname del jugador a salirse\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ UNO.\+Contratos.\+Juego\+UNOServicio} \doxyref{}{p.}{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_aa9434d42e3eff5c3e14f989d4fe6226f}.
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_ac58cbaae937b668b5c6cc7b9c8a4d1d0}} 
+\index{UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}!TomarCarta@{TomarCarta}}
+\index{TomarCarta@{TomarCarta}!UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}}
+\doxysubsubsection{TomarCarta()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego.\+Tomar\+Carta (\begin{DoxyParamCaption}\item[{String}]{id\+Sala\+Jugador,  }\item[{String}]{nickname }\end{DoxyParamCaption})}
+
+
+
+El jugador toma una carta del mazo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Sala\+Jugador} & La sala a la que pertenece el usuario\\
+\hline
+{\em nickname} & Nombre del jugador\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ UNO.\+Contratos.\+Juego\+UNOServicio} \doxyref{}{p.}{class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio_a6eb5597933cc28c1ebcff4877e1b9447}.
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego_acfe7615a46510238633f3ada3bbcdde5}} 
+\index{UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}!UnirseASala@{UnirseASala}}
+\index{UnirseASala@{UnirseASala}!UNO.Contratos.LogicaJuego.IAdministrarJuego@{UNO.Contratos.LogicaJuego.IAdministrarJuego}}
+\doxysubsubsection{UnirseASala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IAdministrar\+Juego.\+Unirse\+ASala (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{sala\+AUnirse,  }\item[{\textbf{ Dominio.\+Jugador}}]{jugador }\end{DoxyParamCaption})}
+
+
+
+Une un jugador a la sala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sala\+AUnirse} & \doxyref{Sala}{p.}{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_sala} a la cual se va a unir\\
+\hline
+{\em jugador} & Jugador que se va a unir a la sala\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\+Logica\+Juego/\textbf{ IAdministrar\+Juego.\+cs}\end{DoxyCompactItemize}

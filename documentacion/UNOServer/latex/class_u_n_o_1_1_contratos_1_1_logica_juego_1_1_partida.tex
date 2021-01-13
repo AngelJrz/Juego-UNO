@@ -1,0 +1,154 @@
+\doxysection{UNO.\+Contratos.\+Logica\+Juego.\+Partida Class Reference}
+\label{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida}\index{UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}}
+
+
+Lógica para la \doxyref{Partida}{p.}{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida} del juego  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \textbf{ Cambiar\+Turno} ()
+\begin{DoxyCompactList}\small\item\em Realiza un cambio de turno en la partida \end{DoxyCompactList}\item 
+string \textbf{ Obtener\+Siguiente\+Jugador} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el Nickname del siguiente jugador en turno. \end{DoxyCompactList}\item 
+void \textbf{ Cancelar\+Siguiente\+Jugador} ()
+\begin{DoxyCompactList}\small\item\em Cancela el turno del siguiente jugador. \end{DoxyCompactList}\item 
+string \textbf{ Obtener\+Jugador\+En\+Turno} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el Nickname del jugador en turno \end{DoxyCompactList}\item 
+void \textbf{ Reiniciar\+Turnos} ()
+\begin{DoxyCompactList}\small\item\em Reinicia el turno de los jugadores \end{DoxyCompactList}\item 
+void \textbf{ Sacar\+Jugador} (\textbf{ Dominio.\+Jugador} jugador)
+\begin{DoxyCompactList}\small\item\em Saca al jugador de los jugadores en la partida. \end{DoxyCompactList}\item 
+bool \textbf{ Hay\+Suficientes\+Jugadores} ()
+\begin{DoxyCompactList}\small\item\em Comprueba si hay suficientes jugadores en la partida \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+String \textbf{ Sentido\+Juego} = \char`\"{}DERECHA\char`\"{}\hspace{0.3cm}{\ttfamily  [get, set]}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece la dirección de los turnos de los jugadores \end{DoxyCompactList}\item 
+List$<$ \textbf{ Dominio.\+Jugador} $>$ \textbf{ Jugadores\+En\+Partida}\hspace{0.3cm}{\ttfamily  [get, set]}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece una lista de los jugadores de la partida \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lógica para la \doxyref{Partida}{p.}{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida} del juego 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida_a69b7f83179837644aa0cec5c5d497860}} 
+\index{UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}!CambiarTurno@{CambiarTurno}}
+\index{CambiarTurno@{CambiarTurno}!UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}}
+\doxysubsubsection{CambiarTurno()}
+{\footnotesize\ttfamily String UNO.\+Contratos.\+Logica\+Juego.\+Partida.\+Cambiar\+Turno (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Realiza un cambio de turno en la partida 
+
+\begin{DoxyReturn}{Returns}
+Nickname del nuevo jugador en turno
+\end{DoxyReturn}
+\mbox{\label{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida_a1ab8a8ba5f7193f2ce04d7261f9bb6f7}} 
+\index{UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}!CancelarSiguienteJugador@{CancelarSiguienteJugador}}
+\index{CancelarSiguienteJugador@{CancelarSiguienteJugador}!UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}}
+\doxysubsubsection{CancelarSiguienteJugador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+Partida.\+Cancelar\+Siguiente\+Jugador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cancela el turno del siguiente jugador. 
+
+\mbox{\label{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida_ab9a5d0e1c1ffc848ca7e645587a23f13}} 
+\index{UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}!HaySuficientesJugadores@{HaySuficientesJugadores}}
+\index{HaySuficientesJugadores@{HaySuficientesJugadores}!UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}}
+\doxysubsubsection{HaySuficientesJugadores()}
+{\footnotesize\ttfamily bool UNO.\+Contratos.\+Logica\+Juego.\+Partida.\+Hay\+Suficientes\+Jugadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Comprueba si hay suficientes jugadores en la partida 
+
+\begin{DoxyReturn}{Returns}
+true si hay suficientes jugadors, falso si no lo hay
+\end{DoxyReturn}
+\mbox{\label{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida_a6ccd1fc632e0ccce5f225380479b40b7}} 
+\index{UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}!ObtenerJugadorEnTurno@{ObtenerJugadorEnTurno}}
+\index{ObtenerJugadorEnTurno@{ObtenerJugadorEnTurno}!UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}}
+\doxysubsubsection{ObtenerJugadorEnTurno()}
+{\footnotesize\ttfamily string UNO.\+Contratos.\+Logica\+Juego.\+Partida.\+Obtener\+Jugador\+En\+Turno (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene el Nickname del jugador en turno 
+
+\begin{DoxyReturn}{Returns}
+Nickname del jugador en turno
+\end{DoxyReturn}
+\mbox{\label{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida_a90c45d6987e49af8798f389505d9502a}} 
+\index{UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}!ObtenerSiguienteJugador@{ObtenerSiguienteJugador}}
+\index{ObtenerSiguienteJugador@{ObtenerSiguienteJugador}!UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}}
+\doxysubsubsection{ObtenerSiguienteJugador()}
+{\footnotesize\ttfamily string UNO.\+Contratos.\+Logica\+Juego.\+Partida.\+Obtener\+Siguiente\+Jugador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene el Nickname del siguiente jugador en turno. 
+
+\begin{DoxyReturn}{Returns}
+Nickname del siguiente Jugador
+\end{DoxyReturn}
+\mbox{\label{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida_afa49e2d963ea424fc69f064c78320630}} 
+\index{UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}!ReiniciarTurnos@{ReiniciarTurnos}}
+\index{ReiniciarTurnos@{ReiniciarTurnos}!UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}}
+\doxysubsubsection{ReiniciarTurnos()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+Partida.\+Reiniciar\+Turnos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reinicia el turno de los jugadores 
+
+\mbox{\label{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida_a7cca95c95c354ef537ab49f789d9f583}} 
+\index{UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}!SacarJugador@{SacarJugador}}
+\index{SacarJugador@{SacarJugador}!UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}}
+\doxysubsubsection{SacarJugador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+Partida.\+Sacar\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ Dominio.\+Jugador}}]{jugador }\end{DoxyParamCaption})}
+
+
+
+Saca al jugador de los jugadores en la partida. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jugador} & Jugador a sacar\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\label{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida_a3665e076cd02ff3a22b66e2aa72075d2}} 
+\index{UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}!JugadoresEnPartida@{JugadoresEnPartida}}
+\index{JugadoresEnPartida@{JugadoresEnPartida}!UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}}
+\doxysubsubsection{JugadoresEnPartida}
+{\footnotesize\ttfamily List$<$\textbf{ Dominio.\+Jugador}$>$ UNO.\+Contratos.\+Logica\+Juego.\+Partida.\+Jugadores\+En\+Partida\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Obtiene o establece una lista de los jugadores de la partida 
+
+\mbox{\label{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida_a6c17f8c63c6975b9521b193a97f54988}} 
+\index{UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}!SentidoJuego@{SentidoJuego}}
+\index{SentidoJuego@{SentidoJuego}!UNO.Contratos.LogicaJuego.Partida@{UNO.Contratos.LogicaJuego.Partida}}
+\doxysubsubsection{SentidoJuego}
+{\footnotesize\ttfamily String UNO.\+Contratos.\+Logica\+Juego.\+Partida.\+Sentido\+Juego = \char`\"{}DERECHA\char`\"{}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Obtiene o establece la dirección de los turnos de los jugadores 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\+Logica\+Juego/\textbf{ Partida.\+cs}\end{DoxyCompactItemize}

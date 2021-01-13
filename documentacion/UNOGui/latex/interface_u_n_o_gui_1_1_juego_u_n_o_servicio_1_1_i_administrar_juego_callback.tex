@@ -1,0 +1,207 @@
+\doxysection{UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback Interface Reference}
+\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback}\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+Inheritance diagram for UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Notificar\+Creacion\+De\+Sala} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Sala} sala\+Creada)
+\item 
+void \textbf{ Notificar\+Union\+ASala} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Resultado\+Union\+Sala} resultado)
+\item 
+void \textbf{ Actualizar\+Sala} (System.\+Collections.\+Generic.\+List$<$ string $>$ jugadores)
+\item 
+void \textbf{ Obtener\+Informacion\+De\+Sala} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Sala} sala)
+\item 
+void \textbf{ Agregar\+Nuevo\+Jugador} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Jugador} nuevo\+Jugador)
+\item 
+void \textbf{ Sacar\+Jugador} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Jugador} jugador\+ASacar)
+\item 
+void \textbf{ Notificar\+Salida\+De\+Sala} ()
+\item 
+void \textbf{ Notificar\+Eliminacion\+De\+Sala} ()
+\item 
+void \textbf{ Eliminar\+Creador} ()
+\item 
+void \textbf{ Notificar\+Falta\+De\+Jugadores} ()
+\item 
+void \textbf{ Notificar\+Inicio\+Partida} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Sala} sala)
+\item 
+void \textbf{ Obtener\+Mazo} (System.\+Collections.\+Generic.\+List$<$ \textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta} $>$ mazo\+De\+Jugador)
+\item 
+void \textbf{ Actualizar\+Carta\+Central} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta} carta\+Central)
+\item 
+void \textbf{ Recibir\+Carta} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta} carta\+Tomada)
+\item 
+void \textbf{ Notificar\+Ganador} (string jugador\+Ganador)
+\item 
+void \textbf{ Cambiar\+Turno} (string nuevo\+Turno)
+\item 
+void \textbf{ Actualizar\+Numero\+De\+Cartas} (string nickname, string numero\+De\+Cartas)
+\item 
+void \textbf{ Obtener\+Dos\+Cartas} (System.\+Collections.\+Generic.\+List$<$ \textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta} $>$ nuevas\+Cartas)
+\item 
+void \textbf{ Obtener\+Cuatro\+Cartas} (System.\+Collections.\+Generic.\+List$<$ \textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta} $>$ nuevas\+Cartas)
+\item 
+void \textbf{ Obtener\+Turno\+Actual} (string turno\+Actual)
+\item 
+void \textbf{ Actualizar\+Puntaje\+De\+Jugador} (string nickname, int puntaje\+ASumar)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a82ae60f234567722e56b70b9994cdd85}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!ActualizarCartaCentral@{ActualizarCartaCentral}}
+\index{ActualizarCartaCentral@{ActualizarCartaCentral}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{ActualizarCartaCentral()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Actualizar\+Carta\+Central (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta}}]{carta\+Central }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a1f31907e694e2e0ae3d4345c03d725fa}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!ActualizarNumeroDeCartas@{ActualizarNumeroDeCartas}}
+\index{ActualizarNumeroDeCartas@{ActualizarNumeroDeCartas}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{ActualizarNumeroDeCartas()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Actualizar\+Numero\+De\+Cartas (\begin{DoxyParamCaption}\item[{string}]{nickname,  }\item[{string}]{numero\+De\+Cartas }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a796f675b50e6d3f0a623e80d333ee90f}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!ActualizarPuntajeDeJugador@{ActualizarPuntajeDeJugador}}
+\index{ActualizarPuntajeDeJugador@{ActualizarPuntajeDeJugador}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{ActualizarPuntajeDeJugador()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Actualizar\+Puntaje\+De\+Jugador (\begin{DoxyParamCaption}\item[{string}]{nickname,  }\item[{int}]{puntaje\+ASumar }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_aa8175514a8a266a064343c6f60e81148}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!ActualizarSala@{ActualizarSala}}
+\index{ActualizarSala@{ActualizarSala}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{ActualizarSala()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Actualizar\+Sala (\begin{DoxyParamCaption}\item[{System.\+Collections.\+Generic.\+List$<$ string $>$}]{jugadores }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_aa1f8f0728728621817eb23eace969e22}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!AgregarNuevoJugador@{AgregarNuevoJugador}}
+\index{AgregarNuevoJugador@{AgregarNuevoJugador}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{AgregarNuevoJugador()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Agregar\+Nuevo\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Jugador}}]{nuevo\+Jugador }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a7567380b877030a2a781579350aa9ee7}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!CambiarTurno@{CambiarTurno}}
+\index{CambiarTurno@{CambiarTurno}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{CambiarTurno()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Cambiar\+Turno (\begin{DoxyParamCaption}\item[{string}]{nuevo\+Turno }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a270a554d8070ef90ff5121a2a80065a5}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!EliminarCreador@{EliminarCreador}}
+\index{EliminarCreador@{EliminarCreador}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{EliminarCreador()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Eliminar\+Creador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implemented in \textbf{ UNOGui.\+Logica.\+Juego\+Callback\+Admin} \doxyref{}{p.}{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a77fd40882070e0a31b5d6b7fdb2483fb}.
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_ab4f136776b113abfb2067a599a6f4015}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!NotificarCreacionDeSala@{NotificarCreacionDeSala}}
+\index{NotificarCreacionDeSala@{NotificarCreacionDeSala}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{NotificarCreacionDeSala()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Notificar\+Creacion\+De\+Sala (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Sala}}]{sala\+Creada }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a96583977b1a55e784b4da6e3b89c0812}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!NotificarEliminacionDeSala@{NotificarEliminacionDeSala}}
+\index{NotificarEliminacionDeSala@{NotificarEliminacionDeSala}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{NotificarEliminacionDeSala()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Notificar\+Eliminacion\+De\+Sala (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implemented in \textbf{ UNOGui.\+Logica.\+Juego\+Callback\+Admin} \doxyref{}{p.}{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_ae404710c43669b27032a7c2f22282aea}.
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_afbec64e67c770673dbacfbf24280c3e6}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!NotificarFaltaDeJugadores@{NotificarFaltaDeJugadores}}
+\index{NotificarFaltaDeJugadores@{NotificarFaltaDeJugadores}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{NotificarFaltaDeJugadores()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Notificar\+Falta\+De\+Jugadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implemented in \textbf{ UNOGui.\+Logica.\+Juego\+Callback\+Admin} \doxyref{}{p.}{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_ab1a1cfdbaea9f1f833e2107ca3231202}.
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_adc7c65257633b13d7e01924610c4035e}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!NotificarGanador@{NotificarGanador}}
+\index{NotificarGanador@{NotificarGanador}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{NotificarGanador()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Notificar\+Ganador (\begin{DoxyParamCaption}\item[{string}]{jugador\+Ganador }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a0aec955eb891656648ae00c1324adefc}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!NotificarInicioPartida@{NotificarInicioPartida}}
+\index{NotificarInicioPartida@{NotificarInicioPartida}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{NotificarInicioPartida()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Notificar\+Inicio\+Partida (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Sala}}]{sala }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_ab49553a1c48b47c4fed1bb634306f5ff}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!NotificarSalidaDeSala@{NotificarSalidaDeSala}}
+\index{NotificarSalidaDeSala@{NotificarSalidaDeSala}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{NotificarSalidaDeSala()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Notificar\+Salida\+De\+Sala (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implemented in \textbf{ UNOGui.\+Logica.\+Juego\+Callback\+Admin} \doxyref{}{p.}{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a31917ce069beb2dd6f4f359f22c8a7f1}.
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a00de0892edfe4ad5212534115bdf1ce1}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!NotificarUnionASala@{NotificarUnionASala}}
+\index{NotificarUnionASala@{NotificarUnionASala}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{NotificarUnionASala()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Notificar\+Union\+ASala (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Resultado\+Union\+Sala}}]{resultado }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_aa557ba8267f7a8fba47ecde10851a21f}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!ObtenerCuatroCartas@{ObtenerCuatroCartas}}
+\index{ObtenerCuatroCartas@{ObtenerCuatroCartas}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{ObtenerCuatroCartas()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Obtener\+Cuatro\+Cartas (\begin{DoxyParamCaption}\item[{System.\+Collections.\+Generic.\+List$<$ \textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta} $>$}]{nuevas\+Cartas }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a5815479ac62f17696694432831a339fd}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!ObtenerDosCartas@{ObtenerDosCartas}}
+\index{ObtenerDosCartas@{ObtenerDosCartas}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{ObtenerDosCartas()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Obtener\+Dos\+Cartas (\begin{DoxyParamCaption}\item[{System.\+Collections.\+Generic.\+List$<$ \textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta} $>$}]{nuevas\+Cartas }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_aa214cb1573573674841394914ca9354d}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!ObtenerInformacionDeSala@{ObtenerInformacionDeSala}}
+\index{ObtenerInformacionDeSala@{ObtenerInformacionDeSala}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{ObtenerInformacionDeSala()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Obtener\+Informacion\+De\+Sala (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Sala}}]{sala }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a43f006240cc202b1f899ea5e94cf5486}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!ObtenerMazo@{ObtenerMazo}}
+\index{ObtenerMazo@{ObtenerMazo}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{ObtenerMazo()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Obtener\+Mazo (\begin{DoxyParamCaption}\item[{System.\+Collections.\+Generic.\+List$<$ \textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta} $>$}]{mazo\+De\+Jugador }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_ac5ac15404b2e569e86f149dc706c4399}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!ObtenerTurnoActual@{ObtenerTurnoActual}}
+\index{ObtenerTurnoActual@{ObtenerTurnoActual}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{ObtenerTurnoActual()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Obtener\+Turno\+Actual (\begin{DoxyParamCaption}\item[{string}]{turno\+Actual }\end{DoxyParamCaption})}
+
+
+
+Implemented in \textbf{ UNOGui.\+Logica.\+Juego\+Callback\+Admin} \doxyref{}{p.}{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a3b03ab05985e54f191ee5ddf0b0bd164}.
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_ad9051b4cc4246a73e0aad9902bf17d3a}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!RecibirCarta@{RecibirCarta}}
+\index{RecibirCarta@{RecibirCarta}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{RecibirCarta()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Recibir\+Carta (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta}}]{carta\+Tomada }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a727ce2e44e6450a427e289a22f4b486b}} 
+\index{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}!SacarJugador@{SacarJugador}}
+\index{SacarJugador@{SacarJugador}!UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback@{UNOGui.JuegoUNOServicio.IAdministrarJuegoCallback}}
+\doxysubsubsection{SacarJugador()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback.\+Sacar\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Jugador}}]{jugador\+ASacar }\end{DoxyParamCaption})}
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOGui/\+Connected Services/\+Juego\+UNOServicio/\textbf{ Reference.\+cs}\end{DoxyCompactItemize}
