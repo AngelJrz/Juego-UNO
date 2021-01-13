@@ -2,7 +2,8 @@ U
 LD:\Juego-UNO\UNOServer\UNO.Contratos\AdministradorEmail\CorreoElectronico.csutf-8R
 ID:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\GeneradorClave.csutf-8K
 BD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\IPerfil.csutf-8S
-JD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\IPerfilCallback.csutf-8O
+JD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\IPerfilCallback.csutf-8D
+;D:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\Partida.csutf-8O
 FD:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\ResultadoUnionSala.csutf-8A
 8D:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\Sala.csutf-8A
 8D:\Juego-UNO\UNOServer\UNO.Contratos\JuegoUNOServicio.csutf-8N
@@ -17,7 +18,6 @@ BD:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\IJuegoCallback.csutf-8>
 LD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\IRegistrarJugador.csutf-8]
 TD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\IRegistrarJugadorCallback.csutf-8U
 LD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\ResultadoRegistro.csutf-8?
-6D:\Juego-UNO\UNOServer\UNO.Contratos\ServicioDeSala.csutf-8>
-5D:\Juego-UNO\UNOServer\UNO.Contratos\ServicioJuego.csutf-8@
+6D:\Juego-UNO\UNOServer\UNO.Contratos\ServicioDeSala.csutf-8@
 7D:\Juego-UNO\UNOServer\UNO.Contratos\ServicioPartida.csutf-8_
 TC:\Users\sammy\AppData\Local\Temp\.NETFramework,Version=v4.7.2.AssemblyAttributes.csutf-8

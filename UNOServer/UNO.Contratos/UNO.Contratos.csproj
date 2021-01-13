@@ -58,6 +58,8 @@
     <Compile Include="AdministrarJugador\GeneradorClave.cs" />
     <Compile Include="AdministrarJugador\IPerfil.cs" />
     <Compile Include="AdministrarJugador\IPerfilCallback.cs" />
+    <Compile Include="AdministrarJugador\IRecuperarCuenta.cs" />
+    <Compile Include="AdministrarJugador\IRecuperarCuentaCallback.cs" />
     <Compile Include="LogicaJuego\Partida.cs" />
     <Compile Include="LogicaJuego\ResultadoUnionSala.cs" />
     <Compile Include="LogicaJuego\Sala.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="AdministrarJugador\IRegistrarJugador.cs" />
     <Compile Include="AdministrarJugador\IRegistrarJugadorCallback.cs" />
     <Compile Include="AdministrarJugador\ResultadoRegistro.cs" />
+    <Compile Include="ServicioDeRecuperacion.cs" />
     <Compile Include="ServicioDeSala.cs" />
     <Compile Include="ServicioPartida.cs" />
   </ItemGroup>

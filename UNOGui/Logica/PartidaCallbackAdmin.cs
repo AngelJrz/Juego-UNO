@@ -33,24 +33,24 @@ namespace UNOGui.Logica
         /// Establece el mazo inicial de un jugador en la partida
         /// </summary>
         /// <param name="manoJugador">Lista de las cartas iniciales de un jugador</param>
-        public void ObtenerMazo(List<Carta> manoJugador)
+        public void ObtenerMazo(List<Carta> mazoDeJugador)
         {
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
             Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
 
-            ventanaPartida.EntregarCartas(manoJugador);
+            ventanaPartida.EntregarCartas(mazoDeJugador);
         }
 
         /// <summary>
         /// Actualiza la carta central del tablero en la partida
         /// </summary>
         /// <param name="nuevaCarta">Nueva carta en el tablero</param>
-        public void ActualizarCartaCentral(Carta nuevaCarta)
+        public void ActualizarCartaCentral(Carta cartaCentral)
         {
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
             Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
 
-            ventanaPartida.ActualizarCartaCentral(nuevaCarta);
+            ventanaPartida.ActualizarCartaCentral(cartaCentral);
         }
 
         /// <summary>
@@ -121,13 +121,7 @@ namespace UNOGui.Logica
         /// <param name="nuevasCartas">Lista de las nuevas cartas</param>
         public void ObtenerCuatroCartas(List<Carta> nuevasCartas)
         {
-            Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
-            Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;
-
-            foreach (Carta carta in nuevasCartas)
-            {
-                ventanaPartida.AniadirCarta(carta);
-            }
+            AñadirCartasAJugador(nuevasCartas);
         }
 
         /// <summary>
@@ -135,6 +129,11 @@ namespace UNOGui.Logica
         /// </summary>
         /// <param name="nuevasCartas">Lista de las nuevas cartas</param>
         public void ObtenerDosCartas(List<Carta> nuevasCartas)
+        {
+            AñadirCartasAJugador(nuevasCartas);
+        }
+
+        private void AñadirCartasAJugador(List<Carta> nuevasCartas)
         {
             Juego ventanaJuego = Application.Current.Windows.OfType<Juego>().SingleOrDefault();
             Paginas.Partida ventanaPartida = ventanaJuego.PaginaActual as Paginas.Partida;

@@ -208,5 +208,27 @@ namespace UNO.AccesoADatos.AdministrarDatos
                 throw new DbUpdateException("Error al agregar nuevo jugador");
             }
         }
+
+        /// <summary>
+        /// Actualiza la contraseña de un Jugador.
+        /// </summary>
+        /// <param name="jugadorActualizado">Jugador que cambia su contraseña</param>
+        /// <param name="contrasenia">La nueva contraseña</param>
+        public void ActualizarContrasenia(Dominio.Jugador jugadorActualizado, string contrasenia)
+        {
+            var jugadorBuscado = baseDeDatos.Jugador.Where(jugador => jugador.CorreoElectronico.Equals(jugadorActualizado.CorreoElectronico)).FirstOrDefault<Jugador>();
+
+            jugadorBuscado.Contraseña = AdministradorHash.GenerarHash(contrasenia);
+
+            try
+            {
+                baseDeDatos.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                throw new DbUpdateException("Error al agregar nuevo jugador");
+            }
+
+        }
     }
 }
