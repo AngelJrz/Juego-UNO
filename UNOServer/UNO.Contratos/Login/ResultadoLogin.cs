@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UNO.Contratos.Login
+﻿namespace UNO.Contratos.Login
 {
     /// <summary>
     /// Enumeracion para los resultados posibles de un inicio de sesión.

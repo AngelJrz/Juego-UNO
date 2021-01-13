@@ -1,11 +1,16 @@
-ù
+š
+
 MD:\Juego-UNO\UNOServer\UNO.AccesoADatos\AdministrarDatos\AdminDatosJugador.cs
 
 
 
- "\
+ "Œ
 ) 4 !!  22! ,FF  ]] aa rr' 2
-‰‰! ,
+ŽŽ! ,
+¤¤% 0
+³³ 
+ÁÁ% 0
+ÌÌ 
 
   
 
@@ -37,23 +42,62 @@ MD:\Juego-UNO\UNOServer\UNO.AccesoADatos\AdministrarDatos\AdminDatosJugador.cs
 tt# *tt. 5(
 vv  {{# *||, 3}}  '
 
-…… -$
+ŠŠ -$
 
-……5 =
-‰‰: B
- #$
+ŠŠ5 =
+ŽŽ: B
+’’ #$
 
-‡‡ #
-‹‹ 
-–– T
+ŒŒ #
+ 
+›› T
 
-‰‰ 
-ŽŽ$ 2
-$ 2
- &
-‘‘# 1
-’’' 5
-““' 5Õ
+ŽŽ 
+““$ 2
+””$ 2
+•• &
+––# 1
+——' 5
+˜˜' 5
+
+¢¢ 30
+
+¢¢D K
+¤¤> E
+¦¦* 1
+ªª, 3T
+
+¤¤ "
+¦¦ 
+§§ 
+¨¨ 
+¬¬ 
+®®& 4
+¯¯ 
+
+ªª $
+¬¬* >
+
+®® 
+¯¯# 1
+
+¿¿ -$
+
+¿¿> E
+ÁÁ> E
+ÄÄ, 3<
+
+ÁÁ "
+ÃÃ 
+ÅÅ 
+ÇÇ& 4
+ÈÈ 
+
+ÄÄ $
+ÅÅ* >
+
+ÇÇ 
+ÈÈ# 1Õ
 MD:\Juego-UNO\UNOServer\UNO.AccesoADatos\AdministrarDatos\AdministradorHash.cs
 
  )
@@ -64,38 +108,5 @@ MD:\Juego-UNO\UNOServer\UNO.AccesoADatos\AdministrarDatos\AdministradorHash.cs
  '
 / 4) .
 = I0 <
-  "" ~
-@D:\Juego-UNO\UNOServer\UNO.AccesoADatos\JuegoUNOModel.Context.cs
-
- (
-
- 
-
-  /
-
-? K
-
-& -:
-8D:\Juego-UNO\UNOServer\UNO.AccesoADatos\JuegoUNOModel.csC
-AD:\Juego-UNO\UNOServer\UNO.AccesoADatos\JuegoUNOModel.Designer.cs 
-2D:\Juego-UNO\UNOServer\UNO.AccesoADatos\Jugador.cs
-
-  
-
- 
-
- '
-
-  
-
- (
-
- )
-
- ,
-
- ,
-
- D
-BD:\Juego-UNO\UNOServer\UNO.AccesoADatos\Properties\AssemblyInfo.csV
-TC:\Users\sammy\AppData\Local\Temp\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+  "" D
+BD:\Juego-UNO\UNOServer\UNO.AccesoADatos\Properties\AssemblyInfo.cs

@@ -1,0 +1,49 @@
+\doxysection{UNO.\+Contratos.\+Login Namespace Reference}
+\label{namespace_u_n_o_1_1_contratos_1_1_login}\index{UNO.Contratos.Login@{UNO.Contratos.Login}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \textbf{ ILogin}
+\begin{DoxyCompactList}\small\item\em Interfaz para el inicio de sesión de un Jugador. Expone los métodos necesarios para realizar el inicio de sesión. \end{DoxyCompactList}\item 
+interface \textbf{ ILogin\+Callback}
+\begin{DoxyCompactList}\small\item\em Interfaz para la comunicación con el cliente del juego. Expone métodos para informar sobre el inicio de sesión. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ Resultado\+Login} \{ \textbf{ No\+Existe\+Nickname} = 1
+, \textbf{ Contraseña\+Incorrecta} = 2
+, \textbf{ Existe\+Jugador} = 3
+, \textbf{ Sesion\+Iniciada} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeracion para los resultados posibles de un inicio de sesión. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_login_a883fd6afec9db2684840661d52082805}} 
+\index{UNO.Contratos.Login@{UNO.Contratos.Login}!ResultadoLogin@{ResultadoLogin}}
+\index{ResultadoLogin@{ResultadoLogin}!UNO.Contratos.Login@{UNO.Contratos.Login}}
+\doxysubsubsection{ResultadoLogin}
+{\footnotesize\ttfamily enum \textbf{ UNO.\+Contratos.\+Login.\+Resultado\+Login}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeracion para los resultados posibles de un inicio de sesión. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoExisteNickname@{NoExisteNickname}!UNO.Contratos.Login@{UNO.Contratos.Login}}\index{UNO.Contratos.Login@{UNO.Contratos.Login}!NoExisteNickname@{NoExisteNickname}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_login_a883fd6afec9db2684840661d52082805a9e6940b2ebce4a20ca74585591526db6}} 
+No\+Existe\+Nickname&El nickname ingresado no existe en la base de datos \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ContraseñaIncorrecta@{ContraseñaIncorrecta}!UNO.Contratos.Login@{UNO.Contratos.Login}}\index{UNO.Contratos.Login@{UNO.Contratos.Login}!ContraseñaIncorrecta@{ContraseñaIncorrecta}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_login_a883fd6afec9db2684840661d52082805a8d5e7b766c2a0a387b652fd63e37586f}} 
+Contraseña\+Incorrecta&La contraseña ingresada es incorrecta \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ExisteJugador@{ExisteJugador}!UNO.Contratos.Login@{UNO.Contratos.Login}}\index{UNO.Contratos.Login@{UNO.Contratos.Login}!ExisteJugador@{ExisteJugador}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_login_a883fd6afec9db2684840661d52082805a58e5f77a40c04c3611256a183ac0b917}} 
+Existe\+Jugador&El jugador ingresado existe en el sistema \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SesionIniciada@{SesionIniciada}!UNO.Contratos.Login@{UNO.Contratos.Login}}\index{UNO.Contratos.Login@{UNO.Contratos.Login}!SesionIniciada@{SesionIniciada}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_login_a883fd6afec9db2684840661d52082805af99e48f214dd0f63d3439c42f30426fa}} 
+Sesion\+Iniciada&La sesión del jugador fue iniciada \\
+\hline
+
+\end{DoxyEnumFields}

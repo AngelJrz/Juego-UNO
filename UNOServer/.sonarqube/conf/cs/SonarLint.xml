@@ -7,7 +7,7 @@
     </Setting>
     <Setting>
       <Key>sonar.cs.analyzeGeneratedCode</Key>
-      <Value>true</Value>
+      <Value>false</Value>
     </Setting>
     <Setting>
       <Key>sonar.cs.file.suffixes</Key>
@@ -280,9 +280,6 @@
     </Rule>
     <Rule>
       <Key>S4015</Key>
-    </Rule>
-    <Rule>
-      <Key>S4016</Key>
     </Rule>
     <Rule>
       <Key>S3169</Key>

@@ -1,0 +1,81 @@
+\doxysection{UNO.\+Contratos.\+Administrar\+Jugador.\+IRegistrar\+Jugador\+Callback Interface Reference}
+\label{interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador_callback}\index{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback@{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback}}
+
+
+Interfaz para comunicarse con cliente y notificar sobre el resultado de ciertas operaciones.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Notificar\+Registro} (\textbf{ Resultado\+Registro} resultado)
+\begin{DoxyCompactList}\small\item\em Notifica el resultado de registrar un nuevo Jugador. \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Resultado\+Clave} (bool clave\+Valida)
+\begin{DoxyCompactList}\small\item\em Notifica el resultado de comprobación de la clave de registro. \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Cancelacion\+Registro} ()
+\begin{DoxyCompactList}\small\item\em Notifica cuando se cancela el registro de un Jugador. \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Envio\+De\+Clave} ()
+\begin{DoxyCompactList}\small\item\em Notifica cuando se envía de nuevo la clave al Jugador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interfaz para comunicarse con cliente y notificar sobre el resultado de ciertas operaciones. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador_callback_af6cf9e8ccdb875b2a1ed2c282867cfcc}} 
+\index{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback@{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback}!NotificarCancelacionRegistro@{NotificarCancelacionRegistro}}
+\index{NotificarCancelacionRegistro@{NotificarCancelacionRegistro}!UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback@{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback}}
+\doxysubsubsection{NotificarCancelacionRegistro()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Administrar\+Jugador.\+IRegistrar\+Jugador\+Callback.\+Notificar\+Cancelacion\+Registro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifica cuando se cancela el registro de un Jugador. 
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador_callback_a78e350cc25fcd3ca2b3cbc50900fad46}} 
+\index{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback@{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback}!NotificarEnvioDeClave@{NotificarEnvioDeClave}}
+\index{NotificarEnvioDeClave@{NotificarEnvioDeClave}!UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback@{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback}}
+\doxysubsubsection{NotificarEnvioDeClave()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Administrar\+Jugador.\+IRegistrar\+Jugador\+Callback.\+Notificar\+Envio\+De\+Clave (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifica cuando se envía de nuevo la clave al Jugador. 
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador_callback_ad2c3ef6326aefe828de2c5a922b3d672}} 
+\index{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback@{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback}!NotificarRegistro@{NotificarRegistro}}
+\index{NotificarRegistro@{NotificarRegistro}!UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback@{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback}}
+\doxysubsubsection{NotificarRegistro()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Administrar\+Jugador.\+IRegistrar\+Jugador\+Callback.\+Notificar\+Registro (\begin{DoxyParamCaption}\item[{\textbf{ Resultado\+Registro}}]{resultado }\end{DoxyParamCaption})}
+
+
+
+Notifica el resultado de registrar un nuevo Jugador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resultado} & Resultado del registro de un Jugador.\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador_callback_aeca882521dbde423ff33aba4a505735e}} 
+\index{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback@{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback}!NotificarResultadoClave@{NotificarResultadoClave}}
+\index{NotificarResultadoClave@{NotificarResultadoClave}!UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback@{UNO.Contratos.AdministrarJugador.IRegistrarJugadorCallback}}
+\doxysubsubsection{NotificarResultadoClave()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Administrar\+Jugador.\+IRegistrar\+Jugador\+Callback.\+Notificar\+Resultado\+Clave (\begin{DoxyParamCaption}\item[{bool}]{clave\+Valida }\end{DoxyParamCaption})}
+
+
+
+Notifica el resultado de comprobación de la clave de registro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clave\+Valida} & Notifica si la clave fue valida.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\+Administrar\+Jugador/\textbf{ IRegistrar\+Jugador\+Callback.\+cs}\end{DoxyCompactItemize}

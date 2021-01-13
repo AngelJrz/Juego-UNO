@@ -116,6 +116,35 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IRecuperarCuenta_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -259,6 +288,24 @@
   <wsdl:message name="IAdministrarJuego_ActualizarPuntajeDeJugador_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ActualizarPuntajeDeJugador" />
   </wsdl:message>
+  <wsdl:message name="IRecuperarCuenta_VerificarClaveRecuperacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarClaveRecuperacion" />
+  </wsdl:message>
+  <wsdl:message name="IRecuperarCuenta_EnviarClaveRecuperacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarClaveRecuperacion" />
+  </wsdl:message>
+  <wsdl:message name="IRecuperarCuenta_ActualizarContrasenia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarContrasenia" />
+  </wsdl:message>
+  <wsdl:message name="IRecuperarCuenta_NotificarEnvioClave_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarEnvioClave" />
+  </wsdl:message>
+  <wsdl:message name="IRecuperarCuenta_NotificarResultadoVerificación_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarResultadoVerificación" />
+  </wsdl:message>
+  <wsdl:message name="IRecuperarCuenta_NotificarResultadoRecuperacion_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarResultadoRecuperacion" />
+  </wsdl:message>
   <wsdl:portType name="IRegistrarJugador">
     <wsdl:operation name="RegistrarJugador">
       <wsdl:input wsaw:Action="http://tempuri.org/IRegistrarJugador/RegistrarJugador" message="tns:IRegistrarJugador_RegistrarJugador_InputMessage" />
@@ -397,6 +444,26 @@
     </wsdl:operation>
     <wsdl:operation name="ActualizarPuntajeDeJugador">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntajeDeJugador" message="tns:IAdministrarJuego_ActualizarPuntajeDeJugador_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRecuperarCuenta">
+    <wsdl:operation name="VerificarClaveRecuperacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecuperarCuenta/VerificarClaveRecuperacion" message="tns:IRecuperarCuenta_VerificarClaveRecuperacion_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarClaveRecuperacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecuperarCuenta/EnviarClaveRecuperacion" message="tns:IRecuperarCuenta_EnviarClaveRecuperacion_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContrasenia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecuperarCuenta/ActualizarContrasenia" message="tns:IRecuperarCuenta_ActualizarContrasenia_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarEnvioClave">
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecuperarCuenta/NotificarEnvioClave" message="tns:IRecuperarCuenta_NotificarEnvioClave_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarResultadoVerificación">
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecuperarCuenta/NotificarResultadoVerificación" message="tns:IRecuperarCuenta_NotificarResultadoVerificación_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarResultadoRecuperacion">
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecuperarCuenta/NotificarResultadoRecuperacion" message="tns:IRecuperarCuenta_NotificarResultadoRecuperacion_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IRegistrarJugador" type="tns:IRegistrarJugador">
@@ -679,6 +746,46 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IRecuperarCuenta" type="tns:IRecuperarCuenta">
+    <wsp:PolicyReference URI="#NetTcpBinding_IRecuperarCuenta_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="VerificarClaveRecuperacion">
+      <soap12:operation soapAction="http://tempuri.org/IRecuperarCuenta/VerificarClaveRecuperacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarClaveRecuperacion">
+      <soap12:operation soapAction="http://tempuri.org/IRecuperarCuenta/EnviarClaveRecuperacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContrasenia">
+      <soap12:operation soapAction="http://tempuri.org/IRecuperarCuenta/ActualizarContrasenia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarEnvioClave">
+      <soap12:operation soapAction="http://tempuri.org/IRecuperarCuenta/NotificarEnvioClave" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarResultadoVerificación">
+      <soap12:operation soapAction="http://tempuri.org/IRecuperarCuenta/NotificarResultadoVerificación" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarResultadoRecuperacion">
+      <soap12:operation soapAction="http://tempuri.org/IRecuperarCuenta/NotificarResultadoRecuperacion" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="JuegoUNOServicio">
     <wsdl:port name="NetTcpBinding_IRegistrarJugador" binding="tns:NetTcpBinding_IRegistrarJugador">
       <soap12:address location="net.tcp://localhost:8090/UNO.Contratos" />
@@ -708,6 +815,15 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IAdministrarJuego" binding="tns:NetTcpBinding_IAdministrarJuego">
+      <soap12:address location="net.tcp://localhost:8090/UNO.Contratos" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>LAPTOP-SQIOU73F\Sammy</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IRecuperarCuenta" binding="tns:NetTcpBinding_IRecuperarCuenta">
       <soap12:address location="net.tcp://localhost:8090/UNO.Contratos" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/UNO.Contratos</wsa10:Address>

@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['mensaje_5fbuton_704',['Mensaje_Buton',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#aaeb7e8b5004e7d87efb3712b0740e6e1',1,'UNOGui::Properties::Resources']]],
+  ['mensaje_5fcambioidiomamensaje_705',['Mensaje_CambioIdiomaMensaje',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#ad93231ca01e1bc6f37deb443d34ccc6d',1,'UNOGui::Properties::Resources']]],
+  ['mensaje_5fcambioidiomatitulo_706',['Mensaje_CambioIdiomaTitulo',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#a4de08fcc22dd7ded10fbc221bdf7f89a',1,'UNOGui::Properties::Resources']]],
+  ['menuprincipal_5fcerrarsesion_707',['MenuPrincipal_CerrarSesion',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#a2616ae79476ffdd8ce0ecee0085d77e0',1,'UNOGui::Properties::Resources']]],
+  ['menuprincipal_5fcrearsala_708',['MenuPrincipal_CrearSala',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#a601a5987aed8d328e8a0706f62635d41',1,'UNOGui::Properties::Resources']]],
+  ['menuprincipal_5finicio_709',['MenuPrincipal_Inicio',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#a5cbba58d12a2cd4ba8cdfde08161fb42',1,'UNOGui::Properties::Resources']]],
+  ['menuprincipal_5fmiperfil_710',['MenuPrincipal_MiPerfil',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#a8ec511d9291521818869b8aa006cd612',1,'UNOGui::Properties::Resources']]],
+  ['menuprincipal_5fsaludo_711',['MenuPrincipal_Saludo',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#a617457377f67de4c95e6a0618f2d82be',1,'UNOGui::Properties::Resources']]],
+  ['menuprincipal_5funirsesala_712',['MenuPrincipal_UnirseSala',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#af2f9fe5c9c21cbc9c9e0a4073c4578f1',1,'UNOGui::Properties::Resources']]],
+  ['miperfil_5fconfiguracion_713',['MiPerfil_Configuracion',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#afcbbb950b414348c09c16451d0f2d048',1,'UNOGui::Properties::Resources']]],
+  ['miperfil_5fcuenta_714',['MiPerfil_Cuenta',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#a1b762a0ad11a3c3bfa6333a54b708c73',1,'UNOGui::Properties::Resources']]],
+  ['miperfil_5fexperiencia_715',['MiPerfil_Experiencia',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#aa6b35fe164059a913a360bc729a0de2e',1,'UNOGui::Properties::Resources']]],
+  ['miperfil_5fguardarcambios_716',['MiPerfil_GuardarCambios',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#afd7feac54c4d57d2a0fcff3a29019d97',1,'UNOGui::Properties::Resources']]],
+  ['miperfil_5fidioma_717',['MiPerfil_Idioma',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#abe2d19ba17ef270da48fe728609ada08',1,'UNOGui::Properties::Resources']]],
+  ['miperfil_5fjuego_718',['MiPerfil_Juego',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#afeaeb51fd1606a9cec9de9a42954721b',1,'UNOGui::Properties::Resources']]],
+  ['miperfil_5fpartidasganadas_719',['MiPerfil_PartidasGanadas',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#a3bd6a1d0db0b806fe124666c75959976',1,'UNOGui::Properties::Resources']]],
+  ['miperfil_5fpartidasjugadas_720',['MiPerfil_PartidasJugadas',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#a33b2b117cdc0e404c15bd88b38bd5009',1,'UNOGui::Properties::Resources']]],
+  ['miperfil_5ftitulo_721',['MiPerfil_Titulo',['../class_u_n_o_gui_1_1_properties_1_1_resources.html#a09332b16a3fb07c14782fc54251d10c9',1,'UNOGui::Properties::Resources']]]
+];

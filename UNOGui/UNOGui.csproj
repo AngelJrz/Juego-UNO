@@ -93,6 +93,8 @@
     <Compile Include="Logica\Log\LoggerAdmin.cs" />
     <Compile Include="Logica\PartidaAdmin.cs" />
     <Compile Include="Logica\PartidaCallbackAdmin.cs" />
+    <Compile Include="Logica\RecuperarCuentaAdmin.cs" />
+    <Compile Include="Logica\RecuperarCuentaCallback.cs" />
     <Compile Include="Logica\RegistroJugadorAdmin.cs" />
     <Compile Include="Logica\RegistroJugadorCallback.cs" />
     <Compile Include="Logica\Reglas.cs" />
@@ -101,6 +103,9 @@
     </Compile>
     <Compile Include="Paginas\CreacionDeSala.xaml.cs">
       <DependentUpon>CreacionDeSala.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\IngresoDeCorreo.xaml.cs">
+      <DependentUpon>IngresoDeCorreo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
@@ -116,6 +121,9 @@
     </Compile>
     <Compile Include="Paginas\Partida.xaml.cs">
       <DependentUpon>Partida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\RecuperacionCuenta.xaml.cs">
+      <DependentUpon>RecuperacionCuenta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\RegistrarCuenta.xaml.cs">
       <DependentUpon>RegistrarCuenta.xaml</DependentUpon>
@@ -133,9 +141,6 @@
     <Compile Include="Logica\SalaCallbackAdmin.cs" />
     <Compile Include="Ventanas\Juego.xaml.cs">
       <DependentUpon>Juego.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Ventanas\Lobby.xaml.cs">
-      <DependentUpon>Lobby.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Mensaje.xaml.cs">
       <DependentUpon>Mensaje.xaml</DependentUpon>
@@ -213,6 +218,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Paginas\IngresoDeCorreo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\Inicio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -233,6 +242,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Paginas\RecuperacionCuenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\RegistrarCuenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -242,10 +255,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\Juego.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Ventanas\Lobby.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

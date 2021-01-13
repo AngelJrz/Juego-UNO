@@ -1,0 +1,205 @@
+\doxysection{UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador Class Reference}
+\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador}\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+
+
+Lógica para la administración de datos de un \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Admin\+Datos\+Jugador} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \doxyref{Admin\+Datos\+Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador}. \end{DoxyCompactList}\item 
+bool \textbf{ Existe\+Nickname} (string nickname)
+\begin{DoxyCompactList}\small\item\em Verifica si existe el Nickname del \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}. \end{DoxyCompactList}\item 
+bool \textbf{ Es\+Contraseña\+Correcta} (string nickname, string contraseña)
+\begin{DoxyCompactList}\small\item\em Verifica si la contraseña del \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador} es correcta. \end{DoxyCompactList}\item 
+bool \textbf{ Existe\+Correo\+Electronico} (string correo\+Electronico)
+\begin{DoxyCompactList}\small\item\em Verifica si existe el correo electrónico del \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}. \end{DoxyCompactList}\item 
+void \textbf{ Guardar\+Jugador} (\textbf{ Dominio.\+Jugador} nuevo\+Jugador)
+\begin{DoxyCompactList}\small\item\em Guarda un nuevo jugador en la base de datos \end{DoxyCompactList}\item 
+List$<$ \textbf{ Dominio.\+Jugador} $>$ \textbf{ Obtener\+Mejores\+Jugadores} ()
+\begin{DoxyCompactList}\small\item\em Obtiene los mejores 5 Jugadores del juego, de acuerdo con su puntaje total. \end{DoxyCompactList}\item 
+\textbf{ Dominio.\+Jugador} \textbf{ Obtener\+Jugador} (string nickname)
+\begin{DoxyCompactList}\small\item\em Obtiene un \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}. \end{DoxyCompactList}\item 
+void \textbf{ Actualizar\+Estadisticas\+De\+Jugador} (\textbf{ Dominio.\+Jugador} jugador)
+\begin{DoxyCompactList}\small\item\em Actualiza las estadísticas en el juego de un jugador. \end{DoxyCompactList}\item 
+void \textbf{ Actualizar\+Partidas\+Jugadas} (\textbf{ Dominio.\+Jugador} jugador)
+\begin{DoxyCompactList}\small\item\em Actualiza las estadisticas de un jugador en la base de datos \end{DoxyCompactList}\item 
+void \textbf{ Actualizar\+Contrasenia} (\textbf{ Dominio.\+Jugador} jugador\+Actualizado, string contrasenia)
+\begin{DoxyCompactList}\small\item\em Actualiza la contraseña de un \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lógica para la administración de datos de un \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador_af3920eedfd9b603e05edb029fc5c87d3}} 
+\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}!AdminDatosJugador@{AdminDatosJugador}}
+\index{AdminDatosJugador@{AdminDatosJugador}!UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+\doxysubsubsection{AdminDatosJugador()}
+{\footnotesize\ttfamily UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador.\+Admin\+Datos\+Jugador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase \doxyref{Admin\+Datos\+Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador_a4e2ea46497ca1c1d3f10904d2266e7b1}} 
+\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}!ActualizarContrasenia@{ActualizarContrasenia}}
+\index{ActualizarContrasenia@{ActualizarContrasenia}!UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+\doxysubsubsection{ActualizarContrasenia()}
+{\footnotesize\ttfamily void UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador.\+Actualizar\+Contrasenia (\begin{DoxyParamCaption}\item[{\textbf{ Dominio.\+Jugador}}]{jugador\+Actualizado,  }\item[{string}]{contrasenia }\end{DoxyParamCaption})}
+
+
+
+Actualiza la contraseña de un \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jugador\+Actualizado} & \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador} que cambia su contraseña\\
+\hline
+{\em contrasenia} & La nueva contraseña\\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador_abdda0b22842bfdc09c8f2e4c7ec5c25f}} 
+\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}!ActualizarEstadisticasDeJugador@{ActualizarEstadisticasDeJugador}}
+\index{ActualizarEstadisticasDeJugador@{ActualizarEstadisticasDeJugador}!UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+\doxysubsubsection{ActualizarEstadisticasDeJugador()}
+{\footnotesize\ttfamily void UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador.\+Actualizar\+Estadisticas\+De\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ Dominio.\+Jugador}}]{jugador }\end{DoxyParamCaption})}
+
+
+
+Actualiza las estadísticas en el juego de un jugador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jugador} & \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador} a actualizar estadísticas\\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador_a341a1d91ba4919284c0e86f3c69bde7f}} 
+\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}!ActualizarPartidasJugadas@{ActualizarPartidasJugadas}}
+\index{ActualizarPartidasJugadas@{ActualizarPartidasJugadas}!UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+\doxysubsubsection{ActualizarPartidasJugadas()}
+{\footnotesize\ttfamily void UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador.\+Actualizar\+Partidas\+Jugadas (\begin{DoxyParamCaption}\item[{\textbf{ Dominio.\+Jugador}}]{jugador }\end{DoxyParamCaption})}
+
+
+
+Actualiza las estadisticas de un jugador en la base de datos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jugador} & \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador} a actualizar\\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador_aafa89e1800986ad09274fc403eb70a9e}} 
+\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}!EsContraseñaCorrecta@{EsContraseñaCorrecta}}
+\index{EsContraseñaCorrecta@{EsContraseñaCorrecta}!UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+\doxysubsubsection{EsContraseñaCorrecta()}
+{\footnotesize\ttfamily bool UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador.\+Es\+Contraseña\+Correcta (\begin{DoxyParamCaption}\item[{string}]{nickname,  }\item[{string}]{contraseña }\end{DoxyParamCaption})}
+
+
+
+Verifica si la contraseña del \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador} es correcta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nickname} & Nickname del \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador} a buscar.\\
+\hline
+{\em contraseña} & Contraseña del \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si la contraseña es correcta, false si no lo es. 
+\end{DoxyReturn}
+\mbox{\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador_a11265a0ed12451e75362984bc78694d8}} 
+\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}!ExisteCorreoElectronico@{ExisteCorreoElectronico}}
+\index{ExisteCorreoElectronico@{ExisteCorreoElectronico}!UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+\doxysubsubsection{ExisteCorreoElectronico()}
+{\footnotesize\ttfamily bool UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador.\+Existe\+Correo\+Electronico (\begin{DoxyParamCaption}\item[{string}]{correo\+Electronico }\end{DoxyParamCaption})}
+
+
+
+Verifica si existe el correo electrónico del \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em correo\+Electronico} & Correo electrónico del \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si existe el correo, falso si no existe.
+\end{DoxyReturn}
+\mbox{\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador_a8133bf66684c2265e1dbac83f5863a9d}} 
+\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}!ExisteNickname@{ExisteNickname}}
+\index{ExisteNickname@{ExisteNickname}!UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+\doxysubsubsection{ExisteNickname()}
+{\footnotesize\ttfamily bool UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador.\+Existe\+Nickname (\begin{DoxyParamCaption}\item[{string}]{nickname }\end{DoxyParamCaption})}
+
+
+
+Verifica si existe el Nickname del \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nickname} & Nickname del \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si encuentra existe el Nickname, false si no existe. 
+\end{DoxyReturn}
+\mbox{\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador_a95038392b5cdc255e8dc7a9c829eb9bd}} 
+\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}!GuardarJugador@{GuardarJugador}}
+\index{GuardarJugador@{GuardarJugador}!UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+\doxysubsubsection{GuardarJugador()}
+{\footnotesize\ttfamily void UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador.\+Guardar\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ Dominio.\+Jugador}}]{nuevo\+Jugador }\end{DoxyParamCaption})}
+
+
+
+Guarda un nuevo jugador en la base de datos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nuevo\+Jugador} & Nuevo jugador a guardar\\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador_a1383584b87cb4da6f5aec225f8e42731}} 
+\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}!ObtenerJugador@{ObtenerJugador}}
+\index{ObtenerJugador@{ObtenerJugador}!UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+\doxysubsubsection{ObtenerJugador()}
+{\footnotesize\ttfamily \textbf{ Dominio.\+Jugador} UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador.\+Obtener\+Jugador (\begin{DoxyParamCaption}\item[{string}]{nickname }\end{DoxyParamCaption})}
+
+
+
+Obtiene un \doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nickname} & Nickname del jugador a obtener\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Jugador}{p.}{class_u_n_o_1_1_acceso_a_datos_1_1_jugador} buscado
+\end{DoxyReturn}
+\mbox{\label{class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador_ae19e0877c0e2e01f52c192ee1e4b2253}} 
+\index{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}!ObtenerMejoresJugadores@{ObtenerMejoresJugadores}}
+\index{ObtenerMejoresJugadores@{ObtenerMejoresJugadores}!UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador@{UNO.AccesoADatos.AdministrarDatos.AdminDatosJugador}}
+\doxysubsubsection{ObtenerMejoresJugadores()}
+{\footnotesize\ttfamily List$<$\textbf{ Dominio.\+Jugador}$>$ UNO.\+Acceso\+ADatos.\+Administrar\+Datos.\+Admin\+Datos\+Jugador.\+Obtener\+Mejores\+Jugadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtiene los mejores 5 Jugadores del juego, de acuerdo con su puntaje total. 
+
+\begin{DoxyReturn}{Returns}
+Una lista de los jugadores
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Acceso\+ADatos/\+Administrar\+Datos/\textbf{ Admin\+Datos\+Jugador.\+cs}\end{DoxyCompactItemize}

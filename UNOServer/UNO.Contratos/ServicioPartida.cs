@@ -39,7 +39,7 @@ namespace UNO.Contratos
 
         private void PonerSalaEnJuego(string idSala)
         {
-            salasCreadas.Where(sala => sala.Id.Equals(idSala)).FirstOrDefault().EnJuego = true;
+            salasCreadas.FirstOrDefault(sala => sala.Id.Equals(idSala)).EnJuego = true;
         }
 
         private static List<Carta> CrearMazo()

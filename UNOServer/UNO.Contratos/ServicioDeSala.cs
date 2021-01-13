@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.ServiceModel;
 using UNO.Contratos.LogicaJuego;
 using UNO.Dominio;
@@ -115,39 +116,34 @@ namespace UNO.Contratos
             if (salaActual != null)
             {
                 IJuegoCallback callbackActual = JuegoCallbackActual;
+                Jugador jugadorBuscado = salaActual.JugadoresEnSala.Keys.
+                    ToList().FirstOrDefault(jugador => jugador.Nickname.Equals(nickname));
 
-                foreach (var jugador in salaActual.JugadoresEnSala)
+                if (EsCreadorDeLaSala(salaActual, jugadorBuscado))
                 {
-                    if (jugador.Key.Nickname.Equals(nickname))
+                    callbackActual.EliminarCreador();
+                    salaActual.JugadoresEnSala.Remove(jugadorBuscado);
+                    EliminarSala(salaActual);
+                }
+                else
+                {
+                    callbackActual.NotificarSalidaDeSala();
+                    salaActual.JugadoresEnSala.Remove(jugadorBuscado);
+                    NotificarJugadorEliminado(salaActual, jugadorBuscado);
+
+                    if (salaActual.EnJuego)
                     {
-                        if (EsCreadorDeLaSala(salaActual, jugador.Key))
+                        salaActual.PartidaDeSala.SacarJugador(jugadorBuscado);
+
+                        if (salaActual.PartidaDeSala.HaySuficientesJugadores())
                         {
-                            callbackActual.EliminarCreador();
-                            salaActual.JugadoresEnSala.Remove(jugador.Key);
-                            EliminarSala(salaActual);
+                            salaActual.PartidaDeSala.ReiniciarTurnos();
+                            CambiarTurno(salaActual);
                         }
                         else
                         {
-                            callbackActual.NotificarSalidaDeSala();
-                            salaActual.JugadoresEnSala.Remove(jugador.Key);
-                            NotificarJugadorEliminado(salaActual, jugador.Key);
-
-                            if (salaActual.EnJuego)
-                            {
-                                salaActual.PartidaDeSala.SacarJugador(jugador.Key);
-
-                                if (salaActual.PartidaDeSala.HaySuficientesJugadores())
-                                {
-                                    salaActual.PartidaDeSala.ReiniciarTurnos();
-                                    CambiarTurno(salaActual);
-                                }
-                                else
-                                {
-                                    EliminarSalaPorFaltaDeJugadores(salaActual);
-                                }
-                            }
+                            EliminarSalaPorFaltaDeJugadores(salaActual);
                         }
-                        break;
                     }
                 }
             }
