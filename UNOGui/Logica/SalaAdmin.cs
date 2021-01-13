@@ -20,6 +20,7 @@ namespace UNOGui.Logica
         /// <param name="jugador">Jugador que desea unirse</param>
         /// <exception cref="EndpointNotFoundException"></exception>
         /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void UnirseASala(Sala salaBuscada, Jugador jugador)
         {
             try
@@ -36,6 +37,11 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
@@ -45,6 +51,7 @@ namespace UNOGui.Logica
         /// <param name="jugador">Jugador que crea la sala</param>
         /// <exception cref="EndpointNotFoundException"></exception>
         /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void CrearSala(Sala nuevaSala, Jugador jugador)
         {
             try
@@ -61,6 +68,11 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
@@ -69,6 +81,7 @@ namespace UNOGui.Logica
         /// <param name="idSala">Id de la sala</param>
         /// <exception cref="EndpointNotFoundException"></exception>
         /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void SalirDeSala(string idSala, string nickname)
         {
             try
@@ -81,6 +94,11 @@ namespace UNOGui.Logica
                 throw;
             }
             catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (CommunicationObjectFaultedException ex)
             {
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;

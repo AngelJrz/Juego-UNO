@@ -168,7 +168,7 @@ namespace UNO.AccesoADatos.AdministrarDatos
         {
             Jugador jugadorBuscado = baseDeDatos.Jugador.Find(jugador.Nickname);
 
-            jugadorBuscado.PuntajeTotal = jugador.PuntajeTotal;
+            jugadorBuscado.PuntajeTotal += jugador.PuntajeTotal;
             jugadorBuscado.PartidasJugadas += 1;
             jugadorBuscado.PartidasGanadas += 1;
 

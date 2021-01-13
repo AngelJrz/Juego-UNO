@@ -17,6 +17,9 @@ namespace UNOGui.Logica
         /// Hace la llamada al servidor para poder registrar un jugador.
         /// </summary>
         /// <param name="nuevoJugador">Jugador a registrar</param>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void RegistrarNuevoJugador(Jugador nuevoJugador)
         {
             try
@@ -33,12 +36,20 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
         /// Hace la llamada al servidor para verificar la clave de verificación de registro.
         /// </summary>
         /// <param name="clave">La clave de verificación</param>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void VerificarClaveIngresada(string clave)
         {
             try
@@ -55,11 +66,19 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
         /// Hace la llamada al servidor para cancelar el registro de un jugador.
         /// </summary>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void CancelarRegistrarJugador()
         {    
             try
@@ -76,11 +95,19 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
         /// Hace la llamada al servidor para enviar la clave de verificación nuevamente.
         /// </summary>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void EnviarClave()
         { 
             try
@@ -93,6 +120,11 @@ namespace UNOGui.Logica
                 throw;
             }
             catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (CommunicationObjectFaultedException ex)
             {
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;

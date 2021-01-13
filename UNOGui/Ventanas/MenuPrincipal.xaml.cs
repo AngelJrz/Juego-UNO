@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿
+using System.ServiceModel;
 using System.Windows;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Logica;
@@ -32,6 +33,14 @@ namespace UNOGui.Ventanas
                 LoginAdmin.CerrarSesion(nickname);
             }
             catch (EndpointNotFoundException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+            catch (CommunicationObjectFaultedException)
             {
                 new Mensaje
                 {
@@ -83,7 +92,14 @@ namespace UNOGui.Ventanas
                         Contenido = "Lo sentimos, ocurrió un error en el servidor. Intente más tarde."
                     }.ShowDialog();
                 }
-                
+                catch (CommunicationObjectFaultedException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                    }.ShowDialog();
+                }
             }
         }
 

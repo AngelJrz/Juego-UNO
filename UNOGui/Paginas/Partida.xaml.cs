@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -58,7 +59,34 @@ namespace UNOGui.Paginas
                     PuntajeTotal = ObtenerMiPuntaje()
                 };
 
-                PartidaAdmin.AnunciarGanador(miSala, juadorGanador);
+                try
+                {
+                    PartidaAdmin.AnunciarGanador(miSala, juadorGanador);
+                }
+                catch (EndpointNotFoundException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                    }.ShowDialog();
+                }
+                catch (TimeoutException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                    }.ShowDialog();
+                }
+                catch (CommunicationObjectFaultedException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                    }.ShowDialog();
+                }
             }
         }
 
@@ -90,19 +118,76 @@ namespace UNOGui.Paginas
                 {
                     if (Reglas.EsCartaValida(carta, cartaEnTablero))
                     {
-                        PartidaAdmin.ColocarCarta(carta, miSala);
+                        try
+                        {
+                            PartidaAdmin.ColocarCarta(carta, miSala);
+                        }
+                        catch (EndpointNotFoundException)
+                        {
+                            new Mensaje
+                            {
+                                TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                                Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                            }.ShowDialog();
+                        }
+                        catch (TimeoutException)
+                        {
+                            new Mensaje
+                            {
+                                TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                                Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                            }.ShowDialog();
+                        }
+                        catch (CommunicationObjectFaultedException)
+                        {
+                            new Mensaje
+                            {
+                                TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                                Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                            }.ShowDialog();
+                        }
+                        
                         miMazo.Remove(carta);
                         manoJugador.Children.Remove(imagen);
-                        PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMiNickname(), miMazo.Count.ToString());
-                        PartidaAdmin.ActualizarPuntaje(miSala, ObtenerMiNickname(), carta.Numerok__BackingField);
+
+                        try
+                        {
+                            PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMiNickname(), miMazo.Count.ToString());
+                            PartidaAdmin.ActualizarPuntaje(miSala, ObtenerMiNickname(), carta.Numerok__BackingField);
+                        }
+                        catch (EndpointNotFoundException)
+                        {
+                            new Mensaje
+                            {
+                                TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                                Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                            }.ShowDialog();
+                        }
+                        catch (TimeoutException)
+                        {
+                            new Mensaje
+                            {
+                                TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                                Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                            }.ShowDialog();
+                        }
+                        catch (CommunicationObjectFaultedException)
+                        {
+                            new Mensaje
+                            {
+                                TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                                Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                            }.ShowDialog();
+                        }
+                        
                         ActualizarMiPuntaje(carta.Numerok__BackingField);
                         MostrarMano();
                     }
                     else
                     {
                         new Mensaje {
-                            TituloMensaje = "Carta no permitida",
-                            Contenido = "La carta que seleccionaste no es valida"
+                            TituloMensaje = Properties.Resources.Partida_CartaNoPermitidaTitulo,
+                            Contenido = Properties.Resources.Partida_CartaNoPermitidaMensaje
                         }.ShowDialog();
                     }
                 }
@@ -110,8 +195,8 @@ namespace UNOGui.Paginas
                 {
                     new Mensaje
                     {
-                        TituloMensaje = "Accion no permitida",
-                        Contenido = "Espera tu turno"
+                        TituloMensaje = Properties.Resources.Partida_AccionNoPermitidaTitulo,
+                        Contenido = Properties.Resources.Partida_AccionNoPermitidaMensaje
                     }.ShowDialog();
                 }
             };
@@ -154,7 +239,35 @@ namespace UNOGui.Paginas
         {
             miMazo.Add(nuevaCarta);
             MostrarMano();
-            PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMiNickname(), miMazo.Count.ToString());
+
+            try
+            {
+                PartidaAdmin.ActualizarNumeroDeCartas(miSala, ObtenerMiNickname(), miMazo.Count.ToString());
+            }
+            catch (EndpointNotFoundException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+            catch (TimeoutException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+            catch (CommunicationObjectFaultedException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
         }
 
         /// <summary>
@@ -185,7 +298,34 @@ namespace UNOGui.Paginas
         {
             String miNickname = ObtenerMiNickname();
 
-            PartidaAdmin.TomarCarta(miSala, miNickname);
+            try
+            {
+                PartidaAdmin.TomarCarta(miSala, miNickname);
+            }
+            catch (EndpointNotFoundException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+            catch (TimeoutException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+            catch (CommunicationObjectFaultedException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
         }
 
         /// <summary>
@@ -295,7 +435,34 @@ namespace UNOGui.Paginas
 
         private void SalirDePartida(object sender, RoutedEventArgs e)
         {
-            SalaAdmin.SalirDeSala(miSala, ObtenerMiNickname());
+            try
+            {
+                SalaAdmin.SalirDeSala(miSala, ObtenerMiNickname());
+            }
+            catch (EndpointNotFoundException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+            catch (TimeoutException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+            catch (CommunicationObjectFaultedException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
         }
 
         /// <summary>

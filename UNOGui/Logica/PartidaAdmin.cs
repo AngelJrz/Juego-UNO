@@ -17,6 +17,9 @@ namespace UNOGui.Logica
         /// Se comunica con el servidor para dar inicio a una partida
         /// </summary>
         /// <param name="idSala">Identificador de la sala que iniciará la partida</param>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void IniciarPartida(string idSala)
         {
             try
@@ -40,6 +43,9 @@ namespace UNOGui.Logica
         /// </summary>
         /// <param name="nuevaCarta">Nueva carta a colocar</param>
         /// <param name="idSalaDeJjugador">Identificador de la sala a actualizar</param>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void ColocarCarta(Carta nuevaCarta, String idSalaDeJjugador)
         {
             try
@@ -56,6 +62,11 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
@@ -63,6 +74,9 @@ namespace UNOGui.Logica
         /// </summary>
         /// <param name="idSalaDeJjugador">Identificador de la sala a la que pertenece el jugador</param>
         /// <param name="nickname">Nickname del jugador que requiere una carta</param>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void TomarCarta(String idSalaDeJjugador, String nickname)
         {
             try
@@ -79,6 +93,11 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
@@ -86,6 +105,9 @@ namespace UNOGui.Logica
         /// </summary>
         /// <param name="idSalaDeJjugador">ID sala del jugador ganador</param>
         /// <param name="jugadorGanador">Jugador ganador</param>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void AnunciarGanador(String idSalaDeJjugador, Jugador jugadorGanador)
         {
             try
@@ -102,6 +124,11 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
@@ -110,6 +137,9 @@ namespace UNOGui.Logica
         /// <param name="idSala">Identificador de la sala a la que pertenece el jugador</param>
         /// <param name="nickname">Nickname del jugador</param>
         /// <param name="nuevoNumero">Nuevo numero de cartas con las que cuenta el jugador</param>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void ActualizarNumeroDeCartas(String idSala, String nickname, String nuevoNumero)
         {
             try
@@ -126,6 +156,11 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
@@ -134,6 +169,9 @@ namespace UNOGui.Logica
         /// <param name="idSalaJugador">Identificador de la sala a la que pertenece el jugador</param>
         /// <param name="nickname">Nickname del jugador</param>
         /// <param name="puntajeASumar">Puntaje del jugador actualizado</param>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void ActualizarPuntaje(String idSalaJugador, String nickname, int puntajeASumar)
         {
             try
@@ -146,6 +184,11 @@ namespace UNOGui.Logica
                 throw;
             }
             catch (TimeoutException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (CommunicationObjectFaultedException ex)
             {
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;

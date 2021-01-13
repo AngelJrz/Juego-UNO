@@ -15,6 +15,7 @@ namespace UNOGui.Logica
         /// </summary>
         /// <param name="clave">Clave de recuperación</param>
         /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void VerificarClave(string clave)
         {
             try
@@ -26,6 +27,11 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
@@ -33,6 +39,7 @@ namespace UNOGui.Logica
         /// </summary>
         /// <param name="jugador">Jugador al que se la va a enviar la clave</param>
         /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void EnviarClave(Jugador jugador)
         {
             try
@@ -44,13 +51,19 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
-            
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
         /// Lógica para actualizar la contraseña.
         /// </summary>
         /// <param name="contrasenia">Nueva contraseña</param>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void ActualizarContrasenia(string contrasenia)
         {
             try
@@ -58,6 +71,11 @@ namespace UNOGui.Logica
                 servidor.ActualizarContrasenia(contrasenia);
             }
             catch (EndpointNotFoundException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (CommunicationObjectFaultedException ex)
             {
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;

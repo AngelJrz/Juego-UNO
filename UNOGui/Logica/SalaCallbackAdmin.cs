@@ -72,9 +72,9 @@ namespace UNOGui.Logica
         {
             new Mensaje
             {
-                Title = "Sala eliminada",
-                TituloMensaje = "Sala eliminada",
-                Contenido = "El host eliminó la sala. Unete a otra sala."
+                Title = Properties.Resources.Sala_EliminacionSalaTituloMensaje,
+                TituloMensaje = Properties.Resources.Sala_EliminacionSalaTituloMensaje,
+                Contenido = Properties.Resources.Sala_EliminacionSalaContenidoMensaje
             }.ShowDialog();
 
             CerrarSala();
@@ -87,9 +87,9 @@ namespace UNOGui.Logica
         {
             new Mensaje
             {
-                Title = "Sala eliminada",
-                TituloMensaje = "Sala eliminada",
-                Contenido = "No existen suficientes jugadores en la sala para seguir jugando."
+                Title = Properties.Resources.Sala_EliminacionSalaTituloMensaje,
+                TituloMensaje = Properties.Resources.Sala_EliminacionSalaTituloMensaje,
+                Contenido = Properties.Resources.Sala_EliminacionFaltaJugadoresContenido
             }.ShowDialog();
 
             CerrarSala();
@@ -114,34 +114,33 @@ namespace UNOGui.Logica
                 case ResultadoUnionSala.NoExisteId:
                     new Mensaje
                     {
-                        TituloMensaje = "Sala no encontrada",
-                        Contenido = "No existe la sala buscada. Por favor verique la información e intente de nuevo."
+                        TituloMensaje = Properties.Resources.Sala_NoEncontradaTitulo,
+                        Contenido = Properties.Resources.Sala_NoEncontradaContenido
                     }.ShowDialog();
                     break;
 
                 case ResultadoUnionSala.ContraseñaIncorrecta:
                     new Mensaje
                     {
-                        TituloMensaje = "Contraseña incorrecta",
-                        Contenido = "La contraseña de la sala es incorrecta. Por favor verifique la información e intente de nuevo."
+                        TituloMensaje = Properties.Resources.Sala_ContraseñaIncorrectaTitulo,
+                        Contenido = Properties.Resources.Sala_ContraseñaIncorrectaContenido
                     }.ShowDialog();
                     break;
 
                 case ResultadoUnionSala.NoHayCupo:
-                    MessageBox.Show("Ya no hay cupo en la sala");
                     new Mensaje
                     {
-                        TituloMensaje = "No hay cupo",
-                        Contenido = "Ya no hay cupo en la sala. Únete a otra sala o crea una nueva."
+                        TituloMensaje = Properties.Resources.Sala_NoHayCupoTitulo,
+                        Contenido = Properties.Resources.Sala_NoHayCupoContenido
                     }.ShowDialog();
                     break;
 
                 case ResultadoUnionSala.EnJuego:
                     new Mensaje
                     {
-                        Title = "Sala en juego",
-                        TituloMensaje = "Sala en juego",
-                        Contenido = "La sala ya se encuentra en juego. Por favor ingrese a una nueva sala."
+                        Title = Properties.Resources.Sala_EnJuegoTitulo,
+                        TituloMensaje = Properties.Resources.Sala_EnJuegoTitulo,
+                        Contenido = Properties.Resources.Sala_EnJuegoContenido
                     }.ShowDialog();
                     break;
 
