@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.ServiceModel;
 using System.Windows;
@@ -48,7 +49,16 @@ namespace UNOGui.Paginas
                 {
                     new Mensaje
                     {
-
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                    }.ShowDialog();
+                }
+                catch (CommunicationObjectFaultedException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
                     }.ShowDialog();
                 }
             }
@@ -68,7 +78,34 @@ namespace UNOGui.Paginas
             MenuPrincipal menuPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
             var jugador = menuPrincipal.DataContext as Jugador;
 
-            SalaAdmin.SalirDeSala(idSala, jugador.Nickname);
+            try
+            {
+                SalaAdmin.SalirDeSala(idSala, jugador.Nickname);
+            }
+            catch (EndpointNotFoundException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+            catch (TimeoutException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+            catch (CommunicationObjectFaultedException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
         }
 
         private bool HayMinimoDeJugadores()

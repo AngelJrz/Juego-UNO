@@ -26,7 +26,7 @@
             <TextBox x:Name="nombreSala" Template="{StaticResource TextBoxBaseControlTemplate}" MaxLength="5"/>
 
             <Label Content="{x:Static p:Resources.CampoContraseña}" ContentStringFormat=" {0}:" Style="{StaticResource TextoLabel}" Margin="130,10,0,0"/>
-            <PasswordBox x:Name="contrasenia" Template="{StaticResource PasswordBoxBaseControlTemplate}"/>
+            <PasswordBox x:Name="contrasenia" Template="{StaticResource PasswordBoxBaseControlTemplate}" MaxLength="20"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" VerticalAlignment="Center">

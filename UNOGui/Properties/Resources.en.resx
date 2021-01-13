@@ -165,6 +165,12 @@
   <data name="Idioma_Ingles" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="IngresoCorreo_Contenido" xml:space="preserve">
+    <value>Type your email to send you a recovering code.</value>
+  </data>
+  <data name="IngresoCorreo_Titulo" xml:space="preserve">
+    <value>Entry email</value>
+  </data>
   <data name="Inicio_Nivel" xml:space="preserve">
     <value>Level</value>
   </data>
@@ -279,6 +285,18 @@
   <data name="MiPerfil_Titulo" xml:space="preserve">
     <value>Profile</value>
   </data>
+  <data name="Partida_AccionNoPermitidaMensaje" xml:space="preserve">
+    <value>Wait for your turn to play.</value>
+  </data>
+  <data name="Partida_AccionNoPermitidaTitulo" xml:space="preserve">
+    <value>Action not allowed</value>
+  </data>
+  <data name="Partida_CartaNoPermitidaMensaje" xml:space="preserve">
+    <value>The picked card is not valid.</value>
+  </data>
+  <data name="Partida_CartaNoPermitidaTitulo" xml:space="preserve">
+    <value>Can't play card</value>
+  </data>
   <data name="Partida_GanadorMensajeContenido" xml:space="preserve">
     <value>The game winner is</value>
   </data>
@@ -392,6 +410,39 @@
   </data>
   <data name="Registro_Titulo" xml:space="preserve">
     <value>Sign in</value>
+  </data>
+  <data name="Sala_ContraseñaIncorrectaContenido" xml:space="preserve">
+    <value>The password is incorrect. Please verify it and try again.</value>
+  </data>
+  <data name="Sala_ContraseñaIncorrectaTitulo" xml:space="preserve">
+    <value>Incorrect password</value>
+  </data>
+  <data name="Sala_EliminacionFaltaJugadoresContenido" xml:space="preserve">
+    <value>No enough players in the lobby, please join to another one.</value>
+  </data>
+  <data name="Sala_EliminacionSalaContenidoMensaje" xml:space="preserve">
+    <value>The host removed the lobby. Please join to another one.</value>
+  </data>
+  <data name="Sala_EliminacionSalaTituloMensaje" xml:space="preserve">
+    <value>Lobby removed</value>
+  </data>
+  <data name="Sala_EnJuegoContenido" xml:space="preserve">
+    <value>The game is in progress. Please try to join to another one.</value>
+  </data>
+  <data name="Sala_EnJuegoTitulo" xml:space="preserve">
+    <value>Game in progress</value>
+  </data>
+  <data name="Sala_NoEncontradaContenido" xml:space="preserve">
+    <value>Lobby not found. Plase verify the information and try again.</value>
+  </data>
+  <data name="Sala_NoEncontradaTitulo" xml:space="preserve">
+    <value>Lobby not found</value>
+  </data>
+  <data name="Sala_NoHayCupoContenido" xml:space="preserve">
+    <value>Please join to another lobby to play.</value>
+  </data>
+  <data name="Sala_NoHayCupoTitulo" xml:space="preserve">
+    <value>The lobby is full</value>
   </data>
   <data name="Temporizador_Mensaje" xml:space="preserve">
     <value>Send again on</value>

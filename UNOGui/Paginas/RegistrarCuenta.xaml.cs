@@ -47,6 +47,14 @@ namespace UNOGui.Paginas
                         Contenido = Properties.Resources.ErrorServidor_MensajeContenido
                     }.ShowDialog();
                 }
+                catch (CommunicationObjectFaultedException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                    }.ShowDialog();
+                }
             }
         }
 

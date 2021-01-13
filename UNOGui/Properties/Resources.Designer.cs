@@ -205,6 +205,24 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa tu correo electronico para enviarte un código de recuperación..
+        /// </summary>
+        public static string IngresoCorreo_Contenido {
+            get {
+                return ResourceManager.GetString("IngresoCorreo_Contenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingreso de correo.
+        /// </summary>
+        public static string IngresoCorreo_Titulo {
+            get {
+                return ResourceManager.GetString("IngresoCorreo_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nivel.
         /// </summary>
         public static string Inicio_Nivel {
@@ -547,6 +565,42 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Espera tu turno para jugar..
+        /// </summary>
+        public static string Partida_AccionNoPermitidaMensaje {
+            get {
+                return ResourceManager.GetString("Partida_AccionNoPermitidaMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Acción no permitida.
+        /// </summary>
+        public static string Partida_AccionNoPermitidaTitulo {
+            get {
+                return ResourceManager.GetString("Partida_AccionNoPermitidaTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La carta que seleccionaste no es valida.
+        /// </summary>
+        public static string Partida_CartaNoPermitidaMensaje {
+            get {
+                return ResourceManager.GetString("Partida_CartaNoPermitidaMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Carta no permitida.
+        /// </summary>
+        public static string Partida_CartaNoPermitidaTitulo {
+            get {
+                return ResourceManager.GetString("Partida_CartaNoPermitidaTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El ganador de la partida es.
         /// </summary>
         public static string Partida_GanadorMensajeContenido {
@@ -885,6 +939,105 @@ namespace UNOGui.Properties {
         public static string RegistroEnEspera_VentanaTitulo {
             get {
                 return ResourceManager.GetString("RegistroEnEspera_VentanaTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña de la sala es incorrecta. Por favor verifique la información e intente de nuevo..
+        /// </summary>
+        public static string Sala_ContraseñaIncorrectaContenido {
+            get {
+                return ResourceManager.GetString("Sala_ContraseñaIncorrectaContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña incorrecta.
+        /// </summary>
+        public static string Sala_ContraseñaIncorrectaTitulo {
+            get {
+                return ResourceManager.GetString("Sala_ContraseñaIncorrectaTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No existen suficientes jugadores en la sala para seguir jugando..
+        /// </summary>
+        public static string Sala_EliminacionFaltaJugadoresContenido {
+            get {
+                return ResourceManager.GetString("Sala_EliminacionFaltaJugadoresContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El host eliminó la sala. Unete a otra sala..
+        /// </summary>
+        public static string Sala_EliminacionSalaContenidoMensaje {
+            get {
+                return ResourceManager.GetString("Sala_EliminacionSalaContenidoMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sala eliminada.
+        /// </summary>
+        public static string Sala_EliminacionSalaTituloMensaje {
+            get {
+                return ResourceManager.GetString("Sala_EliminacionSalaTituloMensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La sala ya se encuentra en juego. Por favor ingrese a una nueva sala..
+        /// </summary>
+        public static string Sala_EnJuegoContenido {
+            get {
+                return ResourceManager.GetString("Sala_EnJuegoContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sala en juego.
+        /// </summary>
+        public static string Sala_EnJuegoTitulo {
+            get {
+                return ResourceManager.GetString("Sala_EnJuegoTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No existe la sala buscada. Por favor verique la información e intente de nuevo..
+        /// </summary>
+        public static string Sala_NoEncontradaContenido {
+            get {
+                return ResourceManager.GetString("Sala_NoEncontradaContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sala no encontrada.
+        /// </summary>
+        public static string Sala_NoEncontradaTitulo {
+            get {
+                return ResourceManager.GetString("Sala_NoEncontradaTitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ya no hay cupo en la sala. Únete a otra sala o crea una nueva..
+        /// </summary>
+        public static string Sala_NoHayCupoContenido {
+            get {
+                return ResourceManager.GetString("Sala_NoHayCupoContenido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No hay cupo en la sala.
+        /// </summary>
+        public static string Sala_NoHayCupoTitulo {
+            get {
+                return ResourceManager.GetString("Sala_NoHayCupoTitulo", resourceCulture);
             }
         }
         

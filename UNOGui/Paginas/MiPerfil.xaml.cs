@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using UNOGui.JuegoUNOServicio;
 using UNOGui.Logica;
 using UNOGui.Ventanas;
 
@@ -75,9 +78,34 @@ namespace UNOGui.Paginas
 
         private void AbrirLogin()
         {
-            Principal login = new Principal();
-            login.Show();
-            Window.GetWindow(this).Close();
+            string nickname = (DataContext as Jugador).Nickname;
+
+            try
+            {
+                LoginAdmin.CerrarSesion(nickname);
+            }
+            catch (EndpointNotFoundException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+            catch (CommunicationObjectFaultedException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
+
+            MenuPrincipal ventanaPrincipal = Application.Current.Windows.OfType<MenuPrincipal>().SingleOrDefault();
+            Principal ventanaLogin = new Principal();
+
+            ventanaLogin.Show();
+            ventanaPrincipal.Close();
         }
 
         private void CambiarIdioma()

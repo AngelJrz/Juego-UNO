@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using UNOGui.JuegoUNOServicio;
 using UNOGui.Logica;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Paginas
 {
@@ -42,7 +43,11 @@ namespace UNOGui.Paginas
 
             if (correoIngresado.Text.Trim() == "")
             {
-                MessageBox.Show("El campo esta incompleto");
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.CamposIncompletosTitulo,
+                    Contenido = Properties.Resources.CamposIncompletosMensaje
+                }.ShowDialog();
             }
             else
             {
@@ -64,7 +69,11 @@ namespace UNOGui.Paginas
             }
             else
             {
-                MessageBox.Show("El correo electronico ingresado no es valido", "Información invalida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.Registro_MensajeCorreoTitulo,
+                    Contenido = Properties.Resources.Registro_MensajeCorreoContenido
+                }.ShowDialog();
             }
 
             return valido;

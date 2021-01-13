@@ -35,7 +35,15 @@ namespace UNOGui.Paginas
                     TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
                     Contenido = Properties.Resources.ErrorServidor_MensajeContenido
                 }.ShowDialog();
-            } 
+            }
+            catch (CommunicationObjectFaultedException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
         }
 
         private void ConfirmarRegistro(object sender, RoutedEventArgs e)
@@ -53,7 +61,15 @@ namespace UNOGui.Paginas
                         TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
                         Contenido = Properties.Resources.ErrorServidor_MensajeContenido
                     }.ShowDialog();
-                }                
+                }
+                catch (CommunicationObjectFaultedException)
+                {
+                    new Mensaje
+                    {
+                        TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                        Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                    }.ShowDialog();
+                }
             }
             else
             {
@@ -108,7 +124,15 @@ namespace UNOGui.Paginas
                     TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
                     Contenido = Properties.Resources.ErrorServidor_MensajeContenido
                 }.ShowDialog();
-            } 
+            }
+            catch (CommunicationObjectFaultedException)
+            {
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ErrorServidor_TituloContenido,
+                    Contenido = Properties.Resources.ErrorServidor_MensajeContenido
+                }.ShowDialog();
+            }
         }
     }
 }

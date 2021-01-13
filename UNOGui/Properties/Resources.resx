@@ -165,6 +165,12 @@
   <data name="Idioma_Ingles" xml:space="preserve">
     <value>Inglés</value>
   </data>
+  <data name="IngresoCorreo_Contenido" xml:space="preserve">
+    <value>Ingresa tu correo electronico para enviarte un código de recuperación.</value>
+  </data>
+  <data name="IngresoCorreo_Titulo" xml:space="preserve">
+    <value>Ingreso de correo</value>
+  </data>
   <data name="Inicio_Nivel" xml:space="preserve">
     <value>Nivel</value>
   </data>
@@ -279,6 +285,18 @@
   <data name="MiPerfil_Titulo" xml:space="preserve">
     <value>Mi perfil</value>
   </data>
+  <data name="Partida_AccionNoPermitidaMensaje" xml:space="preserve">
+    <value>Espera tu turno para jugar.</value>
+  </data>
+  <data name="Partida_AccionNoPermitidaTitulo" xml:space="preserve">
+    <value>Acción no permitida</value>
+  </data>
+  <data name="Partida_CartaNoPermitidaMensaje" xml:space="preserve">
+    <value>La carta que seleccionaste no es valida</value>
+  </data>
+  <data name="Partida_CartaNoPermitidaTitulo" xml:space="preserve">
+    <value>Carta no permitida</value>
+  </data>
   <data name="Partida_GanadorMensajeContenido" xml:space="preserve">
     <value>El ganador de la partida es</value>
   </data>
@@ -392,6 +410,39 @@
   </data>
   <data name="Registro_Titulo" xml:space="preserve">
     <value>Registrar cuenta</value>
+  </data>
+  <data name="Sala_ContraseñaIncorrectaContenido" xml:space="preserve">
+    <value>La contraseña de la sala es incorrecta. Por favor verifique la información e intente de nuevo.</value>
+  </data>
+  <data name="Sala_ContraseñaIncorrectaTitulo" xml:space="preserve">
+    <value>Contraseña incorrecta</value>
+  </data>
+  <data name="Sala_EliminacionFaltaJugadoresContenido" xml:space="preserve">
+    <value>No existen suficientes jugadores en la sala para seguir jugando.</value>
+  </data>
+  <data name="Sala_EliminacionSalaContenidoMensaje" xml:space="preserve">
+    <value>El host eliminó la sala. Unete a otra sala.</value>
+  </data>
+  <data name="Sala_EliminacionSalaTituloMensaje" xml:space="preserve">
+    <value>Sala eliminada</value>
+  </data>
+  <data name="Sala_EnJuegoContenido" xml:space="preserve">
+    <value>La sala ya se encuentra en juego. Por favor ingrese a una nueva sala.</value>
+  </data>
+  <data name="Sala_EnJuegoTitulo" xml:space="preserve">
+    <value>Sala en juego</value>
+  </data>
+  <data name="Sala_NoEncontradaContenido" xml:space="preserve">
+    <value>No existe la sala buscada. Por favor verique la información e intente de nuevo.</value>
+  </data>
+  <data name="Sala_NoEncontradaTitulo" xml:space="preserve">
+    <value>Sala no encontrada</value>
+  </data>
+  <data name="Sala_NoHayCupoContenido" xml:space="preserve">
+    <value>Ya no hay cupo en la sala. Únete a otra sala o crea una nueva.</value>
+  </data>
+  <data name="Sala_NoHayCupoTitulo" xml:space="preserve">
+    <value>No hay cupo en la sala</value>
   </data>
   <data name="Temporizador_Mensaje" xml:space="preserve">
     <value>Enviar de nuevo en</value>

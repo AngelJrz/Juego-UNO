@@ -17,6 +17,8 @@ namespace UNOGui.Logica
         /// </summary>
         /// <param name="nickname">Nickname del Jugador.</param>
         /// <param name="contraseña">Contraseña del Jugador.</param>
+        /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void IniciarSesion(string nickname, string contraseña)
         {
             try
@@ -28,6 +30,11 @@ namespace UNOGui.Logica
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
             }
+            catch (CommunicationObjectFaultedException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
         }
 
         /// <summary>
@@ -35,6 +42,7 @@ namespace UNOGui.Logica
         /// </summary>
         /// <param name="nickname">Nickname del Jugador que cerrará sesión</param>
         /// <exception cref="EndpointNotFoundException"></exception>
+        /// <exception cref="CommunicationObjectFaultedException"></exception>
         public static void CerrarSesion(string nickname)
         {
             try
@@ -42,6 +50,11 @@ namespace UNOGui.Logica
                 servidor.CerrarSesion(nickname);
             }
             catch (EndpointNotFoundException ex)
+            {
+                LoggerAdmin.EscribirLog("Error", ex);
+                throw;
+            }
+            catch (CommunicationObjectFaultedException ex)
             {
                 LoggerAdmin.EscribirLog("Error", ex);
                 throw;
