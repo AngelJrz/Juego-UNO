@@ -35,7 +35,7 @@ namespace UNOGui.Paginas
 
         private void IrAVerificarCodigo(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new VerificarCodigo());
+            NavigationService.Navigate(new IngresoDeCorreo());
         }
 
         private void IniciarSesionBoton(object sender, RoutedEventArgs e)
