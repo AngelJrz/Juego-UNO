@@ -1,8 +1,9 @@
-﻿using UNOServerTest.JuegoUNOServicioTest;
+﻿using UNO.Contratos.Login;
+using UNOServerTest.JuegoUNOServicioTest;
 
 namespace UNOServerTest.Login
 {
-    public class LoginCallbackAdmin : ILoginCallback
+    public class LoginCallbackAdmin : JuegoUNOServicioTest.ILoginCallback
     {
         public ResultadoLogin Resultado { get; set; }
 

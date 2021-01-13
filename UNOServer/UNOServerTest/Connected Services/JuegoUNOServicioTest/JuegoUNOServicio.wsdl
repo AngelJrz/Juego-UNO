@@ -154,6 +154,9 @@
   <wsdl:message name="ILogin_IniciarSesion_InputMessage">
     <wsdl:part name="parameters" element="tns:IniciarSesion" />
   </wsdl:message>
+  <wsdl:message name="ILogin_CerrarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarSesion" />
+  </wsdl:message>
   <wsdl:message name="ILogin_NotificarResultadoLogin_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarResultadoLogin" />
   </wsdl:message>
@@ -178,8 +181,20 @@
   <wsdl:message name="IAdministrarJuego_IniciarPartida_InputMessage">
     <wsdl:part name="parameters" element="tns:IniciarPartida" />
   </wsdl:message>
-  <wsdl:message name="IAdministrarJuego_RepartirCartas_InputMessage">
-    <wsdl:part name="parameters" element="tns:RepartirCartas" />
+  <wsdl:message name="IAdministrarJuego_ColocarCartaCentral_InputMessage">
+    <wsdl:part name="parameters" element="tns:ColocarCartaCentral" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_TomarCarta_InputMessage">
+    <wsdl:part name="parameters" element="tns:TomarCarta" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_AnunciarGanador_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnunciarGanador" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ActualizarNumeroDeCarta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarNumeroDeCarta" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ActualizarPuntaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarPuntaje" />
   </wsdl:message>
   <wsdl:message name="IAdministrarJuego_NotificarCreacionDeSala_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarCreacionDeSala" />
@@ -208,11 +223,41 @@
   <wsdl:message name="IAdministrarJuego_EliminarCreador_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EliminarCreador" />
   </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_NotificarFaltaDeJugadores_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarFaltaDeJugadores" />
+  </wsdl:message>
   <wsdl:message name="IAdministrarJuego_NotificarInicioPartida_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarInicioPartida" />
   </wsdl:message>
-  <wsdl:message name="IAdministrarJuego_ObtenerMaso_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerMaso" />
+  <wsdl:message name="IAdministrarJuego_ObtenerMazo_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerMazo" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ActualizarCartaCentral_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCartaCentral" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_RecibirCarta_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirCarta" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_NotificarGanador_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarGanador" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_CambiarTurno_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:CambiarTurno" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ActualizarNumeroDeCartas_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarNumeroDeCartas" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ObtenerDosCartas_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerDosCartas" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ObtenerCuatroCartas_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCuatroCartas" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ObtenerTurnoActual_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTurnoActual" />
+  </wsdl:message>
+  <wsdl:message name="IAdministrarJuego_ActualizarPuntajeDeJugador_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarPuntajeDeJugador" />
   </wsdl:message>
   <wsdl:portType name="IRegistrarJugador">
     <wsdl:operation name="RegistrarJugador">
@@ -244,6 +289,9 @@
     <wsdl:operation name="IniciarSesion">
       <wsdl:input wsaw:Action="http://tempuri.org/ILogin/IniciarSesion" message="tns:ILogin_IniciarSesion_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CerrarSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogin/CerrarSesion" message="tns:ILogin_CerrarSesion_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotificarResultadoLogin">
       <wsdl:output wsaw:Action="http://tempuri.org/ILogin/NotificarResultadoLogin" message="tns:ILogin_NotificarResultadoLogin_OutputCallbackMessage" />
     </wsdl:operation>
@@ -272,8 +320,20 @@
     <wsdl:operation name="IniciarPartida">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/IniciarPartida" message="tns:IAdministrarJuego_IniciarPartida_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="RepartirCartas">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/RepartirCartas" message="tns:IAdministrarJuego_RepartirCartas_InputMessage" />
+    <wsdl:operation name="ColocarCartaCentral">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral" message="tns:IAdministrarJuego_ColocarCartaCentral_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TomarCarta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/TomarCarta" message="tns:IAdministrarJuego_TomarCarta_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnunciarGanador">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador" message="tns:IAdministrarJuego_AnunciarGanador_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNumeroDeCarta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta" message="tns:IAdministrarJuego_ActualizarNumeroDeCarta_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPuntaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntaje" message="tns:IAdministrarJuego_ActualizarPuntaje_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotificarCreacionDeSala">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala" message="tns:IAdministrarJuego_NotificarCreacionDeSala_OutputCallbackMessage" />
@@ -302,11 +362,41 @@
     <wsdl:operation name="EliminarCreador">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/EliminarCreador" message="tns:IAdministrarJuego_EliminarCreador_OutputCallbackMessage" />
     </wsdl:operation>
+    <wsdl:operation name="NotificarFaltaDeJugadores">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarFaltaDeJugadores" message="tns:IAdministrarJuego_NotificarFaltaDeJugadores_OutputCallbackMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NotificarInicioPartida">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarInicioPartida" message="tns:IAdministrarJuego_NotificarInicioPartida_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ObtenerMaso">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ObtenerMaso" message="tns:IAdministrarJuego_ObtenerMaso_OutputCallbackMessage" />
+    <wsdl:operation name="ObtenerMazo">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ObtenerMazo" message="tns:IAdministrarJuego_ObtenerMazo_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCartaCentral">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarCartaCentral" message="tns:IAdministrarJuego_ActualizarCartaCentral_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecibirCarta">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/RecibirCarta" message="tns:IAdministrarJuego_RecibirCarta_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarGanador">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/NotificarGanador" message="tns:IAdministrarJuego_NotificarGanador_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarTurno">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/CambiarTurno" message="tns:IAdministrarJuego_CambiarTurno_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNumeroDeCartas">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCartas" message="tns:IAdministrarJuego_ActualizarNumeroDeCartas_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDosCartas">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ObtenerDosCartas" message="tns:IAdministrarJuego_ObtenerDosCartas_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCuatroCartas">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ObtenerCuatroCartas" message="tns:IAdministrarJuego_ObtenerCuatroCartas_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTurnoActual">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ObtenerTurnoActual" message="tns:IAdministrarJuego_ObtenerTurnoActual_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPuntajeDeJugador">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntajeDeJugador" message="tns:IAdministrarJuego_ActualizarPuntajeDeJugador_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IRegistrarJugador" type="tns:IRegistrarJugador">
@@ -370,6 +460,12 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="CerrarSesion">
+      <soap12:operation soapAction="http://tempuri.org/ILogin/CerrarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="NotificarResultadoLogin">
       <soap12:operation soapAction="http://tempuri.org/ILogin/NotificarResultadoLogin" style="document" />
       <wsdl:output>
@@ -426,8 +522,32 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
-    <wsdl:operation name="RepartirCartas">
-      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/RepartirCartas" style="document" />
+    <wsdl:operation name="ColocarCartaCentral">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="TomarCarta">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/TomarCarta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AnunciarGanador">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/AnunciarGanador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNumeroDeCarta">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPuntaje">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ActualizarPuntaje" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -486,14 +606,74 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="NotificarFaltaDeJugadores">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarFaltaDeJugadores" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NotificarInicioPartida">
       <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarInicioPartida" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ObtenerMaso">
-      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ObtenerMaso" style="document" />
+    <wsdl:operation name="ObtenerMazo">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ObtenerMazo" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCartaCentral">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ActualizarCartaCentral" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecibirCarta">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/RecibirCarta" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarGanador">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/NotificarGanador" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarTurno">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/CambiarTurno" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNumeroDeCartas">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCartas" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDosCartas">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ObtenerDosCartas" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCuatroCartas">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ObtenerCuatroCartas" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTurnoActual">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ObtenerTurnoActual" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarPuntajeDeJugador">
+      <soap12:operation soapAction="http://tempuri.org/IAdministrarJuego/ActualizarPuntajeDeJugador" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

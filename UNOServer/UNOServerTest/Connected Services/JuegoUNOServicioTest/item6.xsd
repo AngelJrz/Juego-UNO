@@ -61,6 +61,13 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CerrarSesion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NotificarResultadoLogin">
     <xs:complexType>
       <xs:sequence>
@@ -120,52 +127,87 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RepartirCartas">
+  <xs:element name="ColocarCartaCentral">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego" minOccurs="0" name="sala" nillable="true" type="q10:Sala" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="cartaCentral" nillable="true" type="q10:Carta" />
+        <xs:element minOccurs="0" name="idSalaJugador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TomarCarta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSalaJugador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnunciarGanador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSalaJugador" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="jugadorGanador" nillable="true" type="q11:Jugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarNumeroDeCarta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSalaJugador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroDeCartas" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarPuntaje">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSalaJugador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="puntajeASumar" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="NotificarCreacionDeSala">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego" minOccurs="0" name="salaCreada" nillable="true" type="q11:Sala" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego" minOccurs="0" name="salaCreada" nillable="true" type="q12:Sala" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="NotificarUnionASala">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego" minOccurs="0" name="resultado" type="q12:ResultadoUnionSala" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego" minOccurs="0" name="resultado" type="q13:ResultadoUnionSala" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ActualizarSala">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="jugadores" nillable="true" type="q13:ArrayOfstring" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="jugadores" nillable="true" type="q14:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ObtenerInformacionDeSala">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego" minOccurs="0" name="sala" nillable="true" type="q14:Sala" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego" minOccurs="0" name="sala" nillable="true" type="q15:Sala" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AgregarNuevoJugador">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="nuevoJugador" nillable="true" type="q15:Jugador" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="nuevoJugador" nillable="true" type="q16:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SacarJugador">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="jugadorASacar" nillable="true" type="q16:Jugador" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="jugadorASacar" nillable="true" type="q17:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -184,16 +226,88 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="NotificarFaltaDeJugadores">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="NotificarInicioPartida">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego" minOccurs="0" name="sala" nillable="true" type="q17:Sala" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego" minOccurs="0" name="sala" nillable="true" type="q18:Sala" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ObtenerMaso">
+  <xs:element name="ObtenerMazo">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="mazoDeJugador" nillable="true" type="q19:ArrayOfCarta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarCartaCentral">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="cartaCentral" nillable="true" type="q20:Carta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecibirCarta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="cartaTomada" nillable="true" type="q21:Carta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotificarGanador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jugadorGanador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarTurno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nuevoTurno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarNumeroDeCartas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroDeCartas" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerDosCartas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="nuevasCartas" nillable="true" type="q22:ArrayOfCarta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCuatroCartas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/UNO.Dominio" minOccurs="0" name="nuevasCartas" nillable="true" type="q23:ArrayOfCarta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTurnoActual">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="turnoActual" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarPuntajeDeJugador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nickname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="puntajeASumar" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

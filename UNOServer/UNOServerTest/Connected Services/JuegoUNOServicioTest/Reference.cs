@@ -186,63 +186,22 @@ namespace UNOServerTest.JuegoUNOServicioTest {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResultadoRegistro", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.AdministrarJugador")]
-    public enum ResultadoRegistro : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RegistroExitoso = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ErrorRegistro = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UsuarioYaExiste = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CorreoYaExiste = 4,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResultadoLogin", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.Login")]
-    public enum ResultadoLogin : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NoExisteNickname = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ContraseñaIncorrecta = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ExisteJugador = 3,
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Sala", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Carta", Namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio")]
     [System.SerializableAttribute()]
-    public partial class Sala : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Carta : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ContraseñaField;
+        private UNOServerTest.JuegoUNOServicioTest.ColoresCartas Colork__BackingFieldField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreadaPorField;
+        private UNOServerTest.JuegoUNOServicioTest.EfectosCarta Efectok__BackingFieldField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool EnJuegoField;
+        private int Numerok__BackingFieldField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.Dictionary<UNOServerTest.JuegoUNOServicioTest.Jugador, object> JugadoresEnSalaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NumeroTotalDeJugadoresField;
+        private string Rutak__BackingFieldField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -254,80 +213,54 @@ namespace UNOServerTest.JuegoUNOServicioTest {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Contraseña {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Color>k__BackingField", IsRequired=true)]
+        public UNOServerTest.JuegoUNOServicioTest.ColoresCartas Colork__BackingField {
             get {
-                return this.ContraseñaField;
+                return this.Colork__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.ContraseñaField, value) != true)) {
-                    this.ContraseñaField = value;
-                    this.RaisePropertyChanged("Contraseña");
+                if ((this.Colork__BackingFieldField.Equals(value) != true)) {
+                    this.Colork__BackingFieldField = value;
+                    this.RaisePropertyChanged("Colork__BackingField");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreadaPor {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Efecto>k__BackingField", IsRequired=true)]
+        public UNOServerTest.JuegoUNOServicioTest.EfectosCarta Efectok__BackingField {
             get {
-                return this.CreadaPorField;
+                return this.Efectok__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreadaPorField, value) != true)) {
-                    this.CreadaPorField = value;
-                    this.RaisePropertyChanged("CreadaPor");
+                if ((this.Efectok__BackingFieldField.Equals(value) != true)) {
+                    this.Efectok__BackingFieldField = value;
+                    this.RaisePropertyChanged("Efectok__BackingField");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool EnJuego {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Numero>k__BackingField", IsRequired=true)]
+        public int Numerok__BackingField {
             get {
-                return this.EnJuegoField;
+                return this.Numerok__BackingFieldField;
             }
             set {
-                if ((this.EnJuegoField.Equals(value) != true)) {
-                    this.EnJuegoField = value;
-                    this.RaisePropertyChanged("EnJuego");
+                if ((this.Numerok__BackingFieldField.Equals(value) != true)) {
+                    this.Numerok__BackingFieldField = value;
+                    this.RaisePropertyChanged("Numerok__BackingField");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Id {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Ruta>k__BackingField", IsRequired=true)]
+        public string Rutak__BackingField {
             get {
-                return this.IdField;
+                return this.Rutak__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.IdField, value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.Dictionary<UNOServerTest.JuegoUNOServicioTest.Jugador, object> JugadoresEnSala {
-            get {
-                return this.JugadoresEnSalaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.JugadoresEnSalaField, value) != true)) {
-                    this.JugadoresEnSalaField = value;
-                    this.RaisePropertyChanged("JugadoresEnSala");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NumeroTotalDeJugadores {
-            get {
-                return this.NumeroTotalDeJugadoresField;
-            }
-            set {
-                if ((this.NumeroTotalDeJugadoresField.Equals(value) != true)) {
-                    this.NumeroTotalDeJugadoresField = value;
-                    this.RaisePropertyChanged("NumeroTotalDeJugadores");
+                if ((object.ReferenceEquals(this.Rutak__BackingFieldField, value) != true)) {
+                    this.Rutak__BackingFieldField = value;
+                    this.RaisePropertyChanged("Rutak__BackingField");
                 }
             }
         }
@@ -343,23 +276,46 @@ namespace UNOServerTest.JuegoUNOServicioTest {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResultadoUnionSala", Namespace="http://schemas.datacontract.org/2004/07/UNO.Contratos.LogicaJuego")]
-    public enum ResultadoUnionSala : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="ColoresCartas", Namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio")]
+    public enum ColoresCartas : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        NoExisteId = 1,
+        Rojo = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ContraseñaIncorrecta = 2,
+        Amarillo = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        NoHayCupo = 3,
+        Verde = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        UnionExitosa = 4,
+        Azul = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        EnJuego = 5,
+        Negro = 5,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EfectosCarta", Namespace="http://schemas.datacontract.org/2004/07/UNO.Dominio")]
+    public enum EfectosCarta : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SinEfecto = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Cancelar = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Reversa = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TomaDos = 30,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TomaCuatro = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MultiColor = 50,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -395,7 +351,7 @@ namespace UNOServerTest.JuegoUNOServicioTest {
     public interface IRegistrarJugadorCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/NotificarRegistro")]
-        void NotificarRegistro(UNOServerTest.JuegoUNOServicioTest.ResultadoRegistro resultado);
+        void NotificarRegistro(UNO.Contratos.AdministrarJugador.ResultadoRegistro resultado);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IRegistrarJugador/NotificarResultadoClave")]
         void NotificarResultadoClave(bool claveValida);
@@ -477,13 +433,19 @@ namespace UNOServerTest.JuegoUNOServicioTest {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/IniciarSesion")]
         System.Threading.Tasks.Task IniciarSesionAsync(string nickname, string contraseña);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/CerrarSesion")]
+        void CerrarSesion(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/CerrarSesion")]
+        System.Threading.Tasks.Task CerrarSesionAsync(string nickname);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ILoginCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/NotificarResultadoLogin")]
-        void NotificarResultadoLogin(UNOServerTest.JuegoUNOServicioTest.ResultadoLogin resultado);
+        void NotificarResultadoLogin(UNO.Contratos.Login.ResultadoLogin resultado);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ILogin/ObtenerJugadoresTop")]
         void ObtenerJugadoresTop(UNOServerTest.JuegoUNOServicioTest.Jugador[] jugadoresTop);
@@ -523,6 +485,14 @@ namespace UNOServerTest.JuegoUNOServicioTest {
         
         public System.Threading.Tasks.Task IniciarSesionAsync(string nickname, string contraseña) {
             return base.Channel.IniciarSesionAsync(nickname, contraseña);
+        }
+        
+        public void CerrarSesion(string nickname) {
+            base.Channel.CerrarSesion(nickname);
+        }
+        
+        public System.Threading.Tasks.Task CerrarSesionAsync(string nickname) {
+            return base.Channel.CerrarSesionAsync(nickname);
         }
     }
     
@@ -586,16 +556,16 @@ namespace UNOServerTest.JuegoUNOServicioTest {
     public interface IAdministrarJuego {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/CrearSala")]
-        void CrearSala(UNOServerTest.JuegoUNOServicioTest.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
+        void CrearSala(UNO.Contratos.LogicaJuego.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/CrearSala")]
-        System.Threading.Tasks.Task CrearSalaAsync(UNOServerTest.JuegoUNOServicioTest.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
+        System.Threading.Tasks.Task CrearSalaAsync(UNO.Contratos.LogicaJuego.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/UnirseASala")]
-        void UnirseASala(UNOServerTest.JuegoUNOServicioTest.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
+        void UnirseASala(UNO.Contratos.LogicaJuego.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/UnirseASala")]
-        System.Threading.Tasks.Task UnirseASalaAsync(UNOServerTest.JuegoUNOServicioTest.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
+        System.Threading.Tasks.Task UnirseASalaAsync(UNO.Contratos.LogicaJuego.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/SalirDeSala")]
         void SalirDeSala(string idSala, string nickname);
@@ -609,27 +579,51 @@ namespace UNOServerTest.JuegoUNOServicioTest {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/IniciarPartida")]
         System.Threading.Tasks.Task IniciarPartidaAsync(string idSala);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RepartirCartas")]
-        void RepartirCartas(UNOServerTest.JuegoUNOServicioTest.Sala sala);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral")]
+        void ColocarCartaCentral(UNOServerTest.JuegoUNOServicioTest.Carta cartaCentral, string idSalaJugador);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RepartirCartas")]
-        System.Threading.Tasks.Task RepartirCartasAsync(UNOServerTest.JuegoUNOServicioTest.Sala sala);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ColocarCartaCentral")]
+        System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOServerTest.JuegoUNOServicioTest.Carta cartaCentral, string idSalaJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/TomarCarta")]
+        void TomarCarta(string idSalaJugador, string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/TomarCarta")]
+        System.Threading.Tasks.Task TomarCartaAsync(string idSalaJugador, string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador")]
+        void AnunciarGanador(string idSalaJugador, UNOServerTest.JuegoUNOServicioTest.Jugador jugadorGanador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AnunciarGanador")]
+        System.Threading.Tasks.Task AnunciarGanadorAsync(string idSalaJugador, UNOServerTest.JuegoUNOServicioTest.Jugador jugadorGanador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta")]
+        void ActualizarNumeroDeCarta(string idSalaJugador, string nickname, string numeroDeCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCarta")]
+        System.Threading.Tasks.Task ActualizarNumeroDeCartaAsync(string idSalaJugador, string nickname, string numeroDeCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntaje")]
+        void ActualizarPuntaje(string idSalaJugador, string nickname, int puntajeASumar);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntaje")]
+        System.Threading.Tasks.Task ActualizarPuntajeAsync(string idSalaJugador, string nickname, int puntajeASumar);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IAdministrarJuegoCallback {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarCreacionDeSala")]
-        void NotificarCreacionDeSala(UNOServerTest.JuegoUNOServicioTest.Sala salaCreada);
+        void NotificarCreacionDeSala(UNO.Contratos.LogicaJuego.Sala salaCreada);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarUnionASala")]
-        void NotificarUnionASala(UNOServerTest.JuegoUNOServicioTest.ResultadoUnionSala resultado);
+        void NotificarUnionASala(UNO.Contratos.LogicaJuego.ResultadoUnionSala resultado);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarSala")]
         void ActualizarSala(string[] jugadores);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerInformacionDeSala")]
-        void ObtenerInformacionDeSala(UNOServerTest.JuegoUNOServicioTest.Sala sala);
+        void ObtenerInformacionDeSala(UNO.Contratos.LogicaJuego.Sala sala);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/AgregarNuevoJugador")]
         void AgregarNuevoJugador(UNOServerTest.JuegoUNOServicioTest.Jugador nuevoJugador);
@@ -646,11 +640,41 @@ namespace UNOServerTest.JuegoUNOServicioTest {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/EliminarCreador")]
         void EliminarCreador();
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarInicioPartida")]
-        void NotificarInicioPartida(UNOServerTest.JuegoUNOServicioTest.Sala sala);
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarFaltaDeJugadores")]
+        void NotificarFaltaDeJugadores();
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerMaso")]
-        void ObtenerMaso();
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarInicioPartida")]
+        void NotificarInicioPartida(UNO.Contratos.LogicaJuego.Sala sala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerMazo")]
+        void ObtenerMazo(UNOServerTest.JuegoUNOServicioTest.Carta[] mazoDeJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarCartaCentral")]
+        void ActualizarCartaCentral(UNOServerTest.JuegoUNOServicioTest.Carta cartaCentral);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/RecibirCarta")]
+        void RecibirCarta(UNOServerTest.JuegoUNOServicioTest.Carta cartaTomada);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/NotificarGanador")]
+        void NotificarGanador(string jugadorGanador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/CambiarTurno")]
+        void CambiarTurno(string nuevoTurno);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarNumeroDeCartas")]
+        void ActualizarNumeroDeCartas(string nickname, string numeroDeCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerDosCartas")]
+        void ObtenerDosCartas(UNOServerTest.JuegoUNOServicioTest.Carta[] nuevasCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerCuatroCartas")]
+        void ObtenerCuatroCartas(UNOServerTest.JuegoUNOServicioTest.Carta[] nuevasCartas);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ObtenerTurnoActual")]
+        void ObtenerTurnoActual(string turnoActual);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministrarJuego/ActualizarPuntajeDeJugador")]
+        void ActualizarPuntajeDeJugador(string nickname, int puntajeASumar);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -681,19 +705,19 @@ namespace UNOServerTest.JuegoUNOServicioTest {
                 base(callbackInstance, binding, remoteAddress) {
         }
         
-        public void CrearSala(UNOServerTest.JuegoUNOServicioTest.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
+        public void CrearSala(UNO.Contratos.LogicaJuego.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
             base.Channel.CrearSala(nuevaSala, jugador);
         }
         
-        public System.Threading.Tasks.Task CrearSalaAsync(UNOServerTest.JuegoUNOServicioTest.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
+        public System.Threading.Tasks.Task CrearSalaAsync(UNO.Contratos.LogicaJuego.Sala nuevaSala, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
             return base.Channel.CrearSalaAsync(nuevaSala, jugador);
         }
         
-        public void UnirseASala(UNOServerTest.JuegoUNOServicioTest.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
+        public void UnirseASala(UNO.Contratos.LogicaJuego.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
             base.Channel.UnirseASala(salaAUnirse, jugador);
         }
         
-        public System.Threading.Tasks.Task UnirseASalaAsync(UNOServerTest.JuegoUNOServicioTest.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
+        public System.Threading.Tasks.Task UnirseASalaAsync(UNO.Contratos.LogicaJuego.Sala salaAUnirse, UNOServerTest.JuegoUNOServicioTest.Jugador jugador) {
             return base.Channel.UnirseASalaAsync(salaAUnirse, jugador);
         }
         
@@ -713,12 +737,44 @@ namespace UNOServerTest.JuegoUNOServicioTest {
             return base.Channel.IniciarPartidaAsync(idSala);
         }
         
-        public void RepartirCartas(UNOServerTest.JuegoUNOServicioTest.Sala sala) {
-            base.Channel.RepartirCartas(sala);
+        public void ColocarCartaCentral(UNOServerTest.JuegoUNOServicioTest.Carta cartaCentral, string idSalaJugador) {
+            base.Channel.ColocarCartaCentral(cartaCentral, idSalaJugador);
         }
         
-        public System.Threading.Tasks.Task RepartirCartasAsync(UNOServerTest.JuegoUNOServicioTest.Sala sala) {
-            return base.Channel.RepartirCartasAsync(sala);
+        public System.Threading.Tasks.Task ColocarCartaCentralAsync(UNOServerTest.JuegoUNOServicioTest.Carta cartaCentral, string idSalaJugador) {
+            return base.Channel.ColocarCartaCentralAsync(cartaCentral, idSalaJugador);
+        }
+        
+        public void TomarCarta(string idSalaJugador, string nickname) {
+            base.Channel.TomarCarta(idSalaJugador, nickname);
+        }
+        
+        public System.Threading.Tasks.Task TomarCartaAsync(string idSalaJugador, string nickname) {
+            return base.Channel.TomarCartaAsync(idSalaJugador, nickname);
+        }
+        
+        public void AnunciarGanador(string idSalaJugador, UNOServerTest.JuegoUNOServicioTest.Jugador jugadorGanador) {
+            base.Channel.AnunciarGanador(idSalaJugador, jugadorGanador);
+        }
+        
+        public System.Threading.Tasks.Task AnunciarGanadorAsync(string idSalaJugador, UNOServerTest.JuegoUNOServicioTest.Jugador jugadorGanador) {
+            return base.Channel.AnunciarGanadorAsync(idSalaJugador, jugadorGanador);
+        }
+        
+        public void ActualizarNumeroDeCarta(string idSalaJugador, string nickname, string numeroDeCartas) {
+            base.Channel.ActualizarNumeroDeCarta(idSalaJugador, nickname, numeroDeCartas);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarNumeroDeCartaAsync(string idSalaJugador, string nickname, string numeroDeCartas) {
+            return base.Channel.ActualizarNumeroDeCartaAsync(idSalaJugador, nickname, numeroDeCartas);
+        }
+        
+        public void ActualizarPuntaje(string idSalaJugador, string nickname, int puntajeASumar) {
+            base.Channel.ActualizarPuntaje(idSalaJugador, nickname, puntajeASumar);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarPuntajeAsync(string idSalaJugador, string nickname, int puntajeASumar) {
+            return base.Channel.ActualizarPuntajeAsync(idSalaJugador, nickname, puntajeASumar);
         }
     }
 }
