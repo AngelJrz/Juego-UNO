@@ -8,7 +8,9 @@ $D:\Juego-UNO\UNOGui\Logica\Idioma.csutf-81
 *D:\Juego-UNO\UNOGui\Logica\PartidaAdmin.csutf-8;
 2D:\Juego-UNO\UNOGui\Logica\PartidaCallbackAdmin.csutf-8;
 2D:\Juego-UNO\UNOGui\Logica\RegistroJugadorAdmin.csutf-8>
-5D:\Juego-UNO\UNOGui\Logica\RegistroJugadorCallback.csutf-8;
+5D:\Juego-UNO\UNOGui\Logica\RegistroJugadorCallback.csutf-8-
+$D:\Juego-UNO\UNOGui\Logica\Reglas.csutf-8>
+5D:\Juego-UNO\UNOGui\Paginas\ContenedorJugador.xaml.csutf-8;
 2D:\Juego-UNO\UNOGui\Paginas\CreacionDeSala.xaml.csutf-83
 *D:\Juego-UNO\UNOGui\Paginas\Inicio.xaml.csutf-82
 )D:\Juego-UNO\UNOGui\Paginas\Lobby.xaml.csutf-82
@@ -21,8 +23,7 @@ $D:\Juego-UNO\UNOGui\Logica\Idioma.csutf-81
 3D:\Juego-UNO\UNOGui\Paginas\VerificarCodigo.xaml.csutf-80
 'D:\Juego-UNO\UNOGui\Logica\SalaAdmin.csutf-88
 /D:\Juego-UNO\UNOGui\Logica\SalaCallbackAdmin.csutf-83
-*D:\Juego-UNO\UNOGui\Ventanas\Juego.xaml.csutf-83
-*D:\Juego-UNO\UNOGui\Ventanas\Lobby.xaml.csutf-85
+*D:\Juego-UNO\UNOGui\Ventanas\Juego.xaml.csutf-85
 ,D:\Juego-UNO\UNOGui\Ventanas\Mensaje.xaml.csutf-8;
 2D:\Juego-UNO\UNOGui\Ventanas\MenuPrincipal.xaml.csutf-87
 .D:\Juego-UNO\UNOGui\Ventanas\Principal.xaml.csutf-8@
@@ -30,7 +31,8 @@ $D:\Juego-UNO\UNOGui\Logica\Idioma.csutf-81
 4D:\Juego-UNO\UNOGui\Ventanas\VerificarCodigo.xaml.csutf-87
 .D:\Juego-UNO\UNOGui\Properties\AssemblyInfo.csutf-8?
 4D:\Juego-UNO\UNOGui\Properties\Resources.Designer.csutf-8>
-3D:\Juego-UNO\UNOGui\Properties\Settings.Designer.csutf-8D
+3D:\Juego-UNO\UNOGui\Properties\Settings.Designer.csutf-8G
+<D:\Juego-UNO\UNOGui\obj\Debug\Paginas\ContenedorJugador.g.csutf-8D
 9D:\Juego-UNO\UNOGui\obj\Debug\Paginas\CreacionDeSala.g.csutf-8<
 1D:\Juego-UNO\UNOGui\obj\Debug\Paginas\Inicio.g.csutf-8;
 0D:\Juego-UNO\UNOGui\obj\Debug\Paginas\Lobby.g.csutf-8;
@@ -39,8 +41,7 @@ $D:\Juego-UNO\UNOGui\Logica\Idioma.csutf-81
 2D:\Juego-UNO\UNOGui\obj\Debug\Paginas\Partida.g.csutf-8E
 :D:\Juego-UNO\UNOGui\obj\Debug\Paginas\RegistrarCuenta.g.csutf-8A
 6D:\Juego-UNO\UNOGui\obj\Debug\Paginas\UnirseASala.g.csutf-8<
-1D:\Juego-UNO\UNOGui\obj\Debug\Ventanas\Juego.g.csutf-8<
-1D:\Juego-UNO\UNOGui\obj\Debug\Ventanas\Lobby.g.csutf-8F
+1D:\Juego-UNO\UNOGui\obj\Debug\Ventanas\Juego.g.csutf-8F
 ;D:\Juego-UNO\UNOGui\obj\Debug\Paginas\RegistroEnEspera.g.csutf-8E
 :D:\Juego-UNO\UNOGui\obj\Debug\Paginas\VerificarCodigo.g.csutf-8>
 3D:\Juego-UNO\UNOGui\obj\Debug\Ventanas\Mensaje.g.csutf-8D

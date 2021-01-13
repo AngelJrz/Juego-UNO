@@ -234,7 +234,7 @@ namespace UNOGui.Paginas
             {
                 if (i != posicionJugador)
                 {
-                    contenedoresJugador.Add(new ContenedorJugador() { DataContext = sala.JugadoresEnSala.Keys.ToList().ElementAt(i) });
+                    contenedoresJugador.Add(new ContenedorJugador() { DataContext = sala.JugadoresEnSala.Keys.ElementAt(i) });
                 }
             }
 

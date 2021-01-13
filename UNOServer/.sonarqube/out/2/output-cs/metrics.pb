@@ -1,49 +1,49 @@
-ù
-LD:\Juego-UNO\UNOServer\UNO.Contratos\AdministradorEmail\CorreoElectronico.cs 8j !r.	
-"#$%&'()*+-./01234567xÇ%&'(*+/3q
-ID:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\GeneradorClave.cs 8jr	
-Ç[
+£
+LD:\Juego-UNO\UNOServer\UNO.Contratos\AdministradorEmail\CorreoElectronico.cs 8j
+	
+$%&'r.!"()*+,-./013456789:;<=xÇ!+,-.0159p
+ID:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\GeneradorClave.cs 8jr	
+Ç[
 BD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\IPerfil.csjr
 	
 c
 JD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\IPerfilCallback.csjr
 	
-U
-FD:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\ResultadoUnionSala.csr	
-i
-8D:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\Sala.cs 8j!"#&'(r	
-$)*+—
-8D:\Juego-UNO\UNOServer\UNO.Contratos\JuegoUNOServicio.cs% 8rj
- !"$%&'()*+-./1245689:;<=>@ABCDEFGHIJKMNOPRSUVWYZ[\^_abcdfghijklmnoqrsuvwxyz{|}xÇ!"&*-.18:<>BFIMORY[^dfjnqy~
-ED:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\IAdministrarJuego.csj
-!"#$%+,-.2345r	&'/0679:ì
-BD:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\IJuegoCallback.csj&#$%&*+,-123489:>?@DEFLNOSUr#	
- !'(./56;<ABGHPQVWYZÜ
-5D:\Juego-UNO\UNOServer\UNO.Contratos\LoginServicio.cs 8jr/
- !"#$%&(*+,-./123456789xÇ
- %(*,-5T
-4D:\Juego-UNO\UNOServer\UNO.Contratos\Login\ILogin.csj	
-r	a
-<D:\Juego-UNO\UNOServer\UNO.Contratos\Login\ILoginCallback.csj
-r	S
-<D:\Juego-UNO\UNOServer\UNO.Contratos\Login\ResultadoLogin.csj	
-rc
-6D:\Juego-UNO\UNOServer\UNO.Contratos\PerfilServicio.cs 8r
-Çc
+†
+;D:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\Partida.cs 8j.	89:;Z[\yz{|ÇÉÑäãåçìîïñrÅ
+ !"#$%&'()*+,-./012356<=>@ABCDEFGHIJKLMNOPQRSTUWX]^_`abcefghijklmnoqrstuvw}~ÄÖÜáàéèêëóòôöúùûü†°xÇ" "&+-15@BDHMOSW_acegmoqsáêôûi
+FD:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\ResultadoUnionSala.csj	
+rk
+8D:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\Sala.cs 8j !$%&)*+r	
+"',-.Ì
+8D:\Juego-UNO\UNOServer\UNO.Contratos\JuegoUNOServicio.cs% 8j89:;]^_lmnru
+ !"#$%&()*+,-./12356<=>@ABCDEFHIJKLMNOPQRSUVWXZ[`abdefgijopqrtuvwxyz{|}ÄÅÉÑÖÜáàâäãxÇ!%&*.125@BDFJNQUWZdfirtx|áö
+ED:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\IAdministrarJuego.csj1	 !")*+,0123489:;<@ABCDHIJKLMQRSTUVr
+#$-.56=>EFNOWXZ[Û
+BD:\Juego-UNO\UNOServer\UNO.Contratos\LogicaJuego\IJuegoCallback.csjh	
+ $%&'+,-.23459:;?@AEFGKLMSTUVZ[\]abcdhijkopqrvwxy}~ÄÅÖÜáàåçéèìîïñöõúùûrA!"()/067<=BCHINOWX^_eflmstz{ÇÉâäêëóòü†¢£ú
+5D:\Juego-UNO\UNOServer\UNO.Contratos\LoginServicio.cs 8j	<=>?r<	
+ !"#$%&'()*+,.012345789:@ABCEFGHIJKLMx
+Ç !%*.0239BIU
+4D:\Juego-UNO\UNOServer\UNO.Contratos\Login\ILogin.csjr	
+]
+<D:\Juego-UNO\UNOServer\UNO.Contratos\Login\ILoginCallback.csj	r
+[
+<D:\Juego-UNO\UNOServer\UNO.Contratos\Login\ResultadoLogin.csj	
+r
+d
+6D:\Juego-UNO\UNOServer\UNO.Contratos\PerfilServicio.cs 8j	
+rÇc
 ?D:\Juego-UNO\UNOServer\UNO.Contratos\Properties\AssemblyInfo.csj !"r	
 #$v
 LD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\IRegistrarJugador.csj !"r	
 #$%&}
 TD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\IRegistrarJugadorCallback.csj !r	
-"#$%Z
-LD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\ResultadoRegistro.csr
-	
-Ÿ
-6D:\Juego-UNO\UNOServer\UNO.Contratos\ServicioDeSala.cs7 
-8j !"jklmnr¿	
-#$%&(*+,-./0123456789:;<=>?@ABDEFGHIJKMNOPQRSUVWYZ[\^_abceghopqstuwxyz{|}~ÄÅÇÉÑÖÜáàâäãçéèêëíìïñóòôöõúûü°¢§•¶®©™´≠Æ∞±≤≥¥µ∂∑∏x!Ç@%(*,.046:@DEGHIOQY[^egqswy{}~ÉÑÖáèëóôõû°®™≠¥n
-5D:\Juego-UNO\UNOServer\UNO.Contratos\ServicioJuego.csj-
-!"#%)+,-/1238:<@BDFILOQSUX[]_rdo
-7D:\Juego-UNO\UNOServer\UNO.Contratos\ServicioPartida.cs 8r 	
- !"#$xÇ [
-TC:\Users\sammy\AppData\Local\Temp\.NETFramework,Version=v4.7.2.AssemblyAttributes.csr
+"#$%k
+LD:\Juego-UNO\UNOServer\UNO.Contratos\AdministrarJugador\ResultadoRegistro.csj	
+r
+ó
+6D:\Juego-UNO\UNOServer\UNO.Contratos\ServicioDeSala.cs@ 8j !"#klmnorÍ	
+$%&')+,-./0123456789:;<=>?@ABCEFGHIJKLNOPQRSTVWXZ[\]_`bcdfhipqrtuvwxz{|}~ÄÅÇÉÑÜáàäãåçéèêëíìîïñòôöõúùûü°¢§•ß®©™´¨≠Ø∞±≤≥¥µ∂∏πªºæø¿¬√ƒ≈«» ÀÃÕŒœ–—“x%ÇT&)+-/157;AEFHIJPRZ\_fhrtwxz|}~ÇÉÑÜàäåçëöúû°§©´±≥µ∏ª¬ƒ«Œﬁ
+7D:\Juego-UNO\UNOServer\UNO.Contratos\ServicioPartida.cs| 8,j=	
+áàâäãÅÇÉÑÖîïñóò∏π∫ªºΩ»… ÀÃÕr• !#$%&()*+-./0123468:;<=>@ABCDFGHJKLNOQRSTUVWYZ[\^_abcdefgijklmnoqrstuvxz|}~ÄÇÑÖåçéêëíìïñóòôöõúùûü°¢£§•¶ß®©´¨ÆØ∞±≤¥µ∂∑∏π∫ºΩæø¿¡¬√ƒ≈∆»… ÀÃÕœ–“”’÷◊ÿŸ⁄€‹ﬁﬂ‡·„‰ÊÁËÈÍÎÏÌÓÔÚÛÙı˜¯˘˚¸˝˛ˇÜáàäãåçéèêëíôöõùûü°¢£§•¶ß®©´¨ÆØ∞±≥¥µ∂æø¿¬√ƒ≈∆Œœ–“”‘’÷ÿŸ⁄€‹›xÇ∞ #$%*012346@CFGHJKLNTUVWYZ[\^ceqstuxÄÇÑéêíìïôõü°£•ß´Æ∞∂∏æ¿¬√ÃÕœ–“Ÿ⁄€‹ﬁﬂ‡·„ËÍÏÌÙ˘˚˝àäåéèõùü°£ß´∞µ¿¬ƒ–“‘⁄
