@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sala_426',['Sala',['../class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_sala.html',1,'UNOGui::JuegoUNOServicio']]]
+  ['unirseasala_280',['UnirseASala',['../class_u_n_o_gui_1_1_paginas_1_1_unirse_a_sala.html',1,'UNOGui::Paginas']]]
 ];

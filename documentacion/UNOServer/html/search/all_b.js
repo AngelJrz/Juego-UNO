@@ -1,26 +1,9 @@
 var searchData=
 [
-  ['negro_90',['Negro',['../namespace_u_n_o_1_1_dominio.html#a0ec68b9d7ea7cad2e978b8a71b9b3a33a660e413be78188bf2aa293b75e86c3dd',1,'UNO::Dominio']]],
-  ['nickname_91',['Nickname',['../class_u_n_o_1_1_acceso_a_datos_1_1_jugador.html#acddf00256c8280bff2324ba61edaf7c8',1,'UNO.AccesoADatos.Jugador.Nickname()'],['../class_u_n_o_1_1_dominio_1_1_jugador.html#aa1773f293722f4f4cd9aeade9fa9cd72',1,'UNO.Dominio.Jugador.Nickname()']]],
-  ['nivel_92',['Nivel',['../class_u_n_o_1_1_acceso_a_datos_1_1_jugador.html#a64ff4ba9ed685ded318fb423f04850bb',1,'UNO.AccesoADatos.Jugador.Nivel()'],['../class_u_n_o_1_1_dominio_1_1_jugador.html#a4ce7512450d32c97ae66cff42b8482f4',1,'UNO.Dominio.Jugador.Nivel()']]],
-  ['noexisteid_93',['NoExisteId',['../namespace_u_n_o_1_1_contratos_1_1_logica_juego.html#a27abf76eb5e1ebf4489bb14dd4650372a4d3d5c56335996ba3182c2c938108b1a',1,'UNO::Contratos::LogicaJuego']]],
-  ['noexistenickname_94',['NoExisteNickname',['../namespace_u_n_o_1_1_contratos_1_1_login.html#a883fd6afec9db2684840661d52082805a9e6940b2ebce4a20ca74585591526db6',1,'UNO::Contratos::Login']]],
-  ['nohaycupo_95',['NoHayCupo',['../namespace_u_n_o_1_1_contratos_1_1_logica_juego.html#a27abf76eb5e1ebf4489bb14dd4650372a9aee2a8509a36f25bb77f9bc365be4a9',1,'UNO::Contratos::LogicaJuego']]],
-  ['notificarcancelacionregistro_96',['NotificarCancelacionRegistro',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador_callback.html#af6cf9e8ccdb875b2a1ed2c282867cfcc',1,'UNO::Contratos::AdministrarJugador::IRegistrarJugadorCallback']]],
-  ['notificarcreaciondesala_97',['NotificarCreacionDeSala',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#a49541c57b360fc8501ad3fc6c4c4fe53',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['notificareliminaciondesala_98',['NotificarEliminacionDeSala',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#a6dc4bf59a2079d227749055d55b35674',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['notificarenvioclave_99',['NotificarEnvioClave',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_recuperar_cuenta_callback.html#a909f6f06cbbb071e66b76dd6c1dc5c6e',1,'UNO::Contratos::AdministrarJugador::IRecuperarCuentaCallback']]],
-  ['notificarenviodeclave_100',['NotificarEnvioDeClave',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador_callback.html#a78e350cc25fcd3ca2b3cbc50900fad46',1,'UNO::Contratos::AdministrarJugador::IRegistrarJugadorCallback']]],
-  ['notificarfaltadejugadores_101',['NotificarFaltaDeJugadores',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#aa0a58a19756ca078d338231136098ea0',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['notificarganador_102',['NotificarGanador',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#ac917742ad915a7ca5e805e44d864f37b',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['notificariniciopartida_103',['NotificarInicioPartida',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#aedf22db609ffe735fa651c96c1990a62',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['notificarregistro_104',['NotificarRegistro',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador_callback.html#ad2c3ef6326aefe828de2c5a922b3d672',1,'UNO::Contratos::AdministrarJugador::IRegistrarJugadorCallback']]],
-  ['notificarresultadoclave_105',['NotificarResultadoClave',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador_callback.html#aeca882521dbde423ff33aba4a505735e',1,'UNO::Contratos::AdministrarJugador::IRegistrarJugadorCallback']]],
-  ['notificarresultadologin_106',['NotificarResultadoLogin',['../interface_u_n_o_1_1_contratos_1_1_login_1_1_i_login_callback.html#adabc1c03251d155989793cf080807ef4',1,'UNO::Contratos::Login::ILoginCallback']]],
-  ['notificarresultadorecuperacion_107',['NotificarResultadoRecuperacion',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_recuperar_cuenta_callback.html#a39850fcf0f56b86b847b7030635f5d8b',1,'UNO::Contratos::AdministrarJugador::IRecuperarCuentaCallback']]],
-  ['notificarresultadoverificación_108',['NotificarResultadoVerificación',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_recuperar_cuenta_callback.html#a25b16924ad64dcac94ebe4755b5e891b',1,'UNO::Contratos::AdministrarJugador::IRecuperarCuentaCallback']]],
-  ['notificarsalidadesala_109',['NotificarSalidaDeSala',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#ab14ca696d775e57ccf6e7fbc1b3b601d',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['notificarunionasala_110',['NotificarUnionASala',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#a3dcf32b2c9bd8ba4f71725f295366744',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['numero_111',['Numero',['../class_u_n_o_1_1_dominio_1_1_carta.html#abd213246f6da60ee21693976ed315482',1,'UNO::Dominio::Carta']]],
-  ['numerototaldejugadores_112',['NumeroTotalDeJugadores',['../class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_sala.html#a7f57c3b9774363aa40ad927cf36c8013',1,'UNO::Contratos::LogicaJuego::Sala']]]
+  ['partidasganadas_89',['PartidasGanadas',['../class_u_n_o_1_1_acceso_a_datos_1_1_jugador.html#a60f9852fcaea2bb0ce461e84adf6a67a',1,'UNO.AccesoADatos.Jugador.PartidasGanadas()'],['../class_u_n_o_1_1_dominio_1_1_jugador.html#a3c387ea86dcce552a98377bfc70f9ddc',1,'UNO.Dominio.Jugador.PartidasGanadas()']]],
+  ['partidasjugadas_90',['PartidasJugadas',['../class_u_n_o_1_1_acceso_a_datos_1_1_jugador.html#aec1349cb52d3f7448f5bb2809d1afbde',1,'UNO.AccesoADatos.Jugador.PartidasJugadas()'],['../class_u_n_o_1_1_dominio_1_1_jugador.html#a2e61095d474aff44c4b2dec6a0235690',1,'UNO.Dominio.Jugador.PartidasJugadas()']]],
+  ['perfilservicio_2ecs_91',['PerfilServicio.cs',['../_perfil_servicio_8cs.html',1,'']]],
+  ['program_92',['Program',['../class_u_n_o_1_1_servicio_1_1_program.html',1,'UNO::Servicio']]],
+  ['program_2ecs_93',['Program.cs',['../_program_8cs.html',1,'']]],
+  ['puntajetotal_94',['PuntajeTotal',['../class_u_n_o_1_1_acceso_a_datos_1_1_jugador.html#afa1789c10d8d48d1176183c86825f54b',1,'UNO.AccesoADatos.Jugador.PuntajeTotal()'],['../class_u_n_o_1_1_dominio_1_1_jugador.html#a3170683c4283365fde908ebc28d3fb99',1,'UNO.Dominio.Jugador.PuntajeTotal()']]]
 ];

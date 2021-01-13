@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['generatedinternaltypehelper_90',['GeneratedInternalTypeHelper',['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html',1,'XamlGeneratedNamespace']]],
-  ['generatedinternaltypehelper_2eg_2ecs_91',['GeneratedInternalTypeHelper.g.cs',['../_generated_internal_type_helper_8g_8cs.html',1,'']]],
-  ['generatedinternaltypehelper_2eg_2ei_2ecs_92',['GeneratedInternalTypeHelper.g.i.cs',['../_generated_internal_type_helper_8g_8i_8cs.html',1,'']]],
-  ['getpropertyvalue_93',['GetPropertyValue',['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#afdc9fe15b56607d02082908d934480c6',1,'XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, System.Globalization.CultureInfo culture)'],['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#afdc9fe15b56607d02082908d934480c6',1,'XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, System.Globalization.CultureInfo culture)']]]
+  ['juego_76',['Juego',['../class_u_n_o_gui_1_1_ventanas_1_1_juego.html#a8bbef9b4ea81aac3c069d7e0d52a790e',1,'UNOGui.Ventanas.Juego.Juego()'],['../class_u_n_o_gui_1_1_ventanas_1_1_juego.html',1,'UNOGui.Ventanas.Juego']]],
+  ['juego_2examl_2ecs_77',['Juego.xaml.cs',['../_juego_8xaml_8cs.html',1,'']]],
+  ['juegocallbackadmin_78',['JuegoCallbackAdmin',['../class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin.html',1,'UNOGui::Logica']]],
+  ['jugador_79',['Jugador',['../class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_jugador.html',1,'UNOGui::JuegoUNOServicio']]],
+  ['jugadores_80',['Jugadores',['../class_u_n_o_gui_1_1_ventanas_1_1_lobby.html#abebe9ff54fb3f5ac27c04c27247196a4',1,'UNOGui::Ventanas::Lobby']]],
+  ['jugadoresensala_81',['JugadoresEnSala',['../class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_sala.html#a56c76270a330945217c6020caacb5c1b',1,'UNOGui::JuegoUNOServicio::Sala']]],
+  ['jugadornickname_82',['JugadorNickname',['../class_u_n_o_gui_1_1_paginas_1_1_login.html#a7a3125bc7e051f862f1fb9958df96ef6',1,'UNOGui::Paginas::Login']]]
 ];

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['resultadologin_2ecs_231',['ResultadoLogin.cs',['../_resultado_login_8cs.html',1,'']]],
-  ['resultadoregistro_2ecs_232',['ResultadoRegistro.cs',['../_resultado_registro_8cs.html',1,'']]],
-  ['resultadounionsala_2ecs_233',['ResultadoUnionSala.cs',['../_resultado_union_sala_8cs.html',1,'']]]
+  ['sala_2ecs_184',['Sala.cs',['../_sala_8cs.html',1,'']]],
+  ['serviciodesala_2ecs_185',['ServicioDeSala.cs',['../_servicio_de_sala_8cs.html',1,'']]],
+  ['serviciojuego_2ecs_186',['ServicioJuego.cs',['../_servicio_juego_8cs.html',1,'']]],
+  ['serviciopartida_2ecs_187',['ServicioPartida.cs',['../_servicio_partida_8cs.html',1,'']]]
 ];

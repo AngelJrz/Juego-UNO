@@ -1,0 +1,161 @@
+\doxysection{UNO.\+Contratos.\+Logica\+Juego.\+ISala\+Callback Interface Reference}
+\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback}\index{UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}}
+
+
+ 
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Notificar\+Creacion\+De\+Sala} (\textbf{ Sala} sala\+Creada)
+\begin{DoxyCompactList}\small\item\em Notifica al jugador la sala creada. \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Union\+ASala} (\textbf{ Resultado\+Union\+Sala} resultado)
+\begin{DoxyCompactList}\small\item\em Notifica al jugador el estado de la union a una sala. \end{DoxyCompactList}\item 
+void \textbf{ Actualizar\+Sala} (List$<$ string $>$ jugadores)
+\begin{DoxyCompactList}\small\item\em Actualiza la sala del jugador con los nuevos jugadores. \end{DoxyCompactList}\item 
+void \textbf{ Obtener\+Informacion\+De\+Sala} (\textbf{ Sala} sala)
+\begin{DoxyCompactList}\small\item\em Obtiene la información de sala para mostrarla en el cliente. \end{DoxyCompactList}\item 
+void \textbf{ Agregar\+Nuevo\+Jugador} (\textbf{ Dominio.\+Jugador} nuevo\+Jugador)
+\begin{DoxyCompactList}\small\item\em Agrega un nuevo jugador para mostrarla en el cliente. \end{DoxyCompactList}\item 
+void \textbf{ Sacar\+Jugador} (\textbf{ Dominio.\+Jugador} jugador\+ASacar)
+\begin{DoxyCompactList}\small\item\em Saca el jugador especificado de la sala. \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Salida\+De\+Sala} ()
+\begin{DoxyCompactList}\small\item\em Notifica al jugador que se salió de la sala. \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Eliminacion\+De\+Sala} ()
+\begin{DoxyCompactList}\small\item\em Notifica a los jugadores que el creador de la sala la eliminó. \end{DoxyCompactList}\item 
+void \textbf{ Eliminar\+Creador} ()
+\begin{DoxyCompactList}\small\item\em Notifica al creador de la sala que se salió de ella. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback_ad0d1ec99161d323b9bf058df1b2498e9}} 
+\index{UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}!ActualizarSala@{ActualizarSala}}
+\index{ActualizarSala@{ActualizarSala}!UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}}
+\doxysubsubsection{ActualizarSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+ISala\+Callback.\+Actualizar\+Sala (\begin{DoxyParamCaption}\item[{List$<$ string $>$}]{jugadores }\end{DoxyParamCaption})}
+
+
+
+Actualiza la sala del jugador con los nuevos jugadores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jugadores} & Jugadores de la sala\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback_ac840b4a652df7f0604b8d8ff2d8500ce}} 
+\index{UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}!AgregarNuevoJugador@{AgregarNuevoJugador}}
+\index{AgregarNuevoJugador@{AgregarNuevoJugador}!UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}}
+\doxysubsubsection{AgregarNuevoJugador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+ISala\+Callback.\+Agregar\+Nuevo\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ Dominio.\+Jugador}}]{nuevo\+Jugador }\end{DoxyParamCaption})}
+
+
+
+Agrega un nuevo jugador para mostrarla en el cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nuevo\+Jugador} & Nuevo jugador.\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback_a46dd48913a0421800b317c840ea05244}} 
+\index{UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}!EliminarCreador@{EliminarCreador}}
+\index{EliminarCreador@{EliminarCreador}!UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}}
+\doxysubsubsection{EliminarCreador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+ISala\+Callback.\+Eliminar\+Creador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifica al creador de la sala que se salió de ella. 
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback_afb7373f0d560465bbbf9891a982f3908}} 
+\index{UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}!NotificarCreacionDeSala@{NotificarCreacionDeSala}}
+\index{NotificarCreacionDeSala@{NotificarCreacionDeSala}!UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}}
+\doxysubsubsection{NotificarCreacionDeSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+ISala\+Callback.\+Notificar\+Creacion\+De\+Sala (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{sala\+Creada }\end{DoxyParamCaption})}
+
+
+
+Notifica al jugador la sala creada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sala\+Creada} & \doxyref{Sala}{p.}{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_sala} creada\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback_a64c62249f6a9dad70ee42e697e03d216}} 
+\index{UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}!NotificarEliminacionDeSala@{NotificarEliminacionDeSala}}
+\index{NotificarEliminacionDeSala@{NotificarEliminacionDeSala}!UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}}
+\doxysubsubsection{NotificarEliminacionDeSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+ISala\+Callback.\+Notificar\+Eliminacion\+De\+Sala (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifica a los jugadores que el creador de la sala la eliminó. 
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback_aab77bf62892ec954c8b67ab0623f9cdf}} 
+\index{UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}!NotificarSalidaDeSala@{NotificarSalidaDeSala}}
+\index{NotificarSalidaDeSala@{NotificarSalidaDeSala}!UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}}
+\doxysubsubsection{NotificarSalidaDeSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+ISala\+Callback.\+Notificar\+Salida\+De\+Sala (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifica al jugador que se salió de la sala. 
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback_aaf3d14f36ecb2be92bb418805f08df21}} 
+\index{UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}!NotificarUnionASala@{NotificarUnionASala}}
+\index{NotificarUnionASala@{NotificarUnionASala}!UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}}
+\doxysubsubsection{NotificarUnionASala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+ISala\+Callback.\+Notificar\+Union\+ASala (\begin{DoxyParamCaption}\item[{\textbf{ Resultado\+Union\+Sala}}]{resultado }\end{DoxyParamCaption})}
+
+
+
+Notifica al jugador el estado de la union a una sala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resultado} & Resultado de la union a una sala\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback_adcb140f9782cd6860284ea1f7bc8f946}} 
+\index{UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}!ObtenerInformacionDeSala@{ObtenerInformacionDeSala}}
+\index{ObtenerInformacionDeSala@{ObtenerInformacionDeSala}!UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}}
+\doxysubsubsection{ObtenerInformacionDeSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+ISala\+Callback.\+Obtener\+Informacion\+De\+Sala (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{sala }\end{DoxyParamCaption})}
+
+
+
+Obtiene la información de sala para mostrarla en el cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sala} & \doxyref{Sala}{p.}{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_sala} con la información necesaria.\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback_a4603f8408b35496fbe4e925462843c4b}} 
+\index{UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}!SacarJugador@{SacarJugador}}
+\index{SacarJugador@{SacarJugador}!UNO.Contratos.LogicaJuego.ISalaCallback@{UNO.Contratos.LogicaJuego.ISalaCallback}}
+\doxysubsubsection{SacarJugador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+ISala\+Callback.\+Sacar\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ Dominio.\+Jugador}}]{jugador\+ASacar }\end{DoxyParamCaption})}
+
+
+
+Saca el jugador especificado de la sala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jugador\+ASacar} & Jugador a sacar de la sala.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\+Logica\+Juego/\textbf{ ISala\+Callback.\+cs}\end{DoxyCompactItemize}

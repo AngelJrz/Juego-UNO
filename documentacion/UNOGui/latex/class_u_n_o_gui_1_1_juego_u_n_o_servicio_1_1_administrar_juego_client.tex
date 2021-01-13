@@ -35,25 +35,9 @@ void \textbf{ Iniciar\+Partida} (string id\+Sala)
 \item 
 System.\+Threading.\+Tasks.\+Task \textbf{ Iniciar\+Partida\+Async} (string id\+Sala)
 \item 
-void \textbf{ Colocar\+Carta\+Central} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta} carta\+Central, string id\+Sala\+Jugador)
+void \textbf{ Repartir\+Cartas} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Sala} sala)
 \item 
-System.\+Threading.\+Tasks.\+Task \textbf{ Colocar\+Carta\+Central\+Async} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta} carta\+Central, string id\+Sala\+Jugador)
-\item 
-void \textbf{ Tomar\+Carta} (string id\+Sala\+Jugador, string nickname)
-\item 
-System.\+Threading.\+Tasks.\+Task \textbf{ Tomar\+Carta\+Async} (string id\+Sala\+Jugador, string nickname)
-\item 
-void \textbf{ Anunciar\+Ganador} (string id\+Sala\+Jugador, \textbf{ UNOGui.\+Juego\+UNOServicio.\+Jugador} jugador\+Ganador)
-\item 
-System.\+Threading.\+Tasks.\+Task \textbf{ Anunciar\+Ganador\+Async} (string id\+Sala\+Jugador, \textbf{ UNOGui.\+Juego\+UNOServicio.\+Jugador} jugador\+Ganador)
-\item 
-void \textbf{ Actualizar\+Numero\+De\+Carta} (string id\+Sala\+Jugador, string nickname, string numero\+De\+Cartas)
-\item 
-System.\+Threading.\+Tasks.\+Task \textbf{ Actualizar\+Numero\+De\+Carta\+Async} (string id\+Sala\+Jugador, string nickname, string numero\+De\+Cartas)
-\item 
-void \textbf{ Actualizar\+Puntaje} (string id\+Sala\+Jugador, string nickname, int puntaje\+ASumar)
-\item 
-System.\+Threading.\+Tasks.\+Task \textbf{ Actualizar\+Puntaje\+Async} (string id\+Sala\+Jugador, string nickname, int puntaje\+ASumar)
+System.\+Threading.\+Tasks.\+Task \textbf{ Repartir\+Cartas\+Async} (\textbf{ UNOGui.\+Juego\+UNOServicio.\+Sala} sala)
 \end{DoxyCompactItemize}
 
 
@@ -91,86 +75,6 @@ System.\+Threading.\+Tasks.\+Task \textbf{ Actualizar\+Puntaje\+Async} (string i
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_a75bb8eae0760302f898ddc06885bef89}} 
-\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!ActualizarNumeroDeCarta@{ActualizarNumeroDeCarta}}
-\index{ActualizarNumeroDeCarta@{ActualizarNumeroDeCarta}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
-\doxysubsubsection{ActualizarNumeroDeCarta()}
-{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Actualizar\+Numero\+De\+Carta (\begin{DoxyParamCaption}\item[{string}]{id\+Sala\+Jugador,  }\item[{string}]{nickname,  }\item[{string}]{numero\+De\+Cartas }\end{DoxyParamCaption})}
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_af93381a73917206fb25a4c81f5fb9c34}.
-
-\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_abf4b0bda620218fa31d8b1612f7571ae}} 
-\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!ActualizarNumeroDeCartaAsync@{ActualizarNumeroDeCartaAsync}}
-\index{ActualizarNumeroDeCartaAsync@{ActualizarNumeroDeCartaAsync}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
-\doxysubsubsection{ActualizarNumeroDeCartaAsync()}
-{\footnotesize\ttfamily System.\+Threading.\+Tasks.\+Task UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Actualizar\+Numero\+De\+Carta\+Async (\begin{DoxyParamCaption}\item[{string}]{id\+Sala\+Jugador,  }\item[{string}]{nickname,  }\item[{string}]{numero\+De\+Cartas }\end{DoxyParamCaption})}
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_a024fcf392b03c0439d9a4d4b9009df0d}.
-
-\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_afe75b54a1b18408fb0ab6cadb9bff0b3}} 
-\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!ActualizarPuntaje@{ActualizarPuntaje}}
-\index{ActualizarPuntaje@{ActualizarPuntaje}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
-\doxysubsubsection{ActualizarPuntaje()}
-{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Actualizar\+Puntaje (\begin{DoxyParamCaption}\item[{string}]{id\+Sala\+Jugador,  }\item[{string}]{nickname,  }\item[{int}]{puntaje\+ASumar }\end{DoxyParamCaption})}
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_a5e6cf6464c2bfdb41d4e34eccf4fbb21}.
-
-\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_a6723865bb3057085a5db2a6057adbe8b}} 
-\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!ActualizarPuntajeAsync@{ActualizarPuntajeAsync}}
-\index{ActualizarPuntajeAsync@{ActualizarPuntajeAsync}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
-\doxysubsubsection{ActualizarPuntajeAsync()}
-{\footnotesize\ttfamily System.\+Threading.\+Tasks.\+Task UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Actualizar\+Puntaje\+Async (\begin{DoxyParamCaption}\item[{string}]{id\+Sala\+Jugador,  }\item[{string}]{nickname,  }\item[{int}]{puntaje\+ASumar }\end{DoxyParamCaption})}
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_a47df8ccbd77783da8119f59a02e92c38}.
-
-\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_a7a3c8a317bafdeef758b2e75fd3fe411}} 
-\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!AnunciarGanador@{AnunciarGanador}}
-\index{AnunciarGanador@{AnunciarGanador}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
-\doxysubsubsection{AnunciarGanador()}
-{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Anunciar\+Ganador (\begin{DoxyParamCaption}\item[{string}]{id\+Sala\+Jugador,  }\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Jugador}}]{jugador\+Ganador }\end{DoxyParamCaption})}
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_aea7fdb3135826cd61147b6e98013eb69}.
-
-\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_a1b510c72640af8d1cb7a271ae607dd96}} 
-\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!AnunciarGanadorAsync@{AnunciarGanadorAsync}}
-\index{AnunciarGanadorAsync@{AnunciarGanadorAsync}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
-\doxysubsubsection{AnunciarGanadorAsync()}
-{\footnotesize\ttfamily System.\+Threading.\+Tasks.\+Task UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Anunciar\+Ganador\+Async (\begin{DoxyParamCaption}\item[{string}]{id\+Sala\+Jugador,  }\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Jugador}}]{jugador\+Ganador }\end{DoxyParamCaption})}
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_a1602b88087dd30a80b284e7f877199d5}.
-
-\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_a78ec83829a57117d63f5f11ff46ecbb4}} 
-\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!ColocarCartaCentral@{ColocarCartaCentral}}
-\index{ColocarCartaCentral@{ColocarCartaCentral}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
-\doxysubsubsection{ColocarCartaCentral()}
-{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Colocar\+Carta\+Central (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta}}]{carta\+Central,  }\item[{string}]{id\+Sala\+Jugador }\end{DoxyParamCaption})}
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_a61bdf435bf5bb9d2cb7b154fd8598331}.
-
-\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_a4013cefa85f160db5ff033b36195b8e8}} 
-\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!ColocarCartaCentralAsync@{ColocarCartaCentralAsync}}
-\index{ColocarCartaCentralAsync@{ColocarCartaCentralAsync}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
-\doxysubsubsection{ColocarCartaCentralAsync()}
-{\footnotesize\ttfamily System.\+Threading.\+Tasks.\+Task UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Colocar\+Carta\+Central\+Async (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Carta}}]{carta\+Central,  }\item[{string}]{id\+Sala\+Jugador }\end{DoxyParamCaption})}
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_a01789e1a684619c6c07d325db0ca7db6}.
-
 \mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_aa338fff359d7422ad8ebb1dc6ef2080e}} 
 \index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!CrearSala@{CrearSala}}
 \index{CrearSala@{CrearSala}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
@@ -211,6 +115,26 @@ Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{
 
 Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_a482697ddcd06f92ae3c2e1d45adba37a}.
 
+\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_a23c943af82c1a8aa56b3777d1cc5d310}} 
+\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!RepartirCartas@{RepartirCartas}}
+\index{RepartirCartas@{RepartirCartas}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
+\doxysubsubsection{RepartirCartas()}
+{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Repartir\+Cartas (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Sala}}]{sala }\end{DoxyParamCaption})}
+
+
+
+Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_adb8bd0872b5915c688a53e5a981ff030}.
+
+\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_aae4d2f8ffc412a931ea366fc8ada2b01}} 
+\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!RepartirCartasAsync@{RepartirCartasAsync}}
+\index{RepartirCartasAsync@{RepartirCartasAsync}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
+\doxysubsubsection{RepartirCartasAsync()}
+{\footnotesize\ttfamily System.\+Threading.\+Tasks.\+Task UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Repartir\+Cartas\+Async (\begin{DoxyParamCaption}\item[{\textbf{ UNOGui.\+Juego\+UNOServicio.\+Sala}}]{sala }\end{DoxyParamCaption})}
+
+
+
+Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_a5cd17dceba5c775f97fd43e0bf0abd14}.
+
 \mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_a3cf2c41d3291b8d4718915b97e4e9fdd}} 
 \index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!SalirDeSala@{SalirDeSala}}
 \index{SalirDeSala@{SalirDeSala}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
@@ -230,26 +154,6 @@ Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{
 
 
 Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_a6a2b80b05ce81e46eb8140409aa3c3a2}.
-
-\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_acebc71befe57ae2a65d7c5cc0001dd58}} 
-\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!TomarCarta@{TomarCarta}}
-\index{TomarCarta@{TomarCarta}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
-\doxysubsubsection{TomarCarta()}
-{\footnotesize\ttfamily void UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Tomar\+Carta (\begin{DoxyParamCaption}\item[{string}]{id\+Sala\+Jugador,  }\item[{string}]{nickname }\end{DoxyParamCaption})}
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_aec9d724fc27e5b533c99b78766e32ce4}.
-
-\mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_aaa0e47d4da8c920bc9399b58334c3b80}} 
-\index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!TomarCartaAsync@{TomarCartaAsync}}
-\index{TomarCartaAsync@{TomarCartaAsync}!UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}}
-\doxysubsubsection{TomarCartaAsync()}
-{\footnotesize\ttfamily System.\+Threading.\+Tasks.\+Task UNOGui.\+Juego\+UNOServicio.\+Administrar\+Juego\+Client.\+Tomar\+Carta\+Async (\begin{DoxyParamCaption}\item[{string}]{id\+Sala\+Jugador,  }\item[{string}]{nickname }\end{DoxyParamCaption})}
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_a89fc5889ed00f89c8da26723ead14951}.
 
 \mbox{\label{class_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_administrar_juego_client_af568d632a998919f7464619889d86beb}} 
 \index{UNOGui.JuegoUNOServicio.AdministrarJuegoClient@{UNOGui.JuegoUNOServicio.AdministrarJuegoClient}!UnirseASala@{UnirseASala}}

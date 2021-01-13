@@ -5,24 +5,27 @@
 \item 
 interface \textbf{ IAdministrar\+Juego}
 \begin{DoxyCompactList}\small\item\em Interfaz encargada de administrar los métodos que pueden llamar desde el cliente. \end{DoxyCompactList}\item 
+interface \textbf{ IAdministrar\+Partida}
+\item 
+interface \textbf{ IAdministrar\+Sala}
+\item 
 interface \textbf{ IJuego\+Callback}
-\begin{DoxyCompactList}\small\item\em Establece los comportamientos que tendra el cliente del servidor \end{DoxyCompactList}\item 
-class \textbf{ Partida}
-\begin{DoxyCompactList}\small\item\em Lógica para la \doxyref{Partida}{p.}{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida} del juego \end{DoxyCompactList}\item 
+\item 
+interface \textbf{ IPartida\+Callback}
+\item 
+interface \textbf{ ISala\+Callback}
+\item 
 class \textbf{ Sala}
-\begin{DoxyCompactList}\small\item\em Clase que controla la información de la sala \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum class \textbf{ Resultado\+Union\+Sala} \{ \newline
-\textbf{ No\+Existe\+Id} = 1
+enum class \textbf{ Resultado\+Union\+Sala} \{ \textbf{ No\+Existe\+Id} = 1
 , \textbf{ Contraseña\+Incorrecta} = 2
 , \textbf{ No\+Hay\+Cupo} = 3
 , \textbf{ Union\+Exitosa} = 4
-, \newline
-\textbf{ En\+Juego} = 5
  \}
-\begin{DoxyCompactList}\small\item\em Posibles resultados al intentar unirse a una sala \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -32,29 +35,21 @@ enum class \textbf{ Resultado\+Union\+Sala} \{ \newline
 \doxysubsubsection{ResultadoUnionSala}
 {\footnotesize\ttfamily enum \textbf{ UNO.\+Contratos.\+Logica\+Juego.\+Resultado\+Union\+Sala}\hspace{0.3cm}{\ttfamily [strong]}}
 
-
-
-Posibles resultados al intentar unirse a una sala 
-
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{NoExisteId@{NoExisteId}!UNO.Contratos.LogicaJuego@{UNO.Contratos.LogicaJuego}}\index{UNO.Contratos.LogicaJuego@{UNO.Contratos.LogicaJuego}!NoExisteId@{NoExisteId}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_logica_juego_a27abf76eb5e1ebf4489bb14dd4650372a4d3d5c56335996ba3182c2c938108b1a}} 
-No\+Existe\+Id&La sala buscada no existe \\
+No\+Existe\+Id&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ContraseñaIncorrecta@{ContraseñaIncorrecta}!UNO.Contratos.LogicaJuego@{UNO.Contratos.LogicaJuego}}\index{UNO.Contratos.LogicaJuego@{UNO.Contratos.LogicaJuego}!ContraseñaIncorrecta@{ContraseñaIncorrecta}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_logica_juego_a27abf76eb5e1ebf4489bb14dd4650372a8d5e7b766c2a0a387b652fd63e37586f}} 
-Contraseña\+Incorrecta&La contraseña para ingresar a la sala es incorrecta \\
+Contraseña\+Incorrecta&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{NoHayCupo@{NoHayCupo}!UNO.Contratos.LogicaJuego@{UNO.Contratos.LogicaJuego}}\index{UNO.Contratos.LogicaJuego@{UNO.Contratos.LogicaJuego}!NoHayCupo@{NoHayCupo}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_logica_juego_a27abf76eb5e1ebf4489bb14dd4650372a9aee2a8509a36f25bb77f9bc365be4a9}} 
-No\+Hay\+Cupo&La sala a la que se intenta unir no tiene cupo \\
+No\+Hay\+Cupo&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{UnionExitosa@{UnionExitosa}!UNO.Contratos.LogicaJuego@{UNO.Contratos.LogicaJuego}}\index{UNO.Contratos.LogicaJuego@{UNO.Contratos.LogicaJuego}!UnionExitosa@{UnionExitosa}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_logica_juego_a27abf76eb5e1ebf4489bb14dd4650372a666ea6c4e1597c4ab6cca3da99bdf591}} 
-Union\+Exitosa&El jugador se pudo unir a la sala exitosamente \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{EnJuego@{EnJuego}!UNO.Contratos.LogicaJuego@{UNO.Contratos.LogicaJuego}}\index{UNO.Contratos.LogicaJuego@{UNO.Contratos.LogicaJuego}!EnJuego@{EnJuego}}}\mbox{\label{namespace_u_n_o_1_1_contratos_1_1_logica_juego_a27abf76eb5e1ebf4489bb14dd4650372a1b7263f3208fd1092f37e0f48981767e}} 
-En\+Juego&La sala a la que se esta intentando unir se encuentra con una partida en curso \\
+Union\+Exitosa&\\
 \hline
 
 \end{DoxyEnumFields}

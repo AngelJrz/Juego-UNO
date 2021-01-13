@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['partida_125',['Partida',['../class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida.html',1,'UNO::Contratos::LogicaJuego']]],
-  ['partida_2ecs_126',['Partida.cs',['../_partida_8cs.html',1,'']]],
-  ['partidadesala_127',['PartidaDeSala',['../class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_sala.html#a1e0c208851f81c08e1d6501f1d46420c',1,'UNO::Contratos::LogicaJuego::Sala']]],
-  ['partidasganadas_128',['PartidasGanadas',['../class_u_n_o_1_1_acceso_a_datos_1_1_jugador.html#a60f9852fcaea2bb0ce461e84adf6a67a',1,'UNO.AccesoADatos.Jugador.PartidasGanadas()'],['../class_u_n_o_1_1_dominio_1_1_jugador.html#a3c387ea86dcce552a98377bfc70f9ddc',1,'UNO.Dominio.Jugador.PartidasGanadas()']]],
-  ['partidasjugadas_129',['PartidasJugadas',['../class_u_n_o_1_1_acceso_a_datos_1_1_jugador.html#aec1349cb52d3f7448f5bb2809d1afbde',1,'UNO.AccesoADatos.Jugador.PartidasJugadas()'],['../class_u_n_o_1_1_dominio_1_1_jugador.html#a2e61095d474aff44c4b2dec6a0235690',1,'UNO.Dominio.Jugador.PartidasJugadas()']]],
-  ['perfilservicio_2ecs_130',['PerfilServicio.cs',['../_perfil_servicio_8cs.html',1,'']]],
-  ['program_2ecs_131',['Program.cs',['../_program_8cs.html',1,'']]],
-  ['puntajetotal_132',['PuntajeTotal',['../class_u_n_o_1_1_acceso_a_datos_1_1_jugador.html#afa1789c10d8d48d1176183c86825f54b',1,'UNO.AccesoADatos.Jugador.PuntajeTotal()'],['../class_u_n_o_1_1_dominio_1_1_jugador.html#a3170683c4283365fde908ebc28d3fb99',1,'UNO.Dominio.Jugador.PuntajeTotal()']]]
+  ['sacarjugador_104',['SacarJugador',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#a197acbc3ac022768dc487aeb1e40b624',1,'UNO.Contratos.LogicaJuego.IJuegoCallback.SacarJugador()'],['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_sala_callback.html#a4603f8408b35496fbe4e925462843c4b',1,'UNO.Contratos.LogicaJuego.ISalaCallback.SacarJugador()']]],
+  ['sala_105',['Sala',['../class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_sala.html',1,'UNO::Contratos::LogicaJuego']]],
+  ['sala_2ecs_106',['Sala.cs',['../_sala_8cs.html',1,'']]],
+  ['salirdesala_107',['SalirDeSala',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego.html#adbd39e47131d18cd598be3b0f09a19bf',1,'UNO.Contratos.LogicaJuego.IAdministrarJuego.SalirDeSala()'],['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_sala.html#a81a1b907d2f39b7fdbc40e61ff9e8a1e',1,'UNO.Contratos.LogicaJuego.IAdministrarSala.SalirDeSala()'],['../class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio.html#aa9434d42e3eff5c3e14f989d4fe6226f',1,'UNO.Contratos.JuegoUNOServicio.SalirDeSala()']]],
+  ['serviciodesala_2ecs_108',['ServicioDeSala.cs',['../_servicio_de_sala_8cs.html',1,'']]],
+  ['serviciojuego_2ecs_109',['ServicioJuego.cs',['../_servicio_juego_8cs.html',1,'']]],
+  ['serviciopartida_2ecs_110',['ServicioPartida.cs',['../_servicio_partida_8cs.html',1,'']]],
+  ['sesioniniciada_111',['SesionIniciada',['../namespace_u_n_o_1_1_contratos_1_1_login.html#a883fd6afec9db2684840661d52082805af99e48f214dd0f63d3439c42f30426fa',1,'UNO::Contratos::Login']]]
 ];

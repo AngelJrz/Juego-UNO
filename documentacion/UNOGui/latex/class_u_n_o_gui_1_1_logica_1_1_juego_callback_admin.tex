@@ -1,10 +1,5 @@
 \doxysection{UNOGui.\+Logica.\+Juego\+Callback\+Admin Class Reference}
 \label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin}\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-
-
-Establecimiento de la logica para el control de la partida  
-
-
 Inheritance diagram for UNOGui.\+Logica.\+Juego\+Callback\+Admin\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,158 +10,51 @@ Inheritance diagram for UNOGui.\+Logica.\+Juego\+Callback\+Admin\+:\begin{figure
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ Notificar\+Inicio\+Partida} (\textbf{ Sala} sala)
-\begin{DoxyCompactList}\small\item\em Notifica a los usuarios que la partida inicio \end{DoxyCompactList}\item 
-void \textbf{ Obtener\+Mazo} (List$<$ \textbf{ Carta} $>$ mazo\+De\+Jugador)
-\begin{DoxyCompactList}\small\item\em Establece el mazo inicial de un jugador en la partida \end{DoxyCompactList}\item 
-void \textbf{ Actualizar\+Carta\+Central} (\textbf{ Carta} carta\+Central)
-\begin{DoxyCompactList}\small\item\em Actualiza la carta central del tablero en la partida \end{DoxyCompactList}\item 
-void \textbf{ Recibir\+Carta} (\textbf{ Carta} carta\+Tomada)
-\begin{DoxyCompactList}\small\item\em Otorga una nueva carta para la mano del jugador \end{DoxyCompactList}\item 
-void \textbf{ Notificar\+Ganador} (String jugador\+Ganador)
-\begin{DoxyCompactList}\small\item\em Notifica al usuario el ganador de la partida \end{DoxyCompactList}\item 
-void \textbf{ Cambiar\+Turno} (String nuevo\+Turno)
-\begin{DoxyCompactList}\small\item\em Establece el nombre de la persona en turno en la partida \end{DoxyCompactList}\item 
-void \textbf{ Actualizar\+Numero\+De\+Cartas} (String nickname, String numero\+De\+Cartas)
-\begin{DoxyCompactList}\small\item\em Actualiza el numero de cartas de un jugador \end{DoxyCompactList}\item 
-void \textbf{ Actualizar\+Puntaje\+De\+Jugador} (String nickname, int puntaje\+ASumar)
-\begin{DoxyCompactList}\small\item\em Actualiza el puntaje de un jugador \end{DoxyCompactList}\item 
-void \textbf{ Obtener\+Cuatro\+Cartas} (List$<$ \textbf{ Carta} $>$ nuevas\+Cartas)
-\begin{DoxyCompactList}\small\item\em Añade cuatro cartas a la mano del jugador \end{DoxyCompactList}\item 
-void \textbf{ Obtener\+Dos\+Cartas} (List$<$ \textbf{ Carta} $>$ nuevas\+Cartas)
-\begin{DoxyCompactList}\small\item\em Añade dos cartas a la mano del jugador \end{DoxyCompactList}\item 
-void \textbf{ Obtener\+Turno\+Actual} (string turno\+Actual)
-\begin{DoxyCompactList}\small\item\em Otorga un nuevo nickname del jugador en turno \end{DoxyCompactList}\item 
-void \textbf{ Actualizar\+Sala} (List$<$ string $>$ jugadores)
-\begin{DoxyCompactList}\small\item\em Lógica para actualizar la sala de un jugador. \end{DoxyCompactList}\item 
+\item 
+void \textbf{ Obtener\+Maso} ()
+\item 
+void \textbf{ Actualizar\+Sala} (string[$\,$] jugadores)
+\item 
 void \textbf{ Agregar\+Nuevo\+Jugador} (\textbf{ Jugador} nuevo\+Jugador)
-\begin{DoxyCompactList}\small\item\em Lógica para agregar un nuevo jugador a la sala. \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Eliminar\+Creador} ()
-\begin{DoxyCompactList}\small\item\em Lógica para eliminar al creador de la sala. \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Notificar\+Creacion\+De\+Sala} (\textbf{ Sala} sala\+Creada)
-\begin{DoxyCompactList}\small\item\em Lógica para notificar la creación de la sala. \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Notificar\+Eliminacion\+De\+Sala} ()
-\begin{DoxyCompactList}\small\item\em Lógica para notificar la eliminación de una sala. \end{DoxyCompactList}\item 
-void \textbf{ Notificar\+Falta\+De\+Jugadores} ()
-\begin{DoxyCompactList}\small\item\em Lógica para notificar la falta de jugadores en la sala \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Notificar\+Salida\+De\+Sala} ()
-\begin{DoxyCompactList}\small\item\em Lógica para notificar la salida de un jugador de la sala. \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Notificar\+Union\+ASala} (\textbf{ Resultado\+Union\+Sala} resultado)
-\begin{DoxyCompactList}\small\item\em Lógica para administrar el resultado de la union a una sala. \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Obtener\+Informacion\+De\+Sala} (\textbf{ Sala} sala)
-\begin{DoxyCompactList}\small\item\em Lógica para configurar la información de la sala. \end{DoxyCompactList}\item 
+\item 
 void \textbf{ Sacar\+Jugador} (\textbf{ Jugador} jugador\+ASacar)
-\begin{DoxyCompactList}\small\item\em Lógica para sacar un jugador de la sala. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Detailed Description}
-Establecimiento de la logica para el control de la partida 
-
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a20d034a6cb57632be2e42b4f6ea3e23d}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!ActualizarCartaCentral@{ActualizarCartaCentral}}
-\index{ActualizarCartaCentral@{ActualizarCartaCentral}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{ActualizarCartaCentral()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Actualizar\+Carta\+Central (\begin{DoxyParamCaption}\item[{\textbf{ Carta}}]{carta\+Central }\end{DoxyParamCaption})}
-
-
-
-Actualiza la carta central del tablero en la partida 
-
-
-\begin{DoxyParams}{Parameters}
-{\em nueva\+Carta} & Nueva carta en el tablero\\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a86fa2c1d026ea95ef7819f8237119c74}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!ActualizarNumeroDeCartas@{ActualizarNumeroDeCartas}}
-\index{ActualizarNumeroDeCartas@{ActualizarNumeroDeCartas}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{ActualizarNumeroDeCartas()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Actualizar\+Numero\+De\+Cartas (\begin{DoxyParamCaption}\item[{String}]{nickname,  }\item[{String}]{numero\+De\+Cartas }\end{DoxyParamCaption})}
-
-
-
-Actualiza el numero de cartas de un jugador 
-
-
-\begin{DoxyParams}{Parameters}
-{\em nickname} & Nombre del jugador a actualizar\\
-\hline
-{\em numero\+De\+Cartas} & Nuevo numero de cartas del jugador\\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_ab805b87519927aae3ea7dcfe4cd5a608}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!ActualizarPuntajeDeJugador@{ActualizarPuntajeDeJugador}}
-\index{ActualizarPuntajeDeJugador@{ActualizarPuntajeDeJugador}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{ActualizarPuntajeDeJugador()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Actualizar\+Puntaje\+De\+Jugador (\begin{DoxyParamCaption}\item[{String}]{nickname,  }\item[{int}]{puntaje\+ASumar }\end{DoxyParamCaption})}
-
-
-
-Actualiza el puntaje de un jugador 
-
-
-\begin{DoxyParams}{Parameters}
-{\em nickname} & Nombre del jugador a actualizar\\
-\hline
-{\em puntaje\+ASumar} & Nuevo puntaje del jugador\\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_ae8b90b24dabc9a5a55d21a9c8019fa50}} 
+\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a04ca7c6ee6984cf8f4246cd9df4ac028}} 
 \index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!ActualizarSala@{ActualizarSala}}
 \index{ActualizarSala@{ActualizarSala}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
 \doxysubsubsection{ActualizarSala()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Actualizar\+Sala (\begin{DoxyParamCaption}\item[{List$<$ string $>$}]{jugadores }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Actualizar\+Sala (\begin{DoxyParamCaption}\item[{string[$\,$]}]{jugadores }\end{DoxyParamCaption})}
 
 
 
-Lógica para actualizar la sala de un jugador. 
+Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a917f9bc6bf9a6aa1f6affc8216ebb194}.
 
-
-\begin{DoxyParams}{Parameters}
-{\em jugadores} & Jugadores a agregar en la sala\\
-\hline
-\end{DoxyParams}
 \mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_ade77d93074307c2f0ef2262684b07494}} 
 \index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!AgregarNuevoJugador@{AgregarNuevoJugador}}
 \index{AgregarNuevoJugador@{AgregarNuevoJugador}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
 \doxysubsubsection{AgregarNuevoJugador()}
 {\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Agregar\+Nuevo\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ Jugador}}]{nuevo\+Jugador }\end{DoxyParamCaption})}
 
-
-
-Lógica para agregar un nuevo jugador a la sala. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em nuevo\+Jugador} & Nuevo jugador a agregar\\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_ae7bd680601a3a6c7194c5628d470fbef}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!CambiarTurno@{CambiarTurno}}
-\index{CambiarTurno@{CambiarTurno}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{CambiarTurno()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Cambiar\+Turno (\begin{DoxyParamCaption}\item[{String}]{nuevo\+Turno }\end{DoxyParamCaption})}
-
-
-
-Establece el nombre de la persona en turno en la partida 
-
-
-\begin{DoxyParams}{Parameters}
-{\em nuevo\+Turno} & Nombre del usuario en turno\\
-\hline
-\end{DoxyParams}
 \mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a77fd40882070e0a31b5d6b7fdb2483fb}} 
 \index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!EliminarCreador@{EliminarCreador}}
 \index{EliminarCreador@{EliminarCreador}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
 \doxysubsubsection{EliminarCreador()}
 {\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Eliminar\+Creador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Lógica para eliminar al creador de la sala. 
 
 
 
@@ -178,15 +66,6 @@ Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback}
 \doxysubsubsection{NotificarCreacionDeSala()}
 {\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Notificar\+Creacion\+De\+Sala (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{sala\+Creada }\end{DoxyParamCaption})}
 
-
-
-Lógica para notificar la creación de la sala. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sala\+Creada} & Sala que fue creada\\
-\hline
-\end{DoxyParams}
 \mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_ae404710c43669b27032a7c2f22282aea}} 
 \index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!NotificarEliminacionDeSala@{NotificarEliminacionDeSala}}
 \index{NotificarEliminacionDeSala@{NotificarEliminacionDeSala}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
@@ -195,65 +74,19 @@ Lógica para notificar la creación de la sala.
 
 
 
-Lógica para notificar la eliminación de una sala. 
-
-
-
 Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_a96583977b1a55e784b4da6e3b89c0812}.
 
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_ab1a1cfdbaea9f1f833e2107ca3231202}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!NotificarFaltaDeJugadores@{NotificarFaltaDeJugadores}}
-\index{NotificarFaltaDeJugadores@{NotificarFaltaDeJugadores}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{NotificarFaltaDeJugadores()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Notificar\+Falta\+De\+Jugadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Lógica para notificar la falta de jugadores en la sala 
-
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_afbec64e67c770673dbacfbf24280c3e6}.
-
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a660093370843927d2f00be7be1b24ee4}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!NotificarGanador@{NotificarGanador}}
-\index{NotificarGanador@{NotificarGanador}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{NotificarGanador()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Notificar\+Ganador (\begin{DoxyParamCaption}\item[{String}]{jugador\+Ganador }\end{DoxyParamCaption})}
-
-
-
-Notifica al usuario el ganador de la partida 
-
-
-\begin{DoxyParams}{Parameters}
-{\em jugador\+Ganador} & Nombre del jugador ganador\\
-\hline
-\end{DoxyParams}
 \mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a54c3a5d9de9b03df2a0edc8342c4135a}} 
 \index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!NotificarInicioPartida@{NotificarInicioPartida}}
 \index{NotificarInicioPartida@{NotificarInicioPartida}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
 \doxysubsubsection{NotificarInicioPartida()}
 {\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Notificar\+Inicio\+Partida (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{sala }\end{DoxyParamCaption})}
 
-
-
-Notifica a los usuarios que la partida inicio 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sala} & Sala creada para la partida\\
-\hline
-\end{DoxyParams}
 \mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a31917ce069beb2dd6f4f359f22c8a7f1}} 
 \index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!NotificarSalidaDeSala@{NotificarSalidaDeSala}}
 \index{NotificarSalidaDeSala@{NotificarSalidaDeSala}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
 \doxysubsubsection{NotificarSalidaDeSala()}
 {\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Notificar\+Salida\+De\+Sala (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Lógica para notificar la salida de un jugador de la sala. 
 
 
 
@@ -265,124 +98,28 @@ Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback}
 \doxysubsubsection{NotificarUnionASala()}
 {\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Notificar\+Union\+ASala (\begin{DoxyParamCaption}\item[{\textbf{ Resultado\+Union\+Sala}}]{resultado }\end{DoxyParamCaption})}
 
-
-
-Lógica para administrar el resultado de la union a una sala. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em resultado} & \\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a74b66f6574cc62c97f594fda28e075f0}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!ObtenerCuatroCartas@{ObtenerCuatroCartas}}
-\index{ObtenerCuatroCartas@{ObtenerCuatroCartas}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{ObtenerCuatroCartas()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Obtener\+Cuatro\+Cartas (\begin{DoxyParamCaption}\item[{List$<$ \textbf{ Carta} $>$}]{nuevas\+Cartas }\end{DoxyParamCaption})}
-
-
-
-Añade cuatro cartas a la mano del jugador 
-
-
-\begin{DoxyParams}{Parameters}
-{\em nuevas\+Cartas} & Lista de las nuevas cartas\\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a83d68b82d6341e8fb41b3d56a4c9b28c}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!ObtenerDosCartas@{ObtenerDosCartas}}
-\index{ObtenerDosCartas@{ObtenerDosCartas}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{ObtenerDosCartas()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Obtener\+Dos\+Cartas (\begin{DoxyParamCaption}\item[{List$<$ \textbf{ Carta} $>$}]{nuevas\+Cartas }\end{DoxyParamCaption})}
-
-
-
-Añade dos cartas a la mano del jugador 
-
-
-\begin{DoxyParams}{Parameters}
-{\em nuevas\+Cartas} & Lista de las nuevas cartas\\
-\hline
-\end{DoxyParams}
 \mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a6617acf1b77cf8bb085d0bc3cbe1b76d}} 
 \index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!ObtenerInformacionDeSala@{ObtenerInformacionDeSala}}
 \index{ObtenerInformacionDeSala@{ObtenerInformacionDeSala}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
 \doxysubsubsection{ObtenerInformacionDeSala()}
 {\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Obtener\+Informacion\+De\+Sala (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{sala }\end{DoxyParamCaption})}
 
-
-
-Lógica para configurar la información de la sala. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sala} & Sala a unirse\\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a945e51cd4a6de8c727b6542ebd866e98}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!ObtenerMazo@{ObtenerMazo}}
-\index{ObtenerMazo@{ObtenerMazo}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{ObtenerMazo()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Obtener\+Mazo (\begin{DoxyParamCaption}\item[{List$<$ \textbf{ Carta} $>$}]{mazo\+De\+Jugador }\end{DoxyParamCaption})}
+\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_abc8df3b791351466c37ecb9df1637054}} 
+\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!ObtenerMaso@{ObtenerMaso}}
+\index{ObtenerMaso@{ObtenerMaso}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
+\doxysubsubsection{ObtenerMaso()}
+{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Obtener\+Maso (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Establece el mazo inicial de un jugador en la partida 
+Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_abfda4cdd9083dca865aa09fb2c2ab6c3}.
 
-
-\begin{DoxyParams}{Parameters}
-{\em mano\+Jugador} & Lista de las cartas iniciales de un jugador\\
-\hline
-\end{DoxyParams}
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a3b03ab05985e54f191ee5ddf0b0bd164}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!ObtenerTurnoActual@{ObtenerTurnoActual}}
-\index{ObtenerTurnoActual@{ObtenerTurnoActual}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{ObtenerTurnoActual()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Obtener\+Turno\+Actual (\begin{DoxyParamCaption}\item[{string}]{turno\+Actual }\end{DoxyParamCaption})}
-
-
-
-Otorga un nuevo nickname del jugador en turno 
-
-
-\begin{DoxyParams}{Parameters}
-{\em turno\+Actual} & Nickname del turno actual\\
-\hline
-\end{DoxyParams}
-
-
-Implements \textbf{ UNOGui.\+Juego\+UNOServicio.\+IAdministrar\+Juego\+Callback} \doxyref{}{p.}{interface_u_n_o_gui_1_1_juego_u_n_o_servicio_1_1_i_administrar_juego_callback_ac5ac15404b2e569e86f149dc706c4399}.
-
-\mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_aff5c8331aa96beefa264c4353a6eae96}} 
-\index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!RecibirCarta@{RecibirCarta}}
-\index{RecibirCarta@{RecibirCarta}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
-\doxysubsubsection{RecibirCarta()}
-{\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Recibir\+Carta (\begin{DoxyParamCaption}\item[{\textbf{ Carta}}]{carta\+Tomada }\end{DoxyParamCaption})}
-
-
-
-Otorga una nueva carta para la mano del jugador 
-
-
-\begin{DoxyParams}{Parameters}
-{\em carta\+Tomada} & Nueva carta para la mano del jugador\\
-\hline
-\end{DoxyParams}
 \mbox{\label{class_u_n_o_gui_1_1_logica_1_1_juego_callback_admin_a33c3a134215a845c87298029bc9ec6f5}} 
 \index{UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}!SacarJugador@{SacarJugador}}
 \index{SacarJugador@{SacarJugador}!UNOGui.Logica.JuegoCallbackAdmin@{UNOGui.Logica.JuegoCallbackAdmin}}
 \doxysubsubsection{SacarJugador()}
 {\footnotesize\ttfamily void UNOGui.\+Logica.\+Juego\+Callback\+Admin.\+Sacar\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ Jugador}}]{jugador\+ASacar }\end{DoxyParamCaption})}
 
-
-
-Lógica para sacar un jugador de la sala. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em jugador\+ASacar} & Jugador a sacar.\\
-\hline
-\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

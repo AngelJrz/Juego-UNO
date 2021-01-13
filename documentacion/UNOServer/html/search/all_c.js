@@ -1,15 +1,12 @@
 var searchData=
 [
-  ['obtenercuatrocartas_113',['ObtenerCuatroCartas',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#af3d98f6662a9e941231351d5c93c6e95',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['obtenerdoscartas_114',['ObtenerDosCartas',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#ab3b202a0b283836d652acd4a0d09be89',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['obtenerinformaciondesala_115',['ObtenerInformacionDeSala',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#ad0d5d67e3bc7f3e78fb40d7bc8b8d191',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['obtenerinformacionjugador_116',['ObtenerInformacionJugador',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_perfil_callback.html#a1d63c305d140dc41bdc48b0e769480db',1,'UNO::Contratos::AdministrarJugador::IPerfilCallback']]],
-  ['obtenerjugador_117',['ObtenerJugador',['../class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador.html#a1383584b87cb4da6f5aec225f8e42731',1,'UNO::AccesoADatos::AdministrarDatos::AdminDatosJugador']]],
-  ['obtenerjugadorenturno_118',['ObtenerJugadorEnTurno',['../class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida.html#a6ccd1fc632e0ccce5f225380479b40b7',1,'UNO::Contratos::LogicaJuego::Partida']]],
-  ['obtenerjugadorestop_119',['ObtenerJugadoresTop',['../interface_u_n_o_1_1_contratos_1_1_login_1_1_i_login_callback.html#a0f4f74a4fc50c55c44dc8e45c74c5143',1,'UNO::Contratos::Login::ILoginCallback']]],
-  ['obtenermazo_120',['ObtenerMazo',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#a2b061cf1f6795692a2ef90eeba025969',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['obtenermejoresjugadores_121',['ObtenerMejoresJugadores',['../class_u_n_o_1_1_acceso_a_datos_1_1_administrar_datos_1_1_admin_datos_jugador.html#ae19e0877c0e2e01f52c192ee1e4b2253',1,'UNO::AccesoADatos::AdministrarDatos::AdminDatosJugador']]],
-  ['obtenersiguientejugador_122',['ObtenerSiguienteJugador',['../class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_partida.html#a90c45d6987e49af8798f389505d9502a',1,'UNO::Contratos::LogicaJuego::Partida']]],
-  ['obtenerturnoactual_123',['ObtenerTurnoActual',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html#a5cf908d9ce9177727b27c9a01191a2f4',1,'UNO::Contratos::LogicaJuego::IJuegoCallback']]],
-  ['onmodelcreating_124',['OnModelCreating',['../class_u_n_o_1_1_acceso_a_datos_1_1_juego_u_n_o_context.html#adcc33e2eaf41e5c45f48f5e33f265cfe',1,'UNO::AccesoADatos::JuegoUNOContext']]]
+  ['registrarjugador_95',['RegistrarJugador',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador.html#a0032045531757d6bcd75401d63102f0a',1,'UNO.Contratos.AdministrarJugador.IRegistrarJugador.RegistrarJugador()'],['../class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio.html#a0821a2ddb0c8ca1ec1f27f740ff9060b',1,'UNO.Contratos.JuegoUNOServicio.RegistrarJugador()']]],
+  ['registroexitoso_96',['RegistroExitoso',['../namespace_u_n_o_1_1_contratos_1_1_administrar_jugador.html#a470791768f61744c6d120bdbe281d4dba2c79ef60cd292a6d21e1dd1f06871afb',1,'UNO::Contratos::AdministrarJugador']]],
+  ['repartircartas_97',['RepartirCartas',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego.html#ab9ed543c7c8f722dfdbba61acc2cf0a3',1,'UNO.Contratos.LogicaJuego.IAdministrarJuego.RepartirCartas()'],['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_partida.html#aae2f45c5dc8768796f64a2bdae61be39',1,'UNO.Contratos.LogicaJuego.IAdministrarPartida.RepartirCartas()'],['../class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio.html#a79e576b1d53a49c5a1ddd70fc70dcaf7',1,'UNO.Contratos.JuegoUNOServicio.RepartirCartas()']]],
+  ['resultadologin_98',['ResultadoLogin',['../namespace_u_n_o_1_1_contratos_1_1_login.html#a883fd6afec9db2684840661d52082805',1,'UNO::Contratos::Login']]],
+  ['resultadologin_2ecs_99',['ResultadoLogin.cs',['../_resultado_login_8cs.html',1,'']]],
+  ['resultadoregistro_100',['ResultadoRegistro',['../namespace_u_n_o_1_1_contratos_1_1_administrar_jugador.html#a470791768f61744c6d120bdbe281d4db',1,'UNO::Contratos::AdministrarJugador']]],
+  ['resultadoregistro_2ecs_101',['ResultadoRegistro.cs',['../_resultado_registro_8cs.html',1,'']]],
+  ['resultadounionsala_102',['ResultadoUnionSala',['../namespace_u_n_o_1_1_contratos_1_1_logica_juego.html#a27abf76eb5e1ebf4489bb14dd4650372',1,'UNO::Contratos::LogicaJuego']]],
+  ['resultadounionsala_2ecs_103',['ResultadoUnionSala.cs',['../_resultado_union_sala_8cs.html',1,'']]]
 ];
