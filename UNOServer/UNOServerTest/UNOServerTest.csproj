@@ -69,8 +69,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="JuegoUNOServicio\JuegoUnoTest.cs" />
+    <Compile Include="JuegoUNOServicio\RegistroJugadorCallback.cs" />
     <Compile Include="Login\LoginCallbackAdmin.cs" />
     <Compile Include="Login\LoginTest.cs" />
+    <Compile Include="Servicio de Sala\SalaCallbackAdmin.cs" />
+    <Compile Include="Servicio de Sala\SalaTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
