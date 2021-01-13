@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['iadministrarjuego_55',['IAdministrarJuego',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego.html',1,'UNO::Contratos::LogicaJuego']]],
+  ['iadministrarjuego_2ecs_56',['IAdministrarJuego.cs',['../_i_administrar_juego_8cs.html',1,'']]],
+  ['id_57',['Id',['../class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_sala.html#a0d61e3c16629a9a4561a5a855a226d2b',1,'UNO::Contratos::LogicaJuego::Sala']]],
+  ['ijuegocallback_58',['IJuegoCallback',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback.html',1,'UNO::Contratos::LogicaJuego']]],
+  ['ijuegocallback_2ecs_59',['IJuegoCallback.cs',['../_i_juego_callback_8cs.html',1,'']]],
+  ['ilogin_60',['ILogin',['../interface_u_n_o_1_1_contratos_1_1_login_1_1_i_login.html',1,'UNO::Contratos::Login']]],
+  ['ilogin_2ecs_61',['ILogin.cs',['../_i_login_8cs.html',1,'']]],
+  ['ilogincallback_62',['ILoginCallback',['../interface_u_n_o_1_1_contratos_1_1_login_1_1_i_login_callback.html',1,'UNO::Contratos::Login']]],
+  ['ilogincallback_2ecs_63',['ILoginCallback.cs',['../_i_login_callback_8cs.html',1,'']]],
+  ['iniciarpartida_64',['IniciarPartida',['../interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_administrar_juego.html#a95a50df59908d26e3bd8dc4304fd2021',1,'UNO.Contratos.LogicaJuego.IAdministrarJuego.IniciarPartida()'],['../class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio.html#a4b5bc544981afebd743efff8347f169a',1,'UNO.Contratos.JuegoUNOServicio.IniciarPartida()']]],
+  ['iniciarsesion_65',['IniciarSesion',['../interface_u_n_o_1_1_contratos_1_1_login_1_1_i_login.html#af419ca495e92b699c9e726f49a28cef3',1,'UNO.Contratos.Login.ILogin.IniciarSesion()'],['../class_u_n_o_1_1_contratos_1_1_juego_u_n_o_servicio.html#a0de8298c7b255893a71e3a8acff05b81',1,'UNO.Contratos.JuegoUNOServicio.IniciarSesion()']]],
+  ['iperfil_66',['IPerfil',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_perfil.html',1,'UNO::Contratos::AdministrarJugador']]],
+  ['iperfil_2ecs_67',['IPerfil.cs',['../_i_perfil_8cs.html',1,'']]],
+  ['iperfilcallback_68',['IPerfilCallback',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_perfil_callback.html',1,'UNO::Contratos::AdministrarJugador']]],
+  ['iperfilcallback_2ecs_69',['IPerfilCallback.cs',['../_i_perfil_callback_8cs.html',1,'']]],
+  ['irecuperarcuenta_70',['IRecuperarCuenta',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_recuperar_cuenta.html',1,'UNO::Contratos::AdministrarJugador']]],
+  ['irecuperarcuenta_2ecs_71',['IRecuperarCuenta.cs',['../_i_recuperar_cuenta_8cs.html',1,'']]],
+  ['irecuperarcuentacallback_72',['IRecuperarCuentaCallback',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_recuperar_cuenta_callback.html',1,'UNO::Contratos::AdministrarJugador']]],
+  ['irecuperarcuentacallback_2ecs_73',['IRecuperarCuentaCallback.cs',['../_i_recuperar_cuenta_callback_8cs.html',1,'']]],
+  ['iregistrarjugador_74',['IRegistrarJugador',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador.html',1,'UNO::Contratos::AdministrarJugador']]],
+  ['iregistrarjugador_2ecs_75',['IRegistrarJugador.cs',['../_i_registrar_jugador_8cs.html',1,'']]],
+  ['iregistrarjugadorcallback_76',['IRegistrarJugadorCallback',['../interface_u_n_o_1_1_contratos_1_1_administrar_jugador_1_1_i_registrar_jugador_callback.html',1,'UNO::Contratos::AdministrarJugador']]],
+  ['iregistrarjugadorcallback_2ecs_77',['IRegistrarJugadorCallback.cs',['../_i_registrar_jugador_callback_8cs.html',1,'']]]
+];

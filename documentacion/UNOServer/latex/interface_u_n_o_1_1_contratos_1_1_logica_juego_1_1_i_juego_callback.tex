@@ -1,0 +1,362 @@
+\doxysection{UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback Interface Reference}
+\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback}\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+
+
+Establece los comportamientos que tendra el cliente del servidor  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Notificar\+Creacion\+De\+Sala} (\textbf{ Sala} sala\+Creada)
+\begin{DoxyCompactList}\small\item\em Notifica al jugador la sala creada. \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Union\+ASala} (\textbf{ Resultado\+Union\+Sala} resultado)
+\begin{DoxyCompactList}\small\item\em Notifica al jugador el estado de la union a una sala. \end{DoxyCompactList}\item 
+void \textbf{ Actualizar\+Sala} (List$<$ string $>$ jugadores)
+\begin{DoxyCompactList}\small\item\em Actualiza la sala del jugador con los nuevos jugadores. \end{DoxyCompactList}\item 
+void \textbf{ Obtener\+Informacion\+De\+Sala} (\textbf{ Sala} sala)
+\begin{DoxyCompactList}\small\item\em Obtiene la información de sala para mostrarla en el cliente. \end{DoxyCompactList}\item 
+void \textbf{ Agregar\+Nuevo\+Jugador} (\textbf{ Dominio.\+Jugador} nuevo\+Jugador)
+\begin{DoxyCompactList}\small\item\em Agrega un nuevo jugador para mostrarla en el cliente. \end{DoxyCompactList}\item 
+void \textbf{ Sacar\+Jugador} (\textbf{ Dominio.\+Jugador} jugador\+ASacar)
+\begin{DoxyCompactList}\small\item\em Saca el jugador especificado de la sala. \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Salida\+De\+Sala} ()
+\begin{DoxyCompactList}\small\item\em Notifica al jugador que se salió de la sala. \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Eliminacion\+De\+Sala} ()
+\begin{DoxyCompactList}\small\item\em Notifica a los jugadores que el creador de la sala la eliminó. \end{DoxyCompactList}\item 
+void \textbf{ Eliminar\+Creador} ()
+\begin{DoxyCompactList}\small\item\em Notifica al creador de la sala que se salió de ella. \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Falta\+De\+Jugadores} ()
+\begin{DoxyCompactList}\small\item\em Notifica al jugador la falta de jugadores en la partida \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Inicio\+Partida} (\textbf{ Sala} sala)
+\begin{DoxyCompactList}\small\item\em Notifica el inicio de la partida \end{DoxyCompactList}\item 
+void \textbf{ Obtener\+Mazo} (List$<$ \textbf{ Carta} $>$ mazo\+De\+Jugador)
+\begin{DoxyCompactList}\small\item\em Establece la mano inicial del jugador en la partida \end{DoxyCompactList}\item 
+void \textbf{ Actualizar\+Carta\+Central} (\textbf{ Carta} carta\+Central)
+\begin{DoxyCompactList}\small\item\em Actualiza la carta central del tablero \end{DoxyCompactList}\item 
+void \textbf{ Recibir\+Carta} (\textbf{ Carta} carta\+Tomada)
+\begin{DoxyCompactList}\small\item\em Añade una nueva carta a la mano del jugador \end{DoxyCompactList}\item 
+void \textbf{ Notificar\+Ganador} (String jugador\+Ganador)
+\begin{DoxyCompactList}\small\item\em Notifica que jugador fue el ganador de la partida \end{DoxyCompactList}\item 
+void \textbf{ Cambiar\+Turno} (String nuevo\+Turno)
+\begin{DoxyCompactList}\small\item\em Actualiza el nombre del jugador en turno \end{DoxyCompactList}\item 
+void \textbf{ Actualizar\+Numero\+De\+Cartas} (String nickname, String numero\+De\+Cartas)
+\begin{DoxyCompactList}\small\item\em Actualiza el numero de cartas de un jugador \end{DoxyCompactList}\item 
+void \textbf{ Obtener\+Dos\+Cartas} (List$<$ \textbf{ Carta} $>$ nuevas\+Cartas)
+\begin{DoxyCompactList}\small\item\em Agrega dos nuevas cartas al jugador. \end{DoxyCompactList}\item 
+void \textbf{ Obtener\+Cuatro\+Cartas} (List$<$ \textbf{ Carta} $>$ nuevas\+Cartas)
+\begin{DoxyCompactList}\small\item\em Agrega cuatro nuevas cartas al jugador. \end{DoxyCompactList}\item 
+void \textbf{ Obtener\+Turno\+Actual} (string turno\+Actual)
+\begin{DoxyCompactList}\small\item\em Obtiene el turno actual de la sala. \end{DoxyCompactList}\item 
+void \textbf{ Actualizar\+Puntaje\+De\+Jugador} (String nickname, int puntaje\+ASumar)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Establece los comportamientos que tendra el cliente del servidor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_ae3decb4dace67a1a362c12f8d8ae597c}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!ActualizarCartaCentral@{ActualizarCartaCentral}}
+\index{ActualizarCartaCentral@{ActualizarCartaCentral}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{ActualizarCartaCentral()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Actualizar\+Carta\+Central (\begin{DoxyParamCaption}\item[{\textbf{ Carta}}]{carta\+Central }\end{DoxyParamCaption})}
+
+
+
+Actualiza la carta central del tablero 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carta\+Central} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a41731b83780cbc31d012ac0ee7ac0548}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!ActualizarNumeroDeCartas@{ActualizarNumeroDeCartas}}
+\index{ActualizarNumeroDeCartas@{ActualizarNumeroDeCartas}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{ActualizarNumeroDeCartas()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Actualizar\+Numero\+De\+Cartas (\begin{DoxyParamCaption}\item[{String}]{nickname,  }\item[{String}]{numero\+De\+Cartas }\end{DoxyParamCaption})}
+
+
+
+Actualiza el numero de cartas de un jugador 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nickname} & \\
+\hline
+{\em numero\+De\+Cartas} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a3b94d64876a2011c30a96e4f9e90eff8}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!ActualizarPuntajeDeJugador@{ActualizarPuntajeDeJugador}}
+\index{ActualizarPuntajeDeJugador@{ActualizarPuntajeDeJugador}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{ActualizarPuntajeDeJugador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Actualizar\+Puntaje\+De\+Jugador (\begin{DoxyParamCaption}\item[{String}]{nickname,  }\item[{int}]{puntaje\+ASumar }\end{DoxyParamCaption})}
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_ae84c25a6b332b9011cbb162e72eb8896}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!ActualizarSala@{ActualizarSala}}
+\index{ActualizarSala@{ActualizarSala}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{ActualizarSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Actualizar\+Sala (\begin{DoxyParamCaption}\item[{List$<$ string $>$}]{jugadores }\end{DoxyParamCaption})}
+
+
+
+Actualiza la sala del jugador con los nuevos jugadores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jugadores} & Jugadores de la sala\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a6ea006e6e5d34866eb660c10856d7e57}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!AgregarNuevoJugador@{AgregarNuevoJugador}}
+\index{AgregarNuevoJugador@{AgregarNuevoJugador}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{AgregarNuevoJugador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Agregar\+Nuevo\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ Dominio.\+Jugador}}]{nuevo\+Jugador }\end{DoxyParamCaption})}
+
+
+
+Agrega un nuevo jugador para mostrarla en el cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nuevo\+Jugador} & Nuevo jugador.\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a99dde9176acebc66b4897326fad94740}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!CambiarTurno@{CambiarTurno}}
+\index{CambiarTurno@{CambiarTurno}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{CambiarTurno()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Cambiar\+Turno (\begin{DoxyParamCaption}\item[{String}]{nuevo\+Turno }\end{DoxyParamCaption})}
+
+
+
+Actualiza el nombre del jugador en turno 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nuevo\+Turno} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a5e8eae9e0fc84207e82406c7418cc7cc}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!EliminarCreador@{EliminarCreador}}
+\index{EliminarCreador@{EliminarCreador}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{EliminarCreador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Eliminar\+Creador (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifica al creador de la sala que se salió de ella. 
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a49541c57b360fc8501ad3fc6c4c4fe53}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!NotificarCreacionDeSala@{NotificarCreacionDeSala}}
+\index{NotificarCreacionDeSala@{NotificarCreacionDeSala}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{NotificarCreacionDeSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Notificar\+Creacion\+De\+Sala (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{sala\+Creada }\end{DoxyParamCaption})}
+
+
+
+Notifica al jugador la sala creada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sala\+Creada} & \doxyref{Sala}{p.}{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_sala} creada\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a6dc4bf59a2079d227749055d55b35674}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!NotificarEliminacionDeSala@{NotificarEliminacionDeSala}}
+\index{NotificarEliminacionDeSala@{NotificarEliminacionDeSala}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{NotificarEliminacionDeSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Notificar\+Eliminacion\+De\+Sala (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifica a los jugadores que el creador de la sala la eliminó. 
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_aa0a58a19756ca078d338231136098ea0}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!NotificarFaltaDeJugadores@{NotificarFaltaDeJugadores}}
+\index{NotificarFaltaDeJugadores@{NotificarFaltaDeJugadores}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{NotificarFaltaDeJugadores()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Notificar\+Falta\+De\+Jugadores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifica al jugador la falta de jugadores en la partida 
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_ac917742ad915a7ca5e805e44d864f37b}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!NotificarGanador@{NotificarGanador}}
+\index{NotificarGanador@{NotificarGanador}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{NotificarGanador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Notificar\+Ganador (\begin{DoxyParamCaption}\item[{String}]{jugador\+Ganador }\end{DoxyParamCaption})}
+
+
+
+Notifica que jugador fue el ganador de la partida 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jugador\+Ganador} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_aedf22db609ffe735fa651c96c1990a62}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!NotificarInicioPartida@{NotificarInicioPartida}}
+\index{NotificarInicioPartida@{NotificarInicioPartida}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{NotificarInicioPartida()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Notificar\+Inicio\+Partida (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{sala }\end{DoxyParamCaption})}
+
+
+
+Notifica el inicio de la partida 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sala} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_ab14ca696d775e57ccf6e7fbc1b3b601d}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!NotificarSalidaDeSala@{NotificarSalidaDeSala}}
+\index{NotificarSalidaDeSala@{NotificarSalidaDeSala}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{NotificarSalidaDeSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Notificar\+Salida\+De\+Sala (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Notifica al jugador que se salió de la sala. 
+
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a3dcf32b2c9bd8ba4f71725f295366744}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!NotificarUnionASala@{NotificarUnionASala}}
+\index{NotificarUnionASala@{NotificarUnionASala}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{NotificarUnionASala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Notificar\+Union\+ASala (\begin{DoxyParamCaption}\item[{\textbf{ Resultado\+Union\+Sala}}]{resultado }\end{DoxyParamCaption})}
+
+
+
+Notifica al jugador el estado de la union a una sala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em resultado} & Resultado de la union a una sala\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_af3d98f6662a9e941231351d5c93c6e95}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!ObtenerCuatroCartas@{ObtenerCuatroCartas}}
+\index{ObtenerCuatroCartas@{ObtenerCuatroCartas}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{ObtenerCuatroCartas()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Obtener\+Cuatro\+Cartas (\begin{DoxyParamCaption}\item[{List$<$ \textbf{ Carta} $>$}]{nuevas\+Cartas }\end{DoxyParamCaption})}
+
+
+
+Agrega cuatro nuevas cartas al jugador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nuevas\+Cartas} & Las cuatro nuevas cartas\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_ab3b202a0b283836d652acd4a0d09be89}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!ObtenerDosCartas@{ObtenerDosCartas}}
+\index{ObtenerDosCartas@{ObtenerDosCartas}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{ObtenerDosCartas()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Obtener\+Dos\+Cartas (\begin{DoxyParamCaption}\item[{List$<$ \textbf{ Carta} $>$}]{nuevas\+Cartas }\end{DoxyParamCaption})}
+
+
+
+Agrega dos nuevas cartas al jugador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nuevas\+Cartas} & Las dos nuevas cartas\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_ad0d5d67e3bc7f3e78fb40d7bc8b8d191}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!ObtenerInformacionDeSala@{ObtenerInformacionDeSala}}
+\index{ObtenerInformacionDeSala@{ObtenerInformacionDeSala}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{ObtenerInformacionDeSala()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Obtener\+Informacion\+De\+Sala (\begin{DoxyParamCaption}\item[{\textbf{ Sala}}]{sala }\end{DoxyParamCaption})}
+
+
+
+Obtiene la información de sala para mostrarla en el cliente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sala} & \doxyref{Sala}{p.}{class_u_n_o_1_1_contratos_1_1_logica_juego_1_1_sala} con la información necesaria.\\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a2b061cf1f6795692a2ef90eeba025969}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!ObtenerMazo@{ObtenerMazo}}
+\index{ObtenerMazo@{ObtenerMazo}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{ObtenerMazo()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Obtener\+Mazo (\begin{DoxyParamCaption}\item[{List$<$ \textbf{ Carta} $>$}]{mazo\+De\+Jugador }\end{DoxyParamCaption})}
+
+
+
+Establece la mano inicial del jugador en la partida 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mazo\+De\+Jugador} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a5cf908d9ce9177727b27c9a01191a2f4}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!ObtenerTurnoActual@{ObtenerTurnoActual}}
+\index{ObtenerTurnoActual@{ObtenerTurnoActual}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{ObtenerTurnoActual()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Obtener\+Turno\+Actual (\begin{DoxyParamCaption}\item[{string}]{turno\+Actual }\end{DoxyParamCaption})}
+
+
+
+Obtiene el turno actual de la sala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em turno\+Actual} & Nickname del jugador del turno actual\\
+\hline
+\end{DoxyParams}
+summary$>$ Actualiza el puntaje de un jugador en la partida
+
+
+\begin{DoxyParams}{Parameters}
+{\em nickname} & \\
+\hline
+{\em puntaje\+ASumar} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_acc2201ea94fa48e8c9bc690996ba0583}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!RecibirCarta@{RecibirCarta}}
+\index{RecibirCarta@{RecibirCarta}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{RecibirCarta()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Recibir\+Carta (\begin{DoxyParamCaption}\item[{\textbf{ Carta}}]{carta\+Tomada }\end{DoxyParamCaption})}
+
+
+
+Añade una nueva carta a la mano del jugador 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carta\+Tomada} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{interface_u_n_o_1_1_contratos_1_1_logica_juego_1_1_i_juego_callback_a197acbc3ac022768dc487aeb1e40b624}} 
+\index{UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}!SacarJugador@{SacarJugador}}
+\index{SacarJugador@{SacarJugador}!UNO.Contratos.LogicaJuego.IJuegoCallback@{UNO.Contratos.LogicaJuego.IJuegoCallback}}
+\doxysubsubsection{SacarJugador()}
+{\footnotesize\ttfamily void UNO.\+Contratos.\+Logica\+Juego.\+IJuego\+Callback.\+Sacar\+Jugador (\begin{DoxyParamCaption}\item[{\textbf{ Dominio.\+Jugador}}]{jugador\+ASacar }\end{DoxyParamCaption})}
+
+
+
+Saca el jugador especificado de la sala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jugador\+ASacar} & Jugador a sacar de la sala.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Angel/\+Desktop/\+Juego-\/\+UNO/\+UNOServer/\+UNO.\+Contratos/\+Logica\+Juego/\textbf{ IJuego\+Callback.\+cs}\end{DoxyCompactItemize}
