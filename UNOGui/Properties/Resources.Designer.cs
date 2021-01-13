@@ -124,6 +124,15 @@ namespace UNOGui.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Información invalida.
+        /// </summary>
+        public static string ContraseñasIncompatibles {
+            get {
+                return ResourceManager.GetString("ContraseñasIncompatibles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Crear.
         /// </summary>
         public static string CrearSala_ButonCrear {
@@ -642,6 +651,15 @@ namespace UNOGui.Properties {
         public static string RecuperacionCuenta_Titulo {
             get {
                 return ResourceManager.GetString("RecuperacionCuenta_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Las contraseñas no son iguales.
+        /// </summary>
+        public static string RecuperacionDeCuenta_ContraseñasIncompatibles {
+            get {
+                return ResourceManager.GetString("RecuperacionDeCuenta_ContraseñasIncompatibles", resourceCulture);
             }
         }
         

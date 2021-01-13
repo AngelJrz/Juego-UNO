@@ -138,6 +138,9 @@
   <data name="CampoUsuario" xml:space="preserve">
     <value>Nickname</value>
   </data>
+  <data name="ContraseñasIncompatibles" xml:space="preserve">
+    <value>Incorrect passwords</value>
+  </data>
   <data name="CrearSala_ButonCrear" xml:space="preserve">
     <value>Create</value>
   </data>
@@ -311,6 +314,9 @@
   </data>
   <data name="RecuperacionCuenta_Titulo" xml:space="preserve">
     <value>Recover your password</value>
+  </data>
+  <data name="RecuperacionDeCuenta_ContraseñasIncompatibles" xml:space="preserve">
+    <value>Passwords must be different</value>
   </data>
   <data name="RegistroEnEspera_CancelarBoton" xml:space="preserve">
     <value>Cancel</value>

@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using UNOGui.Logica;
+using UNOGui.Ventanas;
 
 namespace UNOGui.Paginas
 {
@@ -39,7 +40,11 @@ namespace UNOGui.Paginas
             }
             else
             {
-                MessageBox.Show("Los campos estan incompletos", "Falta información", MessageBoxButton.OK, MessageBoxImage.Warning);
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.CamposIncompletosTitulo,
+                    Contenido = Properties.Resources.CamposIncompletosMensaje
+                }.ShowDialog();
             }
 
             return completo;
@@ -55,7 +60,11 @@ namespace UNOGui.Paginas
             }
             else
             {
-                MessageBox.Show("Las contraseñas no son iguales", "Información invalida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                new Mensaje
+                {
+                    TituloMensaje = Properties.Resources.ContraseñasIncompatibles,
+                    Contenido = Properties.Resources.RecuperacionDeCuenta_ContraseñasIncompatibles
+                }.ShowDialog();
             }
 
             return iguales;
